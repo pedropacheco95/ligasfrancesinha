@@ -24,71 +24,70 @@ function switchPlayer(new_id){
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const draggableRows = document.querySelectorAll('.drag_to_delete');
-  
-    draggableRows.forEach(row => {
-      createDraggableRows(row)
-    });
+  const draggableRows = document.querySelectorAll('.drag_to_delete');
+
+  draggableRows.forEach(row => {
+    createDraggableRows(row)
   });
+});
 
-  function createDraggableRows(row){
-    let startX;
-    let currentX;
-    let isDragging = false;
+function createDraggableRows(row){
+  let startX;
+  let currentX;
+  let isDragging = false;
 
-    const startDrag = (clientX) => {
-      
-      isDragging = true;
-      startX = clientX;
-      currentX = 0;
-      row.classList.add('is-dragging');
-    };
-
-    const onDrag = (clientX) => {
-      if (!isDragging) return;
-      currentX = clientX - startX;
-      if (currentX < -10) {
-          currentX = -210;
-      } else if (currentX > 0) {
-          currentX = 0;
-      }
-      // Apply the opposite transform to the trash icon to keep it in view
-      row.querySelector('.trash').style.transform = `translateX(${100 + currentX}%)`;
-    };
-
-    const endDrag = (e) => {
-      e.preventDefault();
-      if (!isDragging) return;
-      isDragging = false;
-    };
-
-    const handleScroll = (e) => {
-      const isHorizontalScroll = Math.abs(e.wheelDeltaX) > Math.abs(e.wheelDeltaY) || Math.abs(e.deltaX) > Math.abs(e.deltaY);
-      
-      if (isHorizontalScroll) {
-        e.preventDefault();
-      
-        const scrollDirection = e.wheelDeltaX < 0 || e.deltaX > 0 ? -1 : 1;
-        const trashIconPosition = scrollDirection * 110;
-        row.querySelector('.trash').style.transform = `translateX(${trashIconPosition}%)`;
-      }
-    };
+  const startDrag = (clientX) => {
     
-    // Mouse events
-    row.addEventListener('mousedown', (e) => startDrag(e.clientX));
-    document.addEventListener('mousemove', (e) => onDrag(e.clientX));
-    document.addEventListener('mouseup', (e) => endDrag(e));
+    isDragging = true;
+    startX = clientX;
+    currentX = 0;
+    row.classList.add('is-dragging');
+  };
 
-    // Touch events
-    row.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX));
-    document.addEventListener('touchmove', (e) => onDrag(e.touches[0].clientX));
-    document.addEventListener('touchend', (e) => endDrag(e));
+  const onDrag = (clientX) => {
+    if (!isDragging) return;
+    currentX = clientX - startX;
+    if (currentX < -10) {
+        currentX = -210;
+    } else if (currentX > 0) {
+        currentX = 0;
+    }
+    // Apply the opposite transform to the trash icon to keep it in view
+    row.querySelector('.trash').style.transform = `translateX(${100 + currentX}%)`;
+  };
 
-    //Scroll events
-    row.addEventListener('wheel', handleScroll); 
+  const endDrag = (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+  };
 
-    row.querySelector('.trash').addEventListener('click', (e) => {
-      modalActivator = row.getElementsByClassName('playerField')[0];
-      switchPlayer('no_player')
-    });
-  }
+  const handleScroll = (e) => {
+    const isHorizontalScroll = Math.abs(e.wheelDeltaX) > Math.abs(e.wheelDeltaY) || Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    
+    if (isHorizontalScroll) {
+      e.preventDefault();
+    
+      const scrollDirection = e.wheelDeltaX < 0 || e.deltaX > 0 ? -1 : 1;
+      const trashIconPosition = scrollDirection * 110;
+      row.querySelector('.trash').style.transform = `translateX(${trashIconPosition}%)`;
+    }
+  };
+  
+  // Mouse events
+  row.addEventListener('mousedown', (e) => startDrag(e.clientX));
+  document.addEventListener('mousemove', (e) => onDrag(e.clientX));
+  document.addEventListener('mouseup', (e) => endDrag(e));
+
+  // Touch events
+  row.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX));
+  document.addEventListener('touchmove', (e) => onDrag(e.touches[0].clientX));
+  document.addEventListener('touchend', (e) => endDrag(e));
+
+  //Scroll events
+  row.addEventListener('wheel', handleScroll); 
+
+  row.querySelector('.trash').addEventListener('click', (e) => {
+    modalActivator = row.getElementsByClassName('playerField')[0];
+    switchPlayer('no_player')
+  });
+}
