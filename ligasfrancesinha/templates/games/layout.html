@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="game_container">
+
+    {% set field_image = url_for('static', filename="images/Campo-Torrinha.jpg")%}
+    <div class="game_info_container" style="background-image: linear-gradient(to top,rgba(2, 90, 61, 0.5) ,rgba(0,0,0,0.8)), url({{field_image}});color: white;">
+        <div>
+            <table class="table table-borderless" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr style="font-size: smaller;"> 
+                        <td colspan="3">
+                            Jogo dia {{ game.date }} - {{edition.time}}- Campo Francisco torrinha 
+                        </td>
+                    </tr>
+                    <tr style="font-size: smaller;"> 
+                        <td colspan="3">
+                            {{edition.name}}, Jornada {{game.matchweek}} 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="results_container">
+            <div class="team_logo_container">
+                <div class="image profile_picture">
+                    <img src="{{ url_for('static', filename='images/Branquelas.png')}}">
+                </div>
+                <div class="team_name"> Branquelas </div>
+            </div>
+            <div class="game_result">
+                <div>{{game.goals_team1}} - {{game.goals_team2}}</div>
+            </div>
+            <div class="team_logo_container">
+                <div class="image profile_picture">
+                    <img src="{{ url_for('static', filename='images/Maregões.png')}}">
+                </div>
+                <div class="team_name"> Maregões </div>
+            </div>
+        </div>
+        <div class="results_container_small_screen">
+            <div class="game_result">
+                <div>{{game.goals_team1}} - {{game.goals_team2}}</div>
+            </div>
+            <div class="teams_container">
+                <div class="team_logo_container">
+                    <div class="image profile_picture">
+                        <img src="{{ url_for('static', filename='images/Branquelas.png')}}">
+                    </div>
+                    <div class="team_name"> Branquelas </div>
+                </div>
+                <div class="team_logo_container">
+                    <div class="image profile_picture">
+                        <img src="{{ url_for('static', filename='images/Maregões.png')}}">
+                    </div>
+                    <div class="team_name"> Maregões </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block game_info %}{% endblock %}
+    {% endblock %}
+</div>

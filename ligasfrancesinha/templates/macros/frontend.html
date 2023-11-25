@@ -1,0 +1,76 @@
+{% macro games_for_carousel(game) %}
+<div class="last_games_game carousel-cell"> 
+    <div class="item-content">
+        <div class="game_content">
+            <div class="league_logo_box">
+                <img class="league_logo" src="{{game.edition.league.full_image_url()}}">
+            </div>
+            <div class="details_box">
+                Jogo dia {{ game.date }} - {{game.edition.time}} - {{game.edition.name}}, Jornada {{game.matchweek}} 
+            </div>
+            <div class="score_box">
+                <div class="team-container">
+                    <img class="team-logo left" src="{{ url_for('static', filename='images/Branquelas.png')}}">
+                    <div class="team-banner left">
+                        <div class="team-name">
+                            Branquelas
+                        </div>
+                    </div>
+                </div>
+                <div class="score">
+                    <div class="goals score_home">{{game.goals_team1}}</div>
+                    <div class="score_separator">-</div>
+                    <div class="goals score_away">{{game.goals_team2}}</div>
+                </div>
+                <div class="team-container">
+                    <div class="team-banner right">
+                        <div class="team-name">
+                            Maregões
+                        </div>
+                    </div>
+                    <img class="team-logo right" src="{{ url_for('static', filename='images/Maregões.png')}}">
+                </div>
+            </div>
+            <div class="players">
+                {% set players_by_team = game.players_by_team() %}
+                <div class="players_team_1">
+                    {% for player_in_game in players_by_team['Branquelas'] %}
+                    {% set player_url =  url_for('players.general', player_name = player_in_game[1].name ) %}
+                    <div class="player" data-href="{{player_url}}" onclick="linkToDatasetHref(this)">
+                        {% set name_parts = player_in_game[1].name.split() %}
+                        {% for part in name_parts %}
+                            <span {% if loop.index == 1 and name_parts|length > 1 %} class="light_first_name"{% endif %}>{{part}}</span>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="players_team_2">
+                    {% for player_in_game in players_by_team['Maregões'] %}
+                    {% set player_url =  url_for('players.general', player_name = player_in_game[1].name ) %}
+                    <div class="player" data-href="{{player_url}}" onclick="linkToDatasetHref(this)">
+                        {% set name_parts = player_in_game[1].name.split() %}
+                        {% for part in name_parts %}
+                            <span {% if loop.index == 1 and name_parts|length > 1 %} class="light_first_name"{% endif %}>{{part}}</span>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro countdown_timer(target_datetime) %}
+<div class="countdown-timer" data-target-datetime="{{ target_datetime }}">
+    <div class="countdown-timer-values-container">
+        <div class="days_container">Dias<div class="time_value_box" id="days">00</div></div>
+        <div class="hours_container">Horas<div class="time_value_box" id="hours">00</div></div>
+        <div class="minutes">Minutos<div class="time_value_box" id="minutes">00</div></div>
+        <div class="seconds_container">Segundos<div class="time_value_box" id="seconds">00</div></div>
+    </div>
+    <div class="countdown-timer-description">
+        Próximo jogo
+    </div>
+</div>
+{% endmacro %}

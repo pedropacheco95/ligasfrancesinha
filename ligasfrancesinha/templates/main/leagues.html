@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<div class="leagues_container">
+    {% for league in leagues%}
+        <div class="league_container">
+            <a href="{{ url_for('scores.table', league_id=league.id) }}">
+                <div>
+                    <img class="league_image" src="{{league.full_image_url()}}">
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

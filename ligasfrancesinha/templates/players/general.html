@@ -1,0 +1,124 @@
+{% extends "players/layout.html" %} 
+{% block player_info %}
+
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td class="top_table_header" width="100%" valign="top" class="players_info_container">
+                <div class="smallheader">
+                    Resumo
+                </div>
+                <br />
+                <div style="float: left;">
+                    <form action="{{ url_for('api.choose_new_edition_players',view = view , player_name = player.name) }}" method="post">
+                        <select class="custom-select my-1 mr-sm-2" name="edicao" id="edicao" onchange="this.form.submit()">
+                            {% for step_edition in editions %}
+                                <option value="{{step_edition.name}}" {% if step_edition.name==edition.name %} selected="selected"{% endif %}> {{step_edition.name}} </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </div>
+                <div class="box_container" style="width: 95%;">
+                    <table style="background-color: rgba(255, 255, 255, 1);" width="100%">
+                        <thead style="background-color: rgba(13, 121, 209, 0.493);">
+                            <th class="optional"></th>
+                            <th class="optional"></th>
+                            <th class="not_optional" name="Pontos">Pontos</th>
+                            <th class="optional">Presenças</th>
+                            <th class="not_optional" name="Golos">Golos</th>
+                            <th class="optional">% Presenças</th>
+                            <th>V</th>
+                            <th class="optional">E</th>
+                            <th>D</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="optional">
+                                    <div class="image">
+                                        <a href="https://pt.wikipedia.org/wiki/Portugal">
+                                            <img src="{{ url_for('static', filename='images/Bandeira-PT.png')}}" width="18" height="12" alt="Portugal" title="Portugal" style="vertical-align:middle;margin-top:0px;">
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="optional">
+                                    {{ edition.name }}
+                                </td>
+                                <td><strong>{{association.points}}</strong></td>
+                                <td class="optional">{{association.appearances}}</td>
+                                <td>{{association.goals}}</td>
+                                <td class="optional">{{association.percentage_of_appearances}}</td>
+                                <td>{{association.wins}}</td>
+                                <td class="optional">{{association.draws}}</td>
+                                <td>{{association.losts}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        <tr>
+            <td width="100%" valign="top" class="players_info_container">
+                <div class="smallheader">
+                    Jogos
+                </div>
+                <br />
+                <div class="box_container">
+                    <table style="background-color: rgba(255, 255, 255, 1);" width="100%">
+                        <tbody>
+                            {% for game in games %}
+                                <tr>
+                                    {% if game.date %}
+                                        <td class="optional">
+                                            {{ game.date.strftime('%d/%m/%y') }}
+                                        </td>
+                                    {% else %}
+                                        <td class="optional">
+                                            Sem data
+                                        </td>
+                                    {% endif %}
+                                    <td class="desktop optional">
+                                        {{game.edition.time}}
+                                    </td>
+                                    <td class="desktop optional">
+                                        Jornada {{ game.matchweek }}
+                                    </td>
+                                    <td class="form">
+                                        {% if player.result_on_game(game) == 1 %}
+                                        <div class="sign win">V</div>
+                                        {% elif player.result_on_game(game) == -1 %}
+                                        <div class="sign lost">D</div>
+                                        {% else %}
+                                        <div class="sign draw">E</div>
+                                        {% endif %}
+                                    </td>
+                                    <td class="home">
+                                        <a>Branquelas</a>
+                                    </td>
+                                    <td class="result">
+                                        <a href="{{ url_for('games.general', id=game.id) }}"> {{ game.goals_team1 }} - {{ game.goals_team2 }}</a>
+                                    </td>
+                                    <td class="away">
+                                        <a>Maregões</a>
+                                    </td>
+                                    <td>
+                                        {{player.goals_on_game(game)}} <img src="{{ url_for('static', filename='images/goal.png')}}" width="18" height="18">
+                                    </td>
+                                    <td class="double desktop optional">
+                                        <div class="image">
+                                            <a href="https://pt.wikipedia.org/wiki/Portugal">
+                                                <img src="{{ url_for('static', filename='images/Bandeira-PT.png')}}" width="18" height="12" alt="Portugal" title="Portugal" style="vertical-align:middle;margin-top:0px;">
+                                            </a>
+                                        </div>
+                                        <div class="text">
+                                            <a href="{{ url_for('scores.table', league_id=game.edition.league.id) }}">{{ game.edition.league.name[0] }}L</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="table_container">
+    <div class="scores_header" style="background-color: rgb(255, 255, 255) !important">
+        <div>
+            <div>
+                <h1>
+                    <span class="name" style="color: rgb(0, 0, 0) !important">
+                        {{edition.name}}
+                    </span>
+                </h1>
+            </div>
+            <div>
+                <form action="{{ url_for('api.choose_new_edition_scores',view = view) }}" method="post">
+                    <select class="custom-select my-1 mr-sm-2" name="edicao" id="edicao" onchange="this.form.submit()" style="width: 80%!important;">
+                        {% for step_edition in league.editions %}
+                            <option value="{{step_edition.name}}" {% if step_edition.name==edition.name %} selected="selected"{% endif %}> {{step_edition.name}} </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#scores_navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="scores_navbar" name='scores_navbar'>
+                <ul class="navbar-nav mr-auto mt-2" style="width: 100%;">
+                    <li class="nav-item" style="width: 25%;"><a class="nav-link" href="{{ url_for('scores.table', league_id=league.id , edition_id=edition.id) }}">Tabela</a></li>
+                    <li class="nav-item" style="width: 25%;"><a class="nav-link" href="{{ url_for('scores.games', league_id=league.id , edition_id=edition.id) }}">Jogos</a></li>
+                    <li class="nav-item" style="width: 25%;"><a class="nav-link" href="{{ url_for('scores.scorers', league_id=league.id , edition_id=edition.id) }}">Melhores marcadores</a></li>
+                    <li class="nav-item" style="width: 25%;"><a class="nav-link" href="{{ url_for('scores.create_teams', league_id=league.id , edition_id=edition.id) }}">Criar Equipas</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    {% block scores_info %}{% endblock %}
+</div>
+{% endblock %}

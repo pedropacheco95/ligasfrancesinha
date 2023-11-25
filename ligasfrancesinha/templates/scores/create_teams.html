@@ -1,0 +1,57 @@
+{% extends "scores/layout.html" %} 
+{% block scores_info %}
+{% if show %}
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+        <td width="100%" valign="top" class="players_info_container">
+            <div class="smallheader">
+            Equipas
+            </div>
+            <br />
+            <div class="box_container">
+            <table class="table table-borderless" width="100%" cellspacing="0" cellpadding="0" style="background-color: rgba(255, 255, 255, 1);">
+                <thead></thead>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Branquelas</th>
+                    <th>Maregões</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for index in range(teams['Branquelas']|length) %}
+                    <tr>
+                        <td></td>
+                        <td>{{teams['Branquelas'][index].name}}</td>
+                        <td>{{teams['Maregões'][index].name}}</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>
+<p> Equipas numero {{edition.number_of_teams_made}}</p>
+{% else %}
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+        <td width="100%" valign="top" class="players_info_container">
+            <br />
+            <div>
+                <form action="{{url_for('scores.create_teams', league_id = league.id , edition_id = edition.id )}}" method="post">
+                    <button class="btn btn-primary" type="submit"> Fazer Equipas </button>
+                </form>
+            </div>
+            <br />
+        </td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}

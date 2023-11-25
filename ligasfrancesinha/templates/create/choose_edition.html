@@ -1,0 +1,17 @@
+{% extends "create/layout.html" %}
+{% block create %}
+<form method="POST">
+    <div class="leagues_container">
+        {% for edition in editions%}
+            {% if not edition.has_ended %}
+            {% set league = edition.league %}
+            <div class="league_container">
+                <button class="button_image" type="submit" value="{{edition.name}}" name="edition_name" id="edition_name">
+                    <img class="" src="{{league.full_image_url()}}">
+                </button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</form>
+{% endblock %}

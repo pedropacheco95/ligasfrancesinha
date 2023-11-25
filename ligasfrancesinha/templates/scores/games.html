@@ -1,0 +1,77 @@
+{% extends "scores/layout.html" %} 
+{% block scores_info %}
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+        <td width="100%" valign="top" class="players_info_container">
+            <div class="smallheader">
+            Jogos
+            </div>
+            <br />
+            <div class="box_container">
+                <table style="background-color: rgba(255, 255, 255, 1);" width="100%">
+                    <tbody>
+                        {% for game in games %}
+                            <tr>
+                                {% if game.date %}
+                                    <td class="optional">
+                                        {{ game.date.strftime('%d/%m/%y') }}
+                                    </td>
+                                {% else %}
+                                    <td class="optional">
+                                        Sem data
+                                    </td>
+                                {% endif %}
+                                <td class="desktop optional">
+                                    {{game.edition.time}}
+                                </td>
+                                <td class="form">
+                                    {% if game.winner == 1 %}
+                                    <div class="sign win">V</div>
+                                    {% elif game.winner == -1 %}
+                                    <div class="sign lost">D</div>
+                                    {% else %}
+                                    <div class="sign draw">E</div>
+                                    {% endif %}
+                                </td>
+                                <td class="home">
+                                    <a>Branquelas</a>
+                                </td>
+                                <td class="result">
+                                    <a href="{{ url_for('games.general', id=game.id) }}"> {{ game.goals_team1 }} - {{ game.goals_team2 }}</a>
+                                </td>
+                                <td class="away">
+                                    <a>Maregões</a>
+                                </td>
+                                <td class="form">
+                                    {% if game.winner == -1 %}
+                                    <div class="sign win">V</div>
+                                    {% elif game.winner == 1 %}
+                                    <div class="sign lost">D</div>
+                                    {% else %}
+                                    <div class="sign draw">E</div>
+                                    {% endif %}
+                                </td>
+                                <td class="desktop optional">
+                                    Jornada {{ game.matchweek }}
+                                </td>
+                                <td class="double desktop optional">
+                                    <div class="image">
+                                        <a href="https://pt.wikipedia.org/wiki/Portugal">
+                                            <img src="{{ url_for('static', filename='images/Bandeira-PT.png')}}" width="18" height="12" alt="Portugal" title="Portugal" style="vertical-align:middle;margin-top:0px;">
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <a href="{{ url_for('scores.table', league_id=league.id) }}">{{ league.name[0] }}L</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

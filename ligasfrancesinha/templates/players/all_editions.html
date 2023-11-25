@@ -1,0 +1,53 @@
+{% extends "players/layout.html" %} 
+{% block player_info %}
+
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" class="players_info_container">
+                <div class="smallheader">
+                    Épocas
+                </div>
+                <br />
+                <div class="box_container">
+                    <table style="background-color: rgba(255, 255, 255, 1);" width="100%">
+                        <thead style="background-color: rgba(13, 121, 209, 0.493);">
+                            <th class="optional"></th>
+                            <th></th>
+                            <th class="not_optional" name="Pontos">Pontos</th>
+                            <th class="optional">Presenças</th>
+                            <th class="not_optional" name="Golos">Golos</th>
+                            <th class="optional">% Presenças</th>
+                            <th>V</th>
+                            <th class="optional">E</th>
+                            <th>D</th>
+                        </thead>
+                        <tbody>
+                            {% for relation in player.editions_relations %}
+                                <tr>
+                                    <td class="optional">
+                                        <div class="image">
+                                            <a href="https://pt.wikipedia.org/wiki/Portugal">
+                                                <img src="{{ url_for('static', filename='images/Bandeira-PT.png')}}" width="18" height="12" alt="Portugal" title="Portugal" style="vertical-align:middle;margin-top:0px;">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="{{url_for( 'scores.table' , league_id = relation.edition.league.id, edition_id = relation.edition.id)}}"> {{ relation.edition.name }} </a>
+                                    </td>
+                                    <td><strong>{{relation.points}}</strong></td>
+                                    <td class="optional">{{relation.appearances}}</td>
+                                    <td>{{relation.goals}}</td>
+                                    <td class="optional">{{relation.percentage_of_appearances}}</td>
+                                    <td>{{relation.wins}}</td>
+                                    <td class="optional">{{relation.draws}}</td>
+                                    <td>{{relation.losts}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+    </tbody>
+</table>
+{% endblock %}

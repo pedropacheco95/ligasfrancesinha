@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+{% import 'macros/frontend.html' as frontend %}
+
+{% block main %}
+<div class="index">
+    <div class="last_games_container carousel-container">
+        <div class="last_games_container_inner carousel-inner">
+            {% for game in last_games %}
+            {{frontend.games_for_carousel(game)}}
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" role="button">
+            <img src="{{url_for('static',filename='svg/left_chevron_filled.svg')}}" class="fit_image_chevron" alt="Left Chevron">
+        </a>
+        <a class="carousel-control-next" role="button">
+            <img src="{{url_for('static',filename='svg/right_chevron_filled.svg')}}" class="fit_image_chevron" alt="Left Chevron">
+        </a>
+        <ol class="carousel-indicators">
+            {% for game in last_games %}
+            <li id="carousel_indicator_{{loop.index-1}}"data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index }}" {% if loop.index == 1 %} class="carousel-indicator-active" {% endif %}></li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div class="tables_section">
+        <div class="tables_container">
+            <div class="tabs_container">
+                <div class="table_tab active" data-target_id="table_standings" onclick="showTab(this)"> Master League </div>
+                <div class="table_tab" data-target_id="table_standings" onclick="showTab(this)"> Tuesday League </div>
+            </div>
+            {% for edition in editions%}
+            <div id="{{edition.league.name}}" class="table_standings {% if loop.index==1 %} active {% endif %}">
+                {{ frontend.countdown_timer(edition.next_game_datetime()) }}
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                        <td width="100%" valign="top" class="players_info_container">
+                            <div class="smallheader">
+                            Classificação
+                            </div>
+                            <div class="table_header_logo">
+                                <img src="{{edition.league.full_image_url()}}" alt="">
+                            </div>
+                            <br />
+                            <div class="standings_table_container">
+                            <table cellspacing="0" cellpadding="0" style="background-color: rgba(255, 255, 255, 1);width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th width="5%"></th>
+                                    <th class="text"></th>
+                                    <th width="12%" class="not_optional" name="Pontos">
+                                        <div class="big_discription">Pontos</div>
+                                        <div class="small_discription">P</div>
+                                    </th>
+                                    <th width="6%" class="optional">Presenças</th>
+                                    <th width="6%" class="not_optional" name="Golos">
+                                        <div class="big_discription">Golos</div>
+                                        <div class="small_discription">G</div>
+                                    </th>
+                                    <th width="12%" class="optional">% Presenças</th>
+                                    <th width="6%">V</th>
+                                    <th width="6%" class="optional">E</th>
+                                    <th width="6%">D</th>
+                                    <th width="6%" class="optional">GM</th>
+                                    <th width="6%" class="optional">GS</th>
+                                    <th width="6%" class="optional">DG</th>
+                                    <th width="6%" class="optional"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for relation in edition.players_relations_classification() %}
+                                {% if (relation.place == 1) %}
+                                <tr style="background-color: rgba(0, 88, 252, 0.308)">
+                                {% elif (relation.place == edition.get_number_of_players()) %}
+                                <tr style="background-color: rgba(255, 0, 0, 0.288)">
+                                {% elif (relation.place <= edition.get_number_of_players()/2) %}
+                                <tr style="background-color: rgba(0, 153, 255, 0.2)">
+                                {% else %}
+                                <tr style="background-color: rgba(228, 120, 120, 0.2)">
+                                {% endif %}
+                                    <td>{{relation.place}}</td>
+                                    <td class="text">
+                                        <a>
+                                            <form action="{{ url_for('players.general', player_name = relation.player.name , edition_name = edition.name )}}">
+                                                <button type="submit" id="player_name" class="discret_button">
+                                                    {{ relation.player.name }}
+                                                </button>
+                                            </form>
+                                        </a>
+                                    </td>
+                                    <td><strong>{{relation.points}}</strong></td>
+                                    <td class="optional">{{relation.appearances}}</td>
+                                    <td>{{relation.goals}}</td>
+                                    <td class="optional">{{relation.percentage_of_appearances}}</td>
+                                    <td>{{relation.wins}}</td>
+                                    <td class="optional">{{relation.draws}}</td>
+                                    <td>{{relation.losts}}</td>
+                                    <td class="optional">{{relation.goals_scored_by_team}}</td>
+                                    <td class="optional">{{relation.goals_suffered_by_team}}</td>
+                                    <td class="optional">
+                                    {{relation.goals_scored_by_team - relation.goals_suffered_by_team}}
+                                    </td>
+                                    <!-- Para por a setinha a dizer se subiu ou desceu -->
+                                    <td class="optional"></td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            </div>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

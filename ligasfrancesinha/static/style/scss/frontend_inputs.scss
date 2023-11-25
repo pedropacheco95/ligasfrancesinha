@@ -1,0 +1,299 @@
+$color: #A8AEB3;
+$active-color: #1a73e8;
+$active-hover-color: #0069DC;
+$input-value-color: #202124;
+$border-color: 2px solid #e8e9ea;
+
+$border-color-active: 2px solid $active-color;
+$default-background: #fff;
+$background-image:#ecf0f5;
+$border-radius: 5px;
+
+.disp-none{
+    display: none;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size-query(small) {
+        width: 100%;
+        margin: 0.75rem 0;
+    }
+    @include size-query(large) {
+        margin: 1rem 0;
+    }
+    width: 100%;
+    .input-label {
+        position: absolute;
+        color: $color;
+        font-size: 1.2rem;
+        font-weight: 300;
+        max-width: calc(100% - (2 * 8px));
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        left: 0.8rem;
+        top: calc(1.75rem - 1.2rem);
+        transition: 250ms;
+        user-select: none;
+        pointer-events: none;
+        padding: 0 0.5rem 0 0.5rem;
+        svg {
+            position: relative;
+            width: 3rem;
+            height: 2rem;
+            top: 2px;
+            transition: 250ms;
+        }
+
+        .cover_line{
+            height: 2px;
+            width: 100%;
+            display: block;
+            background: white;
+            position: absolute;
+            top: 0.6rem;
+            left: 0;
+            z-index: 1;
+            display: none;
+        }
+    }
+    .input-1 {
+        box-sizing: border-box;
+        height: 3rem;
+        width: 100%;
+        border-radius: $border-radius;
+        color: $input-value-color;
+        border: $border-color;
+        padding: 1rem 1.6rem;
+        font-size: 1rem;
+        &:hover{
+            border: 2px solid #d1d4d7;
+        }
+        &:focus {
+        outline: none;
+        border: 2px solid $active-color;
+        }
+    }
+
+    textarea{
+        height: 12rem!important;
+    }
+}
+
+.slider_container{
+    width: 100%;
+}
+
+.checkbox{
+    position: relative;
+    z-index: 10;
+}
+
+.checkbox-label{
+    width: 50%;
+}
+
+.for_checkbox input {
+	opacity: 0;
+	&,
+    &:after,
+    &:before,
+	& *,
+    & *:after,
+    & *:before,
+	& + .slider {
+		box-sizing: border-box;
+        background: #fbfbfb;
+		border-radius: 2em;
+		padding: 2px;
+		transition: all .4s ease;
+		border: 1px solid #e8eae9;
+		&::selection {
+			background: none;
+		}
+	}
+	+ .slider {
+        outline: 0;
+        display: block;
+        width: 4em;
+        height: 2em;
+        position: absolute;
+        cursor: pointer;
+        user-select: none;
+        top: 0.5em;
+        right: 2em;
+        z-index: 1;
+		&:after,
+        &:before {
+			position: relative;
+			display: block;
+			content: "";
+			width: 50%;
+			height: 100%;
+		}
+    
+		&:after {
+			left: 0;
+            border-radius: 2em;
+			background: #fbfbfb;
+			transition:
+            left .3s cubic-bezier(
+            0.175, 0.885, 0.320, 1.275
+            ),
+            padding .3s ease, margin .3s ease;
+                box-shadow:
+            0 0 0 1px rgba(0,0,0,.1),
+            0 4px 0 rgba(0,0,0,.08);
+		}
+    
+		&:before {
+			display: none;
+		}
+	}
+	&:checked + .slider:after {
+		left: 50%;
+	}
+
+    &:checked + .slider {
+        background: $primary-color;
+        &:active {
+            box-shadow: none;
+            &:after {
+                margin-left: -.8em;
+            }
+        }
+    }
+}
+
+.input-box.focus,
+.input-box.active {
+    .label-invalid{
+        color: #dc3545!important;
+    }
+    
+    .label-valid{
+        color: #28a745!important;
+    }
+    .input-label {
+        color: $active-color;
+        top: -0.6rem;
+        background: rgba(255, 255, 255, 0);
+        font-size: 0.8rem;
+
+        transition: 250ms;
+
+        svg {
+        position: relative;
+        width: 11px;
+        height: 11px;
+        top: 2px;
+        transition: 250ms;
+        }
+
+        .label{
+            z-index: 10;
+            position: relative;
+        }
+
+        .cover_line{
+            display: block;
+        }
+    }
+}
+
+.submit_button{
+    font-weight: 300;
+    display: flex;
+    background: $active-color;
+    color: white;
+    justify-content: center;
+    height: 3rem;
+    align-items: center;
+    border-radius: $border-radius;
+    transition: 250ms;
+    padding: 0.4rem 2rem;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid $active-color;
+    width: 100%;
+
+    &:hover{
+        @include size-query(large) {
+            background: $active-hover-color;
+            color: white;
+        }
+    }
+}
+
+.create_game_player_row {
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    user-select: none;
+    
+    .trash {
+        display: flex;
+        flex-shrink: 0;
+        width: 10%;
+        aspect-ratio: 1;
+        background: rgb(254,69,57);
+        text-align: center;
+        vertical-align: middle;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        align-items: center;
+        justify-content: center;
+        margin: 0.1rem;
+        border-radius: 0.3rem;
+
+        .delete_icon{
+            filter: invert(100%);
+        }
+    }
+
+    .trash:hover{
+        background: rgb(224,69,57);
+    }
+    
+    .row-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        transition: transform 0.3s ease-in-out;
+        min-width: 100%;
+        align-items: center;
+
+        .player_id{
+            width: 10%;
+        }
+
+        .player_image{
+            width: 10%;
+
+            .table_profile_image_editing{
+                height: 100%;
+                width: 100%;
+                border-radius: 50% ;
+            }
+        }
+
+        .player_name{
+            width: 50%;
+        }
+
+        .player_goals_input{
+            width: 20%;
+        }
+    }
+}
+
+.drag_to_delete.is-dragging .trash {
+    transform: translateX(0);
+}

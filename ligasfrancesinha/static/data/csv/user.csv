@@ -1,0 +1,3 @@
+id,name,username,is_admin,email,password,generated_code,player_id
+1,admin,admin,True,admin@example.com,pbkdf2:sha256:260000$mZGJ9tVwfJr00HiR$73b42e640a1d0b0f8a6b33ea67afcf7806ccc38513f5bcb44af17993f6755ba7,,
+2,Pedro Pacheco,pedropacheco,True,pedropacheco95@gmail.com,pbkdf2:sha256:260000$CIPGPvW7ltjM8HtN$f132a295c07e79226b702fad2d5fd477291adde8e748fc6dcc88124e5d923af0,,1

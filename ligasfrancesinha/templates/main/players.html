@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<div class="player_list_container">
+    <br>
+    <div class="players_ranking">
+        <div class="ranking_block">
+            <ul class="player_cards_container">
+                {% for player in players %}
+                <li class="player_card_container">
+                    {% set player_url =  url_for('players.general', player_name = player.name ) %}
+                    <a href="{{player_url}}">
+                        <div class="player_card">
+                            <div class="player_card_header">
+                                <div class="player_details">
+                                    <div class="player_position">{{loop.index}}</div>
+                                    <div class="player_card__name">
+                                        {% for word in player.name.split(' ') %}
+                                        {{word}}<br>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="player_card_image">
+                                    <div class="player_image"><img class="table_profile_image" src="{{ player.full_image_url() }}"></div>
+                                </div>
+                            </div>
+                            <div class="player_card_footer">
+                                <div> Jogos: {{player.games_relations|length}}</div>
+                                <div> Vitórias: {{player.games_won()|length}}</div>
+                                <div> Golos: {{player.goals()}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

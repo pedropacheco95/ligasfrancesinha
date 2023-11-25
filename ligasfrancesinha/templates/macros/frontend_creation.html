@@ -1,0 +1,64 @@
+{% macro create_game_player_input(player,team) %}
+<div id="player_row_{{player.id}}" class="create_game_player_row drag_to_delete" data-team="{{team}}">
+    <div class="row-content">
+        <div class="player_id">{{player.id}}</div>
+        <div class="player_image"><img id="image_{{player.id}}" class="table_profile_image_editing" src="{{ player.full_image_url() }}"></div>
+        <div class="player_name">
+            <div class="modalActivation playerField" data-modal_id="switch_player_modal" data-player_id="{{player.id}}" onclick="modalActivationListener(this)"> {{player.name}} </div>
+            <input type="number" id="player_team_{{team}}" name="player_team_{{team}}" value="{{player.id}}" style="display: none;">
+        </div>
+        <div class="player_goals_input">
+            <input type="number" id="goals_{{player.id}}" name="goals_{{player.id}}" class="goals_of_player_input" pattern="\d*">
+            <img src="{{ url_for('static', filename='images/goal.png')}}" width="18" height="18">
+        </div>
+    </div>
+    <div class="trash"><img src="{{url_for('static',filename='images/delete.png')}}" class="delete_icon" alt="Delete Image"></div>
+</div>
+{% endmacro %}
+
+{% macro create_game_empty_player_input(team) %}
+<div id="player_row_no_player" class="create_game_player_row" data-team="{{team}}">
+    <div class="row-content">
+        <div class="player_id"></div>
+        <div class="player_image"><img id="image_no_player" class="table_profile_image_editing" src="{{ url_for('static',filename='images/Player/no_player.png') }}"></div>
+        <div class="player_name">
+            <div class="modalActivation playerField" data-modal_id="switch_player_modal" data-player_id="no_player" onclick="modalActivationListener(this)"> Substituto </div>
+            <input type="number" id="player_team_{{team}}" name="player_team_{{team}}" value="-1" style="display: none;">
+        </div>
+        <div class="player_goals_input">
+        </div>
+    </div>
+    <div class="trash"><img src="{{url_for('static',filename='images/delete.png')}}" class="delete_icon" alt="Delete Image"></div>
+</div>
+{% endmacro %}
+
+{% macro create_game_team_input(players,team) %}
+{% for player in players%}
+{{create_game_player_input(player,team)}}
+{% endfor %}
+{% endmacro %}
+
+{% macro switch_player_modal(players) %}
+<div class="modal" id="switch_player_modal">
+    <div class="modal_content">
+        <div class="modal_header">
+            <h4>Escolhe outro jogador</h4>
+            <h4 class="closeModal topButton" data-modal_id="switch_player_modal">&times;</h4>
+        </div>
+        <div class="modal_body">
+            <div class="like_modal">
+                <div class="like_modal_container">
+                    <div class="players-grid">
+                        {% for player in players%}
+                        <div class="player" onclick="switchPlayer('{{ player.id }}')">
+                            <img class="player-pic" src="{{ player.full_image_url() }}" alt="Player Name">
+                            <div class="player-name">{{ player.name }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,9 @@
+id,name,app_model_name,app_image,color,style,url,image_filename
+1,Aplicações,Backend_App,Backend_App/20231010192406_app_image.png,#538cc1,style=background-color:#538cc1,/editor/display/Backend_App,images/Backend_App/20231010192406_app_image.png
+2,Users,User,Backend_App/20231010192434_app_image.png,#e18989,style=background-color:#e18989,/editor/display/User,images/Backend_App/20231010192434_app_image.png
+3,Players,Player,Backend_App/20231010192453_app_image.png,#5071be,style=background-color:#5071be,/editor/display/Player,images/Backend_App/20231010192453_app_image.png
+4,League,League,Backend_App/20231010192512_app_image.png,#5da735,style=background-color:#5da735,/editor/display/League,images/Backend_App/20231010192512_app_image.png
+5,Editions,Edition,Backend_App/20231010192534_app_image.png,#c45f1c,style=background-color:#c45f1c,/editor/display/Edition,images/Backend_App/20231010192534_app_image.png
+6,Player in Edition,Association_PlayerEdition,Backend_App/20231010192634_app_image.png,#af6e6e,style=background-color:#af6e6e,/editor/display/Association_PlayerEdition,images/Backend_App/20231010192634_app_image.png
+7,Games,Game,Backend_App/20231011192726_app_image.png,#82b856,style=background-color:#82b856,/editor/display/Game,images/Backend_App/20231011192726_app_image.png
+8,Player in Game,Association_PlayerGame,Backend_App/20231011192937_app_image.png,#af6e6e,style=background-color:#af6e6e,/editor/display/Association_PlayerGame,images/Backend_App/20231011192937_app_image.png

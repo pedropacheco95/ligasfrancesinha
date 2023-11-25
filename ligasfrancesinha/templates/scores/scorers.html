@@ -1,0 +1,72 @@
+{% extends "scores/layout.html" %} 
+{% block scores_info %}
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+        <td width="100%" valign="top" class="players_info_container">
+            <div class="smallheader">
+            Classificação
+            </div>
+            <br />
+            <div class="box_container">
+            <table class="table-hover" width="100%" cellspacing="0" cellpadding="0" style="background-color: rgba(255, 255, 255, 1);">
+                <thead></thead>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th class="text" name="Jogador">Jogador</th>
+                    <th class="not_optional" name="Golos">Golos</th>
+                    <th class="not_optional" name="Presenças">Presenças</th>
+                    <th class="not_optional" name="Golos/Presença">Golos/Presença</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for relation in edition.players_relations_classification_by_goals() %} 
+                {% if (loop.index == 1) %}
+                <tr style="background-color: rgba(221, 218, 7, 0.493)">
+                {% else %}
+                <tr>
+                    {% endif %}
+                    <td>{{loop.index}}</td>
+                    <td class="text">
+                        <a>
+                            <form action="{{ url_for('players.general', player_name = relation.player.name , edition_name = edition.name )}}">
+                                <button type="submit" id="player_name" class="discret_button">
+                                    {{ relation.player.name }}
+                                </button>
+                            </form>
+                        </a>
+                    </td>
+                    <td>{{relation.goals}}</td>
+                    <td>{{relation.appearances}}</td>
+                    {% if relation.appearances != 0 %}
+                    <td>{{(relation.goals / relation.appearances)|round(2)}}</td>
+                    {% else %}
+                    <td> 0.0 </td>
+                    {% endif %}
+                    <td></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<table>
+    <tbody>
+        <tr>
+            <td><div class="square_melhor_marcador"></div></td>
+            <td>
+                <div style="text-align: left">
+                &#160;Nadará em cerveja
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

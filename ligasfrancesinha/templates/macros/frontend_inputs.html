@@ -1,0 +1,88 @@
+{% macro text_input(label,name,required) %}
+<div class="input-box {% if value %}focus{% endif %}">
+    <label class="input-label">
+        <span class="label"> {{label}} </span>
+        <span class="cover_line"></span>
+    </label>
+    <input 
+    type="text" 
+    name="{{name}}" 
+    class="input-1 {{ 'needs-validation' if required }}"
+    onfocus="setFocus(true,this,this.parentNode)" 
+    onblur="setFocus(false,this,this.parentNode)"
+    />
+</div>
+{% endmacro %}
+
+{% macro password_input(label,name,required) %}
+<div class="input-box {% if value %}focus{% endif %}">
+    <label class="input-label">
+        <span class="label"> {{label}} </span>
+        <span class="cover_line"></span>
+    </label>
+    <input 
+    type="password" 
+    name="{{name}}" 
+    class="input-1 {{ 'needs-validation' if required }}"
+    onfocus="setFocus(true,this,this.parentNode)" 
+    onblur="setFocus(false,this,this.parentNode)" 
+    />
+</div>
+{% endmacro %}
+
+
+{% macro float_input(label, name, required, value=value, readonly=readonly) %}
+<div class="input-box {% if value %}focus{% endif %}">
+    <label class="input-label">
+        <span class="label"> {{label}} </span>
+        <span class="cover_line"></span>
+    </label>
+    <input 
+    type="number" 
+    inputmode="numeric" 
+    pattern="\d*" 
+    step=".01" 
+    name="{{name}}" 
+    class="input-1 {{ 'needs-validation' if required }}" 
+    onfocus="setFocus(true,this,this.parentNode)"
+    onblur="setFocus(false,this,this.parentNode)"/>
+</div>
+{% endmacro %}
+
+{% macro long_text_input(label,name,required) %}
+<div class="input-box {% if value %}focus{% endif %}">
+    <label class="input-label">
+        <span class="label"> {{label}} </span>
+        <span class="cover_line"></span>
+    </label>
+    <textarea 
+    type="text" 
+    name="{{name}}" 
+    class="input-1 {{ 'needs-validation' if required }}"
+    onfocus="setFocus(true,this,this.parentNode)" 
+    onblur="setFocus(false,this,this.parentNode)" 
+    >
+    </textarea>
+</div>
+{% endmacro %}
+
+{% macro boolean_input(label,name,required) %}
+<div class="input-box for_checkbox">
+    <label for="checkbox_{{name}}" class="checkbox-label">{{label}}</label>
+    <div class="slider_container">
+        <input 
+        id="checkbox_{{name}}"
+        type="checkbox" 
+        name="{{name}}" 
+        class="input-1 checkbox" 
+        data-field_name="{{name}}"/>
+        <span class="slider"></span>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro submit_button(name) %}
+<button class="submit_button" type="submit">
+    {{name}}
+</button>
+{% endmacro %}

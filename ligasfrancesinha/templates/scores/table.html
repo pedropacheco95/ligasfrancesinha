@@ -1,0 +1,117 @@
+{% extends "scores/layout.html" %} 
+{% block scores_info %}
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+        <td width="100%" valign="top" class="players_info_container">
+            <div class="smallheader">
+            Classificação
+            </div>
+            <br />
+            <div class="box_container">
+            <table cellspacing="0" cellpadding="0" style="background-color: rgba(255, 255, 255, 1);width: 100%;">
+                <thead>
+                <tr>
+                    <th width="5%"></th>
+                    <th class="text"></th>
+                    <th width="12%" class="not_optional" name="Pontos">Pontos</th>
+                    <th width="6%" class="optional">Presenças</th>
+                    <th width="6%" class="not_optional" name="Golos">Golos</th>
+                    <th width="12%" class="optional">% Presenças</th>
+                    <th width="6%">V</th>
+                    <th width="6%" class="optional">E</th>
+                    <th width="6%">D</th>
+                    <th width="6%" class="optional">GM</th>
+                    <th width="6%" class="optional">GS</th>
+                    <th width="6%" class="optional">DG</th>
+                    <th width="6%" class="optional"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for relation in edition.players_relations_classification() %}
+                {% if (relation.place == 1) %}
+                <tr style="background-color: rgba(0, 88, 252, 0.308)">
+                {% elif (relation.place == edition.get_number_of_players()) %}
+                <tr style="background-color: rgba(255, 0, 0, 0.288)">
+                {% elif (relation.place <= edition.get_number_of_players()/2) %}
+                <tr style="background-color: rgba(0, 153, 255, 0.2)">
+                {% else %}
+                <tr style="background-color: rgba(228, 120, 120, 0.2)">
+                {% endif %}
+                    <td>{{relation.place}}</td>
+                    <td class="text">
+                        <a>
+                            <form action="{{ url_for('players.general', player_name = relation.player.name , edition_name = edition.name )}}">
+                                <button type="submit" id="player_name" class="discret_button">
+                                    {{ relation.player.name }}
+                                </button>
+                            </form>
+                        </a>
+                    </td>
+                    <td><strong>{{relation.points}}</strong></td>
+                    <td class="optional">{{relation.appearances}}</td>
+                    <td>{{relation.goals}}</td>
+                    <td class="optional">{{relation.percentage_of_appearances}}</td>
+                    <td>{{relation.wins}}</td>
+                    <td class="optional">{{relation.draws}}</td>
+                    <td>{{relation.losts}}</td>
+                    <td class="optional">{{relation.goals_scored_by_team}}</td>
+                    <td class="optional">{{relation.goals_suffered_by_team}}</td>
+                    <td class="optional">
+                    {{relation.goals_scored_by_team - relation.goals_suffered_by_team}}
+                    </td>
+                    <!-- Para por a setinha a dizer se subiu ou desceu -->
+                    <td class="optional"></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<table>
+    <tbody>
+        <tr>
+            <td><div class="square_primeiro"></div></td>
+            <td>
+                <div style="text-align: left;">
+                &#160;Primeiro lugar
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><div class="square_vitoria"></div></td>
+            <td>
+                <div style="text-align: left;">
+                &#160;Recebe uma magnífica Francesinha
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><div class="square_derrota"></div></td>
+            <td>
+                <div style="text-align: left;">
+                &#160;Paga uma Francesinha que se Fode
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><div class="square_ultimo"></div></td>
+            <td>
+                <div style="text-align: left; ">
+                &#160;João Magalhães
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% if edition.final_game %}
+<div>
+    ÚLTIMO JOGO E JANTAR DIA {{edition.final_game.strftime('%d/%m/%y')}}
+</div>
+{% endif %}
+{% endblock %}

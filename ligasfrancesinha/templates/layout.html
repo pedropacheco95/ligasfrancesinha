@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="{{ url_for('static', filename='images/favicon.ico')}}" rel="icon">
+
+        {% assets "scss_frontend" %}
+            <link rel="stylesheet" href="{{ASSET_URL}}">
+        {% endassets %}
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/animations.js')}}" defer></script>
+    </head>
+    
+    <body>
+        <div class="navbar-fixed-container">
+            <div class="navbar">
+                <!-- Logo -->
+                <a href="{{ url_for('main.index') }}" class="navbar-logo main-logo">
+                    <img src="{{ url_for('static',filename='images/ligas_francesinha_logo.png') }}" alt="Logo">
+                </a>
+    
+                <!-- Navigation Toggle for Mobile -->
+                <div class="navbar-toggle" id="navToggle">
+                    <div class="navbar_toggle_container">
+                        <button type="button" class="navbar_toggler" onclick="toggleNavbar()">
+                            <span class="icon_bar"></span>
+                            <span class="icon_bar"></span>
+                            <span class="icon_bar"></span>
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Main Navigation Links -->
+                <ul class="navbar-links">
+                    <li><a href="{{ url_for('main.players') }}">Players</a></li>
+                    <li>
+                        <a href="{{ url_for('scores.table', league_id=1) }}" class="navbar-logo">
+                            <img src="{{ url_for('static',filename='images/master_logo.png') }}" alt="Logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('scores.table', league_id=2) }}" class="navbar-logo">
+                            <img src="{{ url_for('static',filename='images/tuesday_logo.png') }}" alt="Logo">
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- User Profile -->
+                <div class="navbar-user">
+                    {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('create.game') }}" class="navbar-login-link">Criar jogos</a>
+                    <a href="{{ url_for('auth.logout') }}" class="navbar-login-link">Log Out</a>
+                    {% else %}
+                    <a href="{{ url_for('auth.register') }}" class="navbar-login-link">Registar</a>
+                    <a href="{{ url_for('auth.login') }}" class="navbar-login-link">Login</a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        <main class="main_block">
+            {% block main %}{% endblock %}
+        </main>
+
+
+        <footer class="footer">
+            <a href="https://www.instagram.com/fcporto/" class="social-media-logo">
+                <img src="{{ url_for('static',filename='images/instagram.png') }}" alt="Logo">
+            </a>
+            <a href="https://sicnoticias.pt/mundo/2023-01-10-Privacidade-no-TikTok-um-perigo-para-a-Europa--cbafa2de" class="social-media-logo">
+                <img src="{{ url_for('static',filename='images/tik-tok.png') }}" alt="Logo">
+            </a>
+            <a href="https://www.youtube.com/watch?v=SOqJq_987jw" class="social-media-logo">
+                <img src="{{ url_for('static',filename='images/youtube.png') }}" alt="Logo">
+            </a>
+        </footer>
+    </body>
+
+</html>

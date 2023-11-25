@@ -1,0 +1,47 @@
+{% extends "games/layout.html" %} 
+{% block game_info %}
+
+<div class="games_info">
+    <div class="smallheader">
+        Ficha do jogo
+    </div>
+    <div class="box_container">
+        <div class="line_up">
+            <div class="heading">
+                <span class="optional_description">Equipa</span><span class="optional_description_for_small_screen">Branquelas</span>
+            </div>
+            <table class="table table-striped table_line_up">
+                {% for tup in teams['Branquelas']%}
+                {% set relation = tup[0] %}
+                {% set player = tup[1] %}
+                {% set player_url =  url_for('players.general', player_name = player.name , edition_name = edition.name ) %}
+                <tr onclick="redirect('{{player_url}}')">
+                    <td>{{player.id}}</td>
+                    <td><img class="table_profile_image" src="{{ player.full_image_url() }}"></td>
+                    <td>{{player.name}}</td>
+                    <td>{{relation.goals}} <img src="{{ url_for('static', filename='images/goal.png')}}" width="18" height="18"></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="line_up">
+            <div class="heading">
+                <span class="optional_description">Equipa</span><span class="optional_description_for_small_screen"> Maregões</span>
+            </div>
+            <table class="table table-striped table_line_up">
+                {% for tup in teams['Maregões']%}
+                {% set relation = tup[0] %}
+                {% set player = tup[1] %}
+                {% set player_url =  url_for('players.general', player_name = player.name , edition_name = edition.name ) %}
+                <tr onclick="redirect('{{player_url}}')">
+                    <td>{{player.id}}</td>
+                    <td><img class="table_profile_image" src="{{ player.full_image_url() }}"></td>
+                    <td>{{player.name}}</td>
+                    <td>{{relation.goals}} <img src="{{ url_for('static', filename='images/goal.png')}}" width="18" height="18"></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
