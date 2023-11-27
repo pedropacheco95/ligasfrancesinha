@@ -190,25 +190,25 @@ class Edition(db.Model ,model.Model , model.Base):
         if self.league.name == 'MasterLeague':
             random.shuffle(players)
 
-        teams = {
-            'Branquelas':[players[0],players[3],players[5],players[7],players[8],players[11]],
-            'Maregões':[players[1],players[2],players[4],players[6],players[9],players[10]],
-        }
-
-        """ teams = {'Branquelas': [], 'Maregões': []}
+        even_players = len(players)/2 % 2 == 0
+        teams = {'Branquelas': [], 'Maregões': []}
         order = [teams['Branquelas'], teams['Maregões']]
         flip = False
+        count = 1
 
         while players:
-            if len(players) == 2 and not flip:
-                order[flip].append(players.pop(-1))
-                order[not flip].append(players.pop(0))
+            if len(players) == 2 and flip and not even_players:
+                order[not flip].append(players.pop(-1))
+                order[flip].append(players.pop(0))
             else:
                 team = order[flip]
                 team.extend([players.pop(0), players.pop(-1) if players else None])
                 team.remove(None) if None in team else None
                 flip = not flip
- """
+            if count % 2 == 0:
+                flip = not flip
+            count += 1
+
         last_team = ''
         for key in teams:
             for player in teams[key]:

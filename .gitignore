@@ -3,3 +3,5 @@ __pycache__
 */__pycache__
 */.webassets-cache
 .DS_Store
+
+*.db
