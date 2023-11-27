@@ -195,7 +195,7 @@ class Edition(db.Model ,model.Model , model.Base):
             'Maregões':[players[1],players[2],players[4],players[6],players[9],players[10]],
         }
 
-        teams = {'Branquelas': [], 'Maregões': []}
+        """ teams = {'Branquelas': [], 'Maregões': []}
         order = [teams['Branquelas'], teams['Maregões']]
         flip = False
 
@@ -208,7 +208,7 @@ class Edition(db.Model ,model.Model , model.Base):
                 team.extend([players.pop(0), players.pop(-1) if players else None])
                 team.remove(None) if None in team else None
                 flip = not flip
-
+ """
         last_team = ''
         for key in teams:
             for player in teams[key]:
