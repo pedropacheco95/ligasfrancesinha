@@ -116,7 +116,6 @@ function createCarrousel(){
         
         carrousel.addEventListener('wheel', function(event) {
             event.preventDefault();
-            console.log(event)
             
             if (!isThrottle) {
                 const isHorizontalScroll = Math.abs(event.wheelDeltaX) > Math.abs(event.wheelDeltaY) || Math.abs(event.deltaX) > Math.abs(event.deltaY);
