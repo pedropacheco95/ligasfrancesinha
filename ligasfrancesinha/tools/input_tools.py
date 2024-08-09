@@ -97,15 +97,6 @@ class Field:
         return True
     
     def set_date_value(self, request):
-        string_format = {
-            'Date': '%d/%m/%Y',
-            'DateTime': '%d/%m/%Y, %H:%M',
-        }
-        date_obj = datetime.strptime(request.form[self.name], string_format[self.type]) if self.name in request.form else None
-        self.value = date_obj
-        return True
-    
-    def set_date_value(self, request):
         format = {
             'Date': tools.str_to_date,
             'DateTime': tools.str_to_datetime,

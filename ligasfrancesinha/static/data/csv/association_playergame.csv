@@ -1,1334 +1,1356 @@
 id,player_id,game_id,team,goals,name
 1,1,1,Branquelas,6,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 1"
-2,9,1,Branquelas,3,
-3,7,1,Branquelas,2,
-4,8,1,Branquelas,0,
-5,4,1,Maregões,0,
-6,3,1,Maregões,1,
-7,10,1,Maregões,3,
-8,12,1,Maregões,6,
-9,1,2,Branquelas,1,
-10,3,2,Branquelas,0,
-11,6,2,Branquelas,1,
-12,4,2,Maregões,0,
-13,5,2,Maregões,1,
-14,7,2,Maregões,2,
-15,8,2,Maregões,0,
-16,9,2,Maregões,3,
-17,12,2,Maregões,4,
-18,1,3,Branquelas,1,
-19,12,3,Branquelas,1,
-20,10,3,Branquelas,0,
-21,3,3,Branquelas,0,
-22,6,3,Branquelas,2,
-23,7,3,Branquelas,1,
-24,9,3,Maregões,1,
-25,8,3,Maregões,2,
-26,4,3,Maregões,0,
-27,5,3,Maregões,1,
-28,1,4,Branquelas,3,
-29,4,4,Branquelas,0,
-30,12,4,Branquelas,2,
-31,9,4,Branquelas,2,
-32,10,4,Maregões,2,
-33,3,4,Maregões,1,
-34,5,4,Maregões,5,
-35,6,4,Maregões,1,
-36,2,1,Maregões,0,
-37,2,2,Branquelas,1,
-38,2,3,Maregões,1,
-39,2,4,Maregões,0,
-40,8,5,Branquelas,4,
-41,3,5,Branquelas,0,
-42,6,5,Branquelas,0,
-43,7,5,Branquelas,3,
-44,4,5,Branquelas,1,
-45,1,5,Maregões,2,
-46,9,5,Maregões,1,
-47,10,5,Maregões,1,
-48,5,5,Maregões,3,
-49,12,5,Maregões,3,
-50,3,6,Branquelas,3,
-51,6,6,Branquelas,0,
-52,12,6,Branquelas,2,
-53,1,6,Branquelas,1,
-54,2,6,Maregões,3,
-55,4,6,Maregões,0,
-56,9,6,Maregões,1,
-57,5,6,Maregões,2,
-58,10,6,Maregões,2,
-59,4,7,Branquelas,0,
-60,6,7,Branquelas,0,
-61,12,7,Branquelas,1,
-62,9,7,Branquelas,1,
-63,5,7,Maregões,2,
-64,2,7,Maregões,3,
-65,10,7,Maregões,0,
-66,3,7,Maregões,2,
-67,3,8,Branquelas,1,
-68,6,8,Branquelas,0,
-69,12,8,Branquelas,3,
-70,5,8,Branquelas,0,
-71,2,8,Branquelas,2,
-72,1,8,Maregões,3,
-73,10,8,Maregões,0,
-74,4,8,Maregões,0,
-75,9,9,Branquelas,2,
-76,1,9,Branquelas,3,
-77,7,9,Branquelas,1,
-78,6,9,Branquelas,0,
-79,4,9,Branquelas,2,
-80,12,9,Branquelas,2,
-81,2,9,Maregões,1,
-82,10,9,Maregões,2,
-83,5,9,Maregões,1,
-84,3,9,Maregões,1,
-85,8,9,Maregões,2,
-86,7,10,Branquelas,1,
-87,1,10,Branquelas,4,
-88,8,10,Branquelas,2,
-89,12,10,Branquelas,2,
-90,2,10,Maregões,2,
-91,3,10,Maregões,0,
-92,4,10,Maregões,1,
-93,5,10,Maregões,1,
-94,9,10,Maregões,2,
-95,10,10,Maregões,2,
-96,7,11,Branquelas,1,
-97,4,11,Branquelas,0,
-98,5,11,Branquelas,1,
-99,10,11,Branquelas,1,
-100,9,11,Branquelas,2,
-101,8,11,Branquelas,5,
-102,3,11,Maregões,0,
-103,1,11,Maregões,2,
-104,12,11,Maregões,2,
-105,2,11,Maregões,3,
-106,6,11,Maregões,0,
-107,7,12,Branquelas,2,
-108,8,12,Branquelas,3,
-109,10,12,Branquelas,2,
-110,2,12,Branquelas,1,
-111,1,12,Maregões,1,
-112,9,12,Maregões,2,
-113,5,12,Maregões,1,
-114,4,12,Maregões,2,
-115,6,12,Maregões,0,
-116,12,12,Maregões,2,
-117,1,13,Branquelas,7,
-118,2,13,Branquelas,0,
-119,4,13,Branquelas,2,
-120,8,13,Branquelas,3,
-121,3,13,Maregões,2,
-122,10,13,Maregões,1,
-123,5,13,Maregões,2,
-124,12,13,Maregões,9,
-125,7,13,Maregões,0,
-126,23,14,Branquelas,1,
-127,15,14,Branquelas,0,
-128,14,14,Branquelas,1,
-129,22,14,Branquelas,3,
-130,21,14,Branquelas,2,
-131,13,14,Branquelas,3,
-132,1,14,Maregões,3,
-133,19,14,Maregões,0,
-134,16,14,Maregões,2,
-135,20,14,Maregões,0,
-136,17,14,Maregões,4,
-137,13,15,Branquelas,0,
-138,19,15,Branquelas,5,
-139,1,15,Branquelas,1,
-140,15,15,Branquelas,0,
-141,22,15,Branquelas,5,
-142,18,15,Branquelas,0,
-143,16,15,Maregões,3,
-144,23,15,Maregões,1,
-145,14,15,Maregões,0,
-146,17,15,Maregões,1,
-147,20,15,Maregões,0,
-148,15,16,Branquelas,1,
-149,1,16,Branquelas,2,
-150,20,16,Branquelas,0,
-151,16,16,Branquelas,2,
-152,14,16,Branquelas,1,
-153,18,16,Branquelas,1,
-154,23,16,Maregões,1,
-155,19,16,Maregões,1,
-156,17,16,Maregões,0,
-157,13,16,Maregões,4,
-158,21,16,Maregões,3,
-159,17,17,Branquelas,0,
-160,15,17,Branquelas,0,
-161,19,17,Branquelas,2,
-162,18,17,Branquelas,3,
-163,1,17,Maregões,2,
-164,16,17,Maregões,2,
-165,21,17,Maregões,2,
-166,1,18,Branquelas,3,
-167,19,18,Branquelas,2,
-168,14,18,Branquelas,2,
-169,20,18,Branquelas,5,
-170,16,18,Maregões,2,
-171,23,18,Maregões,2,
-172,21,18,Maregões,3,
-173,17,18,Maregões,0,
-174,16,19,Branquelas,1,
-175,23,19,Branquelas,0,
-176,17,19,Branquelas,0,
-177,18,19,Branquelas,1,
-178,14,19,Branquelas,2,
-179,20,19,Maregões,2,
-180,22,19,Maregões,1,
-181,21,19,Maregões,3,
-182,19,19,Maregões,3,
-183,1,19,Maregões,4,
-184,1,20,Branquelas,3,
-185,21,20,Branquelas,5,
-186,20,20,Branquelas,3,
-187,14,20,Branquelas,0,
-188,19,20,Maregões,1,
-189,16,20,Maregões,4,
-190,23,20,Maregões,2,
-191,17,20,Maregões,1,
-192,23,21,Branquelas,2,
-193,18,21,Branquelas,0,
-194,21,21,Maregões,6,
-195,19,21,Maregões,4,
-196,22,21,Maregões,1,
-197,17,21,Maregões,2,
-198,21,22,Branquelas,3,
-199,22,22,Branquelas,2,
-200,14,22,Branquelas,1,
-201,17,22,Branquelas,4,
-202,1,22,Maregões,3,
-203,20,22,Maregões,1,
-204,15,22,Maregões,0,
-205,23,22,Maregões,0,
-206,21,23,Branquelas,2,
-207,22,23,Branquelas,1,
-208,17,23,Branquelas,0,
-209,20,23,Branquelas,2,
-210,1,23,Maregões,3,
-211,14,23,Maregões,1,
-212,23,23,Maregões,1,
-213,15,23,Maregões,0,
-214,21,24,Branquelas,1,
-215,17,24,Branquelas,2,
-216,20,24,Branquelas,5,
-217,1,24,Maregões,1,
-218,19,24,Maregões,4,
-219,14,24,Maregões,1,
-220,23,24,Maregões,4,
-221,23,25,Branquelas,1,
-222,17,25,Branquelas,5,
-223,14,25,Branquelas,1,
-224,21,25,Branquelas,6,
-225,1,25,Maregões,6,
-226,19,25,Maregões,5,
-227,22,25,Maregões,1,
-228,16,25,Maregões,5,
-229,20,25,Maregões,0,
-230,1,26,Branquelas,1,
-231,17,26,Branquelas,3,
-232,21,26,Branquelas,0,
-233,28,26,Branquelas,0,
-234,27,26,Maregões,0,
-235,32,26,Maregões,1,
-236,33,26,Maregões,3,
-237,25,26,Maregões,1,
-238,22,26,Maregões,2,
-239,3,27,Branquelas,2,
-240,30,27,Branquelas,1,
-241,1,27,Branquelas,2,
-242,6,27,Branquelas,0,
-243,9,27,Branquelas,3,
-244,8,27,Maregões,3,
-245,29,27,Maregões,1,
-246,10,27,Maregões,1,
-247,5,27,Maregões,2,
-248,3,28,Branquelas,2,
-249,9,28,Branquelas,2,
-250,11,28,Branquelas,1,
-251,1,28,Maregões,1,
-252,5,28,Maregões,0,
-253,12,28,Maregões,2,
-254,6,28,Maregões,0,
-255,1,29,Branquelas,1,
-256,31,29,Branquelas,0,
-257,11,29,Maregões,0,
-258,29,29,Maregões,4,
-259,12,29,Maregões,6,
-260,30,29,Maregões,4,
-261,1,30,Branquelas,1,
-262,33,30,Branquelas,1,
-263,25,30,Branquelas,1,
-264,28,30,Branquelas,0,
-265,17,30,Branquelas,1,
-266,16,30,Maregões,5,
-267,22,30,Maregões,2,
-268,27,30,Maregões,2,
-269,4,30,Maregões,2,
-270,12,31,Branquelas,4,
-271,3,31,Branquelas,0,
-272,31,31,Branquelas,3,
-273,1,31,Maregões,1,
-274,9,31,Maregões,1,
-275,29,31,Maregões,1,
-276,30,31,Maregões,0,
-277,10,31,Maregões,0,
-278,20,32,Branquelas,3,
-279,27,32,Branquelas,4,
-280,22,32,Branquelas,1,
-281,25,32,Branquelas,3,
-282,28,32,Maregões,2,
-283,11,33,Branquelas,1,
-284,31,33,Branquelas,4,
-285,12,33,Branquelas,2,
-286,5,33,Branquelas,2,
-287,6,33,Branquelas,2,
-288,29,33,Branquelas,0,
-289,9,33,Maregões,5,
-290,30,33,Maregões,4,
-291,3,33,Maregões,3,
-292,8,33,Maregões,4,
-293,10,33,Maregões,2,
-294,28,34,Branquelas,1,
-295,27,34,Branquelas,1,
-296,20,34,Branquelas,3,
-297,1,34,Maregões,6,
-298,17,34,Maregões,2,
-299,22,34,Maregões,3,
-300,16,34,Maregões,12,
-301,6,35,Branquelas,1,
-302,8,35,Branquelas,1,
-303,31,35,Branquelas,8,
-304,1,35,Maregões,0,
-305,3,35,Maregões,1,
-306,30,35,Maregões,3,
-307,5,35,Maregões,1,
-308,9,35,Maregões,4,
-309,28,36,Branquelas,0,
-310,21,36,Branquelas,0,
-311,17,36,Branquelas,2,
-312,22,36,Branquelas,4,
-313,25,36,Branquelas,2,
-314,33,36,Maregões,1,
-315,32,36,Maregões,4,
-316,1,37,Branquelas,4,
-317,3,37,Branquelas,1,
-318,30,37,Branquelas,2,
-319,31,37,Branquelas,2,
-320,10,37,Branquelas,2,
-321,5,37,Maregões,5,
-322,29,37,Maregões,1,
-323,11,37,Maregões,0,
-324,8,37,Maregões,2,
-325,27,36,Maregões,0,
-326,21,32,Maregões,0,
-327,21,34,Branquelas,0,
-328,25,34,Maregões,0,
-329,1,38,Branquelas,3,
-330,17,38,Branquelas,2,
-331,22,38,Branquelas,2,
-332,28,38,Branquelas,0,
-333,33,38,Maregões,4,
-334,16,38,Maregões,8,
-335,25,38,Maregões,3,
-336,27,38,Maregões,2,
-337,32,38,Maregões,5,
-338,5,39,Branquelas,4,
-339,29,39,Branquelas,5,
-340,30,39,Branquelas,0,
-341,10,39,Branquelas,1,
-342,1,39,Maregões,2,
-343,12,39,Maregões,5,
-344,6,39,Maregões,1,
-345,31,39,Maregões,4,
-346,1,40,Branquelas,2,
-347,16,40,Branquelas,4,
-348,32,40,Branquelas,5,
-349,22,40,Branquelas,3,
-350,21,40,Maregões,0,
-351,27,40,Maregões,0,
-352,17,40,Maregões,1,
-353,28,40,Maregões,1,
-354,1,41,Branquelas,2,
-355,12,41,Branquelas,1,
-356,31,41,Branquelas,2,
-357,9,41,Maregões,3,
-358,30,41,Maregões,4,
-359,8,41,Maregões,0,
-360,3,41,Maregões,1,
-361,1,42,Branquelas,1,
-362,28,42,Branquelas,0,
-363,17,42,Branquelas,1,
-364,16,42,Branquelas,2,
-365,32,42,Maregões,5,
-366,20,42,Maregões,3,
-367,25,42,Maregões,1,
-368,1,43,Branquelas,3,
-369,6,43,Branquelas,1,
-370,30,43,Branquelas,4,
-371,3,43,Maregões,2,
-372,11,43,Maregões,1,
-373,5,43,Maregões,3,
-374,29,43,Maregões,2,
-375,9,43,Maregões,3,
-376,1,44,Branquelas,2,
-377,31,44,Branquelas,4,
-378,10,44,Branquelas,3,
-379,29,44,Branquelas,2,
-380,8,44,Branquelas,2,
-381,11,44,Branquelas,0,
-382,5,44,Maregões,3,
-383,6,44,Maregões,0,
-384,9,44,Maregões,1,
-385,12,44,Maregões,3,
-386,30,44,Maregões,4,
-387,3,44,Maregões,1,
-388,1,45,Branquelas,2,
-389,22,45,Branquelas,1,
-390,17,45,Branquelas,1,
-391,28,45,Maregões,0,
-392,21,45,Maregões,2,
-393,25,45,Maregões,3,
-394,32,45,Maregões,6,
-395,1,46,Branquelas,1,
-396,29,46,Branquelas,0,
-397,9,46,Branquelas,3,
-398,12,46,Branquelas,4,
-399,5,46,Maregões,1,
-400,31,46,Maregões,2,
-401,30,46,Maregões,1,
-402,16,47,Branquelas,7,
-403,28,47,Branquelas,2,
-404,25,47,Branquelas,2,
-405,1,47,Maregões,0,
-406,27,47,Maregões,3,
-407,22,47,Maregões,1,
-408,32,47,Maregões,1,
-409,16,48,Branquelas,6,
-410,17,48,Branquelas,2,
-411,27,48,Branquelas,4,
-412,1,48,Maregões,5,
-413,25,48,Maregões,3,
-414,28,48,Maregões,0,
-415,32,49,Branquelas,4,
-416,28,49,Maregões,0,
-417,17,49,Maregões,1,
-418,29,50,Branquelas,2,
-419,3,50,Branquelas,1,
-420,31,50,Branquelas,2,
-421,1,50,Maregões,1,
-422,12,50,Maregões,2,
-423,5,50,Maregões,1,
-424,9,50,Maregões,3,
-425,30,50,Maregões,3,
-426,17,51,Branquelas,0,
-427,28,51,Branquelas,2,
-428,1,51,Maregões,1,
-429,27,51,Maregões,0,
-430,16,51,Maregões,1,
-431,20,51,Maregões,4,
-432,33,51,Maregões,0,
-433,25,52,Branquelas,2,
-434,17,52,Branquelas,5,
-435,28,52,Branquelas,2,
-436,1,52,Maregões,2,
-437,27,52,Maregões,0,
-438,16,52,Maregões,6,
-439,32,52,Maregões,4,
-440,33,52,Maregões,4,
-441,9,53,Branquelas,2,
-442,30,53,Branquelas,4,
-443,5,53,Branquelas,1,
-444,1,53,Maregões,2,
-445,31,53,Maregões,4,
-446,1,54,Branquelas,1,
-447,30,54,Branquelas,1,
-448,5,54,Branquelas,0,
-449,31,54,Branquelas,2,
-450,6,54,Branquelas,0,
-451,9,54,Maregões,1,
-452,12,54,Maregões,0,
-453,3,54,Maregões,2,
-454,10,54,Maregões,0,
-455,17,55,Branquelas,1,
-456,27,55,Branquelas,0,
-457,33,55,Branquelas,4,
-458,25,55,Branquelas,1,
-459,28,55,Branquelas,0,
-460,1,55,Maregões,1,
-461,20,55,Maregões,1,
-462,16,55,Maregões,3,
-463,32,55,Maregões,5,
-464,12,56,Branquelas,3,
-465,8,56,Branquelas,2,
-466,9,56,Branquelas,1,
-467,6,56,Branquelas,0,
-468,1,56,Maregões,0,
-469,3,56,Maregões,1,
-470,29,56,Maregões,0,
-471,10,56,Maregões,3,
-472,27,57,Branquelas,0,
-473,17,57,Branquelas,1,
-474,33,57,Branquelas,3,
-475,16,57,Branquelas,6,
-476,28,57,Branquelas,0,
-477,1,57,Maregões,2,
-478,20,57,Maregões,4,
-479,25,57,Maregões,0,
-480,20,58,Branquelas,1,
-481,28,58,Branquelas,0,
-482,25,58,Branquelas,0,
-483,27,58,Branquelas,0,
-484,1,58,Maregões,2,
-485,21,58,Maregões,2,
-486,16,58,Maregões,3,
-487,33,58,Maregões,3,
-488,31,59,Branquelas,3,
-489,1,59,Branquelas,0,
-490,8,59,Branquelas,2,
-491,30,59,Maregões,1,
-492,10,59,Maregões,1,
-493,5,59,Maregões,2,
-494,12,59,Maregões,2,
-495,31,60,Branquelas,2,
-496,29,60,Branquelas,3,
-497,12,60,Branquelas,2,
-498,3,60,Maregões,2,
-499,8,60,Maregões,0,
-500,9,60,Maregões,1,
-501,5,60,Maregões,0,
-502,1,61,Branquelas,3,
-503,33,61,Branquelas,5,
-504,28,61,Branquelas,0,
-505,16,61,Branquelas,3,
-506,17,61,Maregões,3,
-507,20,61,Maregões,2,
-508,25,61,Maregões,1,
-509,27,61,Maregões,1,
-510,32,61,Maregões,0,
-511,29,62,Branquelas,2,
-512,31,62,Branquelas,2,
-513,12,62,Branquelas,3,
-514,9,62,Branquelas,0,
-515,1,62,Maregões,6,
-516,30,62,Maregões,3,
-517,8,62,Maregões,4,
-518,3,62,Maregões,2,
-519,28,63,Branquelas,1,
-520,33,63,Branquelas,4,
-521,32,63,Branquelas,5,
-522,16,63,Branquelas,4,
-523,17,63,Branquelas,0,
-524,1,63,Maregões,6,
-525,27,63,Maregões,1,
-526,25,63,Maregões,0,
-527,20,63,Maregões,0,
-528,21,63,Maregões,0,
-529,5,64,Branquelas,1,
-530,8,64,Branquelas,2,
-531,30,64,Branquelas,1,
-532,12,64,Branquelas,2,
-533,9,64,Branquelas,2,
-534,31,64,Maregões,4,
-535,3,64,Maregões,1,
-536,1,65,Branquelas,3,
-537,35,65,Branquelas,2,
-538,25,65,Branquelas,2,
-539,21,65,Branquelas,2,
-540,34,65,Branquelas,0,
-541,28,65,Branquelas,0,
-542,20,65,Maregões,3,
-543,16,65,Maregões,2,
-544,33,65,Maregões,1,
-545,32,65,Maregões,1,
-546,27,65,Maregões,0,
-547,9,66,Branquelas,3,
-548,29,66,Branquelas,1,
-549,8,66,Branquelas,0,
-550,30,66,Branquelas,1,
-551,31,66,Branquelas,2,
-552,11,66,Branquelas,0,
-553,1,66,Maregões,3,
-554,5,66,Maregões,1,
-555,3,66,Maregões,1,
-556,12,66,Maregões,4,
-557,1,67,Branquelas,1,
-558,34,67,Branquelas,0,
-559,25,67,Branquelas,2,
-560,32,67,Branquelas,0,
-561,35,67,Maregões,2,
-562,33,67,Maregões,3,
-563,28,67,Maregões,1,
-564,16,67,Maregões,2,
-565,8,68,Branquelas,0,
-566,10,68,Branquelas,3,
-567,6,68,Branquelas,0,
-568,9,68,Branquelas,6,
-569,30,68,Branquelas,2,
-570,1,68,Maregões,4,
-571,29,68,Maregões,0,
-572,3,68,Maregões,3,
-573,12,68,Maregões,1,
-574,11,68,Maregões,0,
-575,1,69,Branquelas,0,
-576,21,69,Branquelas,1,
-577,35,69,Branquelas,0,
-578,33,69,Branquelas,0,
-579,32,69,Branquelas,2,
-580,34,69,Maregões,0,
-581,27,69,Maregões,2,
-582,25,69,Maregões,2,
-583,20,69,Maregões,2,
-584,21,70,Branquelas,3,
-585,35,70,Branquelas,1,
-586,28,70,Branquelas,2,
-587,25,70,Branquelas,1,
-588,1,70,Maregões,3,
-589,27,70,Maregões,1,
-590,32,70,Maregões,9,
-591,33,70,Maregões,2,
-592,34,70,Maregões,0,
-593,16,70,Maregões,3,
-594,5,71,Branquelas,3,
-595,6,71,Branquelas,0,
-596,10,71,Branquelas,1,
-597,30,71,Branquelas,4,
-598,1,71,Maregões,1,
-599,3,71,Maregões,0,
-600,31,71,Maregões,3,
-601,9,71,Maregões,3,
-602,12,71,Maregões,3,
-603,8,72,Branquelas,1,
-604,12,72,Branquelas,3,
-605,1,72,Maregões,4,
-606,3,72,Maregões,2,
-607,30,72,Maregões,1,
-608,31,72,Maregões,4,
-609,36,73,Branquelas,0,
-610,21,73,Branquelas,0,
-611,32,73,Branquelas,6,
-612,33,73,Branquelas,4,
-613,1,73,Maregões,1,
-614,16,73,Maregões,0,
-615,20,73,Maregões,0,
-616,25,73,Maregões,2,
-617,27,73,Maregões,1,
-618,28,73,Maregões,0,
-619,1,74,Branquelas,2,
-620,3,74,Branquelas,1,
-621,5,74,Branquelas,2,
-622,30,74,Branquelas,0,
-623,8,74,Maregões,2,
-624,9,74,Maregões,0,
-625,10,74,Maregões,2,
-626,12,74,Maregões,0,
-627,29,74,Maregões,1,
-628,31,74,Maregões,3,
-629,1,75,Branquelas,2,
-630,36,75,Branquelas,0,
-631,35,75,Branquelas,4,
-632,21,75,Branquelas,0,
-633,27,75,Branquelas,1,
-634,34,75,Branquelas,0,
-635,16,75,Maregões,3,
-636,20,75,Maregões,2,
-637,25,75,Maregões,1,
-638,28,75,Maregões,1,
-639,32,75,Maregões,6,
-640,33,75,Maregões,3,
-641,5,76,Branquelas,2,
-642,8,76,Branquelas,1,
-643,9,76,Branquelas,3,
-644,11,76,Branquelas,0,
-645,12,76,Branquelas,4,
-646,29,76,Branquelas,0,
-647,1,76,Maregões,3,
-648,3,76,Maregões,22,
-649,10,76,Maregões,0,
-650,30,76,Maregões,1,
-651,31,76,Maregões,2,
-652,28,77,Branquelas,2,
-653,32,77,Branquelas,3,
-654,33,77,Branquelas,1,
-655,1,77,Maregões,2,
-656,35,77,Maregões,1,
-657,20,77,Maregões,0,
-658,25,77,Maregões,0,
-659,34,77,Maregões,1,
-660,20,78,Branquelas,0,
-661,28,78,Branquelas,0,
-662,32,78,Branquelas,0,
-663,1,78,Maregões,3,
-664,35,78,Maregões,2,
-665,25,78,Maregões,0,
-666,27,78,Maregões,1,
-667,33,78,Maregões,0,
-668,3,79,Branquelas,1,
-669,9,79,Branquelas,1,
-670,10,79,Branquelas,3,
-671,29,79,Branquelas,2,
-672,30,79,Branquelas,4,
-673,1,79,Maregões,0,
-674,5,79,Maregões,0,
-675,12,79,Maregões,0,
-676,31,79,Maregões,3,
-677,9,80,Branquelas,5,
-678,11,80,Branquelas,1,
-679,30,80,Branquelas,1,
-680,31,80,Branquelas,2,
-681,1,80,Maregões,3,
-682,5,80,Maregões,3,
-683,12,80,Maregões,5,
-684,29,80,Maregões,1,
-685,27,81,Branquelas,2,
-686,28,81,Branquelas,3,
-687,34,81,Branquelas,0,
-688,1,81,Maregões,1,
-689,35,81,Maregões,1,
-690,20,81,Maregões,3,
-691,25,81,Maregões,2,
-692,1,82,Branquelas,1,
-693,8,82,Branquelas,1,
-694,9,82,Branquelas,3,
-695,10,82,Branquelas,1,
-696,30,82,Branquelas,1,
-697,12,82,Maregões,1,
-698,29,82,Maregões,0,
-699,31,82,Maregões,0,
-700,8,83,Branquelas,1,
-701,10,83,Branquelas,2,
-702,12,83,Branquelas,2,
-703,29,83,Branquelas,0,
-704,30,83,Branquelas,0,
-705,31,83,Branquelas,8,
-706,1,83,Maregões,0,
-707,5,83,Maregões,2,
-708,9,83,Maregões,0,
-709,1,84,Branquelas,2,
-710,35,84,Branquelas,3,
-711,27,84,Branquelas,2,
-712,34,84,Branquelas,0,
-713,20,84,Maregões,0,
-714,21,84,Maregões,1,
-715,25,84,Maregões,1,
-716,28,84,Maregões,5,
-717,33,84,Maregões,6,
-718,21,85,Branquelas,2,
-719,33,85,Branquelas,4,
-720,35,85,Maregões,6,
-721,25,85,Maregões,3,
-722,28,85,Maregões,4,
-723,9,86,Branquelas,4,
-724,10,86,Branquelas,1,
-725,29,86,Branquelas,1,
-726,31,86,Branquelas,0,
-727,8,86,Maregões,0,
-728,12,86,Maregões,1,
-729,30,86,Maregões,5,
-730,12,87,Branquelas,1,
-731,31,87,Branquelas,3,
-732,9,87,Maregões,4,
-733,11,87,Maregões,1,
-734,29,87,Maregões,1,
-735,30,87,Maregões,2,
-736,20,88,Branquelas,2,
-737,21,88,Branquelas,0,
-738,25,88,Branquelas,1,
-739,27,88,Branquelas,2,
-740,33,88,Branquelas,1,
-741,35,88,Maregões,0,
-742,28,88,Maregões,2,
-743,32,88,Maregões,4,
-744,1,89,Branquelas,0,
-745,20,89,Branquelas,3,
-746,25,89,Branquelas,1,
-747,28,89,Branquelas,3,
-748,35,89,Branquelas,1,
-749,27,89,Maregões,1,
-750,33,89,Maregões,1,
-751,34,89,Maregões,1,
-752,25,90,Branquelas,1,
-753,27,90,Branquelas,1,
-754,28,90,Branquelas,2,
-755,35,90,Branquelas,1,
-756,36,90,Branquelas,2,
-757,16,90,Maregões,1,
-758,21,90,Maregões,0,
-759,32,90,Maregões,3,
-760,33,90,Maregões,4,
-761,34,90,Maregões,0,
-762,1,91,Branquelas,0,
-763,6,91,Branquelas,1,
-764,8,91,Branquelas,0,
-765,5,91,Maregões,2,
-766,9,91,Maregões,2,
-767,29,91,Maregões,2,
-768,30,91,Maregões,2,
-769,31,91,Maregões,5,
-770,1,92,Branquelas,0,
-771,3,92,Branquelas,0,
-772,5,92,Branquelas,0,
-773,9,92,Branquelas,4,
-774,12,92,Maregões,4,
-775,29,92,Maregões,3,
-776,30,92,Maregões,1,
-777,3,93,Branquelas,0,
-778,29,93,Branquelas,3,
-779,30,93,Branquelas,1,
-780,31,93,Branquelas,1,
-781,5,93,Maregões,0,
-782,8,93,Maregões,1,
-783,10,93,Maregões,1,
-784,12,93,Maregões,6,
-785,8,94,Branquelas,2,
-786,30,94,Branquelas,2,
-787,5,94,Maregões,1,
-788,12,94,Maregões,3,
-789,29,94,Maregões,0,
-790,31,94,Maregões,3,
-791,5,95,Branquelas,2,
-792,8,95,Branquelas,1,
-793,9,95,Branquelas,3,
-794,11,95,Branquelas,0,
-795,12,95,Branquelas,1,
-796,30,95,Branquelas,1,
-797,2,95,Maregões,1,
-798,40,95,Maregões,1,
-799,38,95,Maregões,3,
-800,5,96,Branquelas,2,
-801,8,96,Branquelas,0,
-802,30,96,Branquelas,1,
-803,31,96,Branquelas,1,
-804,38,96,Branquelas,2,
-805,1,96,Maregões,0,
-806,2,96,Maregões,0,
-807,4,96,Maregões,0,
-808,9,96,Maregões,4,
-809,12,96,Maregões,2,
-810,39,96,Maregões,1,
-811,1,97,Branquelas,2,
-812,5,97,Branquelas,1,
-813,30,97,Branquelas,0,
-814,31,97,Branquelas,3,
-815,38,97,Branquelas,1,
-816,2,97,Maregões,2,
-817,4,97,Maregões,0,
-818,11,97,Maregões,0,
-819,12,97,Maregões,0,
-820,1,98,Branquelas,0,
-821,4,98,Branquelas,1,
-822,8,98,Branquelas,2,
-823,9,98,Branquelas,0,
-824,31,98,Branquelas,3,
-825,5,98,Maregões,0,
-826,11,98,Maregões,0,
-827,12,98,Maregões,2,
-828,40,98,Maregões,0,
-829,30,98,Maregões,2,
-830,38,98,Maregões,2,
-831,3,99,Branquelas,0,
-832,8,99,Branquelas,1,
-833,9,99,Branquelas,3,
-834,31,99,Branquelas,1,
-835,39,99,Branquelas,1,
-836,4,99,Maregões,0,
-837,5,99,Maregões,1,
-838,12,99,Maregões,2,
-839,40,99,Maregões,0,
-840,30,99,Maregões,1,
-841,38,99,Maregões,1,
-842,4,100,Branquelas,0,
-843,11,100,Branquelas,0,
-844,40,100,Branquelas,0,
-845,30,100,Branquelas,0,
-846,31,100,Branquelas,0,
-847,38,100,Branquelas,2,
-848,39,100,Branquelas,1,
-849,1,100,Maregões,1,
-850,2,100,Maregões,0,
-851,5,100,Maregões,1,
-852,8,100,Maregões,0,
-853,9,100,Maregões,1,
-854,12,100,Maregões,2,
-855,39,95,Branquelas,0,
-856,2,99,Branquelas,0,
-857,4,101,Branquelas,1,
-858,5,101,Branquelas,3,
-859,9,101,Branquelas,0,
-860,30,101,Branquelas,1,
-861,1,101,Maregões,0,
-862,2,101,Maregões,1,
-863,8,101,Maregões,0,
-864,12,101,Maregões,1,
-865,31,101,Maregões,1,
-866,38,101,Maregões,1,
-867,39,101,Maregões,0,
-868,12,102,Branquelas,1,
-869,2,102,Maregões,1,
-870,30,102,Maregões,2,
-871,31,102,Maregões,4,
-872,38,102,Maregões,0,
-873,39,102,Maregões,0,
-874,2,103,Branquelas,5,
-875,5,103,Branquelas,0,
-876,8,103,Branquelas,0,
-877,12,103,Branquelas,1,
-878,38,103,Branquelas,3,
-879,39,103,Branquelas,1,
-880,1,103,Maregões,0,
-881,3,103,Maregões,0,
-882,4,103,Maregões,1,
-883,11,103,Maregões,0,
-884,30,103,Maregões,1,
-885,31,103,Maregões,3,
-886,2,104,Branquelas,0,
-887,3,104,Branquelas,0,
-888,4,104,Branquelas,0,
-889,8,104,Branquelas,0,
-890,12,104,Branquelas,0,
-891,39,104,Branquelas,0,
-892,5,104,Maregões,0,
-893,11,104,Maregões,0,
-894,40,104,Maregões,0,
-895,30,104,Maregões,0,
-896,31,104,Maregões,0,
-897,38,104,Maregões,0,
-898,2,105,Branquelas,2,
-899,12,105,Branquelas,0,
-900,38,105,Branquelas,2,
-901,39,105,Branquelas,0,
-902,1,105,Maregões,0,
-903,4,105,Maregões,0,
-904,5,105,Maregões,1,
-905,11,105,Maregões,0,
-906,30,105,Maregões,0,
-907,31,105,Maregões,5,
-908,2,106,Branquelas,1,
-909,5,106,Branquelas,1,
-910,9,106,Branquelas,1,
-911,11,106,Branquelas,0,
-912,38,106,Branquelas,0,
-913,40,106,Branquelas,0,
-914,1,106,Maregões,1,
-915,3,106,Maregões,0,
-916,12,106,Maregões,1,
-917,30,106,Maregões,0,
-918,39,106,Maregões,0,
-919,3,107,Branquelas,0,
-920,5,107,Branquelas,0,
-921,8,107,Branquelas,0,
-922,31,107,Branquelas,3,
-923,1,107,Maregões,0,
-924,2,107,Maregões,1,
-925,4,107,Maregões,0,
-926,9,107,Maregões,1,
-927,30,107,Maregões,1,
-928,40,107,Maregões,0,
-929,4,106,Maregões,0,
-930,1,108,Branquelas,1,
-931,4,108,Branquelas,0,
-932,9,108,Branquelas,1,
-933,11,108,Branquelas,2,
-934,12,108,Branquelas,2,
-935,30,108,Branquelas,0,
-936,38,108,Branquelas,1,
-937,2,108,Maregões,0,
-938,3,108,Maregões,1,
-939,8,108,Maregões,0,
-940,31,108,Maregões,2,
-941,4,109,Branquelas,2,
-942,5,109,Branquelas,1,
-943,8,109,Branquelas,2,
-944,9,109,Branquelas,1,
-945,30,109,Branquelas,1,
-946,1,109,Maregões,0,
-947,12,109,Maregões,1,
-948,38,109,Maregões,0,
-949,39,109,Maregões,0,
-950,9,110,Branquelas,1,
-951,12,110,Branquelas,0,
-952,30,110,Branquelas,1,
-953,40,110,Branquelas,3,
-954,4,110,Maregões,0,
-955,31,110,Maregões,1,
-956,38,110,Maregões,0,
-957,39,110,Maregões,0,
-958,1,111,Branquelas,0,
-959,3,111,Branquelas,1,
-960,5,111,Branquelas,0,
-961,9,111,Branquelas,1,
-962,11,111,Branquelas,0,
-963,39,111,Branquelas,2,
-964,2,111,Maregões,0,
-965,8,111,Maregões,1,
-966,12,111,Maregões,2,
-967,31,111,Maregões,3,
-968,38,111,Maregões,0,
-969,1,112,Branquelas,0,
-970,8,112,Branquelas,0,
-971,11,112,Branquelas,0,
-972,31,112,Branquelas,3,
-973,2,112,Maregões,1,
-974,3,112,Maregões,2,
-975,4,112,Maregões,1,
-976,9,112,Maregões,2,
-977,12,112,Maregões,1,
-978,30,112,Maregões,0,
-979,38,112,Maregões,0,
-980,2,113,Branquelas,3,
-981,4,113,Branquelas,1,
-982,8,113,Branquelas,0,
-983,11,113,Branquelas,2,
-984,12,113,Branquelas,4,
-985,30,113,Branquelas,1,
-986,38,113,Branquelas,0,
-987,1,113,Maregões,0,
-988,3,113,Maregões,0,
-989,5,113,Maregões,0,
-990,9,113,Maregões,1,
-991,31,113,Maregões,4,
-992,40,113,Maregões,3,
-993,12,114,Branquelas,0,
-994,30,114,Branquelas,3,
-995,31,114,Branquelas,1,
-996,38,114,Branquelas,1,
-997,1,114,Maregões,2,
-998,4,114,Maregões,0,
-999,8,114,Maregões,2,
-1000,9,114,Maregões,0,
-1001,39,114,Maregões,1,
-1002,1,115,Branquelas,0,
-1003,4,115,Branquelas,0,
-1004,8,115,Branquelas,0,
-1005,30,115,Branquelas,0,
-1006,31,115,Branquelas,0,
-1007,40,115,Branquelas,1,
-1008,9,115,Maregões,1,
-1009,12,115,Maregões,0,
-1010,38,115,Maregões,0,
-1011,39,115,Maregões,3,
-1012,3,116,Branquelas,0,
-1013,11,116,Branquelas,0,
-1014,12,116,Branquelas,1,
-1015,30,116,Branquelas,1,
-1016,39,116,Branquelas,3,
-1017,1,116,Maregões,4,
-1018,4,116,Maregões,0,
-1019,8,116,Maregões,1,
-1020,9,116,Maregões,0,
-1021,31,116,Maregões,1,
-1022,38,116,Maregões,1,
-1023,1,117,Branquelas,1,
-1024,9,117,Branquelas,1,
-1025,11,117,Branquelas,0,
-1026,12,117,Branquelas,2,
-1027,30,117,Branquelas,2,
-1028,38,117,Branquelas,1,
-1029,40,117,Branquelas,1,
-1030,2,117,Maregões,1,
-1031,3,117,Maregões,1,
-1032,4,117,Maregões,0,
-1033,5,117,Maregões,1,
-1034,31,117,Maregões,3,
-1035,39,117,Maregões,1,
-1036,4,118,Branquelas,0,
-1037,5,118,Branquelas,0,
-1038,11,118,Branquelas,0,
-1039,31,118,Branquelas,0,
-1040,39,118,Branquelas,0,
-1041,2,118,Maregões,2,
-1042,30,118,Maregões,2,
-1043,38,118,Maregões,1,
-1044,2,119,Branquelas,1,
-1045,12,119,Branquelas,0,
-1046,30,119,Branquelas,1,
-1047,31,119,Branquelas,1,
-1048,38,119,Branquelas,0,
-1049,40,119,Branquelas,0,
-1050,1,119,Maregões,0,
-1051,4,119,Maregões,0,
-1052,5,119,Maregões,1,
-1053,8,119,Maregões,2,
-1054,9,119,Maregões,2,
-1055,1,120,Branquelas,0,
-1056,2,120,Branquelas,0,
-1057,5,120,Branquelas,2,
-1058,9,120,Branquelas,1,
-1059,11,120,Branquelas,0,
-1060,12,120,Branquelas,0,
-1061,3,120,Maregões,0,
-1062,4,120,Maregões,0,
-1063,31,120,Maregões,3,
-1064,38,120,Maregões,1,
-1065,40,120,Maregões,0,
-1066,1,121,Branquelas,1,
-1067,3,121,Branquelas,1,
-1068,4,121,Branquelas,0,
-1069,38,121,Branquelas,2,
-1070,39,121,Branquelas,3,
-1071,5,121,Maregões,0,
-1072,9,121,Maregões,2,
-1073,12,121,Maregões,1,
-1074,30,121,Maregões,0,
-1075,40,121,Maregões,1,
-1076,1,122,Branquelas,1,
-1077,4,122,Branquelas,1,
-1078,11,122,Branquelas,0,
-1079,12,122,Branquelas,0,
-1080,31,122,Branquelas,4,
-1081,38,122,Branquelas,0,
-1082,39,122,Branquelas,2,
-1083,2,122,Maregões,1,
-1084,3,122,Maregões,1,
-1085,8,122,Maregões,2,
-1086,9,122,Maregões,1,
-1087,40,122,Maregões,3,
-1088,1,123,Branquelas,1,
-1089,8,123,Branquelas,1,
-1090,12,123,Branquelas,2,
-1091,30,123,Branquelas,2,
-1092,31,123,Branquelas,1,
-1093,3,123,Maregões,1,
-1094,4,123,Maregões,0,
-1095,5,123,Maregões,2,
-1096,38,123,Maregões,1,
-1097,39,123,Maregões,2,
-1098,1,124,Branquelas,0,
-1099,5,124,Branquelas,1,
-1100,12,124,Branquelas,2,
-1101,30,124,Branquelas,3,
-1102,4,124,Maregões,0,
-1103,8,124,Maregões,1,
-1104,11,124,Maregões,0,
-1105,38,124,Maregões,1,
-1106,39,124,Maregões,2,
-1107,2,125,Branquelas,0,
-1108,4,125,Branquelas,1,
-1109,5,125,Branquelas,0,
-1110,30,125,Branquelas,3,
-1111,31,125,Branquelas,1,
-1112,38,125,Branquelas,0,
-1113,39,125,Branquelas,3,
-1114,1,125,Maregões,1,
-1115,8,125,Maregões,0,
-1116,9,125,Maregões,1,
-1117,12,125,Maregões,3,
-1118,3,126,Branquelas,0,
-1119,4,126,Branquelas,1,
-1120,12,126,Branquelas,3,
-1121,38,126,Branquelas,3,
-1122,39,126,Branquelas,4,
-1123,1,126,Maregões,1,
-1124,11,126,Maregões,2,
-1125,30,126,Maregões,3,
-1126,40,126,Maregões,2,
-1127,4,127,Branquelas,0,
-1128,8,127,Branquelas,0,
-1129,9,127,Branquelas,1,
-1130,11,127,Branquelas,0,
-1131,12,127,Branquelas,1,
-1132,31,127,Branquelas,2,
-1133,1,127,Maregões,1,
-1134,2,127,Maregões,1,
-1135,30,127,Maregões,2,
-1136,38,127,Maregões,1,
-1137,39,127,Maregões,2,
-1138,40,127,Maregões,1,
-1139,3,128,Branquelas,1,
-1140,5,128,Branquelas,2,
-1141,8,128,Branquelas,1,
-1142,30,128,Branquelas,1,
-1143,38,128,Branquelas,0,
-1144,39,128,Branquelas,1,
-1145,40,128,Branquelas,1,
-1146,2,128,Maregões,0,
-1147,4,128,Maregões,1,
-1148,9,128,Maregões,4,
-1149,1,129,Branquelas,0,
-1150,9,129,Branquelas,2,
-1151,31,129,Branquelas,1,
-1152,38,129,Branquelas,0,
-1153,39,129,Branquelas,4,
-1154,3,129,Maregões,0,
-1155,4,129,Maregões,0,
-1156,5,129,Maregões,0,
-1157,8,129,Maregões,0,
-1158,11,129,Maregões,0,
-1159,30,129,Maregões,4,
-1160,3,130,Branquelas,0,
-1161,5,130,Branquelas,0,
-1162,9,130,Branquelas,3,
-1163,11,130,Branquelas,2,
-1164,30,130,Branquelas,2,
-1165,1,130,Maregões,2,
-1166,2,130,Maregões,2,
-1167,4,130,Maregões,1,
-1168,8,130,Maregões,0,
-1169,31,130,Maregões,0,
-1170,38,130,Maregões,2,
-1171,39,130,Maregões,0,
-1172,8,131,Branquelas,2,
-1173,9,131,Branquelas,1,
-1174,30,131,Branquelas,1,
-1175,39,131,Branquelas,3,
-1176,49,131,Branquelas,1,
-1177,1,131,Maregões,1,
-1178,4,131,Maregões,0,
-1179,5,131,Maregões,1,
-1180,11,131,Maregões,0,
-1181,12,131,Maregões,2,
-1182,41,131,Maregões,0,
-1183,1,132,Branquelas,2,
-1184,30,132,Branquelas,2,
-1185,39,132,Branquelas,1,
-1186,49,132,Branquelas,2,
-1187,41,132,Branquelas,1,
-1188,4,132,Maregões,0,
-1189,11,132,Maregões,0,
-1190,12,132,Maregões,2,
-1191,37,132,Maregões,2,
-1192,12,133,Branquelas,1,
-1193,30,133,Branquelas,0,
-1194,37,133,Branquelas,2,
-1195,39,133,Branquelas,1,
-1196,1,133,Maregões,2,
-1197,4,133,Maregões,1,
-1198,49,133,Maregões,2,
-1199,41,133,Maregões,2,
-1200,4,134,Branquelas,1,
-1201,12,134,Branquelas,1,
-1202,37,134,Branquelas,0,
-1203,39,134,Branquelas,2,
-1204,41,134,Branquelas,1,
-1205,1,134,Maregões,3,
-1206,8,134,Maregões,0,
-1207,9,134,Maregões,2,
-1208,1,135,Branquelas,1,
-1209,47,135,Branquelas,0,
-1210,19,135,Branquelas,4,
-1211,33,135,Branquelas,4,
-1212,13,135,Branquelas,0,
-1213,42,135,Branquelas,1,
-1214,20,135,Maregões,3,
-1215,22,135,Maregões,1,
-1216,27,135,Maregões,3,
-1217,48,135,Maregões,1,
-1218,43,135,Maregões,3,
-1219,44,135,Maregões,0,
-1220,1,136,Branquelas,2,
-1221,30,136,Branquelas,0,
-1222,39,136,Branquelas,0,
-1223,49,136,Branquelas,0,
-1224,3,136,Maregões,0,
-1225,9,136,Maregões,2,
-1226,19,137,Branquelas,1,
-1227,22,137,Branquelas,3,
-1228,43,137,Branquelas,0,
-1229,44,137,Branquelas,0,
-1230,45,137,Branquelas,1,
-1231,20,137,Maregões,0,
-1232,27,137,Maregões,0,
-1233,33,137,Maregões,1,
-1234,46,137,Maregões,1,
-1235,1,138,Branquelas,0,
-1236,5,138,Branquelas,0,
-1237,8,138,Branquelas,0,
-1238,12,138,Branquelas,2,
-1239,37,138,Branquelas,1,
-1240,49,138,Branquelas,0,
-1241,3,138,Maregões,1,
-1242,4,138,Maregões,0,
-1243,9,138,Maregões,2,
-1244,30,138,Maregões,1,
-1245,39,138,Maregões,1,
-1246,41,138,Maregões,0,
-1247,5,139,Branquelas,1,
-1248,8,139,Branquelas,1,
-1249,9,139,Branquelas,3,
-1250,12,139,Branquelas,1,
-1251,30,139,Branquelas,3,
-1252,39,139,Branquelas,3,
-1253,49,139,Branquelas,2,
-1254,4,139,Maregões,0,
-1255,11,139,Maregões,0,
-1256,37,139,Maregões,0,
-1257,41,139,Maregões,1,
-1258,4,140,Branquelas,0,
-1259,5,140,Branquelas,1,
-1260,9,140,Branquelas,1,
-1261,30,140,Branquelas,0,
-1262,1,140,Maregões,0,
-1263,11,140,Maregões,0,
-1264,12,140,Maregões,3,
-1265,39,140,Maregões,2,
-1266,41,140,Maregões,0,
-1267,49,140,Maregões,0,
-1268,19,141,Branquelas,1,
-1269,20,141,Branquelas,1,
-1270,22,141,Branquelas,0,
-1271,33,141,Branquelas,0,
-1272,13,141,Branquelas,0,
-1273,46,141,Branquelas,2,
-1274,48,141,Branquelas,1,
-1275,1,141,Maregões,1,
-1276,27,141,Maregões,0,
-1277,44,141,Maregões,0,
-1278,47,141,Maregões,1,
-1279,1,142,Branquelas,0,
-1280,3,142,Branquelas,0,
-1281,4,142,Branquelas,0,
-1282,11,142,Branquelas,0,
-1283,12,142,Branquelas,0,
-1284,37,142,Branquelas,0,
-1285,2,142,Maregões,0,
-1286,5,142,Maregões,2,
-1287,30,142,Maregões,1,
-1288,39,142,Maregões,2,
-1289,41,142,Maregões,4,
-1290,1,143,Branquelas,1,
-1291,22,143,Branquelas,5,
-1292,27,143,Branquelas,1,
-1293,46,143,Branquelas,1,
-1294,47,143,Branquelas,0,
-1295,48,143,Branquelas,0,
-1296,13,143,Maregões,0,
-1297,19,143,Maregões,3,
-1298,20,143,Maregões,2,
-1299,43,143,Maregões,2,
-1300,45,143,Maregões,2,
-1301,1,144,Branquelas,1,
-1302,4,144,Branquelas,0,
-1303,5,144,Branquelas,2,
-1304,8,144,Branquelas,1,
-1305,9,144,Branquelas,2,
-1306,41,144,Branquelas,2,
-1307,11,144,Maregões,0,
-1308,30,144,Maregões,0,
-1309,37,144,Maregões,1,
-1310,39,144,Maregões,4,
-1311,49,144,Maregões,0,
-1312,1,145,Branquelas,0,
-1313,13,145,Branquelas,0,
-1314,22,145,Branquelas,2,
-1315,44,145,Branquelas,0,
-1316,46,145,Branquelas,1,
-1317,47,145,Branquelas,1,
-1318,19,145,Maregões,2,
-1319,20,145,Maregões,1,
-1320,42,145,Maregões,1,
-1321,45,145,Maregões,3,
-1322,48,145,Maregões,0,
-1323,1,146,Branquelas,4,
-1324,2,146,Branquelas,0,
-1325,4,146,Branquelas,1,
-1326,9,146,Branquelas,3,
-1327,37,146,Branquelas,2,
-1328,39,146,Branquelas,0,
-1329,5,146,Maregões,0,
-1330,12,146,Maregões,4,
-1331,30,146,Maregões,1,
-1332,41,146,Maregões,0,
-1333,49,146,Maregões,1,
+2,9,1,Branquelas,3,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 1"
+3,7,1,Branquelas,2,"Player: JP in Game: 1ª Edição MasterLeague, jornada 1"
+4,8,1,Branquelas,0,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 1"
+5,4,1,Maregões,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 1"
+6,3,1,Maregões,1,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 1"
+7,10,1,Maregões,3,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 1"
+8,12,1,Maregões,6,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 1"
+9,1,2,Branquelas,1,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 2"
+10,3,2,Branquelas,0,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 2"
+11,6,2,Branquelas,1,"Player: João in Game: 1ª Edição MasterLeague, jornada 2"
+12,4,2,Maregões,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 2"
+13,5,2,Maregões,1,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 2"
+14,7,2,Maregões,2,"Player: JP in Game: 1ª Edição MasterLeague, jornada 2"
+15,8,2,Maregões,0,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 2"
+16,9,2,Maregões,3,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 2"
+17,12,2,Maregões,4,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 2"
+18,1,3,Branquelas,1,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 3"
+19,12,3,Branquelas,1,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 3"
+20,10,3,Branquelas,0,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 3"
+21,3,3,Branquelas,0,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 3"
+22,6,3,Branquelas,2,"Player: João in Game: 1ª Edição MasterLeague, jornada 3"
+23,7,3,Branquelas,1,"Player: JP in Game: 1ª Edição MasterLeague, jornada 3"
+24,9,3,Maregões,1,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 3"
+25,8,3,Maregões,2,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 3"
+26,4,3,Maregões,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 3"
+27,5,3,Maregões,1,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 3"
+28,1,4,Branquelas,3,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 4"
+29,4,4,Branquelas,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 4"
+30,12,4,Branquelas,2,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 4"
+31,9,4,Branquelas,2,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 4"
+32,10,4,Maregões,2,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 4"
+33,3,4,Maregões,1,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 4"
+34,5,4,Maregões,5,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 4"
+35,6,4,Maregões,1,"Player: João in Game: 1ª Edição MasterLeague, jornada 4"
+36,2,1,Maregões,0,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 1"
+37,2,2,Branquelas,1,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 2"
+38,2,3,Maregões,1,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 3"
+39,2,4,Maregões,0,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 4"
+40,8,5,Branquelas,4,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 5"
+41,3,5,Branquelas,0,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 5"
+42,6,5,Branquelas,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 5"
+43,7,5,Branquelas,3,"Player: JP in Game: 1ª Edição MasterLeague, jornada 5"
+44,4,5,Branquelas,1,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 5"
+45,1,5,Maregões,2,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 5"
+46,9,5,Maregões,1,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 5"
+47,10,5,Maregões,1,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 5"
+48,5,5,Maregões,3,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 5"
+49,12,5,Maregões,3,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 5"
+50,3,6,Branquelas,3,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 6"
+51,6,6,Branquelas,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 6"
+52,12,6,Branquelas,2,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 6"
+53,1,6,Branquelas,1,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 6"
+54,2,6,Maregões,3,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 6"
+55,4,6,Maregões,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 6"
+56,9,6,Maregões,1,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 6"
+57,5,6,Maregões,2,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 6"
+58,10,6,Maregões,2,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 6"
+59,4,7,Branquelas,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 7"
+60,6,7,Branquelas,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 7"
+61,12,7,Branquelas,1,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 7"
+62,9,7,Branquelas,1,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 7"
+63,5,7,Maregões,2,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 7"
+64,2,7,Maregões,3,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 7"
+65,10,7,Maregões,0,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 7"
+66,3,7,Maregões,2,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 7"
+67,3,8,Branquelas,1,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 8"
+68,6,8,Branquelas,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 8"
+69,12,8,Branquelas,3,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 8"
+70,5,8,Branquelas,0,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 8"
+71,2,8,Branquelas,2,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 8"
+72,1,8,Maregões,3,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 8"
+73,10,8,Maregões,0,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 8"
+74,4,8,Maregões,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 8"
+75,9,9,Branquelas,2,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 9"
+76,1,9,Branquelas,3,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 9"
+77,7,9,Branquelas,1,"Player: JP in Game: 1ª Edição MasterLeague, jornada 9"
+78,6,9,Branquelas,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 9"
+79,4,9,Branquelas,2,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 9"
+80,12,9,Branquelas,2,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 9"
+81,2,9,Maregões,1,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 9"
+82,10,9,Maregões,2,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 9"
+83,5,9,Maregões,1,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 9"
+84,3,9,Maregões,1,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 9"
+85,8,9,Maregões,2,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 9"
+86,7,10,Branquelas,1,"Player: JP in Game: 1ª Edição MasterLeague, jornada 10"
+87,1,10,Branquelas,4,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 10"
+88,8,10,Branquelas,2,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 10"
+89,12,10,Branquelas,2,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 10"
+90,2,10,Maregões,2,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 10"
+91,3,10,Maregões,0,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 10"
+92,4,10,Maregões,1,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 10"
+93,5,10,Maregões,1,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 10"
+94,9,10,Maregões,2,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 10"
+95,10,10,Maregões,2,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 10"
+96,7,11,Branquelas,1,"Player: JP in Game: 1ª Edição MasterLeague, jornada 11"
+97,4,11,Branquelas,0,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 11"
+98,5,11,Branquelas,1,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 11"
+99,10,11,Branquelas,1,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 11"
+100,9,11,Branquelas,2,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 11"
+101,8,11,Branquelas,5,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 11"
+102,3,11,Maregões,0,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 11"
+103,1,11,Maregões,2,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 11"
+104,12,11,Maregões,2,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 11"
+105,2,11,Maregões,3,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 11"
+106,6,11,Maregões,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 11"
+107,7,12,Branquelas,2,"Player: JP in Game: 1ª Edição MasterLeague, jornada 12"
+108,8,12,Branquelas,3,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 12"
+109,10,12,Branquelas,2,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 12"
+110,2,12,Branquelas,1,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 12"
+111,1,12,Maregões,1,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 12"
+112,9,12,Maregões,2,"Player: Luis Fragoso in Game: 1ª Edição MasterLeague, jornada 12"
+113,5,12,Maregões,1,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 12"
+114,4,12,Maregões,2,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 12"
+115,6,12,Maregões,0,"Player: João in Game: 1ª Edição MasterLeague, jornada 12"
+116,12,12,Maregões,2,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 12"
+117,1,13,Branquelas,7,"Player: Pedro Pacheco in Game: 1ª Edição MasterLeague, jornada 13"
+118,2,13,Branquelas,0,"Player: João Perneta in Game: 1ª Edição MasterLeague, jornada 13"
+119,4,13,Branquelas,2,"Player: Chico Castro in Game: 1ª Edição MasterLeague, jornada 13"
+120,8,13,Branquelas,3,"Player: Kiko TM in Game: 1ª Edição MasterLeague, jornada 13"
+121,3,13,Maregões,2,"Player: Bernardo Xavier in Game: 1ª Edição MasterLeague, jornada 13"
+122,10,13,Maregões,1,"Player: Manel in Game: 1ª Edição MasterLeague, jornada 13"
+123,5,13,Maregões,2,"Player: Ferna in Game: 1ª Edição MasterLeague, jornada 13"
+124,12,13,Maregões,9,"Player: Zi in Game: 1ª Edição MasterLeague, jornada 13"
+125,7,13,Maregões,0,"Player: JP in Game: 1ª Edição MasterLeague, jornada 13"
+126,23,14,Branquelas,1,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 1"
+127,15,14,Branquelas,0,"Player: Praça in Game: 1ª Edição TuesdayLeague, jornada 1"
+128,14,14,Branquelas,1,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 1"
+129,22,14,Branquelas,3,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 1"
+130,21,14,Branquelas,2,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 1"
+131,13,14,Branquelas,3,"Player: Gustavo in Game: 1ª Edição TuesdayLeague, jornada 1"
+132,1,14,Maregões,3,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 1"
+133,19,14,Maregões,0,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 1"
+134,16,14,Maregões,2,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 1"
+135,20,14,Maregões,0,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 1"
+136,17,14,Maregões,4,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 1"
+137,13,15,Branquelas,0,"Player: Gustavo in Game: 1ª Edição TuesdayLeague, jornada 2"
+138,19,15,Branquelas,5,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 2"
+139,1,15,Branquelas,1,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 2"
+140,15,15,Branquelas,0,"Player: Praça in Game: 1ª Edição TuesdayLeague, jornada 2"
+141,22,15,Branquelas,5,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 2"
+142,18,15,Branquelas,0,"Player: Dinis in Game: 1ª Edição TuesdayLeague, jornada 2"
+143,16,15,Maregões,3,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 2"
+144,23,15,Maregões,1,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 2"
+145,14,15,Maregões,0,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 2"
+146,17,15,Maregões,1,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 2"
+147,20,15,Maregões,0,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 2"
+148,15,16,Branquelas,1,"Player: Praça in Game: 1ª Edição TuesdayLeague, jornada 3"
+149,1,16,Branquelas,2,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 3"
+150,20,16,Branquelas,0,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 3"
+151,16,16,Branquelas,2,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 3"
+152,14,16,Branquelas,1,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 3"
+153,18,16,Branquelas,1,"Player: Dinis in Game: 1ª Edição TuesdayLeague, jornada 3"
+154,23,16,Maregões,1,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 3"
+155,19,16,Maregões,1,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 3"
+156,17,16,Maregões,0,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 3"
+157,13,16,Maregões,4,"Player: Gustavo in Game: 1ª Edição TuesdayLeague, jornada 3"
+158,21,16,Maregões,3,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 3"
+159,17,17,Branquelas,0,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 4"
+160,15,17,Branquelas,0,"Player: Praça in Game: 1ª Edição TuesdayLeague, jornada 4"
+161,19,17,Branquelas,2,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 4"
+162,18,17,Branquelas,3,"Player: Dinis in Game: 1ª Edição TuesdayLeague, jornada 4"
+163,1,17,Maregões,2,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 4"
+164,16,17,Maregões,2,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 4"
+165,21,17,Maregões,2,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 4"
+166,1,18,Branquelas,3,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 5"
+167,19,18,Branquelas,2,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 5"
+168,14,18,Branquelas,2,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 5"
+169,20,18,Branquelas,5,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 5"
+170,16,18,Maregões,2,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 5"
+171,23,18,Maregões,2,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 5"
+172,21,18,Maregões,3,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 5"
+173,17,18,Maregões,0,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 5"
+174,16,19,Branquelas,1,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 6"
+175,23,19,Branquelas,0,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 6"
+176,17,19,Branquelas,0,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 6"
+177,18,19,Branquelas,1,"Player: Dinis in Game: 1ª Edição TuesdayLeague, jornada 6"
+178,14,19,Branquelas,2,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 6"
+179,20,19,Maregões,2,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 6"
+180,22,19,Maregões,1,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 6"
+181,21,19,Maregões,3,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 6"
+182,19,19,Maregões,3,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 6"
+183,1,19,Maregões,4,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 6"
+184,1,20,Branquelas,3,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 7"
+185,21,20,Branquelas,5,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 7"
+186,20,20,Branquelas,3,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 7"
+187,14,20,Branquelas,0,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 7"
+188,19,20,Maregões,1,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 7"
+189,16,20,Maregões,4,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 7"
+190,23,20,Maregões,2,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 7"
+191,17,20,Maregões,1,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 7"
+192,23,21,Branquelas,2,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 8"
+193,18,21,Branquelas,0,"Player: Dinis in Game: 1ª Edição TuesdayLeague, jornada 8"
+194,21,21,Maregões,6,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 8"
+195,19,21,Maregões,4,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 8"
+196,22,21,Maregões,1,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 8"
+197,17,21,Maregões,2,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 8"
+198,21,22,Branquelas,3,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 9"
+199,22,22,Branquelas,2,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 9"
+200,14,22,Branquelas,1,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 9"
+201,17,22,Branquelas,4,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 9"
+202,1,22,Maregões,3,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 9"
+203,20,22,Maregões,1,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 9"
+204,15,22,Maregões,0,"Player: Praça in Game: 1ª Edição TuesdayLeague, jornada 9"
+205,23,22,Maregões,0,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 9"
+206,21,23,Branquelas,2,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 10"
+207,22,23,Branquelas,1,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 10"
+208,17,23,Branquelas,0,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 10"
+209,20,23,Branquelas,2,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 10"
+210,1,23,Maregões,3,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 10"
+211,14,23,Maregões,1,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 10"
+212,23,23,Maregões,1,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 10"
+213,15,23,Maregões,0,"Player: Praça in Game: 1ª Edição TuesdayLeague, jornada 10"
+214,21,24,Branquelas,1,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 11"
+215,17,24,Branquelas,2,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 11"
+216,20,24,Branquelas,5,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 11"
+217,1,24,Maregões,1,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 11"
+218,19,24,Maregões,4,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 11"
+219,14,24,Maregões,1,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 11"
+220,23,24,Maregões,4,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 11"
+221,23,25,Branquelas,1,"Player: Tomás Pacheco in Game: 1ª Edição TuesdayLeague, jornada 12"
+222,17,25,Branquelas,5,"Player: Araújo in Game: 1ª Edição TuesdayLeague, jornada 12"
+223,14,25,Branquelas,1,"Player: Beirão in Game: 1ª Edição TuesdayLeague, jornada 12"
+224,21,25,Branquelas,6,"Player: Nuno in Game: 1ª Edição TuesdayLeague, jornada 12"
+225,1,25,Maregões,6,"Player: Pedro Pacheco in Game: 1ª Edição TuesdayLeague, jornada 12"
+226,19,25,Maregões,5,"Player: Mateus in Game: 1ª Edição TuesdayLeague, jornada 12"
+227,22,25,Maregões,1,"Player: Pipinho in Game: 1ª Edição TuesdayLeague, jornada 12"
+228,16,25,Maregões,5,"Player: Tommy in Game: 1ª Edição TuesdayLeague, jornada 12"
+229,20,25,Maregões,0,"Player: Eloi in Game: 1ª Edição TuesdayLeague, jornada 12"
+230,1,26,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 1"
+231,17,26,Branquelas,3,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 1"
+232,21,26,Branquelas,0,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 1"
+233,28,26,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 1"
+234,27,26,Maregões,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 1"
+235,32,26,Maregões,1,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 1"
+236,33,26,Maregões,3,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 1"
+237,25,26,Maregões,1,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 1"
+238,22,26,Maregões,2,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 1"
+239,3,27,Branquelas,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 1"
+240,30,27,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 1"
+241,1,27,Branquelas,2,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 1"
+242,6,27,Branquelas,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 1"
+243,9,27,Branquelas,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 1"
+244,8,27,Maregões,3,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 1"
+245,29,27,Maregões,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 1"
+246,10,27,Maregões,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 1"
+247,5,27,Maregões,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 1"
+248,3,28,Branquelas,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 2"
+249,9,28,Branquelas,2,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 2"
+250,11,28,Branquelas,1,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 2"
+251,1,28,Maregões,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 2"
+252,5,28,Maregões,0,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 2"
+253,12,28,Maregões,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 2"
+254,6,28,Maregões,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 2"
+255,1,29,Branquelas,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 3"
+256,31,29,Branquelas,0,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 3"
+257,11,29,Maregões,0,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 3"
+258,29,29,Maregões,4,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 3"
+259,12,29,Maregões,6,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 3"
+260,30,29,Maregões,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 3"
+261,1,30,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 2"
+262,33,30,Branquelas,1,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 2"
+263,25,30,Branquelas,1,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 2"
+264,28,30,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 2"
+265,17,30,Branquelas,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 2"
+266,16,30,Maregões,5,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 2"
+267,22,30,Maregões,2,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 2"
+268,27,30,Maregões,2,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 2"
+269,4,30,Maregões,2,"Player: Chico Castro in Game: 3ª Edição TuesdayLeague, jornada 2"
+270,12,31,Branquelas,4,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 4"
+271,3,31,Branquelas,0,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 4"
+272,31,31,Branquelas,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 4"
+273,1,31,Maregões,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 4"
+274,9,31,Maregões,1,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 4"
+275,29,31,Maregões,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 4"
+276,30,31,Maregões,0,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 4"
+277,10,31,Maregões,0,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 4"
+278,20,32,Branquelas,3,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 3"
+279,27,32,Branquelas,4,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 3"
+280,22,32,Branquelas,1,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 3"
+281,25,32,Branquelas,3,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 3"
+282,28,32,Maregões,2,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 3"
+283,11,33,Branquelas,1,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 5"
+284,31,33,Branquelas,4,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 5"
+285,12,33,Branquelas,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 5"
+286,5,33,Branquelas,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 5"
+287,6,33,Branquelas,2,"Player: João in Game: 2ª Edição MasterLeague, jornada 5"
+288,29,33,Branquelas,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 5"
+289,9,33,Maregões,5,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 5"
+290,30,33,Maregões,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 5"
+291,3,33,Maregões,3,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 5"
+292,8,33,Maregões,4,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 5"
+293,10,33,Maregões,2,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 5"
+294,28,34,Branquelas,1,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 4"
+295,27,34,Branquelas,1,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 4"
+296,20,34,Branquelas,3,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 4"
+297,1,34,Maregões,6,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 4"
+298,17,34,Maregões,2,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 4"
+299,22,34,Maregões,3,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 4"
+300,16,34,Maregões,12,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 4"
+301,6,35,Branquelas,1,"Player: João in Game: 2ª Edição MasterLeague, jornada 6"
+302,8,35,Branquelas,1,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 6"
+303,31,35,Branquelas,8,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 6"
+304,1,35,Maregões,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 6"
+305,3,35,Maregões,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 6"
+306,30,35,Maregões,3,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 6"
+307,5,35,Maregões,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 6"
+308,9,35,Maregões,4,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 6"
+309,28,36,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 5"
+310,21,36,Branquelas,0,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 5"
+311,17,36,Branquelas,2,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 5"
+312,22,36,Branquelas,4,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 5"
+313,25,36,Branquelas,2,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 5"
+314,33,36,Maregões,1,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 5"
+315,32,36,Maregões,4,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 5"
+316,1,37,Branquelas,4,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 7"
+317,3,37,Branquelas,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 7"
+318,30,37,Branquelas,2,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 7"
+319,31,37,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 7"
+320,10,37,Branquelas,2,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 7"
+321,5,37,Maregões,5,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 7"
+322,29,37,Maregões,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 7"
+323,11,37,Maregões,0,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 7"
+324,8,37,Maregões,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 7"
+325,27,36,Maregões,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 5"
+326,21,32,Maregões,0,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 3"
+327,21,34,Branquelas,0,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 4"
+328,25,34,Maregões,0,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 4"
+329,1,38,Branquelas,3,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 6"
+330,17,38,Branquelas,2,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 6"
+331,22,38,Branquelas,2,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 6"
+332,28,38,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 6"
+333,33,38,Maregões,4,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 6"
+334,16,38,Maregões,8,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 6"
+335,25,38,Maregões,3,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 6"
+336,27,38,Maregões,2,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 6"
+337,32,38,Maregões,5,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 6"
+338,5,39,Branquelas,4,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 8"
+339,29,39,Branquelas,5,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 8"
+340,30,39,Branquelas,0,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 8"
+341,10,39,Branquelas,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 8"
+342,1,39,Maregões,2,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 8"
+343,12,39,Maregões,5,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 8"
+344,6,39,Maregões,1,"Player: João in Game: 2ª Edição MasterLeague, jornada 8"
+345,31,39,Maregões,4,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 8"
+346,1,40,Branquelas,2,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 7"
+347,16,40,Branquelas,4,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 7"
+348,32,40,Branquelas,5,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 7"
+349,22,40,Branquelas,3,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 7"
+350,21,40,Maregões,0,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 7"
+351,27,40,Maregões,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 7"
+352,17,40,Maregões,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 7"
+353,28,40,Maregões,1,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 7"
+354,1,41,Branquelas,2,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 9"
+355,12,41,Branquelas,1,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 9"
+356,31,41,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 9"
+357,9,41,Maregões,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 9"
+358,30,41,Maregões,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 9"
+359,8,41,Maregões,0,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 9"
+360,3,41,Maregões,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 9"
+361,1,42,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 8"
+362,28,42,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 8"
+363,17,42,Branquelas,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 8"
+364,16,42,Branquelas,2,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 8"
+365,32,42,Maregões,5,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 8"
+366,20,42,Maregões,3,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 8"
+367,25,42,Maregões,1,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 8"
+368,1,43,Branquelas,3,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 10"
+369,6,43,Branquelas,1,"Player: João in Game: 2ª Edição MasterLeague, jornada 10"
+370,30,43,Branquelas,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 10"
+371,3,43,Maregões,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 10"
+372,11,43,Maregões,1,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 10"
+373,5,43,Maregões,3,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 10"
+374,29,43,Maregões,2,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 10"
+375,9,43,Maregões,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 10"
+376,1,44,Branquelas,2,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 11"
+377,31,44,Branquelas,4,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 11"
+378,10,44,Branquelas,3,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 11"
+379,29,44,Branquelas,2,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 11"
+380,8,44,Branquelas,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 11"
+381,11,44,Branquelas,0,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 11"
+382,5,44,Maregões,3,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 11"
+383,6,44,Maregões,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 11"
+384,9,44,Maregões,1,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 11"
+385,12,44,Maregões,3,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 11"
+386,30,44,Maregões,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 11"
+387,3,44,Maregões,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 11"
+388,1,45,Branquelas,2,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 9"
+389,22,45,Branquelas,1,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 9"
+390,17,45,Branquelas,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 9"
+391,28,45,Maregões,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 9"
+392,21,45,Maregões,2,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 9"
+393,25,45,Maregões,3,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 9"
+394,32,45,Maregões,6,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 9"
+395,1,46,Branquelas,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 12"
+396,29,46,Branquelas,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 12"
+397,9,46,Branquelas,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 12"
+398,12,46,Branquelas,4,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 12"
+399,5,46,Maregões,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 12"
+400,31,46,Maregões,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 12"
+401,30,46,Maregões,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 12"
+402,16,47,Branquelas,7,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 10"
+403,28,47,Branquelas,2,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 10"
+404,25,47,Branquelas,2,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 10"
+405,1,47,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 10"
+406,27,47,Maregões,3,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 10"
+407,22,47,Maregões,1,"Player: Pipinho in Game: 3ª Edição TuesdayLeague, jornada 10"
+408,32,47,Maregões,1,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 10"
+409,16,48,Branquelas,6,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 11"
+410,17,48,Branquelas,2,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 11"
+411,27,48,Branquelas,4,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 11"
+412,1,48,Maregões,5,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 11"
+413,25,48,Maregões,3,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 11"
+414,28,48,Maregões,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 11"
+415,32,49,Branquelas,4,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 12"
+416,28,49,Maregões,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 12"
+417,17,49,Maregões,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 12"
+418,29,50,Branquelas,2,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 13"
+419,3,50,Branquelas,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 13"
+420,31,50,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 13"
+421,1,50,Maregões,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 13"
+422,12,50,Maregões,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 13"
+423,5,50,Maregões,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 13"
+424,9,50,Maregões,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 13"
+425,30,50,Maregões,3,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 13"
+426,17,51,Branquelas,0,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 13"
+427,28,51,Branquelas,2,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 13"
+428,1,51,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 13"
+429,27,51,Maregões,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 13"
+430,16,51,Maregões,1,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 13"
+431,20,51,Maregões,4,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 13"
+432,33,51,Maregões,0,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 13"
+433,25,52,Branquelas,2,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 14"
+434,17,52,Branquelas,5,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 14"
+435,28,52,Branquelas,2,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 14"
+436,1,52,Maregões,2,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 14"
+437,27,52,Maregões,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 14"
+438,16,52,Maregões,6,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 14"
+439,32,52,Maregões,4,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 14"
+440,33,52,Maregões,4,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 14"
+441,9,53,Branquelas,2,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 14"
+442,30,53,Branquelas,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 14"
+443,5,53,Branquelas,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 14"
+444,1,53,Maregões,2,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 14"
+445,31,53,Maregões,4,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 14"
+446,1,54,Branquelas,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 15"
+447,30,54,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 15"
+448,5,54,Branquelas,0,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 15"
+449,31,54,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 15"
+450,6,54,Branquelas,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 15"
+451,9,54,Maregões,1,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 15"
+452,12,54,Maregões,0,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 15"
+453,3,54,Maregões,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 15"
+454,10,54,Maregões,0,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 15"
+455,17,55,Branquelas,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 15"
+456,27,55,Branquelas,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 15"
+457,33,55,Branquelas,4,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 15"
+458,25,55,Branquelas,1,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 15"
+459,28,55,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 15"
+460,1,55,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 15"
+461,20,55,Maregões,1,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 15"
+462,16,55,Maregões,3,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 15"
+463,32,55,Maregões,5,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 15"
+464,12,56,Branquelas,3,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 16"
+465,8,56,Branquelas,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 16"
+466,9,56,Branquelas,1,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 16"
+467,6,56,Branquelas,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 16"
+468,1,56,Maregões,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 16"
+469,3,56,Maregões,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 16"
+470,29,56,Maregões,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 16"
+471,10,56,Maregões,3,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 16"
+472,27,57,Branquelas,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 16"
+473,17,57,Branquelas,1,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 16"
+474,33,57,Branquelas,3,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 16"
+475,16,57,Branquelas,6,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 16"
+476,28,57,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 16"
+477,1,57,Maregões,2,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 16"
+478,20,57,Maregões,4,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 16"
+479,25,57,Maregões,0,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 16"
+480,20,58,Branquelas,1,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 17"
+481,28,58,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 17"
+482,25,58,Branquelas,0,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 17"
+483,27,58,Branquelas,0,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 17"
+484,1,58,Maregões,2,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 17"
+485,21,58,Maregões,2,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 17"
+486,16,58,Maregões,3,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 17"
+487,33,58,Maregões,3,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 17"
+488,31,59,Branquelas,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 17"
+489,1,59,Branquelas,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 17"
+490,8,59,Branquelas,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 17"
+491,30,59,Maregões,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 17"
+492,10,59,Maregões,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 17"
+493,5,59,Maregões,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 17"
+494,12,59,Maregões,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 17"
+495,31,60,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 18"
+496,29,60,Branquelas,3,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 18"
+497,12,60,Branquelas,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 18"
+498,3,60,Maregões,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 18"
+499,8,60,Maregões,0,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 18"
+500,9,60,Maregões,1,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 18"
+501,5,60,Maregões,0,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 18"
+502,1,61,Branquelas,3,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 18"
+503,33,61,Branquelas,5,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 18"
+504,28,61,Branquelas,0,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 18"
+505,16,61,Branquelas,3,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 18"
+506,17,61,Maregões,3,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 18"
+507,20,61,Maregões,2,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 18"
+508,25,61,Maregões,1,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 18"
+509,27,61,Maregões,1,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 18"
+510,32,61,Maregões,0,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 18"
+511,29,62,Branquelas,2,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 19"
+512,31,62,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 19"
+513,12,62,Branquelas,3,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 19"
+514,9,62,Branquelas,0,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 19"
+515,1,62,Maregões,6,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 19"
+516,30,62,Maregões,3,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 19"
+517,8,62,Maregões,4,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 19"
+518,3,62,Maregões,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 19"
+519,28,63,Branquelas,1,"Player: Diego in Game: 3ª Edição TuesdayLeague, jornada 19"
+520,33,63,Branquelas,4,"Player: Pedro in Game: 3ª Edição TuesdayLeague, jornada 19"
+521,32,63,Branquelas,5,"Player: Jervell in Game: 3ª Edição TuesdayLeague, jornada 19"
+522,16,63,Branquelas,4,"Player: Tommy in Game: 3ª Edição TuesdayLeague, jornada 19"
+523,17,63,Branquelas,0,"Player: Araújo in Game: 3ª Edição TuesdayLeague, jornada 19"
+524,1,63,Maregões,6,"Player: Pedro Pacheco in Game: 3ª Edição TuesdayLeague, jornada 19"
+525,27,63,Maregões,1,"Player: António PT in Game: 3ª Edição TuesdayLeague, jornada 19"
+526,25,63,Maregões,0,"Player: Xico in Game: 3ª Edição TuesdayLeague, jornada 19"
+527,20,63,Maregões,0,"Player: Eloi in Game: 3ª Edição TuesdayLeague, jornada 19"
+528,21,63,Maregões,0,"Player: Nuno in Game: 3ª Edição TuesdayLeague, jornada 19"
+529,5,64,Branquelas,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 20"
+530,8,64,Branquelas,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 20"
+531,30,64,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 20"
+532,12,64,Branquelas,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 20"
+533,9,64,Branquelas,2,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 20"
+534,31,64,Maregões,4,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 20"
+535,3,64,Maregões,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 20"
+536,1,65,Branquelas,3,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 1"
+537,35,65,Branquelas,2,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 1"
+538,25,65,Branquelas,2,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 1"
+539,21,65,Branquelas,2,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 1"
+540,34,65,Branquelas,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 1"
+541,28,65,Branquelas,0,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 1"
+542,20,65,Maregões,3,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 1"
+543,16,65,Maregões,2,"Player: Tommy in Game: 4ª Edição TuesdayLeague, jornada 1"
+544,33,65,Maregões,1,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 1"
+545,32,65,Maregões,1,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 1"
+546,27,65,Maregões,0,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 1"
+547,9,66,Branquelas,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 21"
+548,29,66,Branquelas,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 21"
+549,8,66,Branquelas,0,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 21"
+550,30,66,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 21"
+551,31,66,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 21"
+552,11,66,Branquelas,0,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 21"
+553,1,66,Maregões,3,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 21"
+554,5,66,Maregões,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 21"
+555,3,66,Maregões,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 21"
+556,12,66,Maregões,4,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 21"
+557,1,67,Branquelas,1,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 2"
+558,34,67,Branquelas,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 2"
+559,25,67,Branquelas,2,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 2"
+560,32,67,Branquelas,0,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 2"
+561,35,67,Maregões,2,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 2"
+562,33,67,Maregões,3,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 2"
+563,28,67,Maregões,1,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 2"
+564,16,67,Maregões,2,"Player: Tommy in Game: 4ª Edição TuesdayLeague, jornada 2"
+565,8,68,Branquelas,0,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 22"
+566,10,68,Branquelas,3,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 22"
+567,6,68,Branquelas,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 22"
+568,9,68,Branquelas,6,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 22"
+569,30,68,Branquelas,2,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 22"
+570,1,68,Maregões,4,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 22"
+571,29,68,Maregões,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 22"
+572,3,68,Maregões,3,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 22"
+573,12,68,Maregões,1,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 22"
+574,11,68,Maregões,0,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 22"
+575,1,69,Branquelas,0,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 3"
+576,21,69,Branquelas,1,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 3"
+577,35,69,Branquelas,0,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 3"
+578,33,69,Branquelas,0,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 3"
+579,32,69,Branquelas,2,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 3"
+580,34,69,Maregões,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 3"
+581,27,69,Maregões,2,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 3"
+582,25,69,Maregões,2,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 3"
+583,20,69,Maregões,2,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 3"
+584,21,70,Branquelas,3,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 4"
+585,35,70,Branquelas,1,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 4"
+586,28,70,Branquelas,2,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 4"
+587,25,70,Branquelas,1,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 4"
+588,1,70,Maregões,3,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 4"
+589,27,70,Maregões,1,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 4"
+590,32,70,Maregões,9,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 4"
+591,33,70,Maregões,2,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 4"
+592,34,70,Maregões,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 4"
+593,16,70,Maregões,3,"Player: Tommy in Game: 4ª Edição TuesdayLeague, jornada 4"
+594,5,71,Branquelas,3,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 23"
+595,6,71,Branquelas,0,"Player: João in Game: 2ª Edição MasterLeague, jornada 23"
+596,10,71,Branquelas,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 23"
+597,30,71,Branquelas,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 23"
+598,1,71,Maregões,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 23"
+599,3,71,Maregões,0,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 23"
+600,31,71,Maregões,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 23"
+601,9,71,Maregões,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 23"
+602,12,71,Maregões,3,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 23"
+603,8,72,Branquelas,1,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 24"
+604,12,72,Branquelas,3,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 24"
+605,1,72,Maregões,4,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 24"
+606,3,72,Maregões,2,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 24"
+607,30,72,Maregões,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 24"
+608,31,72,Maregões,4,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 24"
+609,36,73,Branquelas,0,"Player: Nuno Pereira in Game: 4ª Edição TuesdayLeague, jornada 5"
+610,21,73,Branquelas,0,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 5"
+611,32,73,Branquelas,6,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 5"
+612,33,73,Branquelas,4,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 5"
+613,1,73,Maregões,1,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 5"
+614,16,73,Maregões,0,"Player: Tommy in Game: 4ª Edição TuesdayLeague, jornada 5"
+615,20,73,Maregões,0,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 5"
+616,25,73,Maregões,2,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 5"
+617,27,73,Maregões,1,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 5"
+618,28,73,Maregões,0,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 5"
+619,1,74,Branquelas,2,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 25"
+620,3,74,Branquelas,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 25"
+621,5,74,Branquelas,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 25"
+622,30,74,Branquelas,0,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 25"
+623,8,74,Maregões,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 25"
+624,9,74,Maregões,0,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 25"
+625,10,74,Maregões,2,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 25"
+626,12,74,Maregões,0,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 25"
+627,29,74,Maregões,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 25"
+628,31,74,Maregões,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 25"
+629,1,75,Branquelas,2,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 6"
+630,36,75,Branquelas,0,"Player: Nuno Pereira in Game: 4ª Edição TuesdayLeague, jornada 6"
+631,35,75,Branquelas,4,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 6"
+632,21,75,Branquelas,0,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 6"
+633,27,75,Branquelas,1,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 6"
+634,34,75,Branquelas,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 6"
+635,16,75,Maregões,3,"Player: Tommy in Game: 4ª Edição TuesdayLeague, jornada 6"
+636,20,75,Maregões,2,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 6"
+637,25,75,Maregões,1,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 6"
+638,28,75,Maregões,1,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 6"
+639,32,75,Maregões,6,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 6"
+640,33,75,Maregões,3,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 6"
+641,5,76,Branquelas,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 26"
+642,8,76,Branquelas,1,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 26"
+643,9,76,Branquelas,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 26"
+644,11,76,Branquelas,0,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 26"
+645,12,76,Branquelas,4,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 26"
+646,29,76,Branquelas,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 26"
+647,1,76,Maregões,3,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 26"
+648,3,76,Maregões,22,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 26"
+649,10,76,Maregões,0,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 26"
+650,30,76,Maregões,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 26"
+651,31,76,Maregões,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 26"
+652,28,77,Branquelas,2,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 7"
+653,32,77,Branquelas,3,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 7"
+654,33,77,Branquelas,1,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 7"
+655,1,77,Maregões,2,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 7"
+656,35,77,Maregões,1,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 7"
+657,20,77,Maregões,0,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 7"
+658,25,77,Maregões,0,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 7"
+659,34,77,Maregões,1,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 7"
+660,20,78,Branquelas,0,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 8"
+661,28,78,Branquelas,0,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 8"
+662,32,78,Branquelas,0,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 8"
+663,1,78,Maregões,3,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 8"
+664,35,78,Maregões,2,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 8"
+665,25,78,Maregões,0,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 8"
+666,27,78,Maregões,1,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 8"
+667,33,78,Maregões,0,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 8"
+668,3,79,Branquelas,1,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 27"
+669,9,79,Branquelas,1,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 27"
+670,10,79,Branquelas,3,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 27"
+671,29,79,Branquelas,2,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 27"
+672,30,79,Branquelas,4,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 27"
+673,1,79,Maregões,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 27"
+674,5,79,Maregões,0,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 27"
+675,12,79,Maregões,0,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 27"
+676,31,79,Maregões,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 27"
+677,9,80,Branquelas,5,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 28"
+678,11,80,Branquelas,1,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 28"
+679,30,80,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 28"
+680,31,80,Branquelas,2,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 28"
+681,1,80,Maregões,3,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 28"
+682,5,80,Maregões,3,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 28"
+683,12,80,Maregões,5,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 28"
+684,29,80,Maregões,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 28"
+685,27,81,Branquelas,2,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 9"
+686,28,81,Branquelas,3,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 9"
+687,34,81,Branquelas,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 9"
+688,1,81,Maregões,1,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 9"
+689,35,81,Maregões,1,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 9"
+690,20,81,Maregões,3,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 9"
+691,25,81,Maregões,2,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 9"
+692,1,82,Branquelas,1,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 29"
+693,8,82,Branquelas,1,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 29"
+694,9,82,Branquelas,3,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 29"
+695,10,82,Branquelas,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 29"
+696,30,82,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 29"
+697,12,82,Maregões,1,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 29"
+698,29,82,Maregões,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 29"
+699,31,82,Maregões,0,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 29"
+700,8,83,Branquelas,1,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 30"
+701,10,83,Branquelas,2,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 30"
+702,12,83,Branquelas,2,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 30"
+703,29,83,Branquelas,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 30"
+704,30,83,Branquelas,0,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 30"
+705,31,83,Branquelas,8,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 30"
+706,1,83,Maregões,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 30"
+707,5,83,Maregões,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 30"
+708,9,83,Maregões,0,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 30"
+709,1,84,Branquelas,2,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 10"
+710,35,84,Branquelas,3,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 10"
+711,27,84,Branquelas,2,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 10"
+712,34,84,Branquelas,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 10"
+713,20,84,Maregões,0,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 10"
+714,21,84,Maregões,1,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 10"
+715,25,84,Maregões,1,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 10"
+716,28,84,Maregões,5,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 10"
+717,33,84,Maregões,6,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 10"
+718,21,85,Branquelas,2,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 11"
+719,33,85,Branquelas,4,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 11"
+720,35,85,Maregões,6,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 11"
+721,25,85,Maregões,3,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 11"
+722,28,85,Maregões,4,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 11"
+723,9,86,Branquelas,4,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 31"
+724,10,86,Branquelas,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 31"
+725,29,86,Branquelas,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 31"
+726,31,86,Branquelas,0,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 31"
+727,8,86,Maregões,0,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 31"
+728,12,86,Maregões,1,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 31"
+729,30,86,Maregões,5,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 31"
+730,12,87,Branquelas,1,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 32"
+731,31,87,Branquelas,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 32"
+732,9,87,Maregões,4,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 32"
+733,11,87,Maregões,1,"Player: Vinhas in Game: 2ª Edição MasterLeague, jornada 32"
+734,29,87,Maregões,1,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 32"
+735,30,87,Maregões,2,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 32"
+736,20,88,Branquelas,2,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 12"
+737,21,88,Branquelas,0,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 12"
+738,25,88,Branquelas,1,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 12"
+739,27,88,Branquelas,2,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 12"
+740,33,88,Branquelas,1,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 12"
+741,35,88,Maregões,0,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 12"
+742,28,88,Maregões,2,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 12"
+743,32,88,Maregões,4,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 12"
+744,1,89,Branquelas,0,"Player: Pedro Pacheco in Game: 4ª Edição TuesdayLeague, jornada 13"
+745,20,89,Branquelas,3,"Player: Eloi in Game: 4ª Edição TuesdayLeague, jornada 13"
+746,25,89,Branquelas,1,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 13"
+747,28,89,Branquelas,3,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 13"
+748,35,89,Branquelas,1,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 13"
+749,27,89,Maregões,1,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 13"
+750,33,89,Maregões,1,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 13"
+751,34,89,Maregões,1,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 13"
+752,25,90,Branquelas,1,"Player: Xico in Game: 4ª Edição TuesdayLeague, jornada 14"
+753,27,90,Branquelas,1,"Player: António PT in Game: 4ª Edição TuesdayLeague, jornada 14"
+754,28,90,Branquelas,2,"Player: Diego in Game: 4ª Edição TuesdayLeague, jornada 14"
+755,35,90,Branquelas,1,"Player: Castro in Game: 4ª Edição TuesdayLeague, jornada 14"
+756,36,90,Branquelas,2,"Player: Nuno Pereira in Game: 4ª Edição TuesdayLeague, jornada 14"
+757,16,90,Maregões,1,"Player: Tommy in Game: 4ª Edição TuesdayLeague, jornada 14"
+758,21,90,Maregões,0,"Player: Nuno in Game: 4ª Edição TuesdayLeague, jornada 14"
+759,32,90,Maregões,3,"Player: Jervell in Game: 4ª Edição TuesdayLeague, jornada 14"
+760,33,90,Maregões,4,"Player: Pedro in Game: 4ª Edição TuesdayLeague, jornada 14"
+761,34,90,Maregões,0,"Player: Rodrigo in Game: 4ª Edição TuesdayLeague, jornada 14"
+762,1,91,Branquelas,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 33"
+763,6,91,Branquelas,1,"Player: João in Game: 2ª Edição MasterLeague, jornada 33"
+764,8,91,Branquelas,0,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 33"
+765,5,91,Maregões,2,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 33"
+766,9,91,Maregões,2,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 33"
+767,29,91,Maregões,2,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 33"
+768,30,91,Maregões,2,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 33"
+769,31,91,Maregões,5,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 33"
+770,1,92,Branquelas,0,"Player: Pedro Pacheco in Game: 2ª Edição MasterLeague, jornada 34"
+771,3,92,Branquelas,0,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 34"
+772,5,92,Branquelas,0,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 34"
+773,9,92,Branquelas,4,"Player: Luis Fragoso in Game: 2ª Edição MasterLeague, jornada 34"
+774,12,92,Maregões,4,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 34"
+775,29,92,Maregões,3,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 34"
+776,30,92,Maregões,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 34"
+777,3,93,Branquelas,0,"Player: Bernardo Xavier in Game: 2ª Edição MasterLeague, jornada 35"
+778,29,93,Branquelas,3,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 35"
+779,30,93,Branquelas,1,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 35"
+780,31,93,Branquelas,1,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 35"
+781,5,93,Maregões,0,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 35"
+782,8,93,Maregões,1,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 35"
+783,10,93,Maregões,1,"Player: Manel in Game: 2ª Edição MasterLeague, jornada 35"
+784,12,93,Maregões,6,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 35"
+785,8,94,Branquelas,2,"Player: Kiko TM in Game: 2ª Edição MasterLeague, jornada 36"
+786,30,94,Branquelas,2,"Player: Bernardo Castro in Game: 2ª Edição MasterLeague, jornada 36"
+787,5,94,Maregões,1,"Player: Ferna in Game: 2ª Edição MasterLeague, jornada 36"
+788,12,94,Maregões,3,"Player: Zi in Game: 2ª Edição MasterLeague, jornada 36"
+789,29,94,Maregões,0,"Player: Afonso in Game: 2ª Edição MasterLeague, jornada 36"
+790,31,94,Maregões,3,"Player: Zé SF in Game: 2ª Edição MasterLeague, jornada 36"
+791,5,95,Branquelas,2,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 1"
+792,8,95,Branquelas,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 1"
+793,9,95,Branquelas,3,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 1"
+794,11,95,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 1"
+795,12,95,Branquelas,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 1"
+796,30,95,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 1"
+797,2,95,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 1"
+798,40,95,Maregões,1,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 1"
+799,38,95,Maregões,3,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 1"
+800,5,96,Branquelas,2,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 2"
+801,8,96,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 2"
+802,30,96,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 2"
+803,31,96,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 2"
+804,38,96,Branquelas,2,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 2"
+805,1,96,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 2"
+806,2,96,Maregões,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 2"
+807,4,96,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 2"
+808,9,96,Maregões,4,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 2"
+809,12,96,Maregões,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 2"
+810,39,96,Maregões,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 2"
+811,1,97,Branquelas,2,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 3"
+812,5,97,Branquelas,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 3"
+813,30,97,Branquelas,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 3"
+814,31,97,Branquelas,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 3"
+815,38,97,Branquelas,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 3"
+816,2,97,Maregões,2,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 3"
+817,4,97,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 3"
+818,11,97,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 3"
+819,12,97,Maregões,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 3"
+820,1,98,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 4"
+821,4,98,Branquelas,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 4"
+822,8,98,Branquelas,2,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 4"
+823,9,98,Branquelas,0,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 4"
+824,31,98,Branquelas,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 4"
+825,5,98,Maregões,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 4"
+826,11,98,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 4"
+827,12,98,Maregões,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 4"
+828,40,98,Maregões,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 4"
+829,30,98,Maregões,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 4"
+830,38,98,Maregões,2,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 4"
+831,3,99,Branquelas,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 5"
+832,8,99,Branquelas,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 5"
+833,9,99,Branquelas,3,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 5"
+834,31,99,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 5"
+835,39,99,Branquelas,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 5"
+836,4,99,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 5"
+837,5,99,Maregões,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 5"
+838,12,99,Maregões,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 5"
+839,40,99,Maregões,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 5"
+840,30,99,Maregões,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 5"
+841,38,99,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 5"
+842,4,100,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 6"
+843,11,100,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 6"
+844,40,100,Branquelas,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 6"
+845,30,100,Branquelas,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 6"
+846,31,100,Branquelas,0,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 6"
+847,38,100,Branquelas,2,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 6"
+848,39,100,Branquelas,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 6"
+849,1,100,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 6"
+850,2,100,Maregões,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 6"
+851,5,100,Maregões,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 6"
+852,8,100,Maregões,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 6"
+853,9,100,Maregões,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 6"
+854,12,100,Maregões,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 6"
+855,39,95,Branquelas,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 1"
+856,2,99,Branquelas,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 5"
+857,4,101,Branquelas,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 7"
+858,5,101,Branquelas,3,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 7"
+859,9,101,Branquelas,0,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 7"
+860,30,101,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 7"
+861,1,101,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 7"
+862,2,101,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 7"
+863,8,101,Maregões,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 7"
+864,12,101,Maregões,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 7"
+865,31,101,Maregões,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 7"
+866,38,101,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 7"
+867,39,101,Maregões,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 7"
+868,12,102,Branquelas,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 8"
+869,2,102,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 8"
+870,30,102,Maregões,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 8"
+871,31,102,Maregões,4,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 8"
+872,38,102,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 8"
+873,39,102,Maregões,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 8"
+874,2,103,Branquelas,5,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 9"
+875,5,103,Branquelas,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 9"
+876,8,103,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 9"
+877,12,103,Branquelas,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 9"
+878,38,103,Branquelas,3,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 9"
+879,39,103,Branquelas,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 9"
+880,1,103,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 9"
+881,3,103,Maregões,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 9"
+882,4,103,Maregões,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 9"
+883,11,103,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 9"
+884,30,103,Maregões,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 9"
+885,31,103,Maregões,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 9"
+886,2,104,Branquelas,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 10"
+887,3,104,Branquelas,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 10"
+888,4,104,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 10"
+889,8,104,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 10"
+890,12,104,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 10"
+891,39,104,Branquelas,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 10"
+892,5,104,Maregões,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 10"
+893,11,104,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 10"
+894,40,104,Maregões,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 10"
+895,30,104,Maregões,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 10"
+896,31,104,Maregões,0,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 10"
+897,38,104,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 10"
+898,2,105,Branquelas,2,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 11"
+899,12,105,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 11"
+900,38,105,Branquelas,2,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 11"
+901,39,105,Branquelas,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 11"
+902,1,105,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 11"
+903,4,105,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 11"
+904,5,105,Maregões,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 11"
+905,11,105,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 11"
+906,30,105,Maregões,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 11"
+907,31,105,Maregões,5,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 11"
+908,2,106,Branquelas,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 12"
+909,5,106,Branquelas,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 12"
+910,9,106,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 12"
+911,11,106,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 12"
+912,38,106,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 12"
+913,40,106,Branquelas,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 12"
+914,1,106,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 12"
+915,3,106,Maregões,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 12"
+916,12,106,Maregões,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 12"
+917,30,106,Maregões,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 12"
+918,39,106,Maregões,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 12"
+919,3,107,Branquelas,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 13"
+920,5,107,Branquelas,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 13"
+921,8,107,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 13"
+922,31,107,Branquelas,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 13"
+923,1,107,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 13"
+924,2,107,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 13"
+925,4,107,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 13"
+926,9,107,Maregões,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 13"
+927,30,107,Maregões,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 13"
+928,40,107,Maregões,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 13"
+929,4,106,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 12"
+930,1,108,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 14"
+931,4,108,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 14"
+932,9,108,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 14"
+933,11,108,Branquelas,2,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 14"
+934,12,108,Branquelas,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 14"
+935,30,108,Branquelas,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 14"
+936,38,108,Branquelas,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 14"
+937,2,108,Maregões,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 14"
+938,3,108,Maregões,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 14"
+939,8,108,Maregões,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 14"
+940,31,108,Maregões,2,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 14"
+941,4,109,Branquelas,2,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 15"
+942,5,109,Branquelas,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 15"
+943,8,109,Branquelas,2,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 15"
+944,9,109,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 15"
+945,30,109,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 15"
+946,1,109,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 15"
+947,12,109,Maregões,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 15"
+948,38,109,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 15"
+949,39,109,Maregões,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 15"
+950,9,110,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 16"
+951,12,110,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 16"
+952,30,110,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 16"
+953,40,110,Branquelas,3,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 16"
+954,4,110,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 16"
+955,31,110,Maregões,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 16"
+956,38,110,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 16"
+957,39,110,Maregões,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 16"
+958,1,111,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 17"
+959,3,111,Branquelas,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 17"
+960,5,111,Branquelas,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 17"
+961,9,111,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 17"
+962,11,111,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 17"
+963,39,111,Branquelas,2,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 17"
+964,2,111,Maregões,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 17"
+965,8,111,Maregões,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 17"
+966,12,111,Maregões,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 17"
+967,31,111,Maregões,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 17"
+968,38,111,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 17"
+969,1,112,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 18"
+970,8,112,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 18"
+971,11,112,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 18"
+972,31,112,Branquelas,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 18"
+973,2,112,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 18"
+974,3,112,Maregões,2,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 18"
+975,4,112,Maregões,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 18"
+976,9,112,Maregões,2,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 18"
+977,12,112,Maregões,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 18"
+978,30,112,Maregões,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 18"
+979,38,112,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 18"
+980,2,113,Branquelas,3,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 19"
+981,4,113,Branquelas,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 19"
+982,8,113,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 19"
+983,11,113,Branquelas,2,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 19"
+984,12,113,Branquelas,4,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 19"
+985,30,113,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 19"
+986,38,113,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 19"
+987,1,113,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 19"
+988,3,113,Maregões,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 19"
+989,5,113,Maregões,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 19"
+990,9,113,Maregões,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 19"
+991,31,113,Maregões,4,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 19"
+992,40,113,Maregões,3,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 19"
+993,12,114,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 20"
+994,30,114,Branquelas,3,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 20"
+995,31,114,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 20"
+996,38,114,Branquelas,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 20"
+997,1,114,Maregões,2,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 20"
+998,4,114,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 20"
+999,8,114,Maregões,2,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 20"
+1000,9,114,Maregões,0,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 20"
+1001,39,114,Maregões,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 20"
+1002,1,115,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 21"
+1003,4,115,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 21"
+1004,8,115,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 21"
+1005,30,115,Branquelas,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 21"
+1006,31,115,Branquelas,0,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 21"
+1007,40,115,Branquelas,1,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 21"
+1008,9,115,Maregões,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 21"
+1009,12,115,Maregões,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 21"
+1010,38,115,Maregões,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 21"
+1011,39,115,Maregões,3,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 21"
+1012,3,116,Branquelas,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 22"
+1013,11,116,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 22"
+1014,12,116,Branquelas,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 22"
+1015,30,116,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 22"
+1016,39,116,Branquelas,3,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 22"
+1017,1,116,Maregões,4,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 22"
+1018,4,116,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 22"
+1019,8,116,Maregões,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 22"
+1020,9,116,Maregões,0,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 22"
+1021,31,116,Maregões,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 22"
+1022,38,116,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 22"
+1023,1,117,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 23"
+1024,9,117,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 23"
+1025,11,117,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 23"
+1026,12,117,Branquelas,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 23"
+1027,30,117,Branquelas,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 23"
+1028,38,117,Branquelas,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 23"
+1029,40,117,Branquelas,1,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 23"
+1030,2,117,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 23"
+1031,3,117,Maregões,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 23"
+1032,4,117,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 23"
+1033,5,117,Maregões,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 23"
+1034,31,117,Maregões,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 23"
+1035,39,117,Maregões,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 23"
+1036,4,118,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 24"
+1037,5,118,Branquelas,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 24"
+1038,11,118,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 24"
+1039,31,118,Branquelas,0,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 24"
+1040,39,118,Branquelas,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 24"
+1041,2,118,Maregões,2,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 24"
+1042,30,118,Maregões,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 24"
+1043,38,118,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 24"
+1044,2,119,Branquelas,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 25"
+1045,12,119,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 25"
+1046,30,119,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 25"
+1047,31,119,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 25"
+1048,38,119,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 25"
+1049,40,119,Branquelas,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 25"
+1050,1,119,Maregões,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 25"
+1051,4,119,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 25"
+1052,5,119,Maregões,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 25"
+1053,8,119,Maregões,2,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 25"
+1054,9,119,Maregões,2,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 25"
+1055,1,120,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 26"
+1056,2,120,Branquelas,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 26"
+1057,5,120,Branquelas,2,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 26"
+1058,9,120,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 26"
+1059,11,120,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 26"
+1060,12,120,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 26"
+1061,3,120,Maregões,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 26"
+1062,4,120,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 26"
+1063,31,120,Maregões,3,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 26"
+1064,38,120,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 26"
+1065,40,120,Maregões,0,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 26"
+1066,1,121,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 27"
+1067,3,121,Branquelas,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 27"
+1068,4,121,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 27"
+1069,38,121,Branquelas,2,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 27"
+1070,39,121,Branquelas,3,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 27"
+1071,5,121,Maregões,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 27"
+1072,9,121,Maregões,2,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 27"
+1073,12,121,Maregões,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 27"
+1074,30,121,Maregões,0,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 27"
+1075,40,121,Maregões,1,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 27"
+1076,1,122,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 28"
+1077,4,122,Branquelas,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 28"
+1078,11,122,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 28"
+1079,12,122,Branquelas,0,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 28"
+1080,31,122,Branquelas,4,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 28"
+1081,38,122,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 28"
+1082,39,122,Branquelas,2,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 28"
+1083,2,122,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 28"
+1084,3,122,Maregões,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 28"
+1085,8,122,Maregões,2,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 28"
+1086,9,122,Maregões,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 28"
+1087,40,122,Maregões,3,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 28"
+1088,1,123,Branquelas,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 29"
+1089,8,123,Branquelas,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 29"
+1090,12,123,Branquelas,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 29"
+1091,30,123,Branquelas,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 29"
+1092,31,123,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 29"
+1093,3,123,Maregões,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 29"
+1094,4,123,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 29"
+1095,5,123,Maregões,2,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 29"
+1096,38,123,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 29"
+1097,39,123,Maregões,2,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 29"
+1098,1,124,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 30"
+1099,5,124,Branquelas,1,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 30"
+1100,12,124,Branquelas,2,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 30"
+1101,30,124,Branquelas,3,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 30"
+1102,4,124,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 30"
+1103,8,124,Maregões,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 30"
+1104,11,124,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 30"
+1105,38,124,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 30"
+1106,39,124,Maregões,2,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 30"
+1107,2,125,Branquelas,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 31"
+1108,4,125,Branquelas,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 31"
+1109,5,125,Branquelas,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 31"
+1110,30,125,Branquelas,3,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 31"
+1111,31,125,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 31"
+1112,38,125,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 31"
+1113,39,125,Branquelas,3,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 31"
+1114,1,125,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 31"
+1115,8,125,Maregões,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 31"
+1116,9,125,Maregões,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 31"
+1117,12,125,Maregões,3,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 31"
+1118,3,126,Branquelas,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 32"
+1119,4,126,Branquelas,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 32"
+1120,12,126,Branquelas,3,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 32"
+1121,38,126,Branquelas,3,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 32"
+1122,39,126,Branquelas,4,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 32"
+1123,1,126,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 32"
+1124,11,126,Maregões,2,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 32"
+1125,30,126,Maregões,3,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 32"
+1126,40,126,Maregões,2,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 32"
+1127,4,127,Branquelas,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 33"
+1128,8,127,Branquelas,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 33"
+1129,9,127,Branquelas,1,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 33"
+1130,11,127,Branquelas,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 33"
+1131,12,127,Branquelas,1,"Player: Zi in Game: 3ª Edição MasterLeague, jornada 33"
+1132,31,127,Branquelas,2,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 33"
+1133,1,127,Maregões,1,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 33"
+1134,2,127,Maregões,1,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 33"
+1135,30,127,Maregões,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 33"
+1136,38,127,Maregões,1,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 33"
+1137,39,127,Maregões,2,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 33"
+1138,40,127,Maregões,1,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 33"
+1139,3,128,Branquelas,1,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 34"
+1140,5,128,Branquelas,2,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 34"
+1141,8,128,Branquelas,1,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 34"
+1142,30,128,Branquelas,1,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 34"
+1143,38,128,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 34"
+1144,39,128,Branquelas,1,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 34"
+1145,40,128,Branquelas,1,"Player: Totti in Game: 3ª Edição MasterLeague, jornada 34"
+1146,2,128,Maregões,0,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 34"
+1147,4,128,Maregões,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 34"
+1148,9,128,Maregões,4,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 34"
+1149,1,129,Branquelas,0,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 35"
+1150,9,129,Branquelas,2,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 35"
+1151,31,129,Branquelas,1,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 35"
+1152,38,129,Branquelas,0,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 35"
+1153,39,129,Branquelas,4,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 35"
+1154,3,129,Maregões,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 35"
+1155,4,129,Maregões,0,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 35"
+1156,5,129,Maregões,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 35"
+1157,8,129,Maregões,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 35"
+1158,11,129,Maregões,0,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 35"
+1159,30,129,Maregões,4,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 35"
+1160,3,130,Branquelas,0,"Player: Bernardo Xavier in Game: 3ª Edição MasterLeague, jornada 36"
+1161,5,130,Branquelas,0,"Player: Ferna in Game: 3ª Edição MasterLeague, jornada 36"
+1162,9,130,Branquelas,3,"Player: Luis Fragoso in Game: 3ª Edição MasterLeague, jornada 36"
+1163,11,130,Branquelas,2,"Player: Vinhas in Game: 3ª Edição MasterLeague, jornada 36"
+1164,30,130,Branquelas,2,"Player: Bernardo Castro in Game: 3ª Edição MasterLeague, jornada 36"
+1165,1,130,Maregões,2,"Player: Pedro Pacheco in Game: 3ª Edição MasterLeague, jornada 36"
+1166,2,130,Maregões,2,"Player: João Perneta in Game: 3ª Edição MasterLeague, jornada 36"
+1167,4,130,Maregões,1,"Player: Chico Castro in Game: 3ª Edição MasterLeague, jornada 36"
+1168,8,130,Maregões,0,"Player: Kiko TM in Game: 3ª Edição MasterLeague, jornada 36"
+1169,31,130,Maregões,0,"Player: Zé SF in Game: 3ª Edição MasterLeague, jornada 36"
+1170,38,130,Maregões,2,"Player: Barros in Game: 3ª Edição MasterLeague, jornada 36"
+1171,39,130,Maregões,0,"Player: Afonso Mariz in Game: 3ª Edição MasterLeague, jornada 36"
+1172,8,131,Branquelas,2,"Player: Kiko TM in Game: 4ª Edição Masterleague, jornada 1"
+1173,9,131,Branquelas,1,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 1"
+1174,30,131,Branquelas,1,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 1"
+1175,39,131,Branquelas,3,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 1"
+1176,49,131,Branquelas,1,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 1"
+1177,1,131,Maregões,1,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 1"
+1178,4,131,Maregões,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 1"
+1179,5,131,Maregões,1,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 1"
+1180,11,131,Maregões,0,"Player: Vinhas in Game: 4ª Edição Masterleague, jornada 1"
+1181,12,131,Maregões,2,"Player: Zi in Game: 4ª Edição Masterleague, jornada 1"
+1182,41,131,Maregões,0,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 1"
+1183,1,132,Branquelas,2,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 2"
+1184,30,132,Branquelas,2,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 2"
+1185,39,132,Branquelas,1,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 2"
+1186,49,132,Branquelas,2,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 2"
+1187,41,132,Branquelas,1,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 2"
+1188,4,132,Maregões,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 2"
+1189,11,132,Maregões,0,"Player: Vinhas in Game: 4ª Edição Masterleague, jornada 2"
+1190,12,132,Maregões,2,"Player: Zi in Game: 4ª Edição Masterleague, jornada 2"
+1191,37,132,Maregões,2,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 2"
+1192,12,133,Branquelas,1,"Player: Zi in Game: 4ª Edição Masterleague, jornada 3"
+1193,30,133,Branquelas,0,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 3"
+1194,37,133,Branquelas,2,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 3"
+1195,39,133,Branquelas,1,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 3"
+1196,1,133,Maregões,2,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 3"
+1197,4,133,Maregões,1,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 3"
+1198,49,133,Maregões,2,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 3"
+1199,41,133,Maregões,2,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 3"
+1200,4,134,Branquelas,1,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 4"
+1201,12,134,Branquelas,1,"Player: Zi in Game: 4ª Edição Masterleague, jornada 4"
+1202,37,134,Branquelas,0,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 4"
+1203,39,134,Branquelas,2,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 4"
+1204,41,134,Branquelas,1,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 4"
+1205,1,134,Maregões,3,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 4"
+1206,8,134,Maregões,0,"Player: Kiko TM in Game: 4ª Edição Masterleague, jornada 4"
+1207,9,134,Maregões,2,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 4"
+1208,1,135,Branquelas,1,"Player: Pedro Pacheco in Game: 5ª Edição Tuesday League, jornada 1"
+1209,47,135,Branquelas,0,"Player: Pedro F in Game: 5ª Edição Tuesday League, jornada 1"
+1210,19,135,Branquelas,4,"Player: Mateus in Game: 5ª Edição Tuesday League, jornada 1"
+1211,33,135,Branquelas,4,"Player: Pedro in Game: 5ª Edição Tuesday League, jornada 1"
+1212,13,135,Branquelas,0,"Player: Gustavo in Game: 5ª Edição Tuesday League, jornada 1"
+1213,42,135,Branquelas,1,"Player: Filipe in Game: 5ª Edição Tuesday League, jornada 1"
+1214,20,135,Maregões,3,"Player: Eloi in Game: 5ª Edição Tuesday League, jornada 1"
+1215,22,135,Maregões,1,"Player: Pipinho in Game: 5ª Edição Tuesday League, jornada 1"
+1216,27,135,Maregões,3,"Player: António PT in Game: 5ª Edição Tuesday League, jornada 1"
+1217,48,135,Maregões,1,"Player: Mini in Game: 5ª Edição Tuesday League, jornada 1"
+1218,43,135,Maregões,3,"Player: Baldaia in Game: 5ª Edição Tuesday League, jornada 1"
+1219,44,135,Maregões,0,"Player: Machado in Game: 5ª Edição Tuesday League, jornada 1"
+1220,1,136,Branquelas,2,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 5"
+1221,30,136,Branquelas,0,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 5"
+1222,39,136,Branquelas,0,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 5"
+1223,49,136,Branquelas,0,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 5"
+1224,3,136,Maregões,0,"Player: Bernardo Xavier in Game: 4ª Edição Masterleague, jornada 5"
+1225,9,136,Maregões,2,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 5"
+1226,19,137,Branquelas,1,"Player: Mateus in Game: 5ª Edição Tuesday League, jornada 2"
+1227,22,137,Branquelas,3,"Player: Pipinho in Game: 5ª Edição Tuesday League, jornada 2"
+1228,43,137,Branquelas,0,"Player: Baldaia in Game: 5ª Edição Tuesday League, jornada 2"
+1229,44,137,Branquelas,0,"Player: Machado in Game: 5ª Edição Tuesday League, jornada 2"
+1230,45,137,Branquelas,1,"Player: Maia in Game: 5ª Edição Tuesday League, jornada 2"
+1231,20,137,Maregões,0,"Player: Eloi in Game: 5ª Edição Tuesday League, jornada 2"
+1232,27,137,Maregões,0,"Player: António PT in Game: 5ª Edição Tuesday League, jornada 2"
+1233,33,137,Maregões,1,"Player: Pedro in Game: 5ª Edição Tuesday League, jornada 2"
+1234,46,137,Maregões,1,"Player: Kiko BF in Game: 5ª Edição Tuesday League, jornada 2"
+1235,1,138,Branquelas,0,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 6"
+1236,5,138,Branquelas,0,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 6"
+1237,8,138,Branquelas,0,"Player: Kiko TM in Game: 4ª Edição Masterleague, jornada 6"
+1238,12,138,Branquelas,2,"Player: Zi in Game: 4ª Edição Masterleague, jornada 6"
+1239,37,138,Branquelas,1,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 6"
+1240,49,138,Branquelas,0,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 6"
+1241,3,138,Maregões,1,"Player: Bernardo Xavier in Game: 4ª Edição Masterleague, jornada 6"
+1242,4,138,Maregões,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 6"
+1243,9,138,Maregões,2,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 6"
+1244,30,138,Maregões,1,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 6"
+1245,39,138,Maregões,1,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 6"
+1246,41,138,Maregões,0,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 6"
+1247,5,139,Branquelas,1,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 7"
+1248,8,139,Branquelas,1,"Player: Kiko TM in Game: 4ª Edição Masterleague, jornada 7"
+1249,9,139,Branquelas,3,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 7"
+1250,12,139,Branquelas,1,"Player: Zi in Game: 4ª Edição Masterleague, jornada 7"
+1251,30,139,Branquelas,3,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 7"
+1252,39,139,Branquelas,3,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 7"
+1253,49,139,Branquelas,2,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 7"
+1254,4,139,Maregões,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 7"
+1255,11,139,Maregões,0,"Player: Vinhas in Game: 4ª Edição Masterleague, jornada 7"
+1256,37,139,Maregões,0,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 7"
+1257,41,139,Maregões,1,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 7"
+1258,4,140,Branquelas,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 8"
+1259,5,140,Branquelas,1,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 8"
+1260,9,140,Branquelas,1,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 8"
+1261,30,140,Branquelas,0,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 8"
+1262,1,140,Maregões,0,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 8"
+1263,11,140,Maregões,0,"Player: Vinhas in Game: 4ª Edição Masterleague, jornada 8"
+1264,12,140,Maregões,3,"Player: Zi in Game: 4ª Edição Masterleague, jornada 8"
+1265,39,140,Maregões,2,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 8"
+1266,41,140,Maregões,0,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 8"
+1267,49,140,Maregões,0,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 8"
+1268,19,141,Branquelas,1,"Player: Mateus in Game: 5ª Edição Tuesday League, jornada 3"
+1269,20,141,Branquelas,1,"Player: Eloi in Game: 5ª Edição Tuesday League, jornada 3"
+1270,22,141,Branquelas,0,"Player: Pipinho in Game: 5ª Edição Tuesday League, jornada 3"
+1271,33,141,Branquelas,0,"Player: Pedro in Game: 5ª Edição Tuesday League, jornada 3"
+1272,13,141,Branquelas,0,"Player: Gustavo in Game: 5ª Edição Tuesday League, jornada 3"
+1273,46,141,Branquelas,2,"Player: Kiko BF in Game: 5ª Edição Tuesday League, jornada 3"
+1274,48,141,Branquelas,1,"Player: Mini in Game: 5ª Edição Tuesday League, jornada 3"
+1275,1,141,Maregões,1,"Player: Pedro Pacheco in Game: 5ª Edição Tuesday League, jornada 3"
+1276,27,141,Maregões,0,"Player: António PT in Game: 5ª Edição Tuesday League, jornada 3"
+1277,44,141,Maregões,0,"Player: Machado in Game: 5ª Edição Tuesday League, jornada 3"
+1278,47,141,Maregões,1,"Player: Pedro F in Game: 5ª Edição Tuesday League, jornada 3"
+1279,1,142,Branquelas,0,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 9"
+1280,3,142,Branquelas,0,"Player: Bernardo Xavier in Game: 4ª Edição Masterleague, jornada 9"
+1281,4,142,Branquelas,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 9"
+1282,11,142,Branquelas,0,"Player: Vinhas in Game: 4ª Edição Masterleague, jornada 9"
+1283,12,142,Branquelas,0,"Player: Zi in Game: 4ª Edição Masterleague, jornada 9"
+1284,37,142,Branquelas,0,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 9"
+1285,2,142,Maregões,0,"Player: João Perneta in Game: 4ª Edição Masterleague, jornada 9"
+1286,5,142,Maregões,2,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 9"
+1287,30,142,Maregões,1,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 9"
+1288,39,142,Maregões,2,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 9"
+1289,41,142,Maregões,4,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 9"
+1290,1,143,Branquelas,1,"Player: Pedro Pacheco in Game: 5ª Edição Tuesday League, jornada 4"
+1291,22,143,Branquelas,5,"Player: Pipinho in Game: 5ª Edição Tuesday League, jornada 4"
+1292,27,143,Branquelas,1,"Player: António PT in Game: 5ª Edição Tuesday League, jornada 4"
+1293,46,143,Branquelas,1,"Player: Kiko BF in Game: 5ª Edição Tuesday League, jornada 4"
+1294,47,143,Branquelas,0,"Player: Pedro F in Game: 5ª Edição Tuesday League, jornada 4"
+1295,48,143,Branquelas,0,"Player: Mini in Game: 5ª Edição Tuesday League, jornada 4"
+1296,13,143,Maregões,0,"Player: Gustavo in Game: 5ª Edição Tuesday League, jornada 4"
+1297,19,143,Maregões,3,"Player: Mateus in Game: 5ª Edição Tuesday League, jornada 4"
+1298,20,143,Maregões,2,"Player: Eloi in Game: 5ª Edição Tuesday League, jornada 4"
+1299,43,143,Maregões,2,"Player: Baldaia in Game: 5ª Edição Tuesday League, jornada 4"
+1300,45,143,Maregões,2,"Player: Maia in Game: 5ª Edição Tuesday League, jornada 4"
+1301,1,144,Branquelas,1,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 10"
+1302,4,144,Branquelas,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 10"
+1303,5,144,Branquelas,2,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 10"
+1304,8,144,Branquelas,1,"Player: Kiko TM in Game: 4ª Edição Masterleague, jornada 10"
+1305,9,144,Branquelas,2,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 10"
+1306,41,144,Branquelas,2,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 10"
+1307,11,144,Maregões,0,"Player: Vinhas in Game: 4ª Edição Masterleague, jornada 10"
+1308,30,144,Maregões,0,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 10"
+1309,37,144,Maregões,1,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 10"
+1310,39,144,Maregões,4,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 10"
+1311,49,144,Maregões,0,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 10"
+1312,1,145,Branquelas,0,"Player: Pedro Pacheco in Game: 5ª Edição Tuesday League, jornada 5"
+1313,13,145,Branquelas,0,"Player: Gustavo in Game: 5ª Edição Tuesday League, jornada 5"
+1314,22,145,Branquelas,2,"Player: Pipinho in Game: 5ª Edição Tuesday League, jornada 5"
+1315,44,145,Branquelas,0,"Player: Machado in Game: 5ª Edição Tuesday League, jornada 5"
+1316,46,145,Branquelas,1,"Player: Kiko BF in Game: 5ª Edição Tuesday League, jornada 5"
+1317,47,145,Branquelas,1,"Player: Pedro F in Game: 5ª Edição Tuesday League, jornada 5"
+1318,19,145,Maregões,2,"Player: Mateus in Game: 5ª Edição Tuesday League, jornada 5"
+1319,20,145,Maregões,1,"Player: Eloi in Game: 5ª Edição Tuesday League, jornada 5"
+1320,42,145,Maregões,1,"Player: Filipe in Game: 5ª Edição Tuesday League, jornada 5"
+1321,45,145,Maregões,3,"Player: Maia in Game: 5ª Edição Tuesday League, jornada 5"
+1322,48,145,Maregões,0,"Player: Mini in Game: 5ª Edição Tuesday League, jornada 5"
+1323,1,146,Branquelas,4,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 11"
+1324,2,146,Branquelas,0,"Player: João Perneta in Game: 4ª Edição Masterleague, jornada 11"
+1325,4,146,Branquelas,1,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 11"
+1326,9,146,Branquelas,3,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 11"
+1327,37,146,Branquelas,2,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 11"
+1328,39,146,Branquelas,0,"Player: Afonso Mariz in Game: 4ª Edição Masterleague, jornada 11"
+1329,5,146,Maregões,0,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 11"
+1330,12,146,Maregões,4,"Player: Zi in Game: 4ª Edição Masterleague, jornada 11"
+1331,30,146,Maregões,1,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 11"
+1332,41,146,Maregões,0,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 11"
+1333,49,146,Maregões,1,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 11"
+1334,4,147,Maregões,0,"Player: Chico Castro in Game: 4ª Edição Masterleague, jornada 12"
+1335,9,147,Branquelas,0,"Player: Luis Fragoso in Game: 4ª Edição Masterleague, jornada 12"
+1336,12,147,Branquelas,1,"Player: Zi in Game: 4ª Edição Masterleague, jornada 12"
+1337,30,147,Branquelas,1,"Player: Bernardo Castro in Game: 4ª Edição Masterleague, jornada 12"
+1338,37,147,Branquelas,0,"Player: Mini Zi in Game: 4ª Edição Masterleague, jornada 12"
+1339,49,147,Branquelas,0,"Player: Miguel in Game: 4ª Edição Masterleague, jornada 12"
+1340,1,147,Maregões,0,"Player: Pedro Pacheco in Game: 4ª Edição Masterleague, jornada 12"
+1341,3,147,Maregões,0,"Player: Bernardo Xavier in Game: 4ª Edição Masterleague, jornada 12"
+1342,5,147,Maregões,2,"Player: Ferna in Game: 4ª Edição Masterleague, jornada 12"
+1343,8,147,Branquelas,0,"Player: Kiko TM in Game: 4ª Edição Masterleague, jornada 12"
+1344,41,147,Maregões,0,"Player: Bernardo Queiroz in Game: 4ª Edição Masterleague, jornada 12"
+1345,1,148,Branquelas,0,"Player: Pedro Pacheco in Game: 5ª Edição Tuesday League, jornada 6"
+1346,22,148,Branquelas,0,"Player: Pipinho in Game: 5ª Edição Tuesday League, jornada 6"
+1347,27,148,Branquelas,0,"Player: António PT in Game: 5ª Edição Tuesday League, jornada 6"
+1348,42,148,Branquelas,0,"Player: Filipe in Game: 5ª Edição Tuesday League, jornada 6"
+1349,48,148,Branquelas,1,"Player: Mini in Game: 5ª Edição Tuesday League, jornada 6"
+1350,19,148,Maregões,1,"Player: Mateus in Game: 5ª Edição Tuesday League, jornada 6"
+1351,20,148,Maregões,1,"Player: Eloi in Game: 5ª Edição Tuesday League, jornada 6"
+1352,44,148,Maregões,0,"Player: Machado in Game: 5ª Edição Tuesday League, jornada 6"
+1353,45,148,Maregões,0,"Player: Maia in Game: 5ª Edição Tuesday League, jornada 6"
+1354,47,148,Maregões,0,"Player: Pedro F in Game: 5ª Edição Tuesday League, jornada 6"
+1355,43,148,Branquelas,0,"Player: Baldaia in Game: 5ª Edição Tuesday League, jornada 6"
