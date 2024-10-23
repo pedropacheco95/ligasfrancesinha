@@ -1,13 +1,13 @@
 id,name,full_name,birthday,image_url
-1,Pacheco,Pedro Inácio Meireles do Carmo Pacheco,2021-10-13,Player/1.jpg
-2,Perneta,,,Player/2.jpg
-3,Bernardo,Bernardo Lobo Xavier,1995-12-04,Player/3.jpg
+1,Pedro Pacheco,Pedro Inácio Meireles do Carmo Pacheco,2021-10-13,Player/1.jpg
+2,João Perneta,,1994-01-01,Player/2.jpg
+3,Bernardo Xavier,Bernardo Lobo Xavier,1995-12-04,Player/3.jpg
 4,Chico Castro,,,Player/4.jpg
 5,Ferna,,,Player/5.jpg
 6,João,João António Pizarro Magalhães,1994-08-02,Player/6.jpg
 7,JP,,,Player/7.jpg
-8,Kiko,,,Player/8.jpg
-9,Fragoso,,1995-02-12,Player/9.jpg
+8,Kiko TM,Francisco Tete Machado,1995-01-01,Player/8.jpg
+9,Luis Fragoso,Luis Ferreira Fragoso,1995-02-12,Player/9.jpg
 10,Manel,,,Player/10.jpg
 11,Vinhas,,,Player/11.jpg
 12,Zi,,,Player/12.jpg
@@ -39,7 +39,7 @@ id,name,full_name,birthday,image_url
 38,Barros,Francisco Barros,,Player/default_player.jpg
 39,Afonso Mariz,Afonso Mariz,,Player/default_player.jpg
 40,Totti,Totti,,Player/default_player.jpg
-41,Bernardo Q,Bernardo Queiroz,,Player/default_player.jpg
+41,Bernardo Queiroz,Bernardo Queiroz,1992-01-01,Player/default_player.jpg
 42,Filipe,Filipe Ramalho,,Player/default_player.jpg
 43,Baldaia,Diogo Baldaia,,Player/default_player.jpg
 44,Machado,João Machado,,Player/default_player.jpg

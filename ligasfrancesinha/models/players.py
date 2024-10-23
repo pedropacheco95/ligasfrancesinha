@@ -19,7 +19,7 @@ class Player(db.Model ,model.Model, model.Base):
     name = Column(String(80), unique=True, nullable=False)
     full_name =  Column(Text, unique=True)
     birthday = Column(Date)
-    image_url = Column(Text,default= "images/Players/default_player.jpg")
+    image_url = Column(Text,default= "Players/default_player.png")
 
     user = relationship("User",back_populates='player')
     games_relations = relationship('Association_PlayerGame', back_populates='player')
