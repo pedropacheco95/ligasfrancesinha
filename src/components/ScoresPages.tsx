@@ -217,6 +217,8 @@ export function ScorersView({ edition }: { edition: Edition }) {
                   cellPadding={0}
                   style={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
                 >
+                  {/* scorers.html emits an empty <thead> before the real one. */}
+                  <thead></thead>
                   <thead>
                     <tr>
                       <th></th>
@@ -323,6 +325,8 @@ export function CreateTeamsView({ edition }: { edition: Edition }) {
                     cellPadding={0}
                     style={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
                   >
+                    {/* create_teams.html emits an empty <thead> before the real one. */}
+                    <thead></thead>
                     <thead>
                       <tr>
                         <th></th>

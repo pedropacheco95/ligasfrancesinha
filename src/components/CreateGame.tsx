@@ -321,9 +321,16 @@ function PlayerRow({
   const [revealed, setRevealed] = useState(false);
   const dragStart = useState<{ x: number | null }>({ x: null })[0];
 
+  // Only a row holding a real player is draggable-to-delete; the "Substituto"
+  // placeholder row carries the bare class, as in macros/frontend_creation.html.
+  const classes = ["create_game_player_row"];
+  if (player) classes.push("drag_to_delete");
+  if (revealed) classes.push("is-dragging");
+
   return (
     <div
-      className={revealed ? "create_game_player_row is-dragging" : "create_game_player_row"}
+      id={`player_row_${player ? player.id : "no_player"}`}
+      className={classes.join(" ")}
       data-team={team}
       onPointerDown={(event) => {
         dragStart.x = event.clientX;
@@ -362,11 +369,13 @@ function PlayerRow({
             <>
               <input
                 type="number"
+                id={`goals_${player.id}`}
                 name={`goals_${player.id}`}
                 className="goals_of_player_input"
+                pattern="\d*"
                 value={goals}
                 onChange={(event) => onGoals(event.target.value)}
-              />
+              />{" "}
               <img src="/static/images/goal.png" width="18" height="18" />
             </>
           ) : null}

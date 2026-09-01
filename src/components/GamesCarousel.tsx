@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 import {
   leagueImageUrl,
@@ -95,9 +95,14 @@ export function GamesCarousel({ games }: { games: Game[] }) {
     };
   }, [total]);
 
-  /** The multiple of `total` congruent to `cellIndex` nearest the current position. */
+  /**
+   * The slot each cell occupies: the multiple of `total` congruent to
+   * `cellIndex` that is the first at or after `position - 1`. That keeps one
+   * cell behind the active one and the rest ahead, which is the arrangement
+   * `setCarrouselCellsPositions` produces (`[0, 1, 2, 3, -1]` for five cells).
+   */
   const slotFor = (cellIndex: number) =>
-    cellIndex + total * Math.round((position - cellIndex) / total);
+    cellIndex + total * Math.ceil((position - 1 - cellIndex) / total);
 
   return (
     <div className="last_games_container carousel-container">
@@ -216,13 +221,13 @@ function CarouselPlayer({ name }: { name: string }) {
       data-href={href}
       onClick={() => navigate({ to: "/player/general/$playerName", params: { playerName: name } })}
     >
+      {/* The Jinja loop leaves a whitespace text node between each span. */}
       {parts.map((part, position) => (
-        <span
-          key={`${part}-${position}`}
-          className={position === 0 && parts.length > 1 ? "light_first_name" : undefined}
-        >
-          {part}
-        </span>
+        <Fragment key={`${part}-${position}`}>
+          <span className={position === 0 && parts.length > 1 ? "light_first_name" : undefined}>
+            {part}
+          </span>{" "}
+        </Fragment>
       ))}
     </div>
   );

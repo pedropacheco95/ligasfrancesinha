@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Fragment } from "react";
 
 import { Layout } from "@/components/Layout";
 import { useDataset } from "@/hooks/use-app-data";
@@ -38,10 +39,10 @@ function PlayersPage() {
                           <div className="player_position">{position + 1}</div>
                           <div className="player_card__name">
                             {player.name.split(" ").map((word, index) => (
-                              <span key={`${word}-${index}`}>
+                              <Fragment key={`${word}-${index}`}>
                                 {word}
                                 <br />
-                              </span>
+                              </Fragment>
                             ))}
                           </div>
                         </div>

@@ -26,6 +26,10 @@ export function PlayerLayout({
       <div className="table_container">
         <div style={{ backgroundColor: "rgb(255, 255, 255)" }}>
           <div>
+            {/* players/layout.html puts a <div> inside <tbody>. The HTML parser
+                foster-parents it out of the table as an empty element here, and
+                it participates in layout, so the port emits it explicitly. */}
+            <div></div>
             <table
               className="table table-borderless"
               cellSpacing={0}
@@ -41,9 +45,11 @@ export function PlayerLayout({
                   </td>
                   <td colSpan={3}>
                     <h1 style={{ float: "left" }}>
+                      {/* The trailing space sits inside the span, as the Jinja
+                          template's indentation puts it. */}
                       <span className="id" style={{ color: "rgb(0, 0, 0)" }}>
-                        {player.id}.
-                      </span>{" "}
+                        {player.id}.{" "}
+                      </span>
                       <span className="name" style={{ color: "rgb(0, 0, 0)", fontWeight: "bold" }}>
                         {player.name}
                       </span>
