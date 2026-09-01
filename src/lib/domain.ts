@@ -477,12 +477,21 @@ export interface TableUpdate {
  * `Edition.update_table(force_update=True)`, the recalculation the app runs
  * after a game is created. Returns the new column values rather than mutating,
  * so the caller decides how to persist them.
+ *
+ * Throws for an edition with no games, matching Flask: `percentage_of_appearances`
+ * divides by the match count, so recalculating an empty edition raises
+ * ZeroDivisionError and returns a 500 before anything is written. Returning NaN
+ * instead would quietly persist a broken table.
  */
 export function computeTableUpdate(edition: Edition): TableUpdate[] {
   const ordered = getOrderedGames(edition);
   const matchweek = ordered.length ? ordered[ordered.length - 1].matchweek : 0;
   const playedMatches = getPlayedMatches(edition).length;
   const goalValue = edition.goalValue ?? 0;
+
+  if (playedMatches === 0) {
+    throw new Error(`ZeroDivisionError: ${edition.name} has no games to recalculate`);
+  }
 
   const computed = edition.playersRelations.map((relation) => {
     const player = relation.player;
