@@ -1,27 +1,58 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
-import { leagueImageUrl, playersByTeam, BRANQUELAS, MAREGOES, type Game } from "@/lib/domain";
+import {
+  leagueImageUrl,
+  playersByTeam,
+  teamImageUrl,
+  BRANQUELAS,
+  MAREGOES,
+  type Game,
+} from "@/lib/domain";
 import { pyDate, urlSegment } from "@/lib/format";
 
 /**
- * `macros/frontend.html::games_for_carousel` and the `createCarrousel` widget.
+ * `macros/frontend.html::games_for_carousel` and the `createCarrousel` widget
+ * from `static/js/animations.js`.
  *
- * The original positions each cell absolutely and shuffles `left`/`z-index` to
- * fake an infinite loop; this keeps the same markup and controls (arrows,
- * indicators, wheel and touch drag, wrap-around) with a single transform.
+ * The stylesheet absolutely-positions every `.carousel-cell` at `left: 0`, so
+ * the cells only fan out once JavaScript assigns each one a `left`. The
+ * original computes a `ratio` of cell width to viewport width and drives an
+ * infinite loop by shuffling `left` and `z-index` as the index moves.
+ *
+ * This keeps that layout model but derives it from a single unbounded
+ * `position` counter: each cell sits at the multiple of `ratio` congruent to
+ * its index that is nearest the current position. Cells therefore always
+ * surround the active one, wrapping in both directions, and the cell that
+ * moves to the far side is off-screen when its `left` changes.
  */
 export function GamesCarousel({ games }: { games: Game[] }) {
-  const [index, setIndex] = useState(0);
+  const [position, setPosition] = useState(0);
+  const [ratio, setRatio] = useState<number | null>(null);
   const innerRef = useRef<HTMLDivElement>(null);
   const throttled = useRef(false);
   const dragStart = useRef<number | null>(null);
 
   const total = games.length;
+  const index = total ? ((position % total) + total) % total : 0;
+
   const step = (direction: number) => {
     if (!total) return;
-    setIndex((current) => ((current + direction) % total + total) % total);
+    setPosition((current) => current + direction);
   };
+
+  // `ratio` is the cell's share of the viewport, as the original computes it.
+  useEffect(() => {
+    const node = innerRef.current;
+    if (!node || !node.children.length) return;
+    const measure = () => {
+      const cell = node.children[0] as HTMLElement;
+      setRatio((cell.offsetWidth / window.innerWidth) * 100);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [total]);
 
   useEffect(() => {
     const node = innerRef.current;
@@ -64,15 +95,30 @@ export function GamesCarousel({ games }: { games: Game[] }) {
     };
   }, [total]);
 
+  /** The multiple of `total` congruent to `cellIndex` nearest the current position. */
+  const slotFor = (cellIndex: number) =>
+    cellIndex + total * Math.round((position - cellIndex) / total);
+
   return (
     <div className="last_games_container carousel-container">
       <div
         className="last_games_container_inner carousel-inner"
         ref={innerRef}
-        style={{ transform: `translateX(calc(50% - ${index * 100}% / ${total || 1} - 50% / ${total || 1}))` }}
+        style={
+          ratio === null
+            ? undefined
+            : {
+                transform: `translateX(${(100 - ratio) / 2 - position * ratio}%)`,
+                transition: "transform 0.35s ease",
+              }
+        }
       >
-        {games.map((game) => (
-          <GameCell key={game.id} game={game} />
+        {games.map((game, cellIndex) => (
+          <GameCell
+            key={game.id}
+            game={game}
+            left={ratio === null ? undefined : `${ratio * slotFor(cellIndex)}%`}
+          />
         ))}
       </div>
       <a className="carousel-control-prev" role="button" onClick={() => step(-1)}>
@@ -90,12 +136,12 @@ export function GamesCarousel({ games }: { games: Game[] }) {
         />
       </a>
       <ol className="carousel-indicators">
-        {games.map((game, position) => (
+        {games.map((game, cellIndex) => (
           <li
             key={game.id}
-            id={`carousel_indicator_${position}`}
-            className={position === index ? "carousel-indicator-active" : undefined}
-            onClick={() => setIndex(position)}
+            id={`carousel_indicator_${cellIndex}`}
+            className={cellIndex === index ? "carousel-indicator-active" : undefined}
+            onClick={() => setPosition(cellIndex)}
           ></li>
         ))}
       </ol>
@@ -103,12 +149,15 @@ export function GamesCarousel({ games }: { games: Game[] }) {
   );
 }
 
-function GameCell({ game }: { game: Game }) {
+function GameCell({ game, left }: { game: Game; left?: string }) {
   const teams = playersByTeam(game);
   const league = game.edition?.league ?? null;
 
   return (
-    <div className="last_games_game carousel-cell">
+    <div
+      className="last_games_game carousel-cell"
+      style={left === undefined ? undefined : { left }}
+    >
       <div className="item-content">
         <div className="game_content">
           <div className="league_logo_box">
@@ -120,7 +169,7 @@ function GameCell({ game }: { game: Game }) {
           </div>
           <div className="score_box">
             <div className="team-container">
-              <img className="team-logo left" src="/static/images/Branquelas.png" />
+              <img className="team-logo left" src={teamImageUrl(BRANQUELAS)} />
               <div className="team-banner left">
                 <div className="team-name">Branquelas</div>
               </div>
@@ -134,7 +183,7 @@ function GameCell({ game }: { game: Game }) {
               <div className="team-banner right">
                 <div className="team-name">Maregões</div>
               </div>
-              <img className="team-logo right" src="/static/images/Maregões.png" />
+              <img className="team-logo right" src={teamImageUrl(MAREGOES)} />
             </div>
           </div>
           <div className="players">

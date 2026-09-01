@@ -1,8 +1,4 @@
-import {
-  getNumberOfPlayers,
-  playersRelationsClassification,
-  type Edition,
-} from "@/lib/domain";
+import { getNumberOfPlayers, playersRelationsClassification, type Edition } from "@/lib/domain";
 import { pyFloat } from "@/lib/format";
 
 import { PlayerNameForm } from "./PlayerLink";
@@ -89,10 +85,7 @@ export function StandingsTable({
           <tr key={relation.id} style={rowStyle(relation.place, numberOfPlayers)}>
             <td>{relation.place}</td>
             <td className="text">
-              <PlayerNameForm
-                playerName={relation.player?.name ?? ""}
-                editionName={edition.name}
-              />
+              <PlayerNameForm playerName={relation.player?.name ?? ""} editionName={edition.name} />
             </td>
             <td>
               <strong>{pyFloat(relation.points)}</strong>

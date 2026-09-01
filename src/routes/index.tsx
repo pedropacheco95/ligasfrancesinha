@@ -64,7 +64,9 @@ function IndexPage() {
                         <td width="100%" valign="top" className="players_info_container">
                           <div className="smallheader">Classificação</div>
                           <div className="table_header_logo">
-                            {edition.league ? <img src={leagueImageUrl(edition.league)} alt="" /> : null}
+                            {edition.league ? (
+                              <img src={leagueImageUrl(edition.league)} alt="" />
+                            ) : null}
                           </div>
                           <br />
                           <div className="standings_table_container">

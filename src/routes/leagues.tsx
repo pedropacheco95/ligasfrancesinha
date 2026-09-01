@@ -18,7 +18,11 @@ function LeaguesPage() {
       <div className="leagues_container">
         {dataset.leagues.map((league) => (
           <div className="league_container" key={league.id}>
-            <Link to="/scores/table/$leagueId" params={{ leagueId: String(league.id) }}>
+            <Link
+              activeProps={{ className: "" }}
+              to="/scores/table/$leagueId"
+              params={{ leagueId: String(league.id) }}
+            >
               <div>
                 <img className="league_image" src={leagueImageUrl(league)} />
               </div>

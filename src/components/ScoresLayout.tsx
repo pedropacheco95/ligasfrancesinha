@@ -83,6 +83,7 @@ export function ScoresLayout({
               <ul className="navbar-nav mr-auto mt-2" style={{ width: "100%" }}>
                 <li className="nav-item" style={{ width: "25%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/scores/table/$leagueId/$editionId"
                     params={editionParams}
@@ -92,6 +93,7 @@ export function ScoresLayout({
                 </li>
                 <li className="nav-item" style={{ width: "25%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/scores/games/$leagueId/$editionId"
                     params={editionParams}
@@ -101,6 +103,7 @@ export function ScoresLayout({
                 </li>
                 <li className="nav-item" style={{ width: "25%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/scores/scorers/$leagueId/$editionId"
                     params={editionParams}
@@ -110,6 +113,7 @@ export function ScoresLayout({
                 </li>
                 <li className="nav-item" style={{ width: "25%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/scores/create_teams/$leagueId/$editionId"
                     params={editionParams}

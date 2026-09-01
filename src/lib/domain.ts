@@ -352,6 +352,20 @@ export function leagueImageUrl(league: League): string {
   return `/static/images/${league.picture ?? ""}`;
 }
 
+/**
+ * Team crests. The filename is mapped explicitly rather than derived from the
+ * team name: the original asset was "Maregões.png", stored decomposed (NFD) on
+ * disk, which a composed (NFC) string literal in source does not match.
+ */
+const TEAM_IMAGES: Record<TeamName, string> = {
+  [BRANQUELAS]: "Branquelas.png",
+  [MAREGOES]: "Maregoes.png",
+};
+
+export function teamImageUrl(team: TeamName): string {
+  return `/static/images/${TEAM_IMAGES[team]}`;
+}
+
 /* ------------------------------------------------------------------- Game */
 
 /** `Game.players_by_team` — both keys always exist, even when empty. */

@@ -5,6 +5,7 @@ import { useDataset } from "@/hooks/use-app-data";
 import {
   playerImageUrl,
   playersByTeam,
+  teamImageUrl,
   BRANQUELAS,
   MAREGOES,
   type Edition,
@@ -92,7 +93,7 @@ function TeamBadge({ team }: { team: TeamName }) {
   return (
     <div className="team_logo_container">
       <div className="image profile_picture">
-        <img src={`/static/images/${team}.png`} />
+        <img src={teamImageUrl(team)} />
       </div>
       <div className="team_name"> {team} </div>
     </div>

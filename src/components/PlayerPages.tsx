@@ -95,7 +95,7 @@ function GameRow({
         <a>Branquelas</a>
       </td>
       <td className="result">
-        <Link to="/game/$id" params={{ id: String(game.id) }}>
+        <Link activeProps={{ className: "" }} to="/game/$id" params={{ id: String(game.id) }}>
           {" "}
           {game.goalsTeam1} - {game.goalsTeam2}
         </Link>
@@ -110,7 +110,11 @@ function GameRow({
         <td className={badgeOptional ? "double desktop optional" : "double desktop"}>
           <FlagCell />
           <div className="text">
-            <Link to="/scores/table/$leagueId" params={{ leagueId: String(league.id) }}>
+            <Link
+              activeProps={{ className: "" }}
+              to="/scores/table/$leagueId"
+              params={{ leagueId: String(league.id) }}
+            >
               {league.name[0]}L
             </Link>
           </div>
@@ -288,6 +292,7 @@ export function AllEditionsView({ player }: { player: Player }) {
                       <td>
                         {relation.edition ? (
                           <Link
+                            activeProps={{ className: "" }}
                             to="/scores/table/$leagueId/$editionId"
                             params={{
                               leagueId: String(relation.edition.league?.id),

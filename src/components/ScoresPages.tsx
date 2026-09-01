@@ -40,7 +40,9 @@ export function ScoresPage({
   const { league, edition } = useScoresContext(leagueId, editionId);
   if (!league || !edition) {
     // Matches the Flask behaviour: an unknown id blows up rather than 404ing.
-    throw new Error(`No ${league ? "edition" : "league"} for /scores/${view}/${leagueId}/${editionId}`);
+    throw new Error(
+      `No ${league ? "edition" : "league"} for /scores/${view}/${leagueId}/${editionId}`,
+    );
   }
   return (
     <ScoresLayout league={league} edition={edition} view={view}>
@@ -136,7 +138,11 @@ export function GamesView({ league, edition }: { league: League; edition: Editio
                         <a>Branquelas</a>
                       </td>
                       <td className="result">
-                        <Link to="/game/$id" params={{ id: String(game.id) }}>
+                        <Link
+                          activeProps={{ className: "" }}
+                          to="/game/$id"
+                          params={{ id: String(game.id) }}
+                        >
                           {" "}
                           {game.goalsTeam1} - {game.goalsTeam2}
                         </Link>
@@ -162,7 +168,11 @@ export function GamesView({ league, edition }: { league: League; edition: Editio
                           </a>
                         </div>
                         <div className="text">
-                          <Link to="/scores/table/$leagueId" params={{ leagueId: String(league.id) }}>
+                          <Link
+                            activeProps={{ className: "" }}
+                            to="/scores/table/$leagueId"
+                            params={{ leagueId: String(league.id) }}
+                          >
                             {league.name[0]}L
                           </Link>
                         </div>

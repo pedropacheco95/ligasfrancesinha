@@ -1,9 +1,17 @@
-/* Preflight is deliberately not imported. This app renders the original Flask
-   markup against Bootstrap 4 + the ported SCSS, and Tailwind's reset would
-   restyle headings, lists and images out from under it. Theme tokens and
-   utilities stay available for new work. */
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities) source(none);
+/* This app renders the original Flask markup against Bootstrap 4 and the
+   project's compiled SCSS (public/static/style/styles_frontend.css), so Tailwind
+   is set up not to interfere with it:
+     - Preflight is not imported; its reset would restyle headings, lists and
+       images that the ported markup relies on Bootstrap to style.
+     - Utilities are prefixed. Tailwind's utility names collide with Bootstrap's
+       class names — `collapse` (visibility: collapse vs. Bootstrap's collapsible
+       navbar), `table`, `border`, `mt-2`, `mr-auto`, `my-1` — and an unprefixed
+       build silently restyles the ported pages.
+   Write new Tailwind utilities as `tw:flex`, `tw:p-4`, and so on. Note that the
+   shadcn components under src/components/ui/ use unprefixed classes and are not
+   used by any ported page. */
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) source(none) prefix(tw);
 @source "../src";
 @import "tw-animate-css";
 

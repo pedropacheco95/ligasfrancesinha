@@ -16,9 +16,7 @@ export const Route = createFileRoute("/players")({
  */
 function PlayersPage() {
   const dataset = useDataset();
-  const players = [...dataset.players].sort(
-    (a, b) => gamesWon(b).length - gamesWon(a).length,
-  );
+  const players = [...dataset.players].sort((a, b) => gamesWon(b).length - gamesWon(a).length);
 
   return (
     <Layout>
@@ -29,7 +27,11 @@ function PlayersPage() {
             <ul className="player_cards_container">
               {players.map((player, position) => (
                 <li className="player_card_container" key={player.id}>
-                  <Link to="/player/general/$playerName" params={{ playerName: player.name }}>
+                  <Link
+                    activeProps={{ className: "" }}
+                    to="/player/general/$playerName"
+                    params={{ playerName: player.name }}
+                  >
                     <div className="player_card">
                       <div className="player_card_header">
                         <div className="player_details">

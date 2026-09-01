@@ -44,10 +44,7 @@ export function PlayerLayout({
                       <span className="id" style={{ color: "rgb(0, 0, 0)" }}>
                         {player.id}.
                       </span>{" "}
-                      <span
-                        className="name"
-                        style={{ color: "rgb(0, 0, 0)", fontWeight: "bold" }}
-                      >
+                      <span className="name" style={{ color: "rgb(0, 0, 0)", fontWeight: "bold" }}>
                         {player.name}
                       </span>
                     </h1>
@@ -104,6 +101,7 @@ export function PlayerLayout({
               <ul className="navbar-nav mr-auto mt-2" style={{ width: "100%" }}>
                 <li className="nav-item" style={{ width: "33%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/player/general/$playerName/$editionName"
                     params={{ playerName: player.name, editionName: homeEditionName }}
@@ -113,6 +111,7 @@ export function PlayerLayout({
                 </li>
                 <li className="nav-item" style={{ width: "33%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/player/games_played/$playerName"
                     params={{ playerName: player.name }}
@@ -122,6 +121,7 @@ export function PlayerLayout({
                 </li>
                 <li className="nav-item" style={{ width: "34%" }}>
                   <Link
+                    activeProps={{ className: "" }}
                     className="nav-link"
                     to="/player/all_editions/$playerName"
                     params={{ playerName: player.name }}

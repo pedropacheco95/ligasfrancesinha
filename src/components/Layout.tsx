@@ -12,7 +12,7 @@ export function Layout({ children }: { children: ReactNode }) {
     <>
       <div className="navbar-fixed-container">
         <div className="navbar">
-          <Link to="/" className="navbar-logo main-logo">
+          <Link activeProps={{ className: "" }} to="/" className="navbar-logo main-logo">
             <img src="/static/images/ligas_francesinha_logo.png" alt="Logo" />
           </Link>
 
@@ -32,36 +32,66 @@ export function Layout({ children }: { children: ReactNode }) {
 
           <ul className={navOpen ? "navbar-links navbar_links_show" : "navbar-links"}>
             <li>
-              <Link to="/players">Players</Link>
+              <Link activeProps={{ className: "" }} to="/players">
+                Players
+              </Link>
             </li>
             <li>
-              <Link to="/scores/table/$leagueId" params={{ leagueId: "1" }} className="navbar-logo">
+              <Link
+                activeProps={{ className: "" }}
+                to="/scores/table/$leagueId"
+                params={{ leagueId: "1" }}
+                className="navbar-logo"
+              >
                 <img src="/static/images/master_logo.png" alt="Logo" />
               </Link>
             </li>
             <li>
-              <Link to="/scores/table/$leagueId" params={{ leagueId: "2" }} className="navbar-logo">
+              <Link
+                activeProps={{ className: "" }}
+                to="/scores/table/$leagueId"
+                params={{ leagueId: "2" }}
+                className="navbar-logo"
+              >
                 <img src="/static/images/tuesday_logo.png" alt="Logo" />
               </Link>
             </li>
           </ul>
 
+          {/* The `{" "}` between links reproduces the whitespace text node Jinja
+              leaves between the two anchors, which the inline layout renders. */}
           <div className="navbar-user">
             {currentUser ? (
               <>
-                <Link to="/create/game" className="navbar-login-link">
+                <Link
+                  activeProps={{ className: "" }}
+                  to="/create/game"
+                  className="navbar-login-link"
+                >
                   Criar jogos
-                </Link>
-                <Link to="/auth/logout" className="navbar-login-link">
+                </Link>{" "}
+                <Link
+                  activeProps={{ className: "" }}
+                  to="/auth/logout"
+                  className="navbar-login-link"
+                >
                   Log Out
                 </Link>
               </>
             ) : (
               <>
-                <Link to="/auth/register" className="navbar-login-link">
+                <Link
+                  activeProps={{ className: "" }}
+                  to="/auth/register"
+                  className="navbar-login-link"
+                >
                   Registar
-                </Link>
-                <Link to="/auth/login" className="navbar-login-link">
+                </Link>{" "}
+                <Link
+                  activeProps={{ className: "" }}
+                  to="/auth/login"
+                  className="navbar-login-link"
+                >
                   Login
                 </Link>
               </>

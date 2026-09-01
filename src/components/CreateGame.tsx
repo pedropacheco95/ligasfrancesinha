@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import {
   playerImageUrl,
   playersIdsLastTeam,
+  teamImageUrl,
   BRANQUELAS,
   MAREGOES,
   type Edition,
@@ -23,7 +24,11 @@ type Slot = { key: number; playerId: number | null };
  */
 export function defaultGameDay(edition: Edition, today: Date = new Date()): string {
   const target =
-    edition.league?.name === "MasterLeague" ? 3 : edition.league?.name === "TuesdayLeague" ? 1 : null;
+    edition.league?.name === "MasterLeague"
+      ? 3
+      : edition.league?.name === "TuesdayLeague"
+        ? 1
+        : null;
   if (target === null) return isoLocalDate(today);
   const offset = (pyWeekday(today) - target + 7) % 7;
   const day = new Date(today);
@@ -203,7 +208,9 @@ export function CreateGameForm({ edition }: { edition: Edition }) {
                       <PlayerRow
                         key={slot.key}
                         team={teamIndex + 1}
-                        player={slot.playerId === null ? null : playerById.get(slot.playerId) ?? null}
+                        player={
+                          slot.playerId === null ? null : (playerById.get(slot.playerId) ?? null)
+                        }
                         goals={slot.playerId === null ? "" : (goals[slot.playerId] ?? "")}
                         onGoals={(value) =>
                           slot.playerId !== null &&
@@ -260,7 +267,7 @@ function TeamBadge({ team }: { team: typeof BRANQUELAS | typeof MAREGOES }) {
   return (
     <div className="team_logo_container">
       <div className="image profile_picture">
-        <img src={`/static/images/${team}.png`} />
+        <img src={teamImageUrl(team)} />
       </div>
       <div className="team_name"> {team} </div>
     </div>
