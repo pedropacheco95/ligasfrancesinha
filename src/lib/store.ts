@@ -147,8 +147,10 @@ export function nextGameId(): number {
 
 export function nextPlayerGameId(): number {
   return (
-    [...SEED.playersInGame, ...overlay.playersInGame].reduce((max, row) => Math.max(max, row.id), 0) +
-    1
+    [...SEED.playersInGame, ...overlay.playersInGame].reduce(
+      (max, row) => Math.max(max, row.id),
+      0,
+    ) + 1
   );
 }
 

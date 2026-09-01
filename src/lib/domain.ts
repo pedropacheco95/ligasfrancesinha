@@ -418,7 +418,7 @@ export function makeTeams(
   const players = playersClassification(edition);
   if (edition.league?.name === "MasterLeague") shuffle(players);
 
-  const evenPlayers = ((players.length / 2) % 2) === 0;
+  const evenPlayers = (players.length / 2) % 2 === 0;
   const teams: Record<TeamName, Player[]> = { [BRANQUELAS]: [], [MAREGOES]: [] };
   const order: [Player[], Player[]] = [teams[BRANQUELAS], teams[MAREGOES]];
   let flip = false;
