@@ -36,3 +36,7 @@ qa/shots/
 
 # A stray vendored copy of node_modules must never be committed here
 qa/_nm/
+
+# This project installs with bun (bun.lock); an npm lockfile alongside it
+# makes the two toolchains resolve different trees.
+package-lock.json
