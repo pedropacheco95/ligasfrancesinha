@@ -9,7 +9,8 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "add-game": "node --experimental-strip-types --import ./scripts/register-ts.mjs scripts/add-game.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
