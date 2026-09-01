@@ -32,12 +32,14 @@ npm i --no-save playwright pixelmatch pngjs
 | `compare-pixels.mjs` | Full-page screenshots, at desktop and mobile widths |
 | `check-interactions.mjs` | Team draws, sign-in, tabs, dropdowns, the create-game form, and the mobile sub-navigations |
 | `compare-create-game.mjs` | Creates the same game in both apps and diffs the recalculated standings |
+| `check-rounding.mjs` | `pyRound` against Python's `round()`, directly |
 
 ```sh
 python3 qa/compare-text.py qa/urls-all.txt        # all 573 pages
 node qa/compare-geometry.mjs qa/urls-sample.txt
 node qa/compare-pixels.mjs qa/urls-sample.txt
 node qa/check-interactions.mjs
+node --experimental-strip-types qa/check-rounding.mjs   # needs no servers
 ```
 
 `urls-all.txt` covers every player, edition, game and view. `urls-sample.txt` is
@@ -48,7 +50,14 @@ accented and single-word player names, players with no `full_name` or
 ## Reading the results
 
 `compare-text.py` should report **573/573**, `compare-geometry.mjs` **30/30**,
-and `check-interactions.mjs` **29/29**.
+and `check-interactions.mjs` **29/29**. `check-rounding.mjs` should report
+**59990/59990** — it is the one check that needs neither app running.
+
+Rounding gets its own script because the page comparison cannot catch a
+regression there: the values that expose the difference between Python's
+`round()` and a naive implementation (goals per appearance at 40 or 80
+appearances) are not in the current data, so every page would still match while
+the helper was quietly wrong.
 
 `compare-pixels.mjs` reports about 57/60 identical. The three that differ are
 the long "jogos realizados" pages, where React's server rendering splits
