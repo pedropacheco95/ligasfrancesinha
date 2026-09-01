@@ -166,7 +166,7 @@ export async function updateEdition(editionId: number, patch: Partial<EditionRow
   if ("lastTeam" in patch) columns['last_team'] = patch.lastTeam;
   if (Object.keys(columns).length === 0) return;
 
-  const { error } = await supabase.from("editions").update(columns).eq("id", editionId);
+  const { error } = await supabase.from("editions").update(columns as never).eq("id", editionId);
   if (error) throw error;
 }
 
@@ -196,7 +196,7 @@ export async function updatePlayerEditions(
         if (column) columns[column] = value;
       }
       if (Object.keys(columns).length === 0) return;
-      const { error } = await supabase.from("players_in_edition").update(columns).eq("id", id);
+      const { error } = await supabase.from("players_in_edition").update(columns as never).eq("id", id);
       if (error) throw error;
     }),
   );
