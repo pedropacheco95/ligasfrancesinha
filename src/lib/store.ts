@@ -1,8 +1,13 @@
 /**
- * The Flask app writes to SQLite; this port keeps the same seed data immutable
- * and layers every mutation (created games, team draws, login) into a
- * localStorage overlay. The overlay is empty on a fresh visit, so the server
- * render and the first client render agree and hydration stays clean.
+ * Client-side cache over the cloud database.
+ *
+ * The JSON files in `src/data` are still used for the server render and the
+ * first client render (they mirror the seeded database), so hydration stays
+ * clean. As soon as the app mounts, the real rows are fetched from the
+ * database and every mutation is written back to it.
+ *
+ * The login session is cosmetic (there is no real auth yet), so it stays in
+ * localStorage.
  */
 
 import leaguesJson from "@/data/leagues.json";
@@ -21,6 +26,7 @@ import {
   type PlayerGameRow,
   type RawData,
 } from "./domain";
+import { fetchAllData, insertGame, updateEdition, updatePlayerEditions } from "./db";
 
 const SEED: RawData = {
   leagues: leaguesJson as RawData["leagues"],
@@ -32,84 +38,85 @@ const SEED: RawData = {
 };
 
 export interface Overlay {
-  games: GameRow[];
-  playersInGame: PlayerGameRow[];
-  editionPatches: Record<number, Partial<EditionRow>>;
-  playerEditionPatches: Record<number, Partial<PlayerEditionRow>>;
   currentUser: string | null;
 }
 
-const EMPTY_OVERLAY: Overlay = {
-  games: [],
-  playersInGame: [],
-  editionPatches: {},
-  playerEditionPatches: {},
-  currentUser: null,
-};
+const EMPTY_OVERLAY: Overlay = { currentUser: null };
 
-const STORAGE_KEY = "ligasfrancesinha:overlay:v1";
+const STORAGE_KEY = "ligasfrancesinha:session:v1";
 
 let overlay: Overlay = EMPTY_OVERLAY;
 let loadedFromStorage = false;
 const listeners = new Set<() => void>();
 
-/** Dataset with no overlay applied — the SSR snapshot and the pre-hydration view. */
+/** The seeded snapshot — the SSR render and the pre-hydration view. */
 const seedDataset = buildDataset(SEED);
+let raw: RawData = SEED;
 let cachedDataset: Dataset = seedDataset;
-let cachedOverlay: Overlay = EMPTY_OVERLAY;
 
-function applyOverlay(current: Overlay): Dataset {
-  if (current === EMPTY_OVERLAY) return seedDataset;
-
-  const raw: RawData = {
-    leagues: SEED.leagues,
-    players: SEED.players,
-    editions: SEED.editions.map((edition) => {
-      const patch = current.editionPatches[edition.id];
-      return patch ? { ...edition, ...patch } : edition;
-    }),
-    games: [...SEED.games, ...current.games],
-    playersInGame: [...SEED.playersInGame, ...current.playersInGame],
-    playersInEdition: SEED.playersInEdition.map((relation) => {
-      const patch = current.playerEditionPatches[relation.id];
-      return patch ? { ...relation, ...patch } : relation;
-    }),
-  };
-  return buildDataset(raw);
-}
+let loading = false;
+let loaded = false;
 
 function emit() {
-  if (cachedOverlay !== overlay) {
-    cachedOverlay = overlay;
-    cachedDataset = applyOverlay(overlay);
-  }
   for (const listener of listeners) listener();
+}
+
+function rebuild() {
+  cachedDataset = buildDataset(raw);
+  emit();
 }
 
 function persist() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(overlay));
   } catch {
-    // Private browsing or a full quota: the session simply won't survive reload.
+    // Private browsing or a full quota: the session won't survive a reload.
   }
 }
 
-function ensureLoaded() {
+function ensureSession() {
   if (loadedFromStorage || typeof window === "undefined") return;
   loadedFromStorage = true;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      overlay = { ...EMPTY_OVERLAY, ...(JSON.parse(raw) as Partial<Overlay>) };
-      cachedOverlay = overlay;
-      cachedDataset = applyOverlay(overlay);
-    }
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) overlay = { ...EMPTY_OVERLAY, ...(JSON.parse(stored) as Partial<Overlay>) };
   } catch {
     overlay = EMPTY_OVERLAY;
   }
 }
 
+/** Pull every table once, then keep the cache in sync through the mutations below. */
+export function ensureLoaded() {
+  if (loading || loaded || typeof window === "undefined") return;
+  loading = true;
+  fetchAllData()
+    .then((data) => {
+      raw = data;
+      loaded = true;
+      rebuild();
+    })
+    .catch((error) => {
+      console.error("Failed to load league data", error);
+    })
+    .finally(() => {
+      loading = false;
+    });
+}
+
+export function refresh(): Promise<void> {
+  return fetchAllData()
+    .then((data) => {
+      raw = data;
+      loaded = true;
+      rebuild();
+    })
+    .catch((error) => {
+      console.error("Failed to refresh league data", error);
+    });
+}
+
 export function subscribe(listener: () => void): () => void {
+  ensureSession();
   ensureLoaded();
   listeners.add(listener);
   return () => listeners.delete(listener);
@@ -131,65 +138,71 @@ export function getServerOverlay(): Overlay {
   return EMPTY_OVERLAY;
 }
 
-function update(mutate: (draft: Overlay) => Overlay) {
-  ensureLoaded();
-  overlay = mutate(overlay);
-  persist();
-  emit();
-}
-
 /* --------------------------------------------------------------- Mutations */
 
 export function nextGameId(): number {
-  const dataset = getDataset();
-  return dataset.games.reduce((max, game) => Math.max(max, game.id), 0) + 1;
+  return raw.games.reduce((max, game) => Math.max(max, game.id), 0) + 1;
 }
 
 export function nextPlayerGameId(): number {
-  return (
-    [...SEED.playersInGame, ...overlay.playersInGame].reduce(
-      (max, row) => Math.max(max, row.id),
-      0,
-    ) + 1
-  );
+  return raw.playersInGame.reduce((max, row) => Math.max(max, row.id), 0) + 1;
 }
 
 export function addGame(game: GameRow, relations: PlayerGameRow[]) {
-  update((current) => ({
-    ...current,
-    games: [...current.games, game],
-    playersInGame: [...current.playersInGame, ...relations],
-  }));
+  raw = {
+    ...raw,
+    games: [...raw.games, game],
+    playersInGame: [...raw.playersInGame, ...relations],
+  };
+  rebuild();
+  void insertGame(game, relations).catch((error) => {
+    console.error("Failed to save game", error);
+    void refresh();
+  });
 }
 
 export function patchEdition(editionId: number, patch: Partial<EditionRow>) {
-  update((current) => ({
-    ...current,
-    editionPatches: {
-      ...current.editionPatches,
-      [editionId]: { ...current.editionPatches[editionId], ...patch },
-    },
-  }));
+  raw = {
+    ...raw,
+    editions: raw.editions.map((edition) =>
+      edition.id === editionId ? { ...edition, ...patch } : edition,
+    ),
+  };
+  rebuild();
+  void updateEdition(editionId, patch).catch((error) => {
+    console.error("Failed to save edition", error);
+    void refresh();
+  });
 }
 
 export function patchPlayerEditions(patches: Array<{ id: number } & Partial<PlayerEditionRow>>) {
-  update((current) => {
-    const next = { ...current.playerEditionPatches };
-    for (const { id, ...rest } of patches) {
-      next[id] = { ...next[id], ...rest };
-    }
-    return { ...current, playerEditionPatches: next };
+  const byId = new Map(patches.map((patch) => [patch.id, patch]));
+  raw = {
+    ...raw,
+    playersInEdition: raw.playersInEdition.map((relation) => {
+      const patch = byId.get(relation.id);
+      if (!patch) return relation;
+      const { id: _id, ...columns } = patch;
+      return { ...relation, ...columns };
+    }),
+  };
+  rebuild();
+  void updatePlayerEditions(patches).catch((error) => {
+    console.error("Failed to save standings", error);
+    void refresh();
   });
 }
 
 export function login(username: string) {
-  update((current) => ({ ...current, currentUser: username }));
+  ensureSession();
+  overlay = { ...overlay, currentUser: username };
+  persist();
+  emit();
 }
 
 export function logout() {
-  update((current) => ({ ...current, currentUser: null }));
-}
-
-export function resetOverlay() {
-  update(() => EMPTY_OVERLAY);
+  ensureSession();
+  overlay = { ...overlay, currentUser: null };
+  persist();
+  emit();
 }
