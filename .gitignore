@@ -33,3 +33,6 @@ dist-ssr
 
 # Playwright screenshots written by the parity checks in qa/
 qa/shots/
+
+# A stray vendored copy of node_modules must never be committed here
+qa/_nm/
