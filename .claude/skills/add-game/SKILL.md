@@ -25,59 +25,80 @@ Fanuca
 `brancos` is Branquelas, `pretos` is Maregões, and the number beside each is that
 side's final score. Under it, one line per player who actually played, with the
 goals they scored — a name with no number scored none. **Only the players listed
-turned up**; everyone else in the edition simply did not play that week and must
-not appear in the game.
+turned up**; everyone else in the edition did not play that week and must not
+appear in the game.
 
-## How to do it
+## The loop
 
-Save the message verbatim to a file, then preview:
+Save the message verbatim to a file and preview it:
 
 ```sh
 npm run add-game -- /tmp/result.txt
 ```
 
-That prints which edition and matchweek it resolved to, both line-ups with the
-names it matched, and any goals unaccounted for. **It writes nothing.** Show that
-preview to the user, then save it:
+Nothing is written. Show the preview to the user, then save:
 
 ```sh
 npm run add-game -- /tmp/result.txt --commit
 ```
 
-Committing inserts the game and its line-up, then recalculates that edition's
-standings using the app's own logic.
+If the script stops on a name, **that is your job, not the user's** — read the
+next section, decide, and re-run with the decision pinned:
+
+```sh
+npm run add-game -- /tmp/result.txt --resolve="Pacheco=1"
+```
+
+Only involve the user when the reasoning below genuinely does not settle it.
+
+## Resolving a name the script would not guess
+
+The script matches loosely (any part of what was typed must prefix part of a
+player's name or full name) and eliminates candidates already claimed by another
+line in the same message. So `Pacheco` alongside `Tomás P` is already decided.
+What reaches you is what survived that.
+
+The report gives you each candidate's id, full name, and appearances that
+edition, plus who else in the squad went unmentioned. Reason over it:
+
+- **The group's naming is self-disambiguating.** People write the shortest thing
+  that is unambiguous *to them*. A bare `Pacheco` in an edition with three
+  Pachecos means the one everybody just calls Pacheco — normally the one whose
+  registered name is closest to what was typed, and who plays most. If they had
+  meant one of the others they would have written `Tomás P` or `Jaime`, as they
+  do elsewhere in the same message.
+- **Prefer the plain name over a full-name coincidence.** `Pacheco` matching
+  Jaime only because his full name is Jaime Pacheco is far weaker than it
+  matching Pedro Pacheco, who is *called* Pacheco.
+- **Appearances break near-ties.** Someone with 15 appearances is likelier than
+  someone with 2.
+- **Check the unmentioned list.** If a strong candidate is not otherwise in the
+  message and the squad is otherwise fully accounted for, that supports them.
+
+State your reasoning in one line when you show the preview, so the user can
+correct you: *"Read `Pacheco` as Pedro Pacheco — Tomás and Jaime are named
+separately in this message."*
+
+Ask the user only when two candidates are genuinely equally plausible. Never
+pick silently: a wrong choice credits a goal and an appearance to someone who
+was not there and shifts the standings.
 
 ## What it works out for itself
 
-- **Which edition.** It tries every running edition and picks the one whose
-  roster matches every name. The two leagues have almost disjoint squads, so this
-  is normally unambiguous.
-- **The matchweek**, as one past the edition's highest.
-- **The date**, as the most recent matchday for that league (Thursday for
+- **Which edition**, by which running squad every name fits.
+- **The matchweek**, as one past that edition's highest.
+- **The date**, as the most recent matchday for the league (Thursday for
   MasterLeague, Tuesday for TuesdayLeague). Override with `--date=2026-09-03`.
-
-## When it stops
-
-It never guesses a name. If one is ambiguous or unrecognised it prints the
-candidates and exits without writing:
-
-```
-Pacheco: ambiguous — could be Pedro Pacheco, Tomás Pacheco, Jaime
-```
-
-**Ask the user which they meant** and put the fuller name in the message, then
-re-run. Do not pick one yourself — the wrong choice silently credits goals and an
-appearance to the wrong person and shifts the standings.
-
-`--edition=12` forces an edition if the roster genuinely cannot decide.
+- `--edition=12` forces an edition if both somehow fit.
 
 ## Worth telling the user
 
-If the scorers do not add up to the team's total, the preview says so, for
-example `note: 5 goal(s) unattributed`. That is often fine — nobody remembers
-every scorer — but mention it, in case a scorer was dropped from the message.
+If the scorers do not add up to the team's total the preview says so, e.g.
+`note: 5 goal(s) unattributed`. Usually fine — nobody remembers every scorer —
+but mention it in case a name was dropped from the message.
 
 ## Afterwards
 
-The standings update immediately, and everyone sees them: the app reads a hosted
-database, not the browser. Check the edition's table if you want to confirm.
+Committing inserts the game and its line-up, then recalculates that edition's
+standings with the app's own logic. The app reads the hosted database, so
+everyone sees the change immediately.

@@ -172,18 +172,58 @@ function matches(queryTokens, candidateTokens) {
   return true;
 }
 
-function resolveName(raw, roster) {
+function candidatesFor(raw, roster) {
   const query = fold(raw).split(/\s+/).filter(Boolean);
   const exact = roster.filter((p) => fold(p.name) === fold(raw));
-  if (exact.length === 1) return { player: exact[0] };
-
-  const hits = roster.filter((player) => {
+  if (exact.length === 1) return exact;
+  return roster.filter((player) => {
     const names = [player.name, player.fullName ?? ""].join(" ");
     return matches(query, fold(names).split(/\s+/).filter(Boolean));
   });
-  if (hits.length === 1) return { player: hits[0] };
-  if (hits.length === 0) return { error: "no player in this edition matches" };
-  return { error: `ambiguous — could be ${hits.map((p) => p.name).join(", ")}` };
+}
+
+/**
+ * Resolve a whole message at once, because the entries disambiguate each other.
+ *
+ * Someone can only appear in a game once, so a player already claimed by an
+ * unambiguous entry cannot also be the answer to an ambiguous one. Eliminating
+ * those and re-checking, until nothing more falls out, settles most of what a
+ * name-by-name pass would call ambiguous: "Pacheco" alongside "Tomás P" has to
+ * be the other Pacheco.
+ *
+ * What survives is genuinely undecidable from the message and is reported with
+ * enough context to decide it — never guessed.
+ */
+function resolveAll(sides, roster) {
+  const entries = sides.flatMap((side) => side.players);
+  for (const entry of entries) entry.candidates = candidatesFor(entry.raw, roster);
+
+  for (;;) {
+    const claimed = new Set(
+      entries.filter((e) => e.candidates.length === 1).map((e) => e.candidates[0].id),
+    );
+    let narrowed = false;
+    for (const entry of entries) {
+      if (entry.candidates.length <= 1) continue;
+      const kept = entry.candidates.filter((c) => !claimed.has(c.id));
+      if (kept.length && kept.length < entry.candidates.length) {
+        entry.candidates = kept;
+        narrowed = true;
+      }
+    }
+    if (!narrowed) break;
+  }
+
+  for (const entry of entries) {
+    if (entry.candidates.length === 1) entry.player = entry.candidates[0];
+  }
+  return entries;
+}
+
+/** Appearances give a sense of who actually turns up, which helps decide. */
+function appearancesIn(edition, playerId) {
+  const relation = edition.playersRelations.find((r) => r.player?.id === playerId);
+  return relation?.appearances ?? 0;
 }
 
 /* ------------------------------------------------------------------- main */
@@ -209,33 +249,80 @@ const candidates = editionArg
   ? active.filter((e) => String(e.id) === editionArg || e.name === editionArg)
   : active;
 
+/**
+ * `--resolve "Pacheco=1"` pins a name to a player id, for the cases the message
+ * alone cannot settle.
+ */
+const pinned = new Map(
+  args
+    .filter((a) => a.startsWith("--resolve="))
+    .map((a) => a.slice("--resolve=".length).split("="))
+    .map(([name, id]) => [fold(name), Number(id)]),
+);
+
 /** Try each running edition; the right one is where every name resolves. */
 const attempts = candidates.map((edition) => {
   const roster = edition.playersRelations.map((r) => r.player).filter(Boolean);
   const resolved = parsed.map((side) => ({
     ...side,
-    players: side.players.map((entry) => ({ ...entry, ...resolveName(entry.raw, roster) })),
+    players: side.players.map((p) => ({ ...p })),
   }));
-  const failures = resolved.flatMap((s) =>
-    s.players.filter((p) => p.error).map((p) => `${p.raw}: ${p.error}`),
-  );
-  return { edition, resolved, failures };
+  const entries = resolveAll(resolved, roster);
+
+  for (const entry of entries) {
+    const pin = pinned.get(fold(entry.raw));
+    if (pin === undefined) continue;
+    const player = roster.find((p) => p.id === pin);
+    if (player) {
+      entry.player = player;
+      entry.candidates = [player];
+      entry.pinned = true;
+    }
+  }
+
+  const unresolved = entries.filter((e) => !e.player);
+  return { edition, resolved, entries, unresolved };
 });
 
-const usable = attempts.filter((a) => a.failures.length === 0);
+const usable = attempts.filter((a) => a.unresolved.length === 0);
 if (usable.length !== 1) {
   if (usable.length === 0) {
-    console.error("Could not match this message to a running edition.\n");
+    console.error("Could not resolve every name against a running edition.\n");
     for (const attempt of attempts) {
-      console.error(`  ${attempt.edition.name}:`);
-      for (const failure of attempt.failures) console.error(`    - ${failure}`);
+      console.error(`  ${attempt.edition.name} (edition ${attempt.edition.id})`);
+      for (const entry of attempt.unresolved) {
+        if (entry.candidates.length === 0) {
+          console.error(`    "${entry.raw}" — nobody in this edition matches`);
+        } else {
+          console.error(`    "${entry.raw}" — could be:`);
+          for (const c of entry.candidates) {
+            const full = c.fullName && c.fullName !== c.name ? ` (${c.fullName})` : "";
+            console.error(
+              `        id ${c.id}  ${c.name}${full} — ${appearancesIn(attempt.edition, c.id)} appearances this edition`,
+            );
+          }
+        }
+      }
+      // Anyone already resolved, or still in the running for an unresolved name,
+      // is accounted for; only the genuinely unmentioned belong in this list.
+      const named = new Set([
+        ...attempt.entries.filter((e) => e.player).map((e) => e.player.id),
+        ...attempt.unresolved.flatMap((e) => e.candidates.map((c) => c.id)),
+      ]);
+      const rest = attempt.edition.playersRelations
+        .map((r) => r.player)
+        .filter((p) => p && !named.has(p.id))
+        .map((p) => `${p.name} (${p.id})`);
+      console.error(
+        `    rest of the squad, not named in this message: ${rest.join(", ") || "none"}`,
+      );
+      console.error("");
     }
-    console.error("\nFix the spelling, or pass --edition=<id> to force one.");
+    console.error('Decide, then pin it: --resolve="Pacheco=1"   (or fix the message)');
   } else {
     console.error(
-      `Ambiguous: these names fit more than one edition (${usable.map((a) => a.edition.name).join(", ")}).`,
+      `These names fit more than one edition (${usable.map((a) => a.edition.name).join(", ")}). Pass --edition=<id>.`,
     );
-    console.error("Pass --edition=<id> to choose.");
   }
   process.exit(1);
 }
