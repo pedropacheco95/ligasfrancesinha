@@ -33,6 +33,7 @@ npm i --no-save playwright pixelmatch pngjs
 | `check-interactions.mjs` | Team draws, sign-in, tabs, dropdowns, the create-game form, and the mobile sub-navigations |
 | `compare-create-game.mjs` | Creates the same game in both apps and diffs the recalculated standings |
 | `check-rounding.mjs` | `pyRound` against Python's `round()`, directly |
+| `compare-live-data.mjs` | Flask against the app **after** it swaps the seed for live database rows |
 
 ```sh
 python3 qa/compare-text.py qa/urls-all.txt        # all 677 pages
@@ -40,7 +41,13 @@ node qa/compare-geometry.mjs qa/urls-sample.txt
 node qa/compare-pixels.mjs qa/urls-sample.txt
 node qa/check-interactions.mjs
 node --experimental-strip-types qa/check-rounding.mjs   # needs no servers
+node qa/compare-live-data.mjs qa/urls-sample.txt        # exercises Supabase
 ```
+
+`compare-live-data.mjs` is the only check that exercises the database. The other
+comparisons read the server-rendered HTML, which is built from the JSON seed —
+so a bug that only affects rows fetched at runtime is invisible to them. It
+should report **30/30**.
 
 `urls-all.txt` covers every player, edition, game and view. `urls-sample.txt` is
 a 30-page subset for the slower browser-driven checks, chosen for edge cases:

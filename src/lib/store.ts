@@ -149,16 +149,21 @@ export function nextPlayerGameId(): number {
 }
 
 export function addGame(game: GameRow, relations: PlayerGameRow[]) {
+  // Show the game straight away, then reconcile: the database assigns the real
+  // ids, which need not match the ones guessed here if someone else has saved a
+  // game in the meantime.
   raw = {
     ...raw,
     games: [...raw.games, game],
     playersInGame: [...raw.playersInGame, ...relations],
   };
   rebuild();
-  void insertGame(game, relations).catch((error) => {
-    console.error("Failed to save game", error);
-    void refresh();
-  });
+  void insertGame(game, relations)
+    .then(() => refresh())
+    .catch((error) => {
+      console.error("Failed to save game", error);
+      void refresh();
+    });
 }
 
 export function patchEdition(editionId: number, patch: Partial<EditionRow>) {
