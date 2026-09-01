@@ -36,14 +36,14 @@ function IndexPage() {
             <div className="tabs_container">
               <div
                 className={swapped ? "table_tab" : "table_tab active"}
-                onClick={() => setSwapped(true)}
+                onClick={() => setSwapped(false)}
               >
                 {" "}
                 Master League{" "}
               </div>
               <div
                 className={swapped ? "table_tab active" : "table_tab"}
-                onClick={() => setSwapped(false)}
+                onClick={() => setSwapped(true)}
               >
                 {" "}
                 Tuesday League{" "}
