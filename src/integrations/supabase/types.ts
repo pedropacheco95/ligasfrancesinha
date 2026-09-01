@@ -14,7 +14,241 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      editions: {
+        Row: {
+          final_game: string | null
+          goal_value: number | null
+          has_ended: boolean
+          id: number
+          last_team: string | null
+          league_id: number | null
+          name: string
+          number_of_teams_made: number | null
+          time: string | null
+        }
+        Insert: {
+          final_game?: string | null
+          goal_value?: number | null
+          has_ended?: boolean
+          id: number
+          last_team?: string | null
+          league_id?: number | null
+          name: string
+          number_of_teams_made?: number | null
+          time?: string | null
+        }
+        Update: {
+          final_game?: string | null
+          goal_value?: number | null
+          has_ended?: boolean
+          id?: number
+          last_team?: string | null
+          league_id?: number | null
+          name?: string
+          number_of_teams_made?: number | null
+          time?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "editions_league_id_fkey"
+            columns: ["league_id"]
+            isOneToOne: false
+            referencedRelation: "leagues"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      games: {
+        Row: {
+          date: string | null
+          edition_id: number | null
+          goals_team1: number | null
+          goals_team2: number | null
+          id: number
+          matchweek: number
+          played: boolean
+          winner: number | null
+        }
+        Insert: {
+          date?: string | null
+          edition_id?: number | null
+          goals_team1?: number | null
+          goals_team2?: number | null
+          id: number
+          matchweek?: number
+          played?: boolean
+          winner?: number | null
+        }
+        Update: {
+          date?: string | null
+          edition_id?: number | null
+          goals_team1?: number | null
+          goals_team2?: number | null
+          id?: number
+          matchweek?: number
+          played?: boolean
+          winner?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "games_edition_id_fkey"
+            columns: ["edition_id"]
+            isOneToOne: false
+            referencedRelation: "editions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      leagues: {
+        Row: {
+          id: number
+          name: string
+          picture: string | null
+        }
+        Insert: {
+          id: number
+          name: string
+          picture?: string | null
+        }
+        Update: {
+          id?: number
+          name?: string
+          picture?: string | null
+        }
+        Relationships: []
+      }
+      players: {
+        Row: {
+          birthday: string | null
+          full_name: string | null
+          id: number
+          image_url: string | null
+          name: string
+        }
+        Insert: {
+          birthday?: string | null
+          full_name?: string | null
+          id: number
+          image_url?: string | null
+          name: string
+        }
+        Update: {
+          birthday?: string | null
+          full_name?: string | null
+          id?: number
+          image_url?: string | null
+          name?: string
+        }
+        Relationships: []
+      }
+      players_in_edition: {
+        Row: {
+          appearances: number | null
+          draws: number | null
+          edition_id: number | null
+          goals: number | null
+          goals_scored_by_team: number | null
+          goals_suffered_by_team: number | null
+          id: number
+          last_place: number | null
+          losts: number | null
+          matchweek: number | null
+          percentage_of_appearances: number | null
+          place: number | null
+          player_id: number | null
+          points: number | null
+          wins: number | null
+        }
+        Insert: {
+          appearances?: number | null
+          draws?: number | null
+          edition_id?: number | null
+          goals?: number | null
+          goals_scored_by_team?: number | null
+          goals_suffered_by_team?: number | null
+          id: number
+          last_place?: number | null
+          losts?: number | null
+          matchweek?: number | null
+          percentage_of_appearances?: number | null
+          place?: number | null
+          player_id?: number | null
+          points?: number | null
+          wins?: number | null
+        }
+        Update: {
+          appearances?: number | null
+          draws?: number | null
+          edition_id?: number | null
+          goals?: number | null
+          goals_scored_by_team?: number | null
+          goals_suffered_by_team?: number | null
+          id?: number
+          last_place?: number | null
+          losts?: number | null
+          matchweek?: number | null
+          percentage_of_appearances?: number | null
+          place?: number | null
+          player_id?: number | null
+          points?: number | null
+          wins?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "players_in_edition_edition_id_fkey"
+            columns: ["edition_id"]
+            isOneToOne: false
+            referencedRelation: "editions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "players_in_edition_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      players_in_game: {
+        Row: {
+          game_id: number | null
+          goals: number | null
+          id: number
+          player_id: number | null
+          team: string
+        }
+        Insert: {
+          game_id?: number | null
+          goals?: number | null
+          id: number
+          player_id?: number | null
+          team: string
+        }
+        Update: {
+          game_id?: number | null
+          goals?: number | null
+          id?: number
+          player_id?: number | null
+          team?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "players_in_game_game_id_fkey"
+            columns: ["game_id"]
+            isOneToOne: false
+            referencedRelation: "games"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "players_in_game_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
