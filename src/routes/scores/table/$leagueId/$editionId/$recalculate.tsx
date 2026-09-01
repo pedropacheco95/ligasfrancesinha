@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { ScoresPage, TableView } from "@/components/ScoresPages";
 import { useDataset } from "@/hooks/use-app-data";
 import { computeTableUpdate, getPlayedMatches } from "@/lib/domain";
+import { requireLeagueAndEdition } from "@/lib/routing";
 import { getDataset, patchPlayerEditions } from "@/lib/store";
 
 export const Route = createFileRoute("/scores/table/$leagueId/$editionId/$recalculate")({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/scores/table/$leagueId/$editionId/$recalc
   // 500. Refusing here fails the request the same way, instead of letting the
   // component quietly persist a table full of NaN.
   beforeLoad: ({ params }) => {
+    requireLeagueAndEdition(params.leagueId, params.editionId);
     const edition = getDataset().editionById.get(Number(params.editionId));
     if (edition && getPlayedMatches(edition).length === 0) {
       throw new Error(`ZeroDivisionError: ${edition.name} has no games to recalculate`);

@@ -24,6 +24,10 @@
 /scores/games/1/10
 /scores/scorers/1/10
 /scores/create_teams/1/10
+/scores/table/1/12
+/scores/games/1/12
+/scores/scorers/1/12
+/scores/create_teams/1/12
 /scores/table/1
 /scores/games/1
 /scores/scorers/1
@@ -70,6 +74,7 @@
 /player/general/Pedro Pacheco/5ª Edição Tuesday League
 /player/general/Pedro Pacheco/5ª Edição Masterleague
 /player/general/Pedro Pacheco/6ª Edição Tuesday League
+/player/general/Pedro Pacheco/6ª Edição Master League
 /player/general/João Perneta
 /player/games_played/João Perneta
 /player/all_editions/João Perneta
@@ -84,6 +89,7 @@
 /player/general/Bernardo Xavier/3ª Edição MasterLeague
 /player/general/Bernardo Xavier/4ª Edição Masterleague
 /player/general/Bernardo Xavier/5ª Edição Masterleague
+/player/general/Bernardo Xavier/6ª Edição Master League
 /player/general/Chico Castro
 /player/games_played/Chico Castro
 /player/all_editions/Chico Castro
@@ -99,6 +105,7 @@
 /player/general/Ferna/3ª Edição MasterLeague
 /player/general/Ferna/4ª Edição Masterleague
 /player/general/Ferna/5ª Edição Masterleague
+/player/general/Ferna/6ª Edição Master League
 /player/general/João
 /player/games_played/João
 /player/all_editions/João
@@ -116,6 +123,7 @@
 /player/general/Kiko TM/3ª Edição MasterLeague
 /player/general/Kiko TM/4ª Edição Masterleague
 /player/general/Kiko TM/5ª Edição Masterleague
+/player/general/Kiko TM/6ª Edição Master League
 /player/general/Luis Fragoso
 /player/games_played/Luis Fragoso
 /player/all_editions/Luis Fragoso
@@ -124,6 +132,7 @@
 /player/general/Luis Fragoso/3ª Edição MasterLeague
 /player/general/Luis Fragoso/4ª Edição Masterleague
 /player/general/Luis Fragoso/5ª Edição Masterleague
+/player/general/Luis Fragoso/6ª Edição Master League
 /player/general/Manel
 /player/games_played/Manel
 /player/all_editions/Manel
@@ -137,6 +146,7 @@
 /player/general/Vinhas/3ª Edição MasterLeague
 /player/general/Vinhas/4ª Edição Masterleague
 /player/general/Vinhas/5ª Edição Masterleague
+/player/general/Vinhas/6ª Edição Master League
 /player/general/Zi
 /player/games_played/Zi
 /player/all_editions/Zi
@@ -145,6 +155,7 @@
 /player/general/Zi/3ª Edição MasterLeague
 /player/general/Zi/4ª Edição Masterleague
 /player/general/Zi/5ª Edição Masterleague
+/player/general/Zi/6ª Edição Master League
 /player/general/Gustavo
 /player/games_played/Gustavo
 /player/all_editions/Gustavo
@@ -206,6 +217,7 @@
 /player/general/Pipinho/2ª Edição TuesdayLeague
 /player/general/Pipinho/3ª Edição TuesdayLeague
 /player/general/Pipinho/5ª Edição Tuesday League
+/player/general/Pipinho/6ª Edição Tuesday League
 /player/general/Tomás Pacheco
 /player/games_played/Tomás Pacheco
 /player/all_editions/Tomás Pacheco
@@ -249,12 +261,14 @@
 /player/general/Bernardo Castro/3ª Edição MasterLeague
 /player/general/Bernardo Castro/4ª Edição Masterleague
 /player/general/Bernardo Castro/5ª Edição Masterleague
+/player/general/Bernardo Castro/6ª Edição Master League
 /player/general/Zé SF
 /player/games_played/Zé SF
 /player/all_editions/Zé SF
 /player/general/Zé SF/2ª Edição MasterLeague
 /player/general/Zé SF/3ª Edição MasterLeague
 /player/general/Zé SF/5ª Edição Masterleague
+/player/general/Zé SF/6ª Edição Master League
 /player/general/Jervell
 /player/games_played/Jervell
 /player/all_editions/Jervell
@@ -283,6 +297,7 @@
 /player/all_editions/Mini Zi
 /player/general/Mini Zi/4ª Edição Masterleague
 /player/general/Mini Zi/5ª Edição Masterleague
+/player/general/Mini Zi/6ª Edição Master League
 /player/general/Barros
 /player/games_played/Barros
 /player/all_editions/Barros
@@ -293,6 +308,7 @@
 /player/general/Afonso Mariz/3ª Edição MasterLeague
 /player/general/Afonso Mariz/4ª Edição Masterleague
 /player/general/Afonso Mariz/5ª Edição Masterleague
+/player/general/Afonso Mariz/6ª Edição Master League
 /player/general/Totti
 /player/games_played/Totti
 /player/all_editions/Totti
@@ -302,6 +318,7 @@
 /player/all_editions/Bernardo Queiroz
 /player/general/Bernardo Queiroz/4ª Edição Masterleague
 /player/general/Bernardo Queiroz/5ª Edição Masterleague
+/player/general/Bernardo Queiroz/6ª Edição Master League
 /player/general/Filipe
 /player/games_played/Filipe
 /player/all_editions/Filipe
@@ -348,18 +365,25 @@
 /player/games_played/Fanuca
 /player/all_editions/Fanuca
 /player/general/Fanuca/5ª Edição Masterleague
+/player/general/Fanuca/6ª Edição Master League
 /player/general/Vilarinho
 /player/games_played/Vilarinho
 /player/all_editions/Vilarinho
-/player/general/Vilarinho/6ª Edição Tuesday League
 /player/general/Manel Cerquinho
 /player/games_played/Manel Cerquinho
 /player/all_editions/Manel Cerquinho
-/player/general/Manel Cerquinho/6ª Edição Tuesday League
 /player/general/Tomás Cottim
 /player/games_played/Tomás Cottim
 /player/all_editions/Tomás Cottim
 /player/general/Tomás Cottim/6ª Edição Tuesday League
+/player/general/Jaime
+/player/games_played/Jaime
+/player/all_editions/Jaime
+/player/general/Jaime/6ª Edição Tuesday League
+/player/general/Girão
+/player/games_played/Girão
+/player/all_editions/Girão
+/player/general/Girão/6ª Edição Master League
 /game/1
 /game/2
 /game/3
@@ -569,5 +593,91 @@
 /game/207
 /game/208
 /game/209
-/create/game/5ª Edição Masterleague
+/game/210
+/game/211
+/game/212
+/game/213
+/game/214
+/game/215
+/game/216
+/game/217
+/game/218
+/game/219
+/game/220
+/game/221
+/game/222
+/game/223
+/game/224
+/game/225
+/game/226
+/game/227
+/game/228
+/game/229
+/game/230
+/game/231
+/game/232
+/game/233
+/game/234
+/game/235
+/game/237
+/game/238
+/game/239
+/game/240
+/game/241
+/game/242
+/game/243
+/game/244
+/game/245
+/game/246
+/game/247
+/game/248
+/game/249
+/game/250
+/game/251
+/game/253
+/game/254
+/game/255
+/game/256
+/game/257
+/game/258
+/game/259
+/game/260
+/game/261
+/game/262
+/game/263
+/game/264
+/game/265
+/game/266
+/game/267
+/game/268
+/game/269
+/game/270
+/game/271
+/game/272
+/game/273
+/game/274
+/game/275
+/game/276
+/game/277
+/game/278
+/game/279
+/game/280
+/game/281
+/game/282
+/game/283
+/game/284
+/game/285
+/game/286
+/game/287
+/game/288
+/game/289
+/game/290
+/game/291
+/game/292
+/game/293
+/game/294
+/game/295
+/game/296
+/game/297
 /create/game/6ª Edição Tuesday League
+/create/game/6ª Edição Master League

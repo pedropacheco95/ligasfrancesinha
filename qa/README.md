@@ -35,7 +35,7 @@ npm i --no-save playwright pixelmatch pngjs
 | `check-rounding.mjs` | `pyRound` against Python's `round()`, directly |
 
 ```sh
-python3 qa/compare-text.py qa/urls-all.txt        # all 573 pages
+python3 qa/compare-text.py qa/urls-all.txt        # all 683 pages
 node qa/compare-geometry.mjs qa/urls-sample.txt
 node qa/compare-pixels.mjs qa/urls-sample.txt
 node qa/check-interactions.mjs
@@ -49,7 +49,7 @@ accented and single-word player names, players with no `full_name` or
 
 ## Reading the results
 
-`compare-text.py` should report **573/573**, `compare-geometry.mjs` **30/30**,
+`compare-text.py` should report **683/683**, `compare-geometry.mjs` **30/30**,
 and `check-interactions.mjs` **29/29**. `check-rounding.mjs` should report
 **59990/59990** — it is the one check that needs neither app running.
 
@@ -59,8 +59,8 @@ regression there: the values that expose the difference between Python's
 appearances) are not in the current data, so every page would still match while
 the helper was quietly wrong.
 
-`compare-pixels.mjs` reports about 57/60 identical. The three that differ are
-the long "jogos realizados" pages, where React's server rendering splits
+`compare-pixels.mjs` reports about 55/60 identical. The handful that differ are
+the longest pages — the games and "jogos realizados" listings — where React's server rendering splits
 interpolated text into several nodes; each run is then shaped and rounded
 independently, which shifts glyphs by a fraction of a pixel. Geometry comparison
 ignores anything under half a pixel for the same reason. If a page jumps well
@@ -90,3 +90,7 @@ If the Flask database changes, re-export it:
 ```sh
 python3 qa/export-database.py
 ```
+
+The Flask app must be pointed at the same `database.db` for the comparisons to
+mean anything — copy it over `../ligasfrancesinha/ligasfrancesinha/database.db`
+(keep a backup) before running them.

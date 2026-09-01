@@ -376,5 +376,19 @@
   "fullName": "Tomás Cottim",
   "birthday": "2024-10-01",
   "imageUrl": "Player/20241002153229_image_url.png"
+ },
+ {
+  "id": 55,
+  "name": "Jaime",
+  "fullName": "Jaime Pacheco",
+  "birthday": "2025-02-05",
+  "imageUrl": "Player/20250205173039_image_url.png"
+ },
+ {
+  "id": 56,
+  "name": "Girão",
+  "fullName": "Miguel Girão",
+  "birthday": "1994-09-01",
+  "imageUrl": "Player/20250901144311_image_url.png"
  }
 ]

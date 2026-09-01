@@ -1,8 +1,9 @@
 """Export the Flask app's SQLite database to the JSON seed files in src/data/.
 
-Re-run this if the original database changes:
+Re-run this whenever database.db is refreshed:
 
-    python3 qa/export-database.py ../ligasfrancesinha/ligasfrancesinha/database.db
+    python3 qa/export-database.py            # reads ./database.db
+    python3 qa/export-database.py path/to/other.db
 
 Rows are emitted ordered by id so that JavaScript's stable sort reproduces
 Python's stable sort tie-breaking exactly — standings ties fall back to
@@ -14,7 +15,7 @@ import os
 import sqlite3
 import sys
 
-DEFAULT_DB = "../ligasfrancesinha/ligasfrancesinha/database.db"
+DEFAULT_DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "database.db")
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src", "data")
 
 TABLES = {

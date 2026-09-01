@@ -103,11 +103,11 @@
   "name": "5ª Edição Masterleague",
   "time": "20:00",
   "finalGame": "2025-05-26",
-  "hasEnded": false,
+  "hasEnded": true,
   "goalValue": 0.0,
-  "numberOfTeamsMade": 8,
+  "numberOfTeamsMade": 39,
   "leagueId": 1,
-  "lastTeam": "37;8;11;12;39;1;51;41;30;3;31;49;5;9;"
+  "lastTeam": "5;30;9;49;39;41;37;51;11;3;12;1;31;8;"
  },
  {
   "id": 11,
@@ -116,8 +116,19 @@
   "finalGame": "2025-06-30",
   "hasEnded": false,
   "goalValue": 0.1,
-  "numberOfTeamsMade": 2,
+  "numberOfTeamsMade": 17,
   "leagueId": 2,
-  "lastTeam": "54;53;27;52;42;48;50;47;23;46;33;13;1;20;"
+  "lastTeam": "54;20;33;47;1;23;46;48;42;50;22;13;55;27;"
+ },
+ {
+  "id": 12,
+  "name": "6ª Edição Master League",
+  "time": "20:00",
+  "finalGame": "2026-06-29",
+  "hasEnded": false,
+  "goalValue": 0.0,
+  "numberOfTeamsMade": 42,
+  "leagueId": 1,
+  "lastTeam": "8;39;56;37;31;30;3;11;12;51;9;5;1;41;"
  }
 ]

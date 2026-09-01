@@ -5,8 +5,10 @@ import { GeneralView } from "@/components/PlayerPages";
 import { useDataset } from "@/hooks/use-app-data";
 import { gamesPlayedOnEdition } from "@/lib/domain";
 import { sameText } from "@/lib/format";
+import { requirePlayerAndEdition } from "@/lib/routing";
 
 export const Route = createFileRoute("/player/general/$playerName/$editionName")({
+  beforeLoad: ({ params }) => requirePlayerAndEdition(params.playerName, params.editionName),
   component: PlayerGeneralPage,
 });
 

@@ -4,7 +4,7 @@ A React port of the original Flask application (`../ligasfrancesinha`), built to
 and be edited in [Lovable](https://lovable.dev).
 
 Ligas Francesinha is a weekly 7v7 football league. It tracks two leagues
-(MasterLeague and TuesdayLeague) across eleven editions, 54 players and 209
+(MasterLeague and TuesdayLeague) across twelve editions, 56 players and 295
 games: standings, results, top scorers, per-player histories, an automatic team
 draw and a form for entering each week's result.
 
@@ -33,8 +33,19 @@ npm run dev
 The Flask app is a server-rendered Jinja application backed by SQLite. This port
 is a self-contained frontend, so there is no backend to run.
 
-**Data.** `ligasfrancesinha/database.db` was exported to `src/data/*.json`, one
-file per table, with rows ordered by primary key. That ordering is load-bearing:
+**Data.** `database.db` at the repository root is the source of truth. It is
+exported to `src/data/*.json`, one file per table, with rows ordered by primary
+key, by `python3 qa/export-database.py`. Drop in a newer dump and re-run that to
+refresh the app.
+
+Two things to know about that file. The export reads only the league tables, so
+the `users` table — which holds email addresses and password hashes — never
+reaches `src/data/` or the built site; the build output contains no `.db` file
+and no hashes. But the file itself is committed, so those hashes are in this
+repository's history: fine while the repo is private, worth stripping before it
+ever becomes public. And `vite dev` serves the project root, so `/database.db`
+is downloadable from the dev server on your machine — the production build does
+not serve it. That ordering is load-bearing:
 Python's sort is stable, so ties in the standings fall back to insertion order,
 and JavaScript's sort is stable too — keeping the id order reproduces Flask's
 tie-breaking exactly.
@@ -90,6 +101,10 @@ These are bugs in the original that the port keeps, so both apps behave the same
   navbar's "Registar" link has always been broken.
 - Players 50 and 51 have a doubled image path stored in the database
   (`images/Players/default_player.jpg`), which 404s in both apps.
+- Two players added recently, Jaime and Girão, reference photos that are not in
+  `public/static/images/Player/`. They only exist on the server the live app
+  runs on, so their portraits 404 here — as they do against a local Flask copy.
+  Dropping the two files in fixes both.
 - An unknown player or league id raises an error rather than returning 404,
   because Flask redirects to an `errors` blueprint that is never registered.
 - **A rejected game submission silently wipes the form.** `modules/create.py`
@@ -133,7 +148,7 @@ python3 -m venv .venv311
 is not needed: `styles_frontend.css` is already compiled, so set
 `ASSETS_AUTO_BUILD = False` on the app before serving.
 
-The port was checked against the running Flask app on every page (all 573 URLs:
+The port was checked against the running Flask app on every page (all 683 URLs:
 every player, edition, game and view) for identical rendered text, on sampled
 pages for identical element geometry, and on the write paths — both deterministic
 team-draw branches and creating a game — for identical results. The interaction

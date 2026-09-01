@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ScoresPage, TableView } from "@/components/ScoresPages";
+import { requireLeagueAndEdition } from "@/lib/routing";
 
 export const Route = createFileRoute("/scores/table/$leagueId/$editionId/")({
+  beforeLoad: ({ params }) => requireLeagueAndEdition(params.leagueId, params.editionId),
   component: TablePage,
 });
 

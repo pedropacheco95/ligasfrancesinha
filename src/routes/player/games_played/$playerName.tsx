@@ -5,8 +5,10 @@ import { GamesPlayedView } from "@/components/PlayerPages";
 import { useDataset } from "@/hooks/use-app-data";
 import { gamesPlayed } from "@/lib/domain";
 import { sameText } from "@/lib/format";
+import { requirePlayerWithEditions } from "@/lib/routing";
 
 export const Route = createFileRoute("/player/games_played/$playerName")({
+  beforeLoad: ({ params }) => requirePlayerWithEditions(params.playerName),
   component: PlayerGamesPlayedPage,
 });
 

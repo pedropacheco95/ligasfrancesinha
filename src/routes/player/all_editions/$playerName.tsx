@@ -4,8 +4,10 @@ import { PlayerLayout } from "@/components/PlayerLayout";
 import { AllEditionsView } from "@/components/PlayerPages";
 import { useDataset } from "@/hooks/use-app-data";
 import { sameText } from "@/lib/format";
+import { requirePlayerWithEditions } from "@/lib/routing";
 
 export const Route = createFileRoute("/player/all_editions/$playerName")({
+  beforeLoad: ({ params }) => requirePlayerWithEditions(params.playerName),
   component: PlayerAllEditionsPage,
 });
 

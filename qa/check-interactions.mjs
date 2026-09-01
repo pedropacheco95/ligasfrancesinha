@@ -6,29 +6,35 @@ import { chromium } from "playwright";
 const REACT = "http://127.0.0.1:5173";
 const FLASK = "http://127.0.0.1:5001";
 
-// Captured from POSTing /scores/create_teams on the pristine Flask database.
+// Captured from POSTing /scores/create_teams on the Flask app. Both active
+// editions currently have fewer games than draws recorded, so make_teams takes
+// the early-return branch and replays last_team without shuffling — which makes
+// even the MasterLeague draw deterministic. Re-capture these if the data changes.
 const EXPECTED_DRAWS = {
-  // TuesdayLeague: no shuffle, so the snake draw is deterministic.
-  "/scores/create_teams/2/11": [
-    ["António PT", "Tomás Cottim"],
-    ["Vilarinho", "Tomás Pacheco"],
-    ["Kiko BF", "Pedro F"],
-    ["Pedro Rodrigues", "João Morgado"],
-    ["Mini", "Manel Cerquinho"],
-    ["Eloi", "Pedro Pacheco"],
-    ["Gustavo", "Filipe"],
-  ],
-  // MasterLeague edition 10 has 7 games but 8 draws recorded, so make_teams
-  // takes the early-return branch and replays last_team without shuffling.
-  "/scores/create_teams/1/10": [
-    ["Mini Zi", "Bernardo Queiroz"],
-    ["Kiko TM", "Bernardo Castro"],
-    ["Vinhas", "Bernardo Xavier"],
-    ["Zi", "Zé SF"],
-    ["Afonso Mariz", "Miguel"],
-    ["Pedro Pacheco", "Ferna"],
-    ["Fanuca", "Luis Fragoso"],
-  ],
+  "/scores/create_teams/2/11": {
+    counter: "17",
+    rows: [
+      ["Tomás Cottim", "Mini"],
+      ["Eloi", "Filipe"],
+      ["Pedro Rodrigues", "João Morgado"],
+      ["Pedro F", "Pipinho"],
+      ["Pedro Pacheco", "Gustavo"],
+      ["Tomás Pacheco", "Jaime"],
+      ["Kiko BF", "António PT"],
+    ],
+  },
+  "/scores/create_teams/1/12": {
+    counter: "42",
+    rows: [
+      ["Kiko TM", "Vinhas"],
+      ["Afonso Mariz", "Zi"],
+      ["Girão", "Fanuca"],
+      ["Mini Zi", "Luis Fragoso"],
+      ["Zé SF", "Ferna"],
+      ["Bernardo Castro", "Pedro Pacheco"],
+      ["Bernardo Xavier", "Bernardo Queiroz"],
+    ],
+  },
 };
 
 const results = [];
@@ -61,7 +67,7 @@ async function freshVisit(path) {
 
 /* ---------------------------------------------------- 1. team draws */
 
-for (const [path, expected] of Object.entries(EXPECTED_DRAWS)) {
+for (const [path, { rows: expected, counter: expectedCounter }] of Object.entries(EXPECTED_DRAWS)) {
   await freshVisit(path);
   await page.getByRole("button", { name: "Fazer Equipas" }).click();
   await page.waitForTimeout(400);
@@ -82,11 +88,10 @@ for (const [path, expected] of Object.entries(EXPECTED_DRAWS)) {
   const counter = await page.evaluate(
     () => document.body.innerText.match(/Equipas numero (\d+)/)?.[1] ?? null,
   );
-  const flaskCounter = path.includes("/2/11") ? "3" : "8";
   check(
     `draw counter ${path}`,
-    counter === flaskCounter,
-    `shown ${counter}, Flask ${flaskCounter}`,
+    counter === expectedCounter,
+    `shown ${counter}, Flask ${expectedCounter}`,
   );
 }
 
@@ -210,9 +215,10 @@ check("modal closes after picking", modalClosed);
 
 // Rebuild the page, fill a scoreline and submit.
 await freshVisit("/create/game/6ª Edição Tuesday League");
+// Row count before submitting, so the check does not hardcode a game total.
 const beforeGames = await page.evaluate(async () => {
-  const r = await fetch("/scores/games/2/11");
-  return (await r.text()).split("Jornada").length - 1;
+  const html = await (await fetch("/scores/games/2/11")).text();
+  return (html.match(/Jornada/g) || []).length;
 });
 await page.fill('input[name="goals_team1"] >> nth=0', "4");
 await page.fill('input[name="goals_team2"] >> nth=0', "2");
@@ -245,7 +251,11 @@ await page.waitForTimeout(400);
 const gameRows = await page.evaluate(
   () => document.querySelectorAll(".box_container table tbody tr").length,
 );
-check("new game appears in the games list", gameRows === 3, `${gameRows} rows (was 2)`);
+check(
+  "new game appears in the games list",
+  gameRows === beforeGames + 1,
+  `${gameRows} rows (was ${beforeGames})`,
+);
 
 const newestScore = await page.evaluate(() => {
   const rows = [...document.querySelectorAll(".box_container table tbody tr")];
@@ -352,7 +362,8 @@ await page.waitForTimeout(1200);
 
 // Navigate rather than fetch: the created game lives in this browser's overlay,
 // so a server-rendered response would not contain it.
-await page.goto(REACT + "/game/210", { waitUntil: "networkidle" });
+const createdGameId = 298; // one past the highest id in src/data/games.json
+await page.goto(REACT + `/game/${createdGameId}`, { waitUntil: "networkidle" });
 await page.waitForTimeout(500);
 const lineUpCount = await page.evaluate(
   () => document.querySelectorAll(".table_line_up tr").length,
@@ -387,12 +398,24 @@ check(
     .join(" | "),
 );
 
-// Flask 404s this same asset: players 50 and 51 have a doubled image path stored
-// in the database. The port reproduces the broken path rather than fixing it.
-const unexpected = [...failedRequests].filter(
-  (u) => !u.includes("/static/images/images/Players/default_player") && !u.includes("favicon"),
+// Some assets are missing from both apps — a doubled image path stored for
+// players 50 and 51, and photos for players added since the static directory was
+// copied. Rather than maintain an allow-list, replay each failing path against
+// Flask: anything that fails there too is shared, not a regression.
+const unexpected = [];
+for (const entry of failedRequests) {
+  const path = entry.slice(entry.indexOf(" ") + 1).replace(REACT, "");
+  if (path.includes("favicon")) continue;
+  const flaskResponse = await page.request.get(FLASK + encodeURI(decodeURI(path)), {
+    failOnStatusCode: false,
+  });
+  if (flaskResponse.status() < 400) unexpected.push(entry);
+}
+check(
+  "no request fails that Flask serves fine",
+  unexpected.length === 0,
+  unexpected.slice(0, 5).join(" | "),
 );
-check("no unexpected failed requests", unexpected.length === 0, unexpected.slice(0, 5).join(" | "));
 
 await browser.close();
 
