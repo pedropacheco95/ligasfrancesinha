@@ -19,8 +19,11 @@ Continue developing this project in the [Lovable editor](https://lovable.dev/pro
 ## Development
 
 You need Node.js 20.19+ — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Vite 8 will not start on older versions, so if `node -v` reports something
+older, switch first:
 
 ```sh
+nvm use          # reads .nvmrc
 npm i
 npm run dev
 ```
@@ -52,6 +55,11 @@ Python's `round()`. Every interpolated number goes through these helpers.
 localStorage overlay (`src/lib/store.ts`) layered over the immutable seed. The
 overlay is empty on a fresh visit, so the server render and the first client
 render agree and hydration stays clean.
+
+Because the overlay lives in the browser, changes are local to whoever made
+them — they are not shared between people or devices, and they do not reach the
+original database. To start over, clear the `ligasfrancesinha:overlay:v1` key in
+localStorage (or call `resetOverlay()` from `src/lib/store.ts`).
 
 **Styling.** The pages reuse the original project's compiled SCSS
 (`public/static/style/styles_frontend.css`) and Bootstrap 4 verbatim, and the
