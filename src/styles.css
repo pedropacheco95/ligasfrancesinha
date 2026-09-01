@@ -1,4 +1,9 @@
-@import "tailwindcss" source(none);
+/* Preflight is deliberately not imported. This app renders the original Flask
+   markup against Bootstrap 4 + the ported SCSS, and Tailwind's reset would
+   restyle headings, lists and images out from under it. Theme tokens and
+   utilities stay available for new work. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
 @source "../src";
 @import "tw-animate-css";
 
@@ -86,11 +91,4 @@
   --ring: oklch(0.65 0.18 145);
 }
 
-@layer base {
-  * { border-color: var(--color-border); }
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: ui-sans-serif, system-ui, sans-serif;
-  }
-}
+/* No base layer: styles_frontend.css owns body and element defaults. */

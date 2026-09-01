@@ -85,10 +85,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
     ],
     links: [
+      { rel: "icon", href: "/static/images/favicon.ico" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
       },
+      { rel: "stylesheet", href: appCss },
+      // The compiled SCSS from the Flask app, served from /public at the same
+      // path so its relative url(../fonts/...) references still resolve.
+      { rel: "stylesheet", href: "/static/style/styles_frontend.css" },
+      { rel: "stylesheet", href: "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" },
     ],
   }),
   shellComponent: RootShell,

@@ -1,0 +1,380 @@
+[
+ {
+  "id": 1,
+  "name": "Pedro Pacheco",
+  "fullName": "Pedro Inácio Meireles do Carmo Pacheco",
+  "birthday": "2021-10-13",
+  "imageUrl": "Player/1.jpg"
+ },
+ {
+  "id": 2,
+  "name": "João Perneta",
+  "fullName": "",
+  "birthday": "1994-01-01",
+  "imageUrl": "Player/2.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Bernardo Xavier",
+  "fullName": "Bernardo Lobo Xavier",
+  "birthday": "1995-12-04",
+  "imageUrl": "Player/3.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Chico Castro",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/4.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Ferna",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/5.jpg"
+ },
+ {
+  "id": 6,
+  "name": "João",
+  "fullName": "João António Pizarro Magalhães",
+  "birthday": "1994-08-02",
+  "imageUrl": "Player/6.jpg"
+ },
+ {
+  "id": 7,
+  "name": "JP",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/7.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Kiko TM",
+  "fullName": "Francisco Tete Machado",
+  "birthday": "1995-01-01",
+  "imageUrl": "Player/8.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Luis Fragoso",
+  "fullName": "Luis Ferreira Fragoso",
+  "birthday": "1995-02-12",
+  "imageUrl": "Player/9.jpg"
+ },
+ {
+  "id": 10,
+  "name": "Manel",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/10.jpg"
+ },
+ {
+  "id": 11,
+  "name": "Vinhas",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/11.jpg"
+ },
+ {
+  "id": 12,
+  "name": "Zi",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/12.jpg"
+ },
+ {
+  "id": 13,
+  "name": "Gustavo",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 14,
+  "name": "Beirão",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 15,
+  "name": "Praça",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 16,
+  "name": "Tommy",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 17,
+  "name": "Araújo",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 18,
+  "name": "Dinis",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 19,
+  "name": "Mateus",
+  "fullName": "Mateus Meireles Andersen Portela",
+  "birthday": "1997-04-19",
+  "imageUrl": "Player/19.jpg"
+ },
+ {
+  "id": 20,
+  "name": "Eloi",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 21,
+  "name": "Nuno",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 22,
+  "name": "Pipinho",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 23,
+  "name": "Tomás Pacheco",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/23.jpg"
+ },
+ {
+  "id": 24,
+  "name": "Resende",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 25,
+  "name": "Xico",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 26,
+  "name": "Jorginho",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 27,
+  "name": "António PT",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 28,
+  "name": "Diego",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 29,
+  "name": "Afonso",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 30,
+  "name": "Bernardo Castro",
+  "fullName": null,
+  "birthday": "1996-03-20",
+  "imageUrl": "Player/30.jpg"
+ },
+ {
+  "id": 31,
+  "name": "Zé SF",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 32,
+  "name": "Jervell",
+  "fullName": "Sebastião Jervell",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 33,
+  "name": "Pedro Rodrigues",
+  "fullName": "Pedro Rodrigues",
+  "birthday": "2024-02-06",
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 34,
+  "name": "Rodrigo",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 35,
+  "name": "Castro",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 36,
+  "name": "Nuno Pereira",
+  "fullName": null,
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 37,
+  "name": "Mini Zi",
+  "fullName": "Nuno Trigueiros",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 38,
+  "name": "Barros",
+  "fullName": "Francisco Barros",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 39,
+  "name": "Afonso Mariz",
+  "fullName": "Afonso Mariz",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 40,
+  "name": "Totti",
+  "fullName": "Totti",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 41,
+  "name": "Bernardo Queiroz",
+  "fullName": "Bernardo Queiroz",
+  "birthday": "1992-01-01",
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 42,
+  "name": "Filipe",
+  "fullName": "Filipe Ramalho",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 43,
+  "name": "Baldaia",
+  "fullName": "Diogo Baldaia",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 44,
+  "name": "Machado",
+  "fullName": "João Machado",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 45,
+  "name": "Maia",
+  "fullName": "Maia",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 46,
+  "name": "Kiko BF",
+  "fullName": "Francisco Brito e Faro",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 47,
+  "name": "Pedro F",
+  "fullName": "Pedro Ferreira",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 48,
+  "name": "Mini",
+  "fullName": "Francisco Carvalho",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 49,
+  "name": "Miguel",
+  "fullName": "Miguel Oliveira",
+  "birthday": null,
+  "imageUrl": "Player/default_player.jpg"
+ },
+ {
+  "id": 50,
+  "name": "João Morgado",
+  "fullName": "João Morgado",
+  "birthday": "2024-02-06",
+  "imageUrl": "images/Players/default_player.jpg"
+ },
+ {
+  "id": 51,
+  "name": "Fanuca",
+  "fullName": "Fanuca",
+  "birthday": "2024-09-02",
+  "imageUrl": "images/Players/default_player.jpg"
+ },
+ {
+  "id": 52,
+  "name": "Vilarinho",
+  "fullName": "Pedro Vilarinho",
+  "birthday": "2024-10-02",
+  "imageUrl": "Player/20241002152841_image_url.png"
+ },
+ {
+  "id": 53,
+  "name": "Manel Cerquinho",
+  "fullName": "Manel Cerquinho",
+  "birthday": "2024-10-02",
+  "imageUrl": "Player/20241002152900_image_url.png"
+ },
+ {
+  "id": 54,
+  "name": "Tomás Cottim",
+  "fullName": "Tomás Cottim",
+  "birthday": "2024-10-01",
+  "imageUrl": "Player/20241002153229_image_url.png"
+ }
+]

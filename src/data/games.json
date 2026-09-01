@@ -1,0 +1,2092 @@
+[
+ {
+  "id": 1,
+  "goalsTeam1": 18,
+  "goalsTeam2": 11,
+  "date": "2020-10-15",
+  "winner": 1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 2,
+  "goalsTeam1": 5,
+  "goalsTeam2": 10,
+  "date": "2020-10-22",
+  "winner": -1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 3,
+  "goalsTeam1": 6,
+  "goalsTeam2": 8,
+  "date": "2021-06-06",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 4,
+  "goalsTeam1": 9,
+  "goalsTeam2": 12,
+  "date": "2021-05-13",
+  "winner": -1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 5,
+  "goalsTeam1": 10,
+  "goalsTeam2": 10,
+  "date": "2021-05-20",
+  "winner": 0,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 6,
+  "goalsTeam1": 9,
+  "goalsTeam2": 10,
+  "date": "2021-05-27",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 7,
+  "goalsTeam1": 4,
+  "goalsTeam2": 10,
+  "date": "2021-06-03",
+  "winner": -1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 8,
+  "goalsTeam1": 6,
+  "goalsTeam2": 5,
+  "date": "2021-06-10",
+  "winner": 1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 9,
+  "goalsTeam1": 10,
+  "goalsTeam2": 9,
+  "date": "2021-06-17",
+  "winner": 1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 10,
+  "goalsTeam1": 13,
+  "goalsTeam2": 8,
+  "date": "2021-06-24",
+  "winner": 1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 11,
+  "goalsTeam1": 10,
+  "goalsTeam2": 7,
+  "date": "2021-07-01",
+  "winner": 1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 12,
+  "goalsTeam1": 8,
+  "goalsTeam2": 6,
+  "date": "2021-07-08",
+  "winner": 1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 13,
+  "goalsTeam1": 14,
+  "goalsTeam2": 20,
+  "date": "2021-07-15",
+  "winner": -1,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 1
+ },
+ {
+  "id": 14,
+  "goalsTeam1": 10,
+  "goalsTeam2": 9,
+  "date": "2020-10-06",
+  "winner": 1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 15,
+  "goalsTeam1": 11,
+  "goalsTeam2": 6,
+  "date": "2020-10-06",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 16,
+  "goalsTeam1": 7,
+  "goalsTeam2": 9,
+  "date": "2020-10-13",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 17,
+  "goalsTeam1": 6,
+  "goalsTeam2": 10,
+  "date": "2020-10-20",
+  "winner": -1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 18,
+  "goalsTeam1": 19,
+  "goalsTeam2": 6,
+  "date": "2020-10-27",
+  "winner": 1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 19,
+  "goalsTeam1": 6,
+  "goalsTeam2": 12,
+  "date": "2020-11-03",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 20,
+  "goalsTeam1": 17,
+  "goalsTeam2": 9,
+  "date": "2020-11-10",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 21,
+  "goalsTeam1": 6,
+  "goalsTeam2": 14,
+  "date": "2020-11-17",
+  "winner": -1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 22,
+  "goalsTeam1": 13,
+  "goalsTeam2": 7,
+  "date": "2020-11-24",
+  "winner": 1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 23,
+  "goalsTeam1": 7,
+  "goalsTeam2": 7,
+  "date": "2020-12-01",
+  "winner": 0,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 24,
+  "goalsTeam1": 13,
+  "goalsTeam2": 15,
+  "date": "2021-02-02",
+  "winner": -1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 25,
+  "goalsTeam1": 13,
+  "goalsTeam2": 17,
+  "date": "2021-02-09",
+  "winner": -1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 2
+ },
+ {
+  "id": 26,
+  "goalsTeam1": 5,
+  "goalsTeam2": 10,
+  "date": "2021-10-05",
+  "winner": -1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 27,
+  "goalsTeam1": 9,
+  "goalsTeam2": 10,
+  "date": "2021-10-13",
+  "winner": -1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 28,
+  "goalsTeam1": 10,
+  "goalsTeam2": 5,
+  "date": "2021-09-30",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 29,
+  "goalsTeam1": 12,
+  "goalsTeam2": 17,
+  "date": "2021-10-07",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 30,
+  "goalsTeam1": 5,
+  "goalsTeam2": 15,
+  "date": "2021-10-12",
+  "winner": -1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 31,
+  "goalsTeam1": 9,
+  "goalsTeam2": 6,
+  "date": "2021-10-14",
+  "winner": 1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 32,
+  "goalsTeam1": 11,
+  "goalsTeam2": 9,
+  "date": "2021-10-26",
+  "winner": 1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 33,
+  "goalsTeam1": 11,
+  "goalsTeam2": 18,
+  "date": "2021-10-21",
+  "winner": -1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 34,
+  "goalsTeam1": 7,
+  "goalsTeam2": 27,
+  "date": "2021-10-26",
+  "winner": -1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 35,
+  "goalsTeam1": 19,
+  "goalsTeam2": 9,
+  "date": "2021-10-28",
+  "winner": 1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 36,
+  "goalsTeam1": 11,
+  "goalsTeam2": 8,
+  "date": "2021-11-02",
+  "winner": 1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 37,
+  "goalsTeam1": 13,
+  "goalsTeam2": 12,
+  "date": "2021-11-04",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 38,
+  "goalsTeam1": 7,
+  "goalsTeam2": 22,
+  "date": "2021-11-09",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 39,
+  "goalsTeam1": 11,
+  "goalsTeam2": 16,
+  "date": "2021-11-11",
+  "winner": -1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 40,
+  "goalsTeam1": 16,
+  "goalsTeam2": 4,
+  "date": "2021-11-16",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 41,
+  "goalsTeam1": 11,
+  "goalsTeam2": 10,
+  "date": "2021-11-18",
+  "winner": 1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 42,
+  "goalsTeam1": 9,
+  "goalsTeam2": 13,
+  "date": "2021-11-30",
+  "winner": -1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 43,
+  "goalsTeam1": 20,
+  "goalsTeam2": 13,
+  "date": "2021-11-25",
+  "winner": 1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 44,
+  "goalsTeam1": 13,
+  "goalsTeam2": 12,
+  "date": "2021-12-09",
+  "winner": 1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 45,
+  "goalsTeam1": 9,
+  "goalsTeam2": 11,
+  "date": "2021-11-30",
+  "winner": -1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 46,
+  "goalsTeam1": 11,
+  "goalsTeam2": 5,
+  "date": "2021-12-09",
+  "winner": 1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 47,
+  "goalsTeam1": 14,
+  "goalsTeam2": 9,
+  "date": "2021-12-14",
+  "winner": 1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 48,
+  "goalsTeam1": 15,
+  "goalsTeam2": 14,
+  "date": "2021-12-21",
+  "winner": 1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 49,
+  "goalsTeam1": 8,
+  "goalsTeam2": 6,
+  "date": "2021-12-28",
+  "winner": 1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 50,
+  "goalsTeam1": 8,
+  "goalsTeam2": 12,
+  "date": "2021-12-16",
+  "winner": -1,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 51,
+  "goalsTeam1": 9,
+  "goalsTeam2": 7,
+  "date": "2022-01-04",
+  "winner": 1,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 52,
+  "goalsTeam1": 9,
+  "goalsTeam2": 16,
+  "date": "2022-01-11",
+  "winner": -1,
+  "matchweek": 14,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 53,
+  "goalsTeam1": 13,
+  "goalsTeam2": 11,
+  "date": "2022-01-06",
+  "winner": 1,
+  "matchweek": 14,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 54,
+  "goalsTeam1": 5,
+  "goalsTeam2": 6,
+  "date": "2022-01-13",
+  "winner": -1,
+  "matchweek": 15,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 55,
+  "goalsTeam1": 6,
+  "goalsTeam2": 12,
+  "date": "2022-01-18",
+  "winner": -1,
+  "matchweek": 15,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 56,
+  "goalsTeam1": 12,
+  "goalsTeam2": 9,
+  "date": "2022-01-20",
+  "winner": 1,
+  "matchweek": 16,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 57,
+  "goalsTeam1": 10,
+  "goalsTeam2": 14,
+  "date": "2022-01-25",
+  "winner": -1,
+  "matchweek": 16,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 58,
+  "goalsTeam1": 1,
+  "goalsTeam2": 10,
+  "date": "2022-02-01",
+  "winner": -1,
+  "matchweek": 17,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 59,
+  "goalsTeam1": 13,
+  "goalsTeam2": 10,
+  "date": "2022-01-27",
+  "winner": 1,
+  "matchweek": 17,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 60,
+  "goalsTeam1": 9,
+  "goalsTeam2": 8,
+  "date": "2022-02-03",
+  "winner": 1,
+  "matchweek": 18,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 61,
+  "goalsTeam1": 11,
+  "goalsTeam2": 7,
+  "date": "2022-02-08",
+  "winner": 1,
+  "matchweek": 18,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 62,
+  "goalsTeam1": 9,
+  "goalsTeam2": 17,
+  "date": "2022-02-10",
+  "winner": -1,
+  "matchweek": 19,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 63,
+  "goalsTeam1": 14,
+  "goalsTeam2": 16,
+  "date": "2022-02-15",
+  "winner": -1,
+  "matchweek": 19,
+  "played": false,
+  "editionId": 4
+ },
+ {
+  "id": 64,
+  "goalsTeam1": 9,
+  "goalsTeam2": 14,
+  "date": "2022-02-16",
+  "winner": -1,
+  "matchweek": 20,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 65,
+  "goalsTeam1": 9,
+  "goalsTeam2": 7,
+  "date": "2022-02-22",
+  "winner": 1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 66,
+  "goalsTeam1": 7,
+  "goalsTeam2": 10,
+  "date": "2022-02-24",
+  "winner": -1,
+  "matchweek": 21,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 67,
+  "goalsTeam1": 10,
+  "goalsTeam2": 8,
+  "date": "2022-03-01",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 68,
+  "goalsTeam1": 11,
+  "goalsTeam2": 9,
+  "date": "2022-03-03",
+  "winner": 1,
+  "matchweek": 22,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 69,
+  "goalsTeam1": 7,
+  "goalsTeam2": 9,
+  "date": "2022-03-08",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 70,
+  "goalsTeam1": 9,
+  "goalsTeam2": 18,
+  "date": "2022-03-15",
+  "winner": -1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 71,
+  "goalsTeam1": 11,
+  "goalsTeam2": 12,
+  "date": "2022-03-10",
+  "winner": -1,
+  "matchweek": 23,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 72,
+  "goalsTeam1": 11,
+  "goalsTeam2": 12,
+  "date": "2022-03-16",
+  "winner": -1,
+  "matchweek": 24,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 73,
+  "goalsTeam1": 12,
+  "goalsTeam2": 11,
+  "date": "2022-03-22",
+  "winner": 1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 74,
+  "goalsTeam1": 9,
+  "goalsTeam2": 11,
+  "date": "2022-03-24",
+  "winner": -1,
+  "matchweek": 25,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 75,
+  "goalsTeam1": 7,
+  "goalsTeam2": 14,
+  "date": "2022-03-29",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 76,
+  "goalsTeam1": 10,
+  "goalsTeam2": 11,
+  "date": "2022-04-07",
+  "winner": -1,
+  "matchweek": 26,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 77,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2022-04-05",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 78,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2022-04-12",
+  "winner": 1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 79,
+  "goalsTeam1": 13,
+  "goalsTeam2": 5,
+  "date": "2022-04-07",
+  "winner": 1,
+  "matchweek": 27,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 80,
+  "goalsTeam1": 10,
+  "goalsTeam2": 12,
+  "date": "2022-04-14",
+  "winner": -1,
+  "matchweek": 28,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 81,
+  "goalsTeam1": 9,
+  "goalsTeam2": 7,
+  "date": "2022-04-19",
+  "winner": 1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 82,
+  "goalsTeam1": 9,
+  "goalsTeam2": 7,
+  "date": "2022-04-20",
+  "winner": 1,
+  "matchweek": 29,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 83,
+  "goalsTeam1": 10,
+  "goalsTeam2": 6,
+  "date": "2022-04-28",
+  "winner": 1,
+  "matchweek": 30,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 84,
+  "goalsTeam1": 9,
+  "goalsTeam2": 18,
+  "date": "2022-04-26",
+  "winner": -1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 85,
+  "goalsTeam1": 19,
+  "goalsTeam2": 16,
+  "date": "2022-05-10",
+  "winner": 1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 86,
+  "goalsTeam1": 8,
+  "goalsTeam2": 10,
+  "date": "2022-05-05",
+  "winner": -1,
+  "matchweek": 31,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 87,
+  "goalsTeam1": 5,
+  "goalsTeam2": 15,
+  "date": "2022-05-12",
+  "winner": -1,
+  "matchweek": 32,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 88,
+  "goalsTeam1": 8,
+  "goalsTeam2": 11,
+  "date": "2022-05-17",
+  "winner": -1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 89,
+  "goalsTeam1": 8,
+  "goalsTeam2": 8,
+  "date": "2022-05-24",
+  "winner": 0,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 90,
+  "goalsTeam1": 7,
+  "goalsTeam2": 8,
+  "date": "2022-05-31",
+  "winner": -1,
+  "matchweek": 14,
+  "played": false,
+  "editionId": 6
+ },
+ {
+  "id": 91,
+  "goalsTeam1": 7,
+  "goalsTeam2": 12,
+  "date": "2022-05-19",
+  "winner": -1,
+  "matchweek": 33,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 92,
+  "goalsTeam1": 6,
+  "goalsTeam2": 8,
+  "date": "2022-05-26",
+  "winner": -1,
+  "matchweek": 34,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 93,
+  "goalsTeam1": 8,
+  "goalsTeam2": 11,
+  "date": "2022-06-02",
+  "winner": -1,
+  "matchweek": 35,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 94,
+  "goalsTeam1": 9,
+  "goalsTeam2": 8,
+  "date": "2022-06-09",
+  "winner": 1,
+  "matchweek": 36,
+  "played": false,
+  "editionId": 5
+ },
+ {
+  "id": 95,
+  "goalsTeam1": 8,
+  "goalsTeam2": 6,
+  "date": "2022-09-15",
+  "winner": 1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 96,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2022-09-22",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 97,
+  "goalsTeam1": 8,
+  "goalsTeam2": 9,
+  "date": "2022-09-29",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 98,
+  "goalsTeam1": 7,
+  "goalsTeam2": 6,
+  "date": "2022-10-06",
+  "winner": 1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 99,
+  "goalsTeam1": 8,
+  "goalsTeam2": 5,
+  "date": "2022-10-13",
+  "winner": 1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 100,
+  "goalsTeam1": 3,
+  "goalsTeam2": 5,
+  "date": "2022-10-20",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 101,
+  "goalsTeam1": 7,
+  "goalsTeam2": 5,
+  "date": "2022-10-27",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 102,
+  "goalsTeam1": 6,
+  "goalsTeam2": 8,
+  "date": "2022-11-03",
+  "winner": -1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 103,
+  "goalsTeam1": 10,
+  "goalsTeam2": 7,
+  "date": "2022-11-10",
+  "winner": 1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 104,
+  "goalsTeam1": 6,
+  "goalsTeam2": 5,
+  "date": "2022-11-17",
+  "winner": 1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 105,
+  "goalsTeam1": 6,
+  "goalsTeam2": 7,
+  "date": "2022-11-24",
+  "winner": -1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 106,
+  "goalsTeam1": 3,
+  "goalsTeam2": 3,
+  "date": "2022-12-01",
+  "winner": 0,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 107,
+  "goalsTeam1": 5,
+  "goalsTeam2": 4,
+  "date": "2022-12-08",
+  "winner": 1,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 108,
+  "goalsTeam1": 7,
+  "goalsTeam2": 6,
+  "date": "2022-12-15",
+  "winner": 1,
+  "matchweek": 14,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 109,
+  "goalsTeam1": 8,
+  "goalsTeam2": 4,
+  "date": "2022-12-22",
+  "winner": 1,
+  "matchweek": 15,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 110,
+  "goalsTeam1": 6,
+  "goalsTeam2": 3,
+  "date": "2022-12-29",
+  "winner": 1,
+  "matchweek": 16,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 111,
+  "goalsTeam1": 5,
+  "goalsTeam2": 7,
+  "date": "2023-01-12",
+  "winner": -1,
+  "matchweek": 17,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 112,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2023-01-12",
+  "winner": 1,
+  "matchweek": 18,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 113,
+  "goalsTeam1": 11,
+  "goalsTeam2": 9,
+  "date": "2023-01-19",
+  "winner": 1,
+  "matchweek": 19,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 114,
+  "goalsTeam1": 5,
+  "goalsTeam2": 5,
+  "date": "2023-01-26",
+  "winner": 0,
+  "matchweek": 20,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 115,
+  "goalsTeam1": 3,
+  "goalsTeam2": 6,
+  "date": "2023-02-02",
+  "winner": -1,
+  "matchweek": 21,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 116,
+  "goalsTeam1": 5,
+  "goalsTeam2": 9,
+  "date": "2023-02-09",
+  "winner": -1,
+  "matchweek": 22,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 117,
+  "goalsTeam1": 9,
+  "goalsTeam2": 9,
+  "date": "2023-02-16",
+  "winner": 0,
+  "matchweek": 23,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 118,
+  "goalsTeam1": 5,
+  "goalsTeam2": 13,
+  "date": "2023-02-23",
+  "winner": -1,
+  "matchweek": 24,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 119,
+  "goalsTeam1": 5,
+  "goalsTeam2": 6,
+  "date": "2023-03-09",
+  "winner": -1,
+  "matchweek": 25,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 120,
+  "goalsTeam1": 3,
+  "goalsTeam2": 9,
+  "date": "2023-03-09",
+  "winner": -1,
+  "matchweek": 26,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 121,
+  "goalsTeam1": 7,
+  "goalsTeam2": 7,
+  "date": "2023-03-16",
+  "winner": 0,
+  "matchweek": 27,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 122,
+  "goalsTeam1": 8,
+  "goalsTeam2": 10,
+  "date": "2023-03-23",
+  "winner": -1,
+  "matchweek": 28,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 123,
+  "goalsTeam1": 10,
+  "goalsTeam2": 8,
+  "date": "2023-03-30",
+  "winner": 1,
+  "matchweek": 29,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 124,
+  "goalsTeam1": 8,
+  "goalsTeam2": 9,
+  "date": "2023-04-13",
+  "winner": -1,
+  "matchweek": 30,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 125,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2023-04-13",
+  "winner": 1,
+  "matchweek": 31,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 126,
+  "goalsTeam1": 11,
+  "goalsTeam2": 10,
+  "date": "2023-04-20",
+  "winner": 1,
+  "matchweek": 32,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 127,
+  "goalsTeam1": 7,
+  "goalsTeam2": 8,
+  "date": "2023-04-27",
+  "winner": -1,
+  "matchweek": 33,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 128,
+  "goalsTeam1": 7,
+  "goalsTeam2": 12,
+  "date": "2023-05-04",
+  "winner": -1,
+  "matchweek": 34,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 129,
+  "goalsTeam1": 7,
+  "goalsTeam2": 5,
+  "date": "2023-05-11",
+  "winner": 1,
+  "matchweek": 35,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 130,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2023-05-18",
+  "winner": 1,
+  "matchweek": 36,
+  "played": false,
+  "editionId": 7
+ },
+ {
+  "id": 131,
+  "goalsTeam1": 8,
+  "goalsTeam2": 4,
+  "date": "2023-09-14",
+  "winner": 1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 132,
+  "goalsTeam1": 11,
+  "goalsTeam2": 8,
+  "date": "2023-09-14",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 133,
+  "goalsTeam1": 4,
+  "goalsTeam2": 12,
+  "date": "2023-09-21",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 134,
+  "goalsTeam1": 6,
+  "goalsTeam2": 11,
+  "date": "2023-09-28",
+  "winner": -1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 135,
+  "goalsTeam1": 10,
+  "goalsTeam2": 13,
+  "date": "2023-10-10",
+  "winner": -1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 136,
+  "goalsTeam1": 7,
+  "goalsTeam2": 19,
+  "date": "2023-09-28",
+  "winner": -1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 137,
+  "goalsTeam1": 7,
+  "goalsTeam2": 6,
+  "date": "2023-10-17",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 138,
+  "goalsTeam1": 4,
+  "goalsTeam2": 6,
+  "date": "2023-10-12",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 139,
+  "goalsTeam1": 13,
+  "goalsTeam2": 11,
+  "date": "2023-10-19",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 140,
+  "goalsTeam1": 5,
+  "goalsTeam2": 6,
+  "date": "2023-10-26",
+  "winner": -1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 141,
+  "goalsTeam1": 5,
+  "goalsTeam2": 2,
+  "date": "2023-10-24",
+  "winner": 1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 142,
+  "goalsTeam1": 5,
+  "goalsTeam2": 12,
+  "date": "2023-11-02",
+  "winner": -1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 143,
+  "goalsTeam1": 8,
+  "goalsTeam2": 8,
+  "date": "2023-11-07",
+  "winner": 0,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 144,
+  "goalsTeam1": 9,
+  "goalsTeam2": 6,
+  "date": "2023-11-09",
+  "winner": 1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 145,
+  "goalsTeam1": 5,
+  "goalsTeam2": 11,
+  "date": "2023-11-14",
+  "winner": -1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 146,
+  "goalsTeam1": 9,
+  "goalsTeam2": 9,
+  "date": "2023-11-16",
+  "winner": 0,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 147,
+  "goalsTeam1": 3,
+  "goalsTeam2": 4,
+  "date": "2023-11-23",
+  "winner": -1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 148,
+  "goalsTeam1": 1,
+  "goalsTeam2": 2,
+  "date": "2023-11-21",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 149,
+  "goalsTeam1": 10,
+  "goalsTeam2": 6,
+  "date": "2023-11-21",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 150,
+  "goalsTeam1": 9,
+  "goalsTeam2": 11,
+  "date": "2023-11-30",
+  "winner": -1,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 151,
+  "goalsTeam1": 2,
+  "goalsTeam2": 3,
+  "date": "2023-12-12",
+  "winner": -1,
+  "matchweek": 8,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 152,
+  "goalsTeam1": 4,
+  "goalsTeam2": 7,
+  "date": "2023-12-07",
+  "winner": -1,
+  "matchweek": 14,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 153,
+  "goalsTeam1": 4,
+  "goalsTeam2": 11,
+  "date": "2023-12-14",
+  "winner": -1,
+  "matchweek": 15,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 154,
+  "goalsTeam1": 5,
+  "goalsTeam2": 7,
+  "date": "2023-12-21",
+  "winner": -1,
+  "matchweek": 16,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 155,
+  "goalsTeam1": 3,
+  "goalsTeam2": 7,
+  "date": "2024-01-02",
+  "winner": -1,
+  "matchweek": 9,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 156,
+  "goalsTeam1": 11,
+  "goalsTeam2": 8,
+  "date": "2024-01-04",
+  "winner": 1,
+  "matchweek": 17,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 157,
+  "goalsTeam1": 10,
+  "goalsTeam2": 7,
+  "date": "2024-01-02",
+  "winner": 1,
+  "matchweek": 10,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 158,
+  "goalsTeam1": 7,
+  "goalsTeam2": 9,
+  "date": "2024-01-04",
+  "winner": -1,
+  "matchweek": 18,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 159,
+  "goalsTeam1": 9,
+  "goalsTeam2": 6,
+  "date": "2024-01-09",
+  "winner": 1,
+  "matchweek": 11,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 160,
+  "goalsTeam1": 14,
+  "goalsTeam2": 4,
+  "date": "2024-01-11",
+  "winner": 1,
+  "matchweek": 19,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 161,
+  "goalsTeam1": 6,
+  "goalsTeam2": 7,
+  "date": "2024-01-16",
+  "winner": -1,
+  "matchweek": 12,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 162,
+  "goalsTeam1": 4,
+  "goalsTeam2": 4,
+  "date": "2024-01-18",
+  "winner": 0,
+  "matchweek": 20,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 163,
+  "goalsTeam1": 7,
+  "goalsTeam2": 5,
+  "date": "2024-01-23",
+  "winner": 1,
+  "matchweek": 13,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 164,
+  "goalsTeam1": 7,
+  "goalsTeam2": 12,
+  "date": "2024-01-25",
+  "winner": -1,
+  "matchweek": 21,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 165,
+  "goalsTeam1": 10,
+  "goalsTeam2": 4,
+  "date": "2024-01-30",
+  "winner": 1,
+  "matchweek": 14,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 166,
+  "goalsTeam1": 6,
+  "goalsTeam2": 8,
+  "date": "2024-02-01",
+  "winner": -1,
+  "matchweek": 22,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 167,
+  "goalsTeam1": 5,
+  "goalsTeam2": 4,
+  "date": "2024-02-06",
+  "winner": 1,
+  "matchweek": 15,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 168,
+  "goalsTeam1": 5,
+  "goalsTeam2": 6,
+  "date": "2024-02-08",
+  "winner": -1,
+  "matchweek": 23,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 169,
+  "goalsTeam1": 9,
+  "goalsTeam2": 8,
+  "date": "2024-02-13",
+  "winner": 1,
+  "matchweek": 16,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 170,
+  "goalsTeam1": 9,
+  "goalsTeam2": 3,
+  "date": "2024-02-15",
+  "winner": 1,
+  "matchweek": 24,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 171,
+  "goalsTeam1": 4,
+  "goalsTeam2": 5,
+  "date": "2024-02-20",
+  "winner": -1,
+  "matchweek": 17,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 172,
+  "goalsTeam1": 2,
+  "goalsTeam2": 4,
+  "date": "2024-02-22",
+  "winner": -1,
+  "matchweek": 25,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 173,
+  "goalsTeam1": 10,
+  "goalsTeam2": 4,
+  "date": "2024-02-27",
+  "winner": 1,
+  "matchweek": 18,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 174,
+  "goalsTeam1": 6,
+  "goalsTeam2": 6,
+  "date": "2024-02-29",
+  "winner": 0,
+  "matchweek": 26,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 175,
+  "goalsTeam1": 10,
+  "goalsTeam2": 6,
+  "date": "2024-03-07",
+  "winner": 1,
+  "matchweek": 27,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 176,
+  "goalsTeam1": 8,
+  "goalsTeam2": 2,
+  "date": "2024-03-05",
+  "winner": 1,
+  "matchweek": 19,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 177,
+  "goalsTeam1": 10,
+  "goalsTeam2": 4,
+  "date": "2024-03-14",
+  "winner": 1,
+  "matchweek": 28,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 178,
+  "goalsTeam1": 8,
+  "goalsTeam2": 7,
+  "date": "2024-03-21",
+  "winner": 1,
+  "matchweek": 29,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 179,
+  "goalsTeam1": 4,
+  "goalsTeam2": 5,
+  "date": "2024-03-18",
+  "winner": -1,
+  "matchweek": 20,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 180,
+  "goalsTeam1": 7,
+  "goalsTeam2": 12,
+  "date": "2024-03-26",
+  "winner": -1,
+  "matchweek": 21,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 181,
+  "goalsTeam1": 6,
+  "goalsTeam2": 5,
+  "date": "2024-03-28",
+  "winner": 1,
+  "matchweek": 30,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 182,
+  "goalsTeam1": 7,
+  "goalsTeam2": 8,
+  "date": "2024-04-02",
+  "winner": -1,
+  "matchweek": 22,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 183,
+  "goalsTeam1": 8,
+  "goalsTeam2": 1,
+  "date": "2024-04-04",
+  "winner": 1,
+  "matchweek": 31,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 184,
+  "goalsTeam1": 9,
+  "goalsTeam2": 7,
+  "date": "2024-04-09",
+  "winner": 1,
+  "matchweek": 23,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 185,
+  "goalsTeam1": 7,
+  "goalsTeam2": 7,
+  "date": "2024-04-11",
+  "winner": 0,
+  "matchweek": 32,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 186,
+  "goalsTeam1": 2,
+  "goalsTeam2": 9,
+  "date": "2024-04-16",
+  "winner": -1,
+  "matchweek": 24,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 187,
+  "goalsTeam1": 5,
+  "goalsTeam2": 10,
+  "date": "2024-04-18",
+  "winner": -1,
+  "matchweek": 33,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 188,
+  "goalsTeam1": 9,
+  "goalsTeam2": 9,
+  "date": "2024-04-25",
+  "winner": 0,
+  "matchweek": 34,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 189,
+  "goalsTeam1": 5,
+  "goalsTeam2": 5,
+  "date": "2024-04-30",
+  "winner": 0,
+  "matchweek": 25,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 190,
+  "goalsTeam1": 9,
+  "goalsTeam2": 4,
+  "date": "2024-05-02",
+  "winner": 1,
+  "matchweek": 35,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 191,
+  "goalsTeam1": 5,
+  "goalsTeam2": 5,
+  "date": "2024-04-30",
+  "winner": 0,
+  "matchweek": 26,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 192,
+  "goalsTeam1": 6,
+  "goalsTeam2": 6,
+  "date": "2024-05-16",
+  "winner": 0,
+  "matchweek": 36,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 193,
+  "goalsTeam1": 7,
+  "goalsTeam2": 9,
+  "date": "2024-05-14",
+  "winner": -1,
+  "matchweek": 27,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 194,
+  "goalsTeam1": 5,
+  "goalsTeam2": 10,
+  "date": "2024-05-16",
+  "winner": -1,
+  "matchweek": 37,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 195,
+  "goalsTeam1": 5,
+  "goalsTeam2": 4,
+  "date": "2024-05-21",
+  "winner": 1,
+  "matchweek": 28,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 196,
+  "goalsTeam1": 7,
+  "goalsTeam2": 5,
+  "date": "2024-05-23",
+  "winner": 1,
+  "matchweek": 38,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 197,
+  "goalsTeam1": 7,
+  "goalsTeam2": 7,
+  "date": "2024-05-30",
+  "winner": 0,
+  "matchweek": 39,
+  "played": false,
+  "editionId": 8
+ },
+ {
+  "id": 198,
+  "goalsTeam1": 5,
+  "goalsTeam2": 3,
+  "date": "2024-05-28",
+  "winner": 1,
+  "matchweek": 29,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 199,
+  "goalsTeam1": 7,
+  "goalsTeam2": 7,
+  "date": "2024-06-04",
+  "winner": 0,
+  "matchweek": 30,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 200,
+  "goalsTeam1": 5,
+  "goalsTeam2": 5,
+  "date": "2024-06-11",
+  "winner": 0,
+  "matchweek": 31,
+  "played": false,
+  "editionId": 9
+ },
+ {
+  "id": 201,
+  "goalsTeam1": 8,
+  "goalsTeam2": 13,
+  "date": "2024-09-02",
+  "winner": -1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 202,
+  "goalsTeam1": 8,
+  "goalsTeam2": 6,
+  "date": "2024-09-09",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 203,
+  "goalsTeam1": 6,
+  "goalsTeam2": 8,
+  "date": "2024-09-16",
+  "winner": -1,
+  "matchweek": 3,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 204,
+  "goalsTeam1": 8,
+  "goalsTeam2": 6,
+  "date": "2024-09-23",
+  "winner": 1,
+  "matchweek": 4,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 205,
+  "goalsTeam1": 8,
+  "goalsTeam2": 6,
+  "date": "2024-09-30",
+  "winner": 1,
+  "matchweek": 5,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 206,
+  "goalsTeam1": 5,
+  "goalsTeam2": 11,
+  "date": "2024-10-07",
+  "winner": -1,
+  "matchweek": 6,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 207,
+  "goalsTeam1": 7,
+  "goalsTeam2": 8,
+  "date": "2024-10-02",
+  "winner": -1,
+  "matchweek": 1,
+  "played": false,
+  "editionId": 11
+ },
+ {
+  "id": 208,
+  "goalsTeam1": 9,
+  "goalsTeam2": 6,
+  "date": "2024-10-14",
+  "winner": 1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 10
+ },
+ {
+  "id": 209,
+  "goalsTeam1": 9,
+  "goalsTeam2": 5,
+  "date": "2024-10-22",
+  "winner": 1,
+  "matchweek": 2,
+  "played": false,
+  "editionId": 11
+ }
+]
