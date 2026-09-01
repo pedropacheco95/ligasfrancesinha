@@ -254,7 +254,116 @@ const newestScore = await page.evaluate(() => {
 });
 check("new game shows the submitted score", /4 - 2/.test(newestScore), newestScore);
 
-/* ------------------------------------------- 7. Flask parity checks */
+/* ------------------------- 7. mobile: the collapsed sub-navigations */
+
+// Bootstrap's JS implements these toggles in Flask; the port loads only the
+// stylesheet, so the behaviour is reimplemented and needs covering. Desktop
+// hides the toggle entirely, which is why this has to run at phone width.
+{
+  const phone = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const small = await phone.newPage();
+
+  for (const [label, path, navId] of [
+    ["scores", "/scores/table/2/11", "#scores_navbar"],
+    ["player", "/player/general/Pedro Pacheco", "#player_navbar"],
+  ]) {
+    const linksAfterToggle = async (base) => {
+      await small.goto(base + encodeURI(path), { waitUntil: "networkidle" });
+      await small.waitForTimeout(400);
+      await small.click(".navbar-toggler");
+      await small.waitForTimeout(600);
+      return small.evaluate(
+        () =>
+          [...document.querySelectorAll(".nav-link")].filter(
+            (a) => a.getBoundingClientRect().height > 0,
+          ).length,
+      );
+    };
+    const flaskLinks = await linksAfterToggle(FLASK);
+    const reactLinks = await linksAfterToggle(REACT);
+    check(
+      `mobile ${label} sub-nav opens on tap`,
+      flaskLinks > 0 && flaskLinks === reactLinks,
+      `flask ${flaskLinks}, react ${reactLinks}`,
+    );
+  }
+  await phone.close();
+}
+
+/* --------------------- 8. create game: rejection and de-duplication */
+
+// Flask rejects by re-rendering the page from scratch: no message is shown
+// (layout.html has no flash block) and the line-up, goals and date all reset.
+await freshVisit("/create/game/6ª Edição Tuesday League");
+const defaultLineup = () =>
+  page.evaluate(() =>
+    [...document.querySelectorAll(".create_game_player_row .playerField")].map((el) =>
+      el.textContent.trim(),
+    ),
+  );
+const lineupBefore = await defaultLineup();
+
+await page.fill('input[name="goals_team1"] >> nth=0', "4");
+await page.fill('input[name="goals_team2"] >> nth=0', "2");
+// Put the first player of team 2 onto team 1 as well.
+await page.locator(".create_game_player_row .playerField").first().click();
+await page.waitForTimeout(300);
+await page.evaluate((name) => {
+  const cards = [...document.querySelectorAll("#switch_player_modal .players-grid .player")];
+  cards.find((c) => c.querySelector(".player-name").textContent.trim() === name).click();
+}, lineupBefore[7]);
+await page.waitForTimeout(400);
+await page.click('button[type="submit"]:has-text("Criar")');
+await page.waitForTimeout(800);
+
+check(
+  "a rejected submission stays on the form",
+  decodeURI(new URL(page.url()).pathname).startsWith("/create/game/"),
+  page.url(),
+);
+check(
+  "a rejected submission shows no message, as Flask does not",
+  !/posto nas duas equipas|numero de golos/i.test(await page.innerText("body")),
+);
+check(
+  "a rejected submission resets the line-up",
+  JSON.stringify(await defaultLineup()) === JSON.stringify(lineupBefore),
+);
+check(
+  "a rejected submission clears the score",
+  (await page.inputValue('input[name="goals_team1"] >> nth=0')) === "",
+);
+
+// The same player twice in ONE team must collapse to a single appearance:
+// Flask resolves ids through a SQL IN clause, which returns each player once.
+await freshVisit("/create/game/6ª Edição Tuesday League");
+const roster = await defaultLineup();
+await page.locator(".create_game_player_row .playerField").nth(1).click();
+await page.waitForTimeout(300);
+await page.evaluate((name) => {
+  const cards = [...document.querySelectorAll("#switch_player_modal .players-grid .player")];
+  cards.find((c) => c.querySelector(".player-name").textContent.trim() === name).click();
+}, roster[0]);
+await page.waitForTimeout(400);
+await page.fill('input[name="goals_team1"] >> nth=0', "2");
+await page.fill('input[name="goals_team2"] >> nth=0', "0");
+await page.click('button[type="submit"]:has-text("Criar")');
+await page.waitForTimeout(1200);
+
+// Navigate rather than fetch: the created game lives in this browser's overlay,
+// so a server-rendered response would not contain it.
+await page.goto(REACT + "/game/210", { waitUntil: "networkidle" });
+await page.waitForTimeout(500);
+const lineUpCount = await page.evaluate(
+  () => document.querySelectorAll(".table_line_up tr").length,
+);
+check(
+  "a player listed twice in one team appears once in the game",
+  lineUpCount === 13,
+  `${lineUpCount} line-up rows (Flask writes 13)`,
+);
+
+/* ------------------------------------------- 9. Flask parity checks */
 
 // The register link 500s in Flask; the port must not quietly succeed.
 const registerStatus = async (base) => {

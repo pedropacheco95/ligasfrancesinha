@@ -20,19 +20,38 @@ export function pyInt(value: number | null | undefined): string {
   return String(value);
 }
 
-/** Python's round(): half-to-even, unlike JS's half-away-from-zero Math.round. */
+/**
+ * Python's `round()`: half-to-even, applied to the double's *exact* value.
+ *
+ * Scaling by a power of ten first would be wrong. `1 / 40` is a hair above
+ * 0.025, so Python rounds it up to 0.03, but multiplying by 100 lands exactly
+ * on 12.5 and the half-to-even rule then rounds it down to 0.02. So this works
+ * from the decimal expansion instead: `toFixed` is correctly rounded, and 18
+ * digits past the target is far more than a double's precision, so a genuine
+ * tie is distinguishable from a value that merely looks like one.
+ */
 export function pyRound(value: number, digits = 0): number {
-  const factor = 10 ** digits;
-  const scaled = value * factor;
-  const floor = Math.floor(scaled);
-  const diff = scaled - floor;
+  if (!Number.isFinite(value)) return value;
+  if (Math.abs(value) >= 1e21) return value; // toFixed goes exponential up here
 
-  let rounded: number;
-  if (diff > 0.5) rounded = floor + 1;
-  else if (diff < 0.5) rounded = floor;
-  else rounded = floor % 2 === 0 ? floor : floor + 1;
+  const negative = value < 0;
+  const [whole, fraction = ""] = Math.abs(value)
+    .toFixed(Math.min(100, digits + 18))
+    .split(".");
 
-  return rounded / factor;
+  const kept = fraction.slice(0, digits).padEnd(digits, "0");
+  const dropped = fraction.slice(digits);
+
+  let scaled = BigInt(`${whole}${kept}`);
+  const first = dropped.charCodeAt(0);
+  if (first > 53 || (first === 53 && /[1-9]/.test(dropped.slice(1)))) {
+    scaled += 1n; // above the halfway point
+  } else if (first === 53 && scaled % 2n === 1n) {
+    scaled += 1n; // exactly halfway: round to even
+  }
+
+  const rounded = Number(scaled) / 10 ** digits;
+  return negative ? -rounded : rounded;
 }
 
 /**

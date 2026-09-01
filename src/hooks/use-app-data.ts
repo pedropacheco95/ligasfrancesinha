@@ -23,3 +23,18 @@ export function useOverlay(): Overlay {
 export function useCurrentUser(): string | null {
   return useOverlay().currentUser;
 }
+
+/**
+ * False while rendering on the server and during hydration, true afterwards.
+ *
+ * Anything created locally lives in the browser's overlay, which the server
+ * render cannot see. A page that looks such a record up has to wait for
+ * hydration before deciding it does not exist.
+ */
+export function useHydrated(): boolean {
+  return useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
+}

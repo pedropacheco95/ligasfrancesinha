@@ -353,17 +353,22 @@ export function leagueImageUrl(league: League): string {
 }
 
 /**
- * Team crests. The filename is mapped explicitly rather than derived from the
- * team name: the original asset was "Maregões.png", stored decomposed (NFD) on
- * disk, which a composed (NFC) string literal in source does not match.
+ * Team crests, keeping the filenames Flask emits.
+ *
+ * "Maregões.png" shipped decomposed (NFD) in the original static directory, and
+ * the dev server only resolves the byte sequence it finds on disk — so an NFC
+ * request 404s against an NFD file and vice versa. The copy under public/ is
+ * stored composed to match what Flask's template emits, and the escape below
+ * pins the composed form so re-saving this file cannot silently change it.
  */
 const TEAM_IMAGES: Record<TeamName, string> = {
   [BRANQUELAS]: "Branquelas.png",
-  [MAREGOES]: "Maregoes.png",
+  [MAREGOES]: "Mareg\u00F5es.png",
 };
 
 export function teamImageUrl(team: TeamName): string {
-  return `/static/images/${TEAM_IMAGES[team]}`;
+  // Percent-encoded, as Werkzeug's url_for emits it.
+  return `/static/images/${encodeURIComponent(TEAM_IMAGES[team])}`;
 }
 
 /* ------------------------------------------------------------------- Game */

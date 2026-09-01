@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { Layout } from "@/components/Layout";
 import { playerAge, playerImageUrl, type Edition, type Player } from "@/lib/domain";
@@ -16,6 +16,8 @@ export function PlayerLayout({
   children: ReactNode;
 }) {
   const age = playerAge(player);
+  // See ScoresLayout: Bootstrap's collapse toggle, reimplemented.
+  const [navOpen, setNavOpen] = useState(false);
   const homeEditionName =
     edition?.name ??
     player.editionsRelations[player.editionsRelations.length - 1]?.edition?.name ??
@@ -100,10 +102,14 @@ export function PlayerLayout({
               aria-label="Toggle navigation"
               className="navbar-toggler"
               type="button"
+              onClick={() => setNavOpen((open) => !open)}
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="player_navbar">
+            <div
+              className={navOpen ? "collapse navbar-collapse show" : "collapse navbar-collapse"}
+              id="player_navbar"
+            >
               <ul className="navbar-nav mr-auto mt-2" style={{ width: "100%" }}>
                 <li className="nav-item" style={{ width: "33%" }}>
                   <Link

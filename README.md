@@ -92,6 +92,11 @@ These are bugs in the original that the port keeps, so both apps behave the same
   (`images/Players/default_player.jpg`), which 404s in both apps.
 - An unknown player or league id raises an error rather than returning 404,
   because Flask redirects to an `errors` blueprint that is never registered.
+- **A rejected game submission silently wipes the form.** `modules/create.py`
+  flashes an error and then falls through to the code that renders a fresh page,
+  so the line-up returns to the last-team default, the goal boxes empty and the
+  date resets. The message itself is never seen, because `layout.html` renders
+  no flash block. The port does the same.
 
 ### Known differences
 
@@ -102,10 +107,11 @@ These are bugs in the original that the port keeps, so both apps behave the same
   `flash(error)` is never displayed, because `layout.html` renders no flash block.
 - **The `/editor` backend** (the admin CRUD, kanban and CSV import/export under
   `modules/editor.py` and `modules/api.py`) was out of scope and is not ported.
-- **The team crest filename.** `Maregões.png` was renamed to `Maregoes.png`. The
-  original is stored decomposed (NFD) on disk, which a composed (NFC) string
-  literal in source does not match, so the crest 404'd. `teamImageUrl()` in
-  `src/lib/domain.ts` now maps team to filename explicitly.
+- **A game you create is only viewable in the browser that created it.** It
+  lives in that browser's overlay, so the server render cannot see it. The game
+  page waits for hydration before deciding an id is unknown, which means an id
+  that genuinely does not exist renders an error page with a 200 rather than
+  Flask's 500.
 - **`npm run preview` does not work.** The build writes to `.output/` while the
   preview server looks for `dist/server/server.js`. This is a template issue —
   the untouched Lovable scaffold fails the same way — and does not affect
@@ -130,4 +136,6 @@ is not needed: `styles_frontend.css` is already compiled, so set
 The port was checked against the running Flask app on every page (all 573 URLs:
 every player, edition, game and view) for identical rendered text, on sampled
 pages for identical element geometry, and on the write paths — both deterministic
-team-draw branches and creating a game — for identical results.
+team-draw branches and creating a game — for identical results. The interaction
+checks run at phone width as well as desktop, because two of the sub-navigations
+are only reachable through a toggle below 768px.

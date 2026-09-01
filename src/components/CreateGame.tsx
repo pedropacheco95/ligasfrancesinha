@@ -51,18 +51,33 @@ export function CreateGameForm({ edition }: { edition: Edition }) {
     .map((id) => playerById.get(id))
     .filter((player): player is Player => player !== undefined);
 
-  const [teams, setTeams] = useState<[Slot[], Slot[]]>(() => [
+  const initialTeams = (): [Slot[], Slot[]] => [
     lineup.slice(0, numberOfPlayersInTeam).map((id, index) => ({ key: index, playerId: id })),
     lineup.slice(numberOfPlayersInTeam).map((id, index) => ({
       key: numberOfPlayersInTeam + index,
       playerId: id,
     })),
-  ]);
+  ];
+
+  const [teams, setTeams] = useState<[Slot[], Slot[]]>(initialTeams);
   const [goals, setGoals] = useState<Record<number, string>>({});
   const [teamGoals, setTeamGoals] = useState({ team1: "", team2: "" });
   const [date, setDate] = useState(() => defaultGameDay(edition));
-  const [error, setError] = useState<string | null>(null);
   const [modal, setModal] = useState<{ team: 0 | 1; key: number } | null>(null);
+
+  /**
+   * What a rejected submission does in Flask. `create.py` calls `flash(error)`
+   * and falls through to the same code that renders a fresh page, so the
+   * line-up goes back to the last-team default, the goal boxes empty and the
+   * date returns to the league's matchday. Nothing tells the user why: the
+   * flash is never displayed, because `layout.html` renders no flash block.
+   */
+  const rejectSubmission = () => {
+    setTeams(initialTeams());
+    setGoals({});
+    setTeamGoals({ team1: "", team2: "" });
+    setDate(defaultGameDay(edition));
+  };
 
   const replaceSlot = (team: 0 | 1, key: number, playerId: number | null) => {
     setTeams((current) => {
@@ -79,22 +94,26 @@ export function CreateGameForm({ edition }: { edition: Edition }) {
     const goals1 = teamGoals.team1.trim();
     const goals2 = teamGoals.team2.trim();
     if (!goals1 || !goals2) {
-      setError("Uma das equipas não tem um numero de golos definido");
+      rejectSubmission();
       return;
     }
 
     // Flask resolves the submitted ids through `Player.query.filter(id.in_(...))`,
-    // so the placeholder (-1) drops out and the survivors come back in id order.
+    // so the placeholder (-1) drops out, a player named twice in one team comes
+    // back once, and the survivors are in id order.
     const idsFor = (team: 0 | 1) =>
-      teams[team]
-        .map((slot) => slot.playerId)
-        .filter((id): id is number => id !== null && playerById.has(id))
-        .sort((a, b) => a - b);
+      [
+        ...new Set(
+          teams[team]
+            .map((slot) => slot.playerId)
+            .filter((id): id is number => id !== null && playerById.has(id)),
+        ),
+      ].sort((a, b) => a - b);
     const team1 = idsFor(0);
     const team2 = idsFor(1);
 
     if (team1.some((id) => team2.includes(id))) {
-      setError("Houve um jogador posto nas duas equipas");
+      rejectSubmission();
       return;
     }
 
@@ -185,7 +204,6 @@ export function CreateGameForm({ edition }: { edition: Edition }) {
           <div className="games_info">
             <br />
             <div className="smallheader">Ficha do jogo</div>
-            {error ? <div>{error}</div> : null}
             <div>
               <input
                 type="date"
@@ -231,7 +249,16 @@ export function CreateGameForm({ edition }: { edition: Edition }) {
         </div>
       </form>
 
-      <div className="modal" id="switch_player_modal" style={{ display: modal ? "block" : "none" }}>
+      {/* modal.js closes the modal on any click that lands on the backdrop
+          rather than inside .modal_content. */}
+      <div
+        className="modal"
+        id="switch_player_modal"
+        style={{ display: modal ? "block" : "none" }}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setModal(null);
+        }}
+      >
         <div className="modal_content">
           <div className="modal_header">
             <h4>Escolhe outro jogador</h4>
@@ -381,9 +408,13 @@ function PlayerRow({
           ) : null}
         </div>
       </div>
+      {/* The trash sits past the row's right edge (its own width is 10% of the
+          row, and the stylesheet pushes it out by another 100% of that). The
+          drag handler in create_game.js clamps to translateX(-110%), which is
+          what actually slides it back into view; anything smaller stays clipped. */}
       <div
         className="trash"
-        style={revealed ? { transform: "translateX(-10%)" } : undefined}
+        style={revealed ? { transform: "translateX(-110%)" } : undefined}
         onClick={onRemove}
       >
         <img src="/static/images/delete.png" className="delete_icon" alt="Delete Image" />

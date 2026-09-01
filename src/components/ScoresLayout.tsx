@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { Layout } from "@/components/Layout";
 import type { Edition, League } from "@/lib/domain";
@@ -25,6 +25,9 @@ export function ScoresLayout({
 }) {
   const navigate = useNavigate();
   const editionParams = { leagueId: String(league.id), editionId: String(edition.id) };
+  // Below 768px the sub-nav is collapsed and only this toggle reveals it.
+  // Bootstrap's JS would add `show`; only its stylesheet is loaded here.
+  const [navOpen, setNavOpen] = useState(false);
 
   return (
     <Layout>
@@ -76,10 +79,15 @@ export function ScoresLayout({
               aria-label="Toggle navigation"
               className="navbar-toggler"
               type="button"
+              onClick={() => setNavOpen((open) => !open)}
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="scores_navbar" data-name="scores_navbar">
+            <div
+              className={navOpen ? "collapse navbar-collapse show" : "collapse navbar-collapse"}
+              id="scores_navbar"
+              data-name="scores_navbar"
+            >
               <ul className="navbar-nav mr-auto mt-2" style={{ width: "100%" }}>
                 <li className="nav-item" style={{ width: "25%" }}>
                   <Link

@@ -30,7 +30,7 @@ npm i --no-save playwright pixelmatch pngjs
 | `compare-text.py` | Rendered text of every page, token by token |
 | `compare-geometry.mjs` | Every element's tag, classes and layout box |
 | `compare-pixels.mjs` | Full-page screenshots, at desktop and mobile widths |
-| `check-interactions.mjs` | Team draws, sign-in, tabs, dropdowns, the create-game form |
+| `check-interactions.mjs` | Team draws, sign-in, tabs, dropdowns, the create-game form, and the mobile sub-navigations |
 | `compare-create-game.mjs` | Creates the same game in both apps and diffs the recalculated standings |
 
 ```sh
@@ -48,7 +48,7 @@ accented and single-word player names, players with no `full_name` or
 ## Reading the results
 
 `compare-text.py` should report **573/573**, `compare-geometry.mjs` **30/30**,
-and `check-interactions.mjs` **22/22**.
+and `check-interactions.mjs` **29/29**.
 
 `compare-pixels.mjs` reports about 57/60 identical. The three that differ are
 the long "jogos realizados" pages, where React's server rendering splits

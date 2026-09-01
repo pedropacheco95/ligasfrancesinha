@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
-import { useDataset } from "@/hooks/use-app-data";
+import { useDataset, useHydrated } from "@/hooks/use-app-data";
 import {
   playerImageUrl,
   playersByTeam,
@@ -22,8 +22,16 @@ export const Route = createFileRoute("/game/$id")({
 function GamePage() {
   const { id } = Route.useParams();
   const dataset = useDataset();
+  const hydrated = useHydrated();
   const game = dataset.gameById.get(Number(id));
-  if (!game) throw new Error(`No game with id ${id}`);
+
+  // A game created in this browser exists only in the local overlay, so the
+  // server render legitimately cannot find it. Hold off until hydration before
+  // treating the id as unknown, or a freshly created game would 500 on reload.
+  if (!game) {
+    if (!hydrated) return null;
+    throw new Error(`No game with id ${id}`);
+  }
 
   const edition = game.edition;
   const teams = playersByTeam(game);
