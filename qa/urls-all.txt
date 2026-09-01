@@ -1,0 +1,573 @@
+/
+/leagues
+/players
+/auth/login
+/create/choose_edition/game
+/create/game
+/scores/table/1/1
+/scores/games/1/1
+/scores/scorers/1/1
+/scores/create_teams/1/1
+/scores/table/1/5
+/scores/games/1/5
+/scores/scorers/1/5
+/scores/create_teams/1/5
+/scores/table/1/7
+/scores/games/1/7
+/scores/scorers/1/7
+/scores/create_teams/1/7
+/scores/table/1/8
+/scores/games/1/8
+/scores/scorers/1/8
+/scores/create_teams/1/8
+/scores/table/1/10
+/scores/games/1/10
+/scores/scorers/1/10
+/scores/create_teams/1/10
+/scores/table/1
+/scores/games/1
+/scores/scorers/1
+/scores/create_teams/1
+/scores/table/2/2
+/scores/games/2/2
+/scores/scorers/2/2
+/scores/create_teams/2/2
+/scores/table/2/3
+/scores/games/2/3
+/scores/scorers/2/3
+/scores/create_teams/2/3
+/scores/table/2/4
+/scores/games/2/4
+/scores/scorers/2/4
+/scores/create_teams/2/4
+/scores/table/2/6
+/scores/games/2/6
+/scores/scorers/2/6
+/scores/create_teams/2/6
+/scores/table/2/9
+/scores/games/2/9
+/scores/scorers/2/9
+/scores/create_teams/2/9
+/scores/table/2/11
+/scores/games/2/11
+/scores/scorers/2/11
+/scores/create_teams/2/11
+/scores/table/2
+/scores/games/2
+/scores/scorers/2
+/scores/create_teams/2
+/player/general/Pedro Pacheco
+/player/games_played/Pedro Pacheco
+/player/all_editions/Pedro Pacheco
+/player/general/Pedro Pacheco/1ª Edição MasterLeague
+/player/general/Pedro Pacheco/1ª Edição TuesdayLeague
+/player/general/Pedro Pacheco/2ª Edição TuesdayLeague
+/player/general/Pedro Pacheco/3ª Edição TuesdayLeague
+/player/general/Pedro Pacheco/2ª Edição MasterLeague
+/player/general/Pedro Pacheco/4ª Edição TuesdayLeague
+/player/general/Pedro Pacheco/3ª Edição MasterLeague
+/player/general/Pedro Pacheco/4ª Edição Masterleague
+/player/general/Pedro Pacheco/5ª Edição Tuesday League
+/player/general/Pedro Pacheco/5ª Edição Masterleague
+/player/general/Pedro Pacheco/6ª Edição Tuesday League
+/player/general/João Perneta
+/player/games_played/João Perneta
+/player/all_editions/João Perneta
+/player/general/João Perneta/1ª Edição MasterLeague
+/player/general/João Perneta/3ª Edição MasterLeague
+/player/general/João Perneta/4ª Edição Masterleague
+/player/general/Bernardo Xavier
+/player/games_played/Bernardo Xavier
+/player/all_editions/Bernardo Xavier
+/player/general/Bernardo Xavier/1ª Edição MasterLeague
+/player/general/Bernardo Xavier/2ª Edição MasterLeague
+/player/general/Bernardo Xavier/3ª Edição MasterLeague
+/player/general/Bernardo Xavier/4ª Edição Masterleague
+/player/general/Bernardo Xavier/5ª Edição Masterleague
+/player/general/Chico Castro
+/player/games_played/Chico Castro
+/player/all_editions/Chico Castro
+/player/general/Chico Castro/1ª Edição MasterLeague
+/player/general/Chico Castro/3ª Edição TuesdayLeague
+/player/general/Chico Castro/3ª Edição MasterLeague
+/player/general/Chico Castro/4ª Edição Masterleague
+/player/general/Ferna
+/player/games_played/Ferna
+/player/all_editions/Ferna
+/player/general/Ferna/1ª Edição MasterLeague
+/player/general/Ferna/2ª Edição MasterLeague
+/player/general/Ferna/3ª Edição MasterLeague
+/player/general/Ferna/4ª Edição Masterleague
+/player/general/Ferna/5ª Edição Masterleague
+/player/general/João
+/player/games_played/João
+/player/all_editions/João
+/player/general/João/1ª Edição MasterLeague
+/player/general/João/2ª Edição MasterLeague
+/player/general/JP
+/player/games_played/JP
+/player/all_editions/JP
+/player/general/JP/1ª Edição MasterLeague
+/player/general/Kiko TM
+/player/games_played/Kiko TM
+/player/all_editions/Kiko TM
+/player/general/Kiko TM/1ª Edição MasterLeague
+/player/general/Kiko TM/2ª Edição MasterLeague
+/player/general/Kiko TM/3ª Edição MasterLeague
+/player/general/Kiko TM/4ª Edição Masterleague
+/player/general/Kiko TM/5ª Edição Masterleague
+/player/general/Luis Fragoso
+/player/games_played/Luis Fragoso
+/player/all_editions/Luis Fragoso
+/player/general/Luis Fragoso/1ª Edição MasterLeague
+/player/general/Luis Fragoso/2ª Edição MasterLeague
+/player/general/Luis Fragoso/3ª Edição MasterLeague
+/player/general/Luis Fragoso/4ª Edição Masterleague
+/player/general/Luis Fragoso/5ª Edição Masterleague
+/player/general/Manel
+/player/games_played/Manel
+/player/all_editions/Manel
+/player/general/Manel/1ª Edição MasterLeague
+/player/general/Manel/2ª Edição MasterLeague
+/player/general/Vinhas
+/player/games_played/Vinhas
+/player/all_editions/Vinhas
+/player/general/Vinhas/1ª Edição MasterLeague
+/player/general/Vinhas/2ª Edição MasterLeague
+/player/general/Vinhas/3ª Edição MasterLeague
+/player/general/Vinhas/4ª Edição Masterleague
+/player/general/Vinhas/5ª Edição Masterleague
+/player/general/Zi
+/player/games_played/Zi
+/player/all_editions/Zi
+/player/general/Zi/1ª Edição MasterLeague
+/player/general/Zi/2ª Edição MasterLeague
+/player/general/Zi/3ª Edição MasterLeague
+/player/general/Zi/4ª Edição Masterleague
+/player/general/Zi/5ª Edição Masterleague
+/player/general/Gustavo
+/player/games_played/Gustavo
+/player/all_editions/Gustavo
+/player/general/Gustavo/1ª Edição TuesdayLeague
+/player/general/Gustavo/5ª Edição Tuesday League
+/player/general/Gustavo/6ª Edição Tuesday League
+/player/general/Beirão
+/player/games_played/Beirão
+/player/all_editions/Beirão
+/player/general/Beirão/1ª Edição TuesdayLeague
+/player/general/Beirão/2ª Edição TuesdayLeague
+/player/general/Praça
+/player/games_played/Praça
+/player/all_editions/Praça
+/player/general/Praça/1ª Edição TuesdayLeague
+/player/general/Praça/2ª Edição TuesdayLeague
+/player/general/Tommy
+/player/games_played/Tommy
+/player/all_editions/Tommy
+/player/general/Tommy/1ª Edição TuesdayLeague
+/player/general/Tommy/3ª Edição TuesdayLeague
+/player/general/Tommy/4ª Edição TuesdayLeague
+/player/general/Araújo
+/player/games_played/Araújo
+/player/all_editions/Araújo
+/player/general/Araújo/1ª Edição TuesdayLeague
+/player/general/Araújo/2ª Edição TuesdayLeague
+/player/general/Araújo/3ª Edição TuesdayLeague
+/player/general/Dinis
+/player/games_played/Dinis
+/player/all_editions/Dinis
+/player/general/Dinis/1ª Edição TuesdayLeague
+/player/general/Mateus
+/player/games_played/Mateus
+/player/all_editions/Mateus
+/player/general/Mateus/1ª Edição TuesdayLeague
+/player/general/Mateus/2ª Edição TuesdayLeague
+/player/general/Mateus/5ª Edição Tuesday League
+/player/general/Eloi
+/player/games_played/Eloi
+/player/all_editions/Eloi
+/player/general/Eloi/1ª Edição TuesdayLeague
+/player/general/Eloi/2ª Edição TuesdayLeague
+/player/general/Eloi/3ª Edição TuesdayLeague
+/player/general/Eloi/4ª Edição TuesdayLeague
+/player/general/Eloi/5ª Edição Tuesday League
+/player/general/Eloi/6ª Edição Tuesday League
+/player/general/Nuno
+/player/games_played/Nuno
+/player/all_editions/Nuno
+/player/general/Nuno/1ª Edição TuesdayLeague
+/player/general/Nuno/2ª Edição TuesdayLeague
+/player/general/Nuno/3ª Edição TuesdayLeague
+/player/general/Nuno/4ª Edição TuesdayLeague
+/player/general/Pipinho
+/player/games_played/Pipinho
+/player/all_editions/Pipinho
+/player/general/Pipinho/1ª Edição TuesdayLeague
+/player/general/Pipinho/2ª Edição TuesdayLeague
+/player/general/Pipinho/3ª Edição TuesdayLeague
+/player/general/Pipinho/5ª Edição Tuesday League
+/player/general/Tomás Pacheco
+/player/games_played/Tomás Pacheco
+/player/all_editions/Tomás Pacheco
+/player/general/Tomás Pacheco/1ª Edição TuesdayLeague
+/player/general/Tomás Pacheco/2ª Edição TuesdayLeague
+/player/general/Tomás Pacheco/6ª Edição Tuesday League
+/player/general/Resende
+/player/games_played/Resende
+/player/all_editions/Resende
+/player/general/Resende/2ª Edição TuesdayLeague
+/player/general/Xico
+/player/games_played/Xico
+/player/all_editions/Xico
+/player/general/Xico/2ª Edição TuesdayLeague
+/player/general/Xico/3ª Edição TuesdayLeague
+/player/general/Xico/4ª Edição TuesdayLeague
+/player/general/Jorginho
+/player/games_played/Jorginho
+/player/all_editions/Jorginho
+/player/general/Jorginho/2ª Edição TuesdayLeague
+/player/general/António PT
+/player/games_played/António PT
+/player/all_editions/António PT
+/player/general/António PT/3ª Edição TuesdayLeague
+/player/general/António PT/4ª Edição TuesdayLeague
+/player/general/António PT/5ª Edição Tuesday League
+/player/general/António PT/6ª Edição Tuesday League
+/player/general/Diego
+/player/games_played/Diego
+/player/all_editions/Diego
+/player/general/Diego/3ª Edição TuesdayLeague
+/player/general/Diego/4ª Edição TuesdayLeague
+/player/general/Afonso
+/player/games_played/Afonso
+/player/all_editions/Afonso
+/player/general/Afonso/2ª Edição MasterLeague
+/player/general/Bernardo Castro
+/player/games_played/Bernardo Castro
+/player/all_editions/Bernardo Castro
+/player/general/Bernardo Castro/2ª Edição MasterLeague
+/player/general/Bernardo Castro/3ª Edição MasterLeague
+/player/general/Bernardo Castro/4ª Edição Masterleague
+/player/general/Bernardo Castro/5ª Edição Masterleague
+/player/general/Zé SF
+/player/games_played/Zé SF
+/player/all_editions/Zé SF
+/player/general/Zé SF/2ª Edição MasterLeague
+/player/general/Zé SF/3ª Edição MasterLeague
+/player/general/Zé SF/5ª Edição Masterleague
+/player/general/Jervell
+/player/games_played/Jervell
+/player/all_editions/Jervell
+/player/general/Jervell/3ª Edição TuesdayLeague
+/player/general/Jervell/4ª Edição TuesdayLeague
+/player/general/Pedro Rodrigues
+/player/games_played/Pedro Rodrigues
+/player/all_editions/Pedro Rodrigues
+/player/general/Pedro Rodrigues/3ª Edição TuesdayLeague
+/player/general/Pedro Rodrigues/4ª Edição TuesdayLeague
+/player/general/Pedro Rodrigues/6ª Edição Tuesday League
+/player/general/Rodrigo
+/player/games_played/Rodrigo
+/player/all_editions/Rodrigo
+/player/general/Rodrigo/4ª Edição TuesdayLeague
+/player/general/Castro
+/player/games_played/Castro
+/player/all_editions/Castro
+/player/general/Castro/4ª Edição TuesdayLeague
+/player/general/Nuno Pereira
+/player/games_played/Nuno Pereira
+/player/all_editions/Nuno Pereira
+/player/general/Nuno Pereira/4ª Edição TuesdayLeague
+/player/general/Mini Zi
+/player/games_played/Mini Zi
+/player/all_editions/Mini Zi
+/player/general/Mini Zi/4ª Edição Masterleague
+/player/general/Mini Zi/5ª Edição Masterleague
+/player/general/Barros
+/player/games_played/Barros
+/player/all_editions/Barros
+/player/general/Barros/3ª Edição MasterLeague
+/player/general/Afonso Mariz
+/player/games_played/Afonso Mariz
+/player/all_editions/Afonso Mariz
+/player/general/Afonso Mariz/3ª Edição MasterLeague
+/player/general/Afonso Mariz/4ª Edição Masterleague
+/player/general/Afonso Mariz/5ª Edição Masterleague
+/player/general/Totti
+/player/games_played/Totti
+/player/all_editions/Totti
+/player/general/Totti/3ª Edição MasterLeague
+/player/general/Bernardo Queiroz
+/player/games_played/Bernardo Queiroz
+/player/all_editions/Bernardo Queiroz
+/player/general/Bernardo Queiroz/4ª Edição Masterleague
+/player/general/Bernardo Queiroz/5ª Edição Masterleague
+/player/general/Filipe
+/player/games_played/Filipe
+/player/all_editions/Filipe
+/player/general/Filipe/5ª Edição Tuesday League
+/player/general/Filipe/6ª Edição Tuesday League
+/player/general/Baldaia
+/player/games_played/Baldaia
+/player/all_editions/Baldaia
+/player/general/Baldaia/5ª Edição Tuesday League
+/player/general/Machado
+/player/games_played/Machado
+/player/all_editions/Machado
+/player/general/Machado/5ª Edição Tuesday League
+/player/general/Maia
+/player/games_played/Maia
+/player/all_editions/Maia
+/player/general/Maia/5ª Edição Tuesday League
+/player/general/Kiko BF
+/player/games_played/Kiko BF
+/player/all_editions/Kiko BF
+/player/general/Kiko BF/5ª Edição Tuesday League
+/player/general/Kiko BF/6ª Edição Tuesday League
+/player/general/Pedro F
+/player/games_played/Pedro F
+/player/all_editions/Pedro F
+/player/general/Pedro F/5ª Edição Tuesday League
+/player/general/Pedro F/6ª Edição Tuesday League
+/player/general/Mini
+/player/games_played/Mini
+/player/all_editions/Mini
+/player/general/Mini/5ª Edição Tuesday League
+/player/general/Mini/6ª Edição Tuesday League
+/player/general/Miguel
+/player/games_played/Miguel
+/player/all_editions/Miguel
+/player/general/Miguel/4ª Edição Masterleague
+/player/general/Miguel/5ª Edição Masterleague
+/player/general/João Morgado
+/player/games_played/João Morgado
+/player/all_editions/João Morgado
+/player/general/João Morgado/5ª Edição Tuesday League
+/player/general/João Morgado/6ª Edição Tuesday League
+/player/general/Fanuca
+/player/games_played/Fanuca
+/player/all_editions/Fanuca
+/player/general/Fanuca/5ª Edição Masterleague
+/player/general/Vilarinho
+/player/games_played/Vilarinho
+/player/all_editions/Vilarinho
+/player/general/Vilarinho/6ª Edição Tuesday League
+/player/general/Manel Cerquinho
+/player/games_played/Manel Cerquinho
+/player/all_editions/Manel Cerquinho
+/player/general/Manel Cerquinho/6ª Edição Tuesday League
+/player/general/Tomás Cottim
+/player/games_played/Tomás Cottim
+/player/all_editions/Tomás Cottim
+/player/general/Tomás Cottim/6ª Edição Tuesday League
+/game/1
+/game/2
+/game/3
+/game/4
+/game/5
+/game/6
+/game/7
+/game/8
+/game/9
+/game/10
+/game/11
+/game/12
+/game/13
+/game/14
+/game/15
+/game/16
+/game/17
+/game/18
+/game/19
+/game/20
+/game/21
+/game/22
+/game/23
+/game/24
+/game/25
+/game/26
+/game/27
+/game/28
+/game/29
+/game/30
+/game/31
+/game/32
+/game/33
+/game/34
+/game/35
+/game/36
+/game/37
+/game/38
+/game/39
+/game/40
+/game/41
+/game/42
+/game/43
+/game/44
+/game/45
+/game/46
+/game/47
+/game/48
+/game/49
+/game/50
+/game/51
+/game/52
+/game/53
+/game/54
+/game/55
+/game/56
+/game/57
+/game/58
+/game/59
+/game/60
+/game/61
+/game/62
+/game/63
+/game/64
+/game/65
+/game/66
+/game/67
+/game/68
+/game/69
+/game/70
+/game/71
+/game/72
+/game/73
+/game/74
+/game/75
+/game/76
+/game/77
+/game/78
+/game/79
+/game/80
+/game/81
+/game/82
+/game/83
+/game/84
+/game/85
+/game/86
+/game/87
+/game/88
+/game/89
+/game/90
+/game/91
+/game/92
+/game/93
+/game/94
+/game/95
+/game/96
+/game/97
+/game/98
+/game/99
+/game/100
+/game/101
+/game/102
+/game/103
+/game/104
+/game/105
+/game/106
+/game/107
+/game/108
+/game/109
+/game/110
+/game/111
+/game/112
+/game/113
+/game/114
+/game/115
+/game/116
+/game/117
+/game/118
+/game/119
+/game/120
+/game/121
+/game/122
+/game/123
+/game/124
+/game/125
+/game/126
+/game/127
+/game/128
+/game/129
+/game/130
+/game/131
+/game/132
+/game/133
+/game/134
+/game/135
+/game/136
+/game/137
+/game/138
+/game/139
+/game/140
+/game/141
+/game/142
+/game/143
+/game/144
+/game/145
+/game/146
+/game/147
+/game/148
+/game/149
+/game/150
+/game/151
+/game/152
+/game/153
+/game/154
+/game/155
+/game/156
+/game/157
+/game/158
+/game/159
+/game/160
+/game/161
+/game/162
+/game/163
+/game/164
+/game/165
+/game/166
+/game/167
+/game/168
+/game/169
+/game/170
+/game/171
+/game/172
+/game/173
+/game/174
+/game/175
+/game/176
+/game/177
+/game/178
+/game/179
+/game/180
+/game/181
+/game/182
+/game/183
+/game/184
+/game/185
+/game/186
+/game/187
+/game/188
+/game/189
+/game/190
+/game/191
+/game/192
+/game/193
+/game/194
+/game/195
+/game/196
+/game/197
+/game/198
+/game/199
+/game/200
+/game/201
+/game/202
+/game/203
+/game/204
+/game/205
+/game/206
+/game/207
+/game/208
+/game/209
+/create/game/5ª Edição Masterleague
+/create/game/6ª Edição Tuesday League

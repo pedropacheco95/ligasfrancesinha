@@ -1,0 +1,30 @@
+/
+/leagues
+/players
+/auth/login
+/scores/table/1
+/scores/table/1/10
+/scores/table/2/11
+/scores/table/1/7
+/scores/games/1/10
+/scores/games/2/11
+/scores/scorers/1/10
+/scores/scorers/2/11
+/scores/create_teams/1/10
+/scores/create_teams/2/11
+/player/general/Pedro Pacheco
+/player/general/Pedro Pacheco/5ª Edição Masterleague
+/player/general/António PT/6ª Edição Tuesday League
+/player/general/João Perneta
+/player/general/Ferna
+/player/games_played/Pedro Pacheco
+/player/games_played/António PT
+/player/all_editions/Pedro Pacheco
+/player/all_editions/Ferna
+/game/1
+/game/200
+/game/209
+/create/choose_edition/game
+/create/game
+/create/game/5ª Edição Masterleague
+/create/game/6ª Edição Tuesday League
