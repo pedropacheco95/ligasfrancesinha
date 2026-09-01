@@ -35,7 +35,7 @@ npm i --no-save playwright pixelmatch pngjs
 | `check-rounding.mjs` | `pyRound` against Python's `round()`, directly |
 
 ```sh
-python3 qa/compare-text.py qa/urls-all.txt        # all 683 pages
+python3 qa/compare-text.py qa/urls-all.txt        # all 677 pages
 node qa/compare-geometry.mjs qa/urls-sample.txt
 node qa/compare-pixels.mjs qa/urls-sample.txt
 node qa/check-interactions.mjs
@@ -49,7 +49,7 @@ accented and single-word player names, players with no `full_name` or
 
 ## Reading the results
 
-`compare-text.py` should report **683/683**, `compare-geometry.mjs` **30/30**,
+`compare-text.py` should report **677/677**, `compare-geometry.mjs` **30/30**,
 and `check-interactions.mjs` **29/29**. `check-rounding.mjs` should report
 **59990/59990** — it is the one check that needs neither app running.
 

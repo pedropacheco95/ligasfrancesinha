@@ -366,12 +366,6 @@
 /player/all_editions/Fanuca
 /player/general/Fanuca/5ª Edição Masterleague
 /player/general/Fanuca/6ª Edição Master League
-/player/general/Vilarinho
-/player/games_played/Vilarinho
-/player/all_editions/Vilarinho
-/player/general/Manel Cerquinho
-/player/games_played/Manel Cerquinho
-/player/all_editions/Manel Cerquinho
 /player/general/Tomás Cottim
 /player/games_played/Tomás Cottim
 /player/all_editions/Tomás Cottim

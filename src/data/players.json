@@ -347,28 +347,14 @@
   "name": "João Morgado",
   "fullName": "João Morgado",
   "birthday": "2024-02-06",
-  "imageUrl": "images/Players/default_player.jpg"
+  "imageUrl": "Player/default_player.jpg"
  },
  {
   "id": 51,
   "name": "Fanuca",
   "fullName": "Fanuca",
   "birthday": "2024-09-02",
-  "imageUrl": "images/Players/default_player.jpg"
- },
- {
-  "id": 52,
-  "name": "Vilarinho",
-  "fullName": "Pedro Vilarinho",
-  "birthday": "2024-10-02",
-  "imageUrl": "Player/20241002152841_image_url.png"
- },
- {
-  "id": 53,
-  "name": "Manel Cerquinho",
-  "fullName": "Manel Cerquinho",
-  "birthday": "2024-10-02",
-  "imageUrl": "Player/20241002152900_image_url.png"
+  "imageUrl": "Player/default_player.jpg"
  },
  {
   "id": 54,
@@ -382,13 +368,13 @@
   "name": "Jaime",
   "fullName": "Jaime Pacheco",
   "birthday": "2025-02-05",
-  "imageUrl": "Player/20250205173039_image_url.png"
+  "imageUrl": "Player/default_player.jpg"
  },
  {
   "id": 56,
   "name": "Girão",
   "fullName": "Miguel Girão",
   "birthday": "1994-09-01",
-  "imageUrl": "Player/20250901144311_image_url.png"
+  "imageUrl": "Player/default_player.jpg"
  }
 ]
