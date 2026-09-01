@@ -9,33 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as LeaguesRouteImport } from './routes/leagues'
 import { Route as PlayersRouteImport } from './routes/players'
-import { Route as AuthLoginRouteImport } from './routes/auth/login'
-import { Route as AuthLogoutRouteImport } from './routes/auth/logout'
-import { Route as AuthRegisterRouteImport } from './routes/auth/register'
+import { Route as LeaguesRouteImport } from './routes/leagues'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as GameIdRouteImport } from './routes/game/$id'
-import { Route as CreateChoose_editionViewRouteImport } from './routes/create/choose_edition/$view'
+import { Route as AuthRegisterRouteImport } from './routes/auth/register'
+import { Route as AuthLogoutRouteImport } from './routes/auth/logout'
+import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as CreateGameIndexRouteImport } from './routes/create/game/index'
-import { Route as CreateGameEditionNameRouteImport } from './routes/create/game/$editionName'
-import { Route as PlayerAll_editionsPlayerNameRouteImport } from './routes/player/all_editions/$playerName'
 import { Route as PlayerGames_playedPlayerNameRouteImport } from './routes/player/games_played/$playerName'
-import { Route as PlayerGeneralPlayerNameIndexRouteImport } from './routes/player/general/$playerName/index'
-import { Route as PlayerGeneralPlayerNameEditionNameRouteImport } from './routes/player/general/$playerName/$editionName'
-import { Route as ScoresCreate_teamsLeagueIdIndexRouteImport } from './routes/scores/create_teams/$leagueId/index'
-import { Route as ScoresCreate_teamsLeagueIdEditionIdRouteImport } from './routes/scores/create_teams/$leagueId/$editionId'
-import { Route as ScoresGamesLeagueIdIndexRouteImport } from './routes/scores/games/$leagueId/index'
-import { Route as ScoresGamesLeagueIdEditionIdRouteImport } from './routes/scores/games/$leagueId/$editionId'
-import { Route as ScoresScorersLeagueIdIndexRouteImport } from './routes/scores/scorers/$leagueId/index'
-import { Route as ScoresScorersLeagueIdEditionIdRouteImport } from './routes/scores/scorers/$leagueId/$editionId'
+import { Route as PlayerAll_editionsPlayerNameRouteImport } from './routes/player/all_editions/$playerName'
+import { Route as CreateGameEditionNameRouteImport } from './routes/create/game/$editionName'
+import { Route as CreateChoose_editionViewRouteImport } from './routes/create/choose_edition/$view'
 import { Route as ScoresTableLeagueIdIndexRouteImport } from './routes/scores/table/$leagueId/index'
+import { Route as ScoresScorersLeagueIdIndexRouteImport } from './routes/scores/scorers/$leagueId/index'
+import { Route as ScoresGamesLeagueIdIndexRouteImport } from './routes/scores/games/$leagueId/index'
+import { Route as ScoresCreate_teamsLeagueIdIndexRouteImport } from './routes/scores/create_teams/$leagueId/index'
+import { Route as PlayerGeneralPlayerNameIndexRouteImport } from './routes/player/general/$playerName/index'
+import { Route as ScoresScorersLeagueIdEditionIdRouteImport } from './routes/scores/scorers/$leagueId/$editionId'
+import { Route as ScoresGamesLeagueIdEditionIdRouteImport } from './routes/scores/games/$leagueId/$editionId'
+import { Route as ScoresCreate_teamsLeagueIdEditionIdRouteImport } from './routes/scores/create_teams/$leagueId/$editionId'
+import { Route as PlayerGeneralPlayerNameEditionNameRouteImport } from './routes/player/general/$playerName/$editionName'
 import { Route as ScoresTableLeagueIdEditionIdIndexRouteImport } from './routes/scores/table/$leagueId/$editionId/index'
 import { Route as ScoresTableLeagueIdEditionIdRecalculateRouteImport } from './routes/scores/table/$leagueId/$editionId/$recalculate'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PlayersRoute = PlayersRouteImport.update({
+  id: '/players',
+  path: '/players',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeaguesRoute = LeaguesRouteImport.update({
@@ -43,19 +43,14 @@ const LeaguesRoute = LeaguesRouteImport.update({
   path: '/leagues',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlayersRoute = PlayersRouteImport.update({
-  id: '/players',
-  path: '/players',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthLoginRoute = AuthLoginRouteImport.update({
-  id: '/auth/login',
-  path: '/auth/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthLogoutRoute = AuthLogoutRouteImport.update({
-  id: '/auth/logout',
-  path: '/auth/logout',
+const GameIdRoute = GameIdRouteImport.update({
+  id: '/game/$id',
+  path: '/game/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRegisterRoute = AuthRegisterRouteImport.update({
@@ -63,9 +58,36 @@ const AuthRegisterRoute = AuthRegisterRouteImport.update({
   path: '/auth/register',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GameIdRoute = GameIdRouteImport.update({
-  id: '/game/$id',
-  path: '/game/$id',
+const AuthLogoutRoute = AuthLogoutRouteImport.update({
+  id: '/auth/logout',
+  path: '/auth/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreateGameIndexRoute = CreateGameIndexRouteImport.update({
+  id: '/create/game/',
+  path: '/create/game/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayerGames_playedPlayerNameRoute =
+  PlayerGames_playedPlayerNameRouteImport.update({
+    id: '/player/games_played/$playerName',
+    path: '/player/games_played/$playerName',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlayerAll_editionsPlayerNameRoute =
+  PlayerAll_editionsPlayerNameRouteImport.update({
+    id: '/player/all_editions/$playerName',
+    path: '/player/all_editions/$playerName',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CreateGameEditionNameRoute = CreateGameEditionNameRouteImport.update({
+  id: '/create/game/$editionName',
+  path: '/create/game/$editionName',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreateChoose_editionViewRoute =
@@ -74,62 +96,10 @@ const CreateChoose_editionViewRoute =
     path: '/create/choose_edition/$view',
     getParentRoute: () => rootRouteImport,
   } as any)
-const CreateGameIndexRoute = CreateGameIndexRouteImport.update({
-  id: '/create/game/',
-  path: '/create/game/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreateGameEditionNameRoute = CreateGameEditionNameRouteImport.update({
-  id: '/create/game/$editionName',
-  path: '/create/game/$editionName',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayerAll_editionsPlayerNameRoute =
-  PlayerAll_editionsPlayerNameRouteImport.update({
-    id: '/player/all_editions/$playerName',
-    path: '/player/all_editions/$playerName',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PlayerGames_playedPlayerNameRoute =
-  PlayerGames_playedPlayerNameRouteImport.update({
-    id: '/player/games_played/$playerName',
-    path: '/player/games_played/$playerName',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PlayerGeneralPlayerNameIndexRoute =
-  PlayerGeneralPlayerNameIndexRouteImport.update({
-    id: '/player/general/$playerName/',
-    path: '/player/general/$playerName/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PlayerGeneralPlayerNameEditionNameRoute =
-  PlayerGeneralPlayerNameEditionNameRouteImport.update({
-    id: '/player/general/$playerName/$editionName',
-    path: '/player/general/$playerName/$editionName',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ScoresCreate_teamsLeagueIdIndexRoute =
-  ScoresCreate_teamsLeagueIdIndexRouteImport.update({
-    id: '/scores/create_teams/$leagueId/',
-    path: '/scores/create_teams/$leagueId/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ScoresCreate_teamsLeagueIdEditionIdRoute =
-  ScoresCreate_teamsLeagueIdEditionIdRouteImport.update({
-    id: '/scores/create_teams/$leagueId/$editionId',
-    path: '/scores/create_teams/$leagueId/$editionId',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ScoresGamesLeagueIdIndexRoute =
-  ScoresGamesLeagueIdIndexRouteImport.update({
-    id: '/scores/games/$leagueId/',
-    path: '/scores/games/$leagueId/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ScoresGamesLeagueIdEditionIdRoute =
-  ScoresGamesLeagueIdEditionIdRouteImport.update({
-    id: '/scores/games/$leagueId/$editionId',
-    path: '/scores/games/$leagueId/$editionId',
+const ScoresTableLeagueIdIndexRoute =
+  ScoresTableLeagueIdIndexRouteImport.update({
+    id: '/scores/table/$leagueId/',
+    path: '/scores/table/$leagueId/',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ScoresScorersLeagueIdIndexRoute =
@@ -138,16 +108,46 @@ const ScoresScorersLeagueIdIndexRoute =
     path: '/scores/scorers/$leagueId/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ScoresGamesLeagueIdIndexRoute =
+  ScoresGamesLeagueIdIndexRouteImport.update({
+    id: '/scores/games/$leagueId/',
+    path: '/scores/games/$leagueId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ScoresCreate_teamsLeagueIdIndexRoute =
+  ScoresCreate_teamsLeagueIdIndexRouteImport.update({
+    id: '/scores/create_teams/$leagueId/',
+    path: '/scores/create_teams/$leagueId/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlayerGeneralPlayerNameIndexRoute =
+  PlayerGeneralPlayerNameIndexRouteImport.update({
+    id: '/player/general/$playerName/',
+    path: '/player/general/$playerName/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ScoresScorersLeagueIdEditionIdRoute =
   ScoresScorersLeagueIdEditionIdRouteImport.update({
     id: '/scores/scorers/$leagueId/$editionId',
     path: '/scores/scorers/$leagueId/$editionId',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ScoresTableLeagueIdIndexRoute =
-  ScoresTableLeagueIdIndexRouteImport.update({
-    id: '/scores/table/$leagueId/',
-    path: '/scores/table/$leagueId/',
+const ScoresGamesLeagueIdEditionIdRoute =
+  ScoresGamesLeagueIdEditionIdRouteImport.update({
+    id: '/scores/games/$leagueId/$editionId',
+    path: '/scores/games/$leagueId/$editionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ScoresCreate_teamsLeagueIdEditionIdRoute =
+  ScoresCreate_teamsLeagueIdEditionIdRouteImport.update({
+    id: '/scores/create_teams/$leagueId/$editionId',
+    path: '/scores/create_teams/$leagueId/$editionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlayerGeneralPlayerNameEditionNameRoute =
+  PlayerGeneralPlayerNameEditionNameRouteImport.update({
+    id: '/player/general/$playerName/$editionName',
+    path: '/player/general/$playerName/$editionName',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ScoresTableLeagueIdEditionIdIndexRoute =
@@ -345,11 +345,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/players': {
+      id: '/players'
+      path: '/players'
+      fullPath: '/players'
+      preLoaderRoute: typeof PlayersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leagues': {
@@ -359,32 +359,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeaguesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/players': {
-      id: '/players'
-      path: '/players'
-      fullPath: '/players'
-      preLoaderRoute: typeof PlayersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth/login': {
-      id: '/auth/login'
-      path: '/auth/login'
-      fullPath: '/auth/login'
-      preLoaderRoute: typeof AuthLoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth/logout': {
-      id: '/auth/logout'
-      path: '/auth/logout'
-      fullPath: '/auth/logout'
-      preLoaderRoute: typeof AuthLogoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth/register': {
-      id: '/auth/register'
-      path: '/auth/register'
-      fullPath: '/auth/register'
-      preLoaderRoute: typeof AuthRegisterRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/game/$id': {
@@ -394,11 +373,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GameIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/create/choose_edition/$view': {
-      id: '/create/choose_edition/$view'
-      path: '/create/choose_edition/$view'
-      fullPath: '/create/choose_edition/$view'
-      preLoaderRoute: typeof CreateChoose_editionViewRouteImport
+    '/auth/register': {
+      id: '/auth/register'
+      path: '/auth/register'
+      fullPath: '/auth/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/logout': {
+      id: '/auth/logout'
+      path: '/auth/logout'
+      fullPath: '/auth/logout'
+      preLoaderRoute: typeof AuthLogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create/game/': {
@@ -408,11 +401,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreateGameIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/create/game/$editionName': {
-      id: '/create/game/$editionName'
-      path: '/create/game/$editionName'
-      fullPath: '/create/game/$editionName'
-      preLoaderRoute: typeof CreateGameEditionNameRouteImport
+    '/player/games_played/$playerName': {
+      id: '/player/games_played/$playerName'
+      path: '/player/games_played/$playerName'
+      fullPath: '/player/games_played/$playerName'
+      preLoaderRoute: typeof PlayerGames_playedPlayerNameRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/player/all_editions/$playerName': {
@@ -422,53 +415,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayerAll_editionsPlayerNameRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/player/games_played/$playerName': {
-      id: '/player/games_played/$playerName'
-      path: '/player/games_played/$playerName'
-      fullPath: '/player/games_played/$playerName'
-      preLoaderRoute: typeof PlayerGames_playedPlayerNameRouteImport
+    '/create/game/$editionName': {
+      id: '/create/game/$editionName'
+      path: '/create/game/$editionName'
+      fullPath: '/create/game/$editionName'
+      preLoaderRoute: typeof CreateGameEditionNameRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/player/general/$playerName/': {
-      id: '/player/general/$playerName/'
-      path: '/player/general/$playerName'
-      fullPath: '/player/general/$playerName/'
-      preLoaderRoute: typeof PlayerGeneralPlayerNameIndexRouteImport
+    '/create/choose_edition/$view': {
+      id: '/create/choose_edition/$view'
+      path: '/create/choose_edition/$view'
+      fullPath: '/create/choose_edition/$view'
+      preLoaderRoute: typeof CreateChoose_editionViewRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/player/general/$playerName/$editionName': {
-      id: '/player/general/$playerName/$editionName'
-      path: '/player/general/$playerName/$editionName'
-      fullPath: '/player/general/$playerName/$editionName'
-      preLoaderRoute: typeof PlayerGeneralPlayerNameEditionNameRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/scores/create_teams/$leagueId/': {
-      id: '/scores/create_teams/$leagueId/'
-      path: '/scores/create_teams/$leagueId'
-      fullPath: '/scores/create_teams/$leagueId/'
-      preLoaderRoute: typeof ScoresCreate_teamsLeagueIdIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/scores/create_teams/$leagueId/$editionId': {
-      id: '/scores/create_teams/$leagueId/$editionId'
-      path: '/scores/create_teams/$leagueId/$editionId'
-      fullPath: '/scores/create_teams/$leagueId/$editionId'
-      preLoaderRoute: typeof ScoresCreate_teamsLeagueIdEditionIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/scores/games/$leagueId/': {
-      id: '/scores/games/$leagueId/'
-      path: '/scores/games/$leagueId'
-      fullPath: '/scores/games/$leagueId/'
-      preLoaderRoute: typeof ScoresGamesLeagueIdIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/scores/games/$leagueId/$editionId': {
-      id: '/scores/games/$leagueId/$editionId'
-      path: '/scores/games/$leagueId/$editionId'
-      fullPath: '/scores/games/$leagueId/$editionId'
-      preLoaderRoute: typeof ScoresGamesLeagueIdEditionIdRouteImport
+    '/scores/table/$leagueId/': {
+      id: '/scores/table/$leagueId/'
+      path: '/scores/table/$leagueId'
+      fullPath: '/scores/table/$leagueId/'
+      preLoaderRoute: typeof ScoresTableLeagueIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/scores/scorers/$leagueId/': {
@@ -478,6 +443,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScoresScorersLeagueIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/scores/games/$leagueId/': {
+      id: '/scores/games/$leagueId/'
+      path: '/scores/games/$leagueId'
+      fullPath: '/scores/games/$leagueId/'
+      preLoaderRoute: typeof ScoresGamesLeagueIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scores/create_teams/$leagueId/': {
+      id: '/scores/create_teams/$leagueId/'
+      path: '/scores/create_teams/$leagueId'
+      fullPath: '/scores/create_teams/$leagueId/'
+      preLoaderRoute: typeof ScoresCreate_teamsLeagueIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/player/general/$playerName/': {
+      id: '/player/general/$playerName/'
+      path: '/player/general/$playerName'
+      fullPath: '/player/general/$playerName/'
+      preLoaderRoute: typeof PlayerGeneralPlayerNameIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scores/scorers/$leagueId/$editionId': {
       id: '/scores/scorers/$leagueId/$editionId'
       path: '/scores/scorers/$leagueId/$editionId'
@@ -485,11 +471,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScoresScorersLeagueIdEditionIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/scores/table/$leagueId/': {
-      id: '/scores/table/$leagueId/'
-      path: '/scores/table/$leagueId'
-      fullPath: '/scores/table/$leagueId/'
-      preLoaderRoute: typeof ScoresTableLeagueIdIndexRouteImport
+    '/scores/games/$leagueId/$editionId': {
+      id: '/scores/games/$leagueId/$editionId'
+      path: '/scores/games/$leagueId/$editionId'
+      fullPath: '/scores/games/$leagueId/$editionId'
+      preLoaderRoute: typeof ScoresGamesLeagueIdEditionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scores/create_teams/$leagueId/$editionId': {
+      id: '/scores/create_teams/$leagueId/$editionId'
+      path: '/scores/create_teams/$leagueId/$editionId'
+      fullPath: '/scores/create_teams/$leagueId/$editionId'
+      preLoaderRoute: typeof ScoresCreate_teamsLeagueIdEditionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/player/general/$playerName/$editionName': {
+      id: '/player/general/$playerName/$editionName'
+      path: '/player/general/$playerName/$editionName'
+      fullPath: '/player/general/$playerName/$editionName'
+      preLoaderRoute: typeof PlayerGeneralPlayerNameEditionNameRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/scores/table/$leagueId/$editionId/': {
