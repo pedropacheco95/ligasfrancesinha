@@ -35,11 +35,13 @@ export function pyRound(value: number, digits = 0): number {
   return rounded / factor;
 }
 
-/** Jinja's `|round(n)` filter: half-away-from-zero, always returns a float. */
+/**
+ * Jinja's `|round(n)` filter. Its default method is "common", which despite the
+ * name delegates to Python's built-in `round()` — so it is half-to-even, and
+ * `(13/8)|round(2)` is 1.62, not 1.63.
+ */
 export function jinjaRound(value: number, digits = 0): number {
-  const factor = 10 ** digits;
-  const scaled = value * factor;
-  return (scaled < 0 ? -Math.round(-scaled) : Math.round(scaled)) / factor;
+  return pyRound(value, digits);
 }
 
 /** ISO date strings live in the JSON seed exactly as SQLite stored them. */
