@@ -8,6 +8,8 @@
  * `/noticias/<slug>` starts working.
  */
 
+import estatutosBody from "@/content/news/estatutos-da-master-league.html?raw";
+import estatutosCss from "@/content/news/estatutos-da-master-league.css?url";
 import ficheirosBody from "@/content/news/ficheiros-da-francesinha.html?raw";
 import ficheirosCss from "@/content/news/ficheiros-da-francesinha.css?url";
 
@@ -26,9 +28,40 @@ export interface Article {
   body: string;
   /** The article's own stylesheet, scoped to `.news-article` on import. */
   styles: string;
+  /**
+   * The Google Fonts URL this article is set in. `import-article.mjs` drops
+   * everything above the stylesheet, so an article's own font `<link>` does not
+   * survive the import and has to be named here instead. Falls back to the
+   * families the first article established.
+   */
+  fonts?: string;
 }
 
+/** Oswald, Newsreader and IBM Plex Mono — what an article gets if it asks for nothing. */
+export const DEFAULT_FONTS =
+  "https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700" +
+  "&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400" +
+  "&family=IBM+Plex+Mono:wght@400;500;600&display=swap";
+
 export const ARTICLES: Article[] = [
+  {
+    slug: "estatutos-da-master-league",
+    title: "Estatutos da Master League",
+    kicker: "Regulamento \u00b7 para ler e votar",
+    date: "2026-09-03",
+    excerpt:
+      "Combin\u00e1mos escrever isto cinco vezes em quatro anos e nunca escrevemos. Aqui est\u00e3o as 50 " +
+      "regras que regem a liga, cada uma com a data e a frase em que ficou fixada \u2014 o que j\u00e1 est\u00e1 " +
+      "decidido, os tr\u00eas pontos que faltam votar e os cinco que precisam de uma proposta.",
+    image: "/static/images/news/estatutos-da-master-league.jpg",
+    imageAlt:
+      "Capa dos estatutos da Master League sobre fundo verde-relvado, com as quatro partes do documento.",
+    body: estatutosBody,
+    styles: estatutosCss,
+    fonts:
+      "https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700" +
+      "&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap",
+  },
   {
     slug: "ficheiros-da-francesinha",
     title: "Os Ficheiros da Francesinha",

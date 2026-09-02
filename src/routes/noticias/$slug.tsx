@@ -2,7 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
 import { ShareButtons } from "@/components/ShareButtons";
-import { findArticle } from "@/data/news";
+import { DEFAULT_FONTS, findArticle } from "@/data/news";
 import { absoluteUrl } from "@/lib/site";
 
 import newsCss from "@/styles/news.css?url";
@@ -45,10 +45,9 @@ export const Route = createFileRoute("/noticias/$slug")({
         { rel: "canonical", href: url },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
-        },
+        // Each article is set in its own typefaces, so the families come from
+        // the article rather than from a list shared by all of them.
+        { rel: "stylesheet", href: article.fonts ?? DEFAULT_FONTS },
         { rel: "stylesheet", href: newsCss },
         { rel: "stylesheet", href: article.styles },
       ],
