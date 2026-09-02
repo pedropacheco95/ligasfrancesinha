@@ -1,11 +1,9 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { Layout } from "@/components/Layout";
-
-import regulamentoCss from "@/styles/regulamento.css?url";
 import { useRegulamentoActivity, useSquad, useVoter } from "@/hooks/use-regulamento";
-import { addObjection, addProposal, castVote, type RegulamentoActivity } from "@/lib/db";
+import { saveRegulamento, type RegulamentoActivity } from "@/lib/db";
 import {
   contagem,
   pontosDoBalde,
@@ -17,6 +15,8 @@ import {
   type Ponto,
   type Regra,
 } from "@/lib/regulamento";
+
+import regulamentoCss from "@/styles/regulamento.css?url";
 
 export const Route = createFileRoute("/regulamento")({
   head: () => ({
@@ -32,23 +32,103 @@ const SLUG_ARTIGO = "estatutos-da-master-league";
 const CAIXA = "tw:rounded-lg tw:border tw:border-border tw:bg-card tw:p-5";
 const CAMPO =
   "tw:w-full tw:rounded tw:border tw:border-border tw:bg-background tw:px-3 tw:py-2 tw:text-sm tw:text-foreground";
-const BOTAO =
-  "tw:cursor-pointer tw:rounded tw:border tw:border-primary tw:bg-primary tw:px-4 tw:py-2 tw:text-sm tw:font-semibold tw:text-primary-foreground tw:disabled:cursor-not-allowed tw:disabled:opacity-40";
+
+/** One objection being written, before it is added to the list. */
+interface Discordancia {
+  ruleId: string;
+  reason: string;
+  proposal: string;
+}
 
 function RegulamentoPage() {
   const { activity, loading, refresh } = useRegulamentoActivity();
   const [voter, setVoter] = useVoter();
   const squad = useSquad();
 
+  const [escolhas, setEscolhas] = useState<Record<string, string>>({});
+  const [discordancias, setDiscordancias] = useState<Discordancia[]>([]);
+  const [propostas, setPropostas] = useState<Record<string, string>>({});
+  const [gravadoAgora, setGravadoAgora] = useState(false);
+  const [estado, setEstado] = useState<"" | "a-gravar" | "erro">("");
+
+  // The bar is fixed to the window, so it has to be told when the form it
+  // belongs to is off screen — otherwise it would hover over the rulebook.
+  const formulario = useRef<HTMLDivElement>(null);
+  const [formularioAVista, setFormularioAVista] = useState(false);
+
+  useEffect(() => {
+    const alvo = formulario.current;
+    if (!alvo || typeof IntersectionObserver === "undefined") return;
+    const observador = new IntersectionObserver(
+      ([entrada]) => setFormularioAVista(entrada.isIntersecting),
+      { rootMargin: "-80px 0px -80px 0px" },
+    );
+    observador.observe(alvo);
+    return () => observador.disconnect();
+  }, []);
+
+  // Switching to another name must not carry the previous player's draft, nor
+  // the grace that lets them keep editing after saving.
+  useEffect(() => {
+    setEscolhas({});
+    setDiscordancias([]);
+    setPropostas({});
+    setGravadoAgora(false);
+    setEstado("");
+  }, [voter]);
+
   const aprovadas = todasAprovadas();
   const decididas = regrasVotadas();
   const paraVotar = pontosDoBalde("votar");
   const paraPropor = pontosDoBalde("proposta");
 
+  const meusVotos = activity.votes.filter((v) => v.voter === voter);
+  const minhasDiscordancias = activity.objections.filter((o) => o.voter === voter);
+  const minhasPropostas = activity.proposals.filter((p) => p.voter === voter);
+  const jaGravou =
+    voter !== "" &&
+    (meusVotos.length > 0 || minhasDiscordancias.length > 0 || minhasPropostas.length > 0);
+  const bloqueado = jaGravou && !gravadoAgora;
+
+  const porGravar =
+    Object.values(escolhas).filter(Boolean).length +
+    discordancias.length +
+    Object.values(propostas).filter((t) => t.trim()).length;
+
+  async function gravar() {
+    if (!voter || porGravar === 0) return;
+    setEstado("a-gravar");
+    try {
+      await saveRegulamento(voter, {
+        votes: Object.entries(escolhas)
+          .filter(([, choice]) => choice)
+          .map(([pointId, choice]) => ({ pointId, choice })),
+        objections: discordancias.map((d) => ({
+          ruleId: d.ruleId,
+          reason: d.reason.trim(),
+          proposal: d.proposal.trim() || null,
+        })),
+        proposals: Object.entries(propostas)
+          .filter(([, texto]) => texto.trim())
+          .map(([chave, texto]) => ({
+            pointId: chave === "livre" ? null : chave,
+            proposal: texto.trim(),
+          })),
+      });
+      setGravadoAgora(true);
+      setEstado("");
+      await refresh();
+    } catch {
+      // The draft stays on screen: a failure part-way through can leave rows
+      // half-written, and retyping everything would be the worse outcome.
+      setEstado("erro");
+    }
+  }
+
   return (
     <Layout>
       {/* `styles_frontend.css` centres the body text for the ported Bootstrap
-            pages; a document reads as a column, so this one opts out. */}
+          pages; a document reads as a column, so this one opts out. */}
       <div className="regulamento_page tw:mx-auto tw:w-full tw:max-w-3xl tw:px-5 tw:pt-10 tw:pb-24 tw:text-left tw:text-foreground">
         <header className="tw:pb-4">
           <p className="tw:m-0 tw:text-xs tw:tracking-[0.16em] tw:text-primary tw:uppercase">
@@ -111,76 +191,122 @@ function RegulamentoPage() {
           })}
         </Parte>
 
-        <Parte numero={2} titulo="Votar">
-          <p className="tw:mt-0 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-            Escolhe o teu nome uma vez e vota. Podes mudar o voto enquanto a votação estiver aberta
-            — fica sempre o último. As contagens aparecem à medida que as pessoas votam.
-          </p>
+        {/* Partes 2 and 3 are one form with one Gravar, so they share a
+            container the sticky bar can sit at the bottom of. */}
+        <div className="formulario" ref={formulario}>
+          <Parte numero={2} titulo="Votar">
+            <SeletorVotante squad={squad} voter={voter} onChange={setVoter} />
 
-          <SeletorVotante squad={squad} voter={voter} onChange={setVoter} />
-
-          <div className="tw:mt-8 tw:flex tw:flex-col tw:gap-5">
-            {paraVotar.map((ponto) => (
-              <Sondagem
-                key={ponto.id}
-                ponto={ponto}
-                activity={activity}
-                voter={voter}
-                squad={squad}
-                onDone={refresh}
+            {bloqueado ? (
+              <Bloqueado
+                votos={meusVotos}
+                discordancias={minhasDiscordancias}
+                propostas={minhasPropostas}
               />
-            ))}
-          </div>
+            ) : (
+              <>
+                <p className="tw:mt-6 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+                  Preenche o que quiseres e grava no fim, no botão que anda contigo ao fundo da
+                  página. Grava-se uma vez só: a partir daí as respostas ficam fechadas.
+                </p>
 
-          <h3 className="tw:mt-12 tw:mb-1 tw:text-xl tw:font-semibold">
-            Não concordo com uma regra
-          </h3>
-          <p className="tw:mt-0 tw:mb-4 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-            Escolhe a regra, diz porquê e, se tiveres, escreve como devia ser. Podes fazê-lo a
-            tantas regras quantas quiseres — depois de submeteres uma, o formulário fica pronto para
-            a seguinte.
-          </p>
+                <div className="tw:flex tw:flex-col tw:gap-5">
+                  {paraVotar.map((ponto) => (
+                    <Sondagem
+                      key={ponto.id}
+                      ponto={ponto}
+                      activity={activity}
+                      voter={voter}
+                      squad={squad}
+                      escolha={escolhas[ponto.id] ?? ""}
+                      onEscolher={(opcao) =>
+                        setEscolhas((atual) => ({ ...atual, [ponto.id]: opcao }))
+                      }
+                    />
+                  ))}
+                </div>
 
-          <FormDiscordancia voter={voter} onDone={refresh} />
-          <ListaDiscordancias activity={activity} />
-        </Parte>
+                <h3 className="tw:mt-12 tw:mb-1 tw:text-xl tw:font-semibold">
+                  Não concordo com uma regra
+                </h3>
+                <p className="tw:mt-0 tw:mb-4 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+                  Escolhe a regra, diz porquê e, se tiveres, escreve como devia ser. Junta as que
+                  quiseres à lista — só vão para a base de dados quando gravares.
+                </p>
 
-        <Parte numero={3} titulo="Propor">
-          <p className="tw:mt-0 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-            Estes cinco não se resolvem com um sim ou um não: falta alguém escrever o que devia
-            ficar na regra. Quando houver propostas, vão a votos como os da Parte 2.
-          </p>
+                <FormDiscordancia
+                  bloqueado={!voter}
+                  onAdicionar={(nova) => setDiscordancias((atual) => [...atual, nova])}
+                />
+                <ListaPorGravar
+                  discordancias={discordancias}
+                  onRemover={(indice) =>
+                    setDiscordancias((atual) => atual.filter((_, i) => i !== indice))
+                  }
+                />
+              </>
+            )}
 
-          <div className="tw:flex tw:flex-col tw:gap-5">
-            {paraPropor.map((ponto) => (
-              <CartaoProposta
-                key={ponto.id}
-                ponto={ponto}
-                activity={activity}
-                voter={voter}
-                onDone={refresh}
-              />
-            ))}
+            <ListaDiscordancias activity={activity} />
+          </Parte>
 
-            <div className={CAIXA}>
-              <h4 className="tw:mt-0 tw:mb-1 tw:text-base tw:font-semibold">
-                Outra ideia qualquer
-              </h4>
-              <p className="tw:mt-0 tw:mb-4 tw:text-sm tw:text-muted-foreground">
-                Alguma coisa que devia estar no regulamento e não está em nenhum dos pontos acima.
-              </p>
-              <FormProposta pontoId={null} voter={voter} onDone={refresh} />
-              <ListaPropostas activity={activity} pontoId={null} />
+          <Parte numero={3} titulo="Propor">
+            <p className="tw:mt-0 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+              Estes cinco não se resolvem com um sim ou um não: falta alguém escrever o que devia
+              ficar na regra. Quando houver propostas, vão a votos como os da Parte 2.
+            </p>
+
+            <div className="tw:flex tw:flex-col tw:gap-5">
+              {paraPropor.map((ponto) => (
+                <CartaoProposta
+                  key={ponto.id}
+                  ponto={ponto}
+                  activity={activity}
+                  texto={propostas[ponto.id] ?? ""}
+                  bloqueado={bloqueado || !voter}
+                  onEscrever={(texto) => setPropostas((atual) => ({ ...atual, [ponto.id]: texto }))}
+                />
+              ))}
+
+              <div className={CAIXA}>
+                <h4 className="tw:mt-0 tw:mb-1 tw:text-base tw:font-semibold">
+                  Outra ideia qualquer
+                </h4>
+                <p className="tw:mt-0 tw:mb-4 tw:text-sm tw:text-muted-foreground">
+                  Alguma coisa que devia estar no regulamento e não está em nenhum dos pontos acima.
+                </p>
+                <textarea
+                  className={CAMPO}
+                  rows={2}
+                  value={propostas["livre"] ?? ""}
+                  disabled={bloqueado || !voter}
+                  onChange={(event) =>
+                    setPropostas((atual) => ({ ...atual, livre: event.target.value }))
+                  }
+                  placeholder="Escreve a regra como ela devia ficar."
+                />
+                <ListaPropostas activity={activity} pontoId={null} />
+              </div>
             </div>
-          </div>
-        </Parte>
+          </Parte>
+
+          <BarraGravar
+            voter={voter}
+            visivel={formularioAVista}
+            bloqueado={bloqueado}
+            porGravar={porGravar}
+            gravadoAgora={gravadoAgora}
+            estado={estado}
+            onGravar={() => void gravar()}
+          />
+        </div>
 
         <footer className="tw:mt-16 tw:border-t-2 tw:border-foreground tw:pt-6 tw:text-sm tw:text-muted-foreground">
           <p className="tw:mt-0 tw:mb-3">
-            <strong className="tw:text-foreground">Como se altera.</strong> Vota-se aqui, com prazo.
-            Ganha a maioria dos que votam; quem não vota conta como abstenção e o empate mantém o
-            que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda
-            entre as duas mais votadas.
+            <strong className="tw:text-foreground">Como se altera.</strong> Vota-se aqui, com prazo,
+            e cada um grava uma vez. Ganha a maioria dos que votam; quem não vota conta como
+            abstenção e o empate mantém o que estava. Com três ou mais opções, se nenhuma passar de
+            metade faz-se segunda ronda entre as duas mais votadas.
           </p>
           <p className="tw:mt-0 tw:mb-3">
             <strong className="tw:text-foreground">Não existe.</strong> Não há MVP, melhor marcador,
@@ -262,14 +388,9 @@ function CartaoDecidido({ regra }: { regra: Regra }) {
   const vencedora = votacao
     ? [...votacao.resultado].sort((a, b) => b.votos - a.votos)[0]
     : undefined;
-  const porImplementar = regra.estado === "pendente";
 
   return (
-    <div
-      className={`tw:rounded-lg tw:border tw:p-5 ${
-        porImplementar ? "tw:border-gold tw:bg-gold/10" : "tw:border-border tw:bg-card"
-      }`}
-    >
+    <div className="tw:rounded-lg tw:border tw:border-border tw:bg-card tw:p-5">
       <p className="tw:m-0 tw:text-xs tw:text-muted-foreground tw:tabular-nums">{regra.id}</p>
       <h4 className="tw:mt-1 tw:mb-0 tw:text-base tw:leading-snug tw:font-semibold">
         {regra.titulo}
@@ -282,7 +403,6 @@ function CartaoDecidido({ regra }: { regra: Regra }) {
       {votacao ? (
         <p className="tw:mt-2 tw:mb-0 tw:text-[10px] tw:tracking-[0.1em] tw:text-primary tw:uppercase">
           {votacao.pergunta} · {votacao.data}
-          {porImplementar ? " · falta implementar" : ""}
         </p>
       ) : null}
     </div>
@@ -304,11 +424,6 @@ function LinhaRegra({ regra }: { regra: Regra }) {
             </p>
           ) : null}
         </div>
-        {regra.estado === "pendente" ? (
-          <span className="tw:shrink-0 tw:rounded tw:bg-gold/15 tw:px-2 tw:py-1 tw:text-[10px] tw:tracking-[0.1em] tw:text-foreground tw:uppercase">
-            Falta implementar
-          </span>
-        ) : null}
       </div>
     </div>
   );
@@ -351,44 +466,70 @@ function SeletorVotante({
   );
 }
 
+/** What a player sees once their answers are in and the page has been left. */
+function Bloqueado({
+  votos,
+  discordancias,
+  propostas,
+}: {
+  votos: RegulamentoActivity["votes"];
+  discordancias: RegulamentoActivity["objections"];
+  propostas: RegulamentoActivity["proposals"];
+}) {
+  return (
+    <div className="tw:mt-6 tw:rounded-lg tw:border tw:border-gold tw:bg-gold/10 tw:p-5">
+      <h3 className="tw:mt-0 tw:mb-2 tw:text-base tw:font-semibold">Já gravaste.</h3>
+      <p className="tw:mt-0 tw:mb-4 tw:max-w-prose tw:text-sm">
+        As tuas respostas estão fechadas. Se quiseres mudar alguma coisa, fala com o Pacheco: ele
+        apaga o que puseste e começas do zero.
+      </p>
+
+      <dl className="tw:m-0 tw:flex tw:flex-col tw:gap-2 tw:text-sm">
+        {votos.map((voto) => (
+          <div key={voto.pointId}>
+            <dt className="tw:inline tw:font-semibold">{voto.pointId}: </dt>
+            <dd className="tw:m-0 tw:inline">{voto.choice}</dd>
+          </div>
+        ))}
+        {discordancias.map((objecao) => (
+          <div key={objecao.id}>
+            <dt className="tw:inline tw:font-semibold">Discordas da {objecao.ruleId}: </dt>
+            <dd className="tw:m-0 tw:inline">{objecao.reason}</dd>
+          </div>
+        ))}
+        {propostas.map((proposta) => (
+          <div key={proposta.id}>
+            <dt className="tw:inline tw:font-semibold">Proposta {proposta.pointId ?? "livre"}: </dt>
+            <dd className="tw:m-0 tw:inline">{proposta.proposal}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
+
 function Sondagem({
   ponto,
   activity,
   voter,
   squad,
-  onDone,
+  escolha,
+  onEscolher,
 }: {
   ponto: Ponto;
   activity: RegulamentoActivity;
   voter: string;
   squad: string[];
-  onDone: () => Promise<void>;
+  escolha: string;
+  onEscolher: (opcao: string) => void;
 }) {
-  const [erro, setErro] = useState("");
-  const [aGravar, setAGravar] = useState(false);
-
   const votos = activity.votes.filter((voto) => voto.pointId === ponto.id);
   const resultado = contagem(
     ponto,
     votos.map((voto) => voto.choice),
   );
   const total = votos.length;
-  const meu = votos.find((voto) => voto.voter === voter)?.choice ?? "";
   const emFalta = squad.filter((name) => !votos.some((voto) => voto.voter === name));
-
-  async function votar(opcao: string) {
-    if (!voter) return;
-    setAGravar(true);
-    setErro("");
-    try {
-      await castVote(ponto.id, voter, opcao);
-      await onDone();
-    } catch {
-      setErro("Não deu para gravar o voto. Tenta outra vez daqui a bocado.");
-    } finally {
-      setAGravar(false);
-    }
-  }
 
   return (
     <div className={CAIXA}>
@@ -402,11 +543,11 @@ function Sondagem({
         {ponto.contexto}
       </p>
 
-      <fieldset className="tw:mt-4 tw:mb-0 tw:border-0 tw:p-0" disabled={!voter || aGravar}>
+      <fieldset className="tw:mt-4 tw:mb-0 tw:border-0 tw:p-0" disabled={!voter}>
         <legend className="tw:sr-only">{ponto.titulo}</legend>
         <div className="tw:flex tw:flex-col tw:gap-2">
           {resultado.map(({ opcao, votos: votosNaOpcao }) => {
-            const escolhida = meu === opcao;
+            const escolhida = escolha === opcao;
             return (
               <label
                 key={opcao}
@@ -423,7 +564,7 @@ function Sondagem({
                   type="radio"
                   name={`ponto-${ponto.id}`}
                   checked={escolhida}
-                  onChange={() => void votar(opcao)}
+                  onChange={() => onEscolher(opcao)}
                 />
                 <span className="texto tw:relative">{opcao}</span>
                 <span className="contagem tw:relative tw:text-sm tw:font-semibold">
@@ -447,42 +588,35 @@ function Sondagem({
               emFalta.length ? ` · faltam ${emFalta.join(", ")}` : " · votaram todos"
             }`}
       </p>
-
-      {erro ? <p className="tw:mt-2 tw:mb-0 tw:text-xs tw:text-destructive">{erro}</p> : null}
     </div>
   );
 }
 
-/**
- * One objection at a time, cleared and left open for the next — a player may
- * disagree with any number of rules, and a fixed set of slots would either
- * waste the page or run out.
- */
-function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Promise<void> }) {
+/** Writes one objection and hands it to the list; nothing is sent until Gravar. */
+function FormDiscordancia({
+  bloqueado,
+  onAdicionar,
+}: {
+  bloqueado: boolean;
+  onAdicionar: (nova: Discordancia) => void;
+}) {
   const [ruleId, setRuleId] = useState("");
   const [reason, setReason] = useState("");
   const [proposal, setProposal] = useState("");
-  const [estado, setEstado] = useState<"" | "a-gravar" | "gravado" | "erro">("");
 
-  async function submeter(event: FormEvent) {
-    event.preventDefault();
-    if (!voter || !ruleId || !reason.trim()) return;
-    setEstado("a-gravar");
-    try {
-      await addObjection(ruleId, voter, reason.trim(), proposal.trim() || null);
-      setRuleId("");
-      setReason("");
-      setProposal("");
-      setEstado("gravado");
-      await onDone();
-    } catch {
-      setEstado("erro");
-    }
+  const pronta = ruleId !== "" && reason.trim() !== "";
+
+  function adicionar() {
+    if (!pronta) return;
+    onAdicionar({ ruleId, reason, proposal });
+    setRuleId("");
+    setReason("");
+    setProposal("");
   }
 
   return (
-    <form className={CAIXA} onSubmit={(event) => void submeter(event)}>
-      <fieldset className="tw:m-0 tw:border-0 tw:p-0" disabled={!voter || estado === "a-gravar"}>
+    <div className={CAIXA}>
+      <fieldset className="tw:m-0 tw:border-0 tw:p-0" disabled={bloqueado}>
         <legend className="tw:sr-only">Discordar de uma regra</legend>
 
         <label htmlFor="regra" className="tw:mb-1.5 tw:block tw:text-sm tw:font-semibold">
@@ -493,7 +627,6 @@ function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Prom
           className={CAMPO}
           value={ruleId}
           onChange={(event) => setRuleId(event.target.value)}
-          required
         >
           <option value="">— escolhe a regra —</option>
           {regulamento.artigos.map((artigo) => (
@@ -517,7 +650,6 @@ function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Prom
           value={reason}
           onChange={(event) => setReason(event.target.value)}
           placeholder="O que é que esta regra faz mal, na prática."
-          required
         />
 
         <label htmlFor="melhor" className="tw:mt-4 tw:mb-1.5 tw:block tw:text-sm tw:font-semibold">
@@ -533,25 +665,68 @@ function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Prom
         />
 
         <div className="tw:mt-4 tw:flex tw:flex-wrap tw:items-center tw:gap-3">
-          <button type="submit" className={BOTAO}>
-            {estado === "a-gravar" ? "A gravar…" : "Registar discordância"}
+          <button
+            type="button"
+            onClick={adicionar}
+            disabled={!pronta}
+            className="tw:cursor-pointer tw:rounded tw:border tw:border-primary tw:bg-transparent tw:px-4 tw:py-2 tw:text-sm tw:font-semibold tw:text-primary tw:disabled:cursor-not-allowed tw:disabled:opacity-40"
+          >
+            Juntar à lista
           </button>
-          {!voter ? (
+          {bloqueado ? (
             <span className="tw:text-xs tw:text-muted-foreground">
               Escolhe o teu nome primeiro.
             </span>
           ) : null}
-          {estado === "gravado" ? (
-            <span className="tw:text-xs tw:text-primary">
-              Registada. Podes escolher outra regra.
-            </span>
-          ) : null}
-          {estado === "erro" ? (
-            <span className="tw:text-xs tw:text-destructive">Não deu para gravar.</span>
-          ) : null}
         </div>
       </fieldset>
-    </form>
+    </div>
+  );
+}
+
+/** Objections written but not yet sent — removable while they are still a draft. */
+function ListaPorGravar({
+  discordancias,
+  onRemover,
+}: {
+  discordancias: Discordancia[];
+  onRemover: (indice: number) => void;
+}) {
+  if (discordancias.length === 0) return null;
+
+  return (
+    <div className="tw:mt-4 tw:flex tw:flex-col tw:gap-3">
+      {discordancias.map((discordancia, indice) => {
+        const regra = regraPorId(discordancia.ruleId);
+        return (
+          <div
+            key={`${discordancia.ruleId}-${indice}`}
+            className="tw:flex tw:items-start tw:gap-3 tw:rounded tw:border-l-2 tw:border-gold tw:bg-card tw:px-4 tw:py-3"
+          >
+            <div className="tw:min-w-0 tw:flex-1">
+              <p className="tw:m-0 tw:text-xs tw:text-muted-foreground">
+                Por gravar · regra {discordancia.ruleId}
+                {regra ? ` · ${regra.titulo}` : ""}
+              </p>
+              <p className="tw:mt-1.5 tw:mb-0 tw:text-sm">{discordancia.reason}</p>
+              {discordancia.proposal.trim() ? (
+                <p className="tw:mt-2 tw:mb-0 tw:text-sm">
+                  <strong>Propões:</strong> {discordancia.proposal}
+                </p>
+              ) : null}
+            </div>
+            <button
+              type="button"
+              onClick={() => onRemover(indice)}
+              aria-label={`Remover a discordância da regra ${discordancia.ruleId}`}
+              className="tw:cursor-pointer tw:border-0 tw:bg-transparent tw:text-sm tw:text-muted-foreground"
+            >
+              remover
+            </button>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
@@ -559,9 +734,9 @@ function ListaDiscordancias({ activity }: { activity: RegulamentoActivity }) {
   if (activity.objections.length === 0) return null;
 
   return (
-    <div className="tw:mt-5">
+    <div className="tw:mt-8">
       <h4 className="tw:mt-0 tw:mb-3 tw:text-sm tw:font-semibold tw:text-muted-foreground">
-        Discordâncias registadas ({activity.objections.length})
+        Discordâncias já registadas ({activity.objections.length})
       </h4>
       <div className="tw:flex tw:flex-col tw:gap-3">
         {activity.objections.map((objection) => {
@@ -592,13 +767,15 @@ function ListaDiscordancias({ activity }: { activity: RegulamentoActivity }) {
 function CartaoProposta({
   ponto,
   activity,
-  voter,
-  onDone,
+  texto,
+  bloqueado,
+  onEscrever,
 }: {
   ponto: Ponto;
   activity: RegulamentoActivity;
-  voter: string;
-  onDone: () => Promise<void>;
+  texto: string;
+  bloqueado: boolean;
+  onEscrever: (texto: string) => void;
 }) {
   return (
     <div className={CAIXA}>
@@ -611,73 +788,20 @@ function CartaoProposta({
       <p className="tw:mt-2 tw:mb-4 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
         {ponto.contexto}
       </p>
-      <FormProposta pontoId={ponto.id} voter={voter} onDone={onDone} />
+      <label htmlFor={`proposta-${ponto.id}`} className="tw:sr-only">
+        A tua proposta para {ponto.titulo}
+      </label>
+      <textarea
+        id={`proposta-${ponto.id}`}
+        className={CAMPO}
+        rows={2}
+        value={texto}
+        disabled={bloqueado}
+        onChange={(event) => onEscrever(event.target.value)}
+        placeholder="Escreve a regra como ela devia ficar."
+      />
       <ListaPropostas activity={activity} pontoId={ponto.id} />
     </div>
-  );
-}
-
-function FormProposta({
-  pontoId,
-  voter,
-  onDone,
-}: {
-  pontoId: string | null;
-  voter: string;
-  onDone: () => Promise<void>;
-}) {
-  const [proposal, setProposal] = useState("");
-  const [estado, setEstado] = useState<"" | "a-gravar" | "gravado" | "erro">("");
-  const campoId = `proposta-${pontoId ?? "livre"}`;
-
-  async function submeter(event: FormEvent) {
-    event.preventDefault();
-    if (!voter || !proposal.trim()) return;
-    setEstado("a-gravar");
-    try {
-      await addProposal(pontoId, voter, proposal.trim());
-      setProposal("");
-      setEstado("gravado");
-      await onDone();
-    } catch {
-      setEstado("erro");
-    }
-  }
-
-  return (
-    <form onSubmit={(event) => void submeter(event)}>
-      <fieldset className="tw:m-0 tw:border-0 tw:p-0" disabled={!voter || estado === "a-gravar"}>
-        <legend className="tw:sr-only">Escrever uma proposta</legend>
-        <label htmlFor={campoId} className="tw:sr-only">
-          A tua proposta
-        </label>
-        <textarea
-          id={campoId}
-          className={CAMPO}
-          rows={2}
-          value={proposal}
-          onChange={(event) => setProposal(event.target.value)}
-          placeholder="Escreve a regra como ela devia ficar."
-          required
-        />
-        <div className="tw:mt-3 tw:flex tw:flex-wrap tw:items-center tw:gap-3">
-          <button type="submit" className={BOTAO}>
-            {estado === "a-gravar" ? "A gravar…" : "Propor"}
-          </button>
-          {!voter ? (
-            <span className="tw:text-xs tw:text-muted-foreground">
-              Escolhe o teu nome primeiro.
-            </span>
-          ) : null}
-          {estado === "gravado" ? (
-            <span className="tw:text-xs tw:text-primary">Proposta registada.</span>
-          ) : null}
-          {estado === "erro" ? (
-            <span className="tw:text-xs tw:text-destructive">Não deu para gravar.</span>
-          ) : null}
-        </div>
-      </fieldset>
-    </form>
   );
 }
 
@@ -702,6 +826,62 @@ function ListaPropostas({
           <p className="tw:mt-1.5 tw:mb-0 tw:text-sm">{proposta.proposal}</p>
         </div>
       ))}
+    </div>
+  );
+}
+
+/**
+ * Sticks to the bottom of the form for as long as the form is on screen, so
+ * nobody fills three sections and then hunts for the button.
+ */
+function BarraGravar({
+  voter,
+  visivel,
+  bloqueado,
+  porGravar,
+  gravadoAgora,
+  estado,
+  onGravar,
+}: {
+  voter: string;
+  visivel: boolean;
+  bloqueado: boolean;
+  porGravar: number;
+  gravadoAgora: boolean;
+  estado: "" | "a-gravar" | "erro";
+  onGravar: () => void;
+}) {
+  if (bloqueado || !visivel) return null;
+
+  return (
+    <div className="barra_gravar">
+      <div className="barra_gravar_texto">
+        {!voter ? (
+          <span>Escolhe o teu nome para poderes gravar.</span>
+        ) : estado === "erro" ? (
+          <span className="tw:text-destructive">
+            Não deu para gravar tudo. Não apagues nada do que escreveste — fala com o Pacheco antes
+            de tentares outra vez.
+          </span>
+        ) : gravadoAgora ? (
+          <span>
+            <strong>Gravado.</strong> Podes corrigir enquanto não saíres desta página.
+          </span>
+        ) : (
+          <span>
+            <strong>{voter}</strong> · {porGravar}{" "}
+            {porGravar === 1 ? "resposta por gravar" : "respostas por gravar"}
+          </span>
+        )}
+      </div>
+      <button
+        type="button"
+        onClick={onGravar}
+        disabled={!voter || porGravar === 0 || estado === "a-gravar"}
+        className="tw:cursor-pointer tw:rounded tw:border tw:border-primary tw:bg-primary tw:px-5 tw:py-2.5 tw:text-sm tw:font-semibold tw:text-primary-foreground tw:disabled:cursor-not-allowed tw:disabled:opacity-40"
+      >
+        {estado === "a-gravar" ? "A gravar…" : "Gravar"}
+      </button>
     </div>
   );
 }

@@ -358,21 +358,65 @@ export async function castVote(pointId: string, voter: string, choice: string) {
   if (error) throw error;
 }
 
-export async function addObjection(
-  ruleId: string,
-  voter: string,
-  reason: string,
-  proposal: string | null,
-) {
-  const { error } = await supabase
-    .from("regulamento_objections" as never)
-    .insert({ rule_id: ruleId, voter, reason, proposal } as never);
+export interface RegulamentoSubmission {
+  votes: { pointId: string; choice: string }[];
+  objections: { ruleId: string; reason: string; proposal: string | null }[];
+  proposals: { pointId: string | null; proposal: string }[];
+}
+
+async function replaceRows(table: string, voter: string, rows: Row[]) {
+  const { error: removed } = await supabase
+    .from(table as never)
+    .delete()
+    .eq("voter", voter);
+  if (removed) throw removed;
+  if (rows.length === 0) return;
+  const { error } = await supabase.from(table as never).insert(rows as never);
   if (error) throw error;
 }
 
-export async function addProposal(pointId: string | null, voter: string, proposal: string) {
-  const { error } = await supabase
-    .from("regulamento_proposals" as never)
-    .insert({ point_id: pointId, voter, proposal } as never);
-  if (error) throw error;
+/**
+ * Everything one player is submitting, written in one go.
+ *
+ * The votes upsert on `(point_id, voter)`, but objections and proposals carry
+ * no uniqueness — one person may raise as many as they like — so saving twice
+ * would duplicate them. Theirs are cleared and rewritten instead.
+ *
+ * There is no transaction to wrap this in: PostgREST has none, and the
+ * publishable key could not open one anyway. A failure part-way therefore
+ * leaves the player's rows incomplete, which is why the caller keeps the draft
+ * on screen and tells them to come back rather than reporting a clean failure.
+ */
+export async function saveRegulamento(voter: string, entry: RegulamentoSubmission) {
+  for (const vote of entry.votes) {
+    await castVote(vote.pointId, voter, vote.choice);
+  }
+
+  await replaceRows(
+    "regulamento_objections",
+    voter,
+    entry.objections.map((o) => ({
+      rule_id: o.ruleId,
+      voter,
+      reason: o.reason,
+      proposal: o.proposal,
+    })),
+  );
+
+  await replaceRows(
+    "regulamento_proposals",
+    voter,
+    entry.proposals.map((p) => ({ point_id: p.pointId, voter, proposal: p.proposal })),
+  );
+}
+
+/** Wipe one player's answers so they can start over — the only way back in. */
+export async function clearRegulamento(voter: string) {
+  for (const table of ["regulamento_votes", "regulamento_objections", "regulamento_proposals"]) {
+    const { error } = await supabase
+      .from(table as never)
+      .delete()
+      .eq("voter", voter);
+    if (error) throw error;
+  }
 }

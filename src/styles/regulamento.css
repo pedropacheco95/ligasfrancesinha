@@ -73,3 +73,52 @@
   display: inline;
   font-weight: 400;
 }
+
+/*
+ * The Gravar bar, held at the bottom of the screen while the form is on it.
+ *
+ * `position: sticky` looks like the right tool and cannot work: `main_block`
+ * in the compiled Flask stylesheet is `overflow: auto`, which makes it the
+ * element's scrolling ancestor, so the bar would stick to a scrollport that
+ * never scrolls instead of to the window. That file is not edited, so the bar
+ * is fixed to the viewport and the component hides it when the form is out of
+ * view. `position` is set here rather than with a `tw:` utility for the same
+ * reason `display` is: an unlayered rule beats a layered one.
+ */
+.regulamento_page .formulario {
+  position: relative;
+  padding-bottom: 5.5rem;
+}
+
+.regulamento_page .barra_gravar {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  width: min(48rem, calc(100vw - 2.5rem));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--card);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 18%);
+}
+
+.regulamento_page .barra_gravar_texto {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  min-width: 12rem;
+  flex: 1 1 12rem;
+}
+
+@media (max-width: 560px) {
+  .regulamento_page .barra_gravar {
+    bottom: 0.5rem;
+  }
+}
