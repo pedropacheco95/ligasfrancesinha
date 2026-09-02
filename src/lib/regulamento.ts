@@ -121,3 +121,22 @@ export function contagem(ponto: Ponto, escolhas: string[]): { opcao: string; vot
     votos: escolhas.filter((escolha) => escolha === opcao).length,
   }));
 }
+
+/**
+ * The rulebook: the rules that actually govern the league.
+ *
+ * `/regulamento` shows only these. A rule that is still a proposal, or that
+ * two people read in incompatible ways, is not a rule you can be held to — the
+ * contested ones are precisely what the open points are voting on, and the
+ * proposals are what the group is being asked to write. The reconstruction
+ * that produced all of them, with the quotes and the contradictions, is the
+ * article, not the rulebook.
+ */
+export function regrasAprovadas(artigo: Artigo): Regra[] {
+  return artigo.regras.filter((regra) => regra.estado === "vigor" || regra.estado === "pendente");
+}
+
+/** Every approved rule, across the articles — what the page counts and lists. */
+export function todasAprovadas(): Regra[] {
+  return regulamento.artigos.flatMap(regrasAprovadas);
+}

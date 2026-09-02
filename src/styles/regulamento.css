@@ -1,0 +1,75 @@
+/*
+ * The form controls on /regulamento.
+ *
+ * Tailwind's utilities are imported into `@layer utilities`, and an unlayered
+ * rule beats any layered one no matter how specific — so Bootstrap's reboot
+ * (`label { display: inline-block }`) and the compiled Flask stylesheet
+ * (`select { width: 140px; margin: 10px }`) win against `tw:block`, `tw:flex`
+ * and `tw:w-full`. Neither of those files is edited, so the page takes back
+ * its own elements here, in plain unlayered CSS, the way `news.css` does.
+ *
+ * Loaded from the route's `head.links`.
+ */
+
+.regulamento_page label {
+  display: block;
+  margin: 0;
+}
+
+.regulamento_page select,
+.regulamento_page textarea {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* The arrow the appearance reset removes. */
+.regulamento_page select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% + 2px),
+    calc(100% - 13px) calc(50% + 2px);
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.regulamento_page textarea {
+  resize: vertical;
+}
+
+/* One option in a poll: radio, then the option, then its count on the right. */
+.regulamento_page label.opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.regulamento_page label.opcao input {
+  width: auto;
+  margin: 0;
+  flex: none;
+  -webkit-appearance: radio;
+  appearance: radio;
+}
+
+.regulamento_page label.opcao .texto {
+  flex: 1 1 auto;
+}
+
+.regulamento_page label.opcao .contagem {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+
+/* `label { display: block }` above would otherwise stack these onto two lines. */
+.regulamento_page label .opcional {
+  display: inline;
+  font-weight: 400;
+}

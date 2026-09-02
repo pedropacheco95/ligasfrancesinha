@@ -1,34 +1,33 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent, type ReactNode } from "react";
 
 import { Layout } from "@/components/Layout";
+
+import regulamentoCss from "@/styles/regulamento.css?url";
 import { useRegulamentoActivity, useSquad, useVoter } from "@/hooks/use-regulamento";
 import { addObjection, addProposal, castVote, type RegulamentoActivity } from "@/lib/db";
 import {
-  ESTADO_LABEL,
   contagem,
   pontosDoBalde,
   regraPorId,
+  regrasAprovadas,
   regrasVotadas,
   regulamento,
-  totalRegras,
-  type EstadoRegra,
+  todasAprovadas,
   type Ponto,
   type Regra,
 } from "@/lib/regulamento";
 
 export const Route = createFileRoute("/regulamento")({
-  head: () => ({ meta: [{ title: "Regulamento — Ligas Francesinha" }] }),
+  head: () => ({
+    meta: [{ title: "Regulamento — Ligas Francesinha" }],
+    links: [{ rel: "stylesheet", href: regulamentoCss }],
+  }),
   component: RegulamentoPage,
 });
 
-const ESTADO_CLASSE: Record<EstadoRegra, string> = {
-  vigor: "tw:bg-primary/10 tw:text-primary",
-  pendente: "tw:bg-gold/15 tw:text-foreground",
-  contestada: "tw:bg-destructive/10 tw:text-destructive",
-  proposta: "tw:bg-muted tw:text-muted-foreground",
-  dormente: "tw:bg-muted tw:text-muted-foreground",
-};
+/** The article that carries the reconstruction these rules came out of. */
+const SLUG_ARTIGO = "estatutos-da-master-league";
 
 const CAIXA = "tw:rounded-lg tw:border tw:border-border tw:bg-card tw:p-5";
 const CAMPO =
@@ -41,14 +40,17 @@ function RegulamentoPage() {
   const [voter, setVoter] = useVoter();
   const squad = useSquad();
 
+  const aprovadas = todasAprovadas();
   const decididas = regrasVotadas();
   const paraVotar = pontosDoBalde("votar");
   const paraPropor = pontosDoBalde("proposta");
 
   return (
     <Layout>
-      <div className="tw:mx-auto tw:w-full tw:max-w-3xl tw:px-5 tw:pt-10 tw:pb-24 tw:text-foreground">
-        <header className="tw:border-b-2 tw:border-foreground tw:pb-8">
+      {/* `styles_frontend.css` centres the body text for the ported Bootstrap
+            pages; a document reads as a column, so this one opts out. */}
+      <div className="regulamento_page tw:mx-auto tw:w-full tw:max-w-3xl tw:px-5 tw:pt-10 tw:pb-24 tw:text-left tw:text-foreground">
+        <header className="tw:pb-4">
           <p className="tw:m-0 tw:text-xs tw:tracking-[0.16em] tw:text-primary tw:uppercase">
             Versão {regulamento.versao}
           </p>
@@ -56,11 +58,13 @@ function RegulamentoPage() {
             Regulamento da Master League
           </h1>
           <p className="tw:mt-4 tw:mb-0 tw:max-w-prose tw:text-base tw:text-muted-foreground">
-            {regulamento.notaMetodo}
+            As regras por que a liga se rege. Uma regra só entra aqui depois de aprovada — o que
+            ainda é proposta, ou que duas pessoas leem de maneiras incompatíveis, está em baixo, à
+            espera de voto.
           </p>
 
           <dl className="tw:mt-7 tw:mb-0 tw:grid tw:grid-cols-2 tw:gap-x-6 tw:gap-y-4 tw:sm:grid-cols-4">
-            <Facto valor={String(totalRegras())} rotulo="regras" />
+            <Facto valor={String(aprovadas.length)} rotulo="regras em vigor" />
             <Facto valor={String(decididas.length)} rotulo="já votadas" />
             <Facto valor={String(paraVotar.length)} rotulo="a votar agora" />
             <Facto valor={String(paraPropor.length)} rotulo="à espera de proposta" />
@@ -81,29 +85,30 @@ function RegulamentoPage() {
             ))}
           </div>
 
-          <h3 className="tw:mt-12 tw:mb-1 tw:text-xl tw:font-semibold">O regulamento inteiro</h3>
+          <h3 className="tw:mt-14 tw:mb-1 tw:text-xl tw:font-semibold">O regulamento</h3>
           <p className="tw:mt-0 tw:mb-2 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-            As {totalRegras()} regras, cada uma com a data, o autor e a frase em que ficou fixada.
+            As {aprovadas.length} regras em vigor, por artigo.
           </p>
 
-          {regulamento.artigos.map((artigo) => (
-            <article key={artigo.id} id={artigo.id} className="tw:mt-10 tw:scroll-mt-24">
-              <div className="tw:flex tw:items-baseline tw:gap-3 tw:border-b tw:border-foreground tw:pb-2">
-                <span className="tw:text-xs tw:tracking-[0.08em] tw:text-primary tw:uppercase">
-                  Art. {artigo.numero}
-                </span>
-                <h4 className="tw:m-0 tw:text-lg tw:font-semibold">{artigo.titulo}</h4>
-              </div>
-              <p className="tw:mt-3 tw:mb-0 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-                {artigo.nota}
-              </p>
-              <div className="tw:mt-2">
-                {artigo.regras.map((regra) => (
-                  <LinhaRegra key={regra.id} regra={regra} />
-                ))}
-              </div>
-            </article>
-          ))}
+          {regulamento.artigos.map((artigo) => {
+            const regras = regrasAprovadas(artigo);
+            if (regras.length === 0) return null;
+            return (
+              <article key={artigo.id} id={artigo.id} className="tw:mt-10 tw:scroll-mt-24">
+                <div className="tw:flex tw:items-baseline tw:gap-3 tw:border-b tw:border-foreground tw:pb-2">
+                  <span className="tw:text-xs tw:tracking-[0.08em] tw:text-primary tw:uppercase">
+                    Art. {artigo.numero}
+                  </span>
+                  <h4 className="tw:m-0 tw:text-lg tw:font-semibold">{artigo.titulo}</h4>
+                </div>
+                <div className="tw:mt-2">
+                  {regras.map((regra) => (
+                    <LinhaRegra key={regra.id} regra={regra} />
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </Parte>
 
         <Parte numero={2} titulo="Votar">
@@ -177,9 +182,23 @@ function RegulamentoPage() {
             que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda
             entre as duas mais votadas.
           </p>
-          <p className="tw:m-0">
+          <p className="tw:mt-0 tw:mb-3">
             <strong className="tw:text-foreground">Não existe.</strong> Não há MVP, melhor marcador,
             taça nem qualquer prémio individual além da francesinha.
+          </p>
+          <p className="tw:m-0">
+            <strong className="tw:text-foreground">De onde vêm.</strong> Cada regra foi reconstruída
+            a partir das 27 453 mensagens do grupo. Quem quiser ver a data, o autor e a frase em que
+            cada uma ficou fixada — e as contradições que ainda não foram resolvidas — encontra tudo
+            em{" "}
+            <Link
+              activeProps={{ className: "" }}
+              to="/noticias/$slug"
+              params={{ slug: SLUG_ARTIGO }}
+            >
+              Estatutos da Master League
+            </Link>
+            .
           </p>
         </footer>
       </div>
@@ -272,9 +291,9 @@ function CartaoDecidido({ regra }: { regra: Regra }) {
 
 function LinhaRegra({ regra }: { regra: Regra }) {
   return (
-    <div className="tw:border-b tw:border-border tw:py-5 tw:last:border-b-0">
-      <div className="tw:flex tw:flex-wrap tw:items-start tw:gap-x-4 tw:gap-y-2">
-        <span className="tw:w-9 tw:shrink-0 tw:pt-1 tw:text-sm tw:text-muted-foreground tw:tabular-nums">
+    <div className="tw:border-b tw:border-border tw:py-4 tw:last:border-b-0">
+      <div className="tw:flex tw:flex-wrap tw:items-start tw:gap-x-4 tw:gap-y-1">
+        <span className="tw:w-9 tw:shrink-0 tw:pt-0.5 tw:text-sm tw:text-muted-foreground tw:tabular-nums">
           {regra.id}
         </span>
         <div className="tw:min-w-0 tw:flex-1 tw:basis-80">
@@ -285,35 +304,12 @@ function LinhaRegra({ regra }: { regra: Regra }) {
             </p>
           ) : null}
         </div>
-        <span
-          className={`tw:shrink-0 tw:rounded tw:px-2 tw:py-1 tw:text-[10px] tw:tracking-[0.1em] tw:uppercase ${ESTADO_CLASSE[regra.estado]}`}
-        >
-          {ESTADO_LABEL[regra.estado]}
-        </span>
+        {regra.estado === "pendente" ? (
+          <span className="tw:shrink-0 tw:rounded tw:bg-gold/15 tw:px-2 tw:py-1 tw:text-[10px] tw:tracking-[0.1em] tw:text-foreground tw:uppercase">
+            Falta implementar
+          </span>
+        ) : null}
       </div>
-
-      {regra.citacoes.map((citacao, indice) => (
-        <blockquote
-          key={indice}
-          className="tw:mt-3 tw:mb-0 tw:border-l-2 tw:border-border tw:pl-3.5 tw:sm:ml-13"
-        >
-          <p className="tw:m-0 tw:text-sm tw:italic">«{citacao.texto}»</p>
-          <cite className="tw:mt-1 tw:block tw:text-xs tw:not-italic tw:text-muted-foreground">
-            {citacao.autor} · {citacao.data}
-          </cite>
-        </blockquote>
-      ))}
-
-      {regra.verificacao ? (
-        <div className="tw:mt-4 tw:rounded tw:border tw:border-border tw:bg-card tw:p-3.5 tw:sm:ml-13">
-          <p className="tw:m-0 tw:text-[10px] tw:tracking-[0.12em] tw:text-primary tw:uppercase">
-            {regra.verificacao.titulo}
-          </p>
-          <p className="tw:mt-1.5 tw:mb-0 tw:font-mono tw:text-xs tw:break-words">
-            {regra.verificacao.texto}
-          </p>
-        </div>
-      ) : null}
     </div>
   );
 }
@@ -414,7 +410,7 @@ function Sondagem({
             return (
               <label
                 key={opcao}
-                className={`tw:relative tw:flex tw:cursor-pointer tw:items-center tw:gap-3 tw:overflow-hidden tw:rounded tw:border tw:px-3 tw:py-2.5 tw:text-sm ${
+                className={`opcao tw:relative tw:cursor-pointer tw:overflow-hidden tw:rounded tw:border tw:px-3 tw:py-2.5 tw:text-sm ${
                   escolhida ? "tw:border-primary tw:bg-primary/5" : "tw:border-border"
                 }`}
               >
@@ -426,12 +422,11 @@ function Sondagem({
                 <input
                   type="radio"
                   name={`ponto-${ponto.id}`}
-                  className="tw:relative tw:shrink-0"
                   checked={escolhida}
                   onChange={() => void votar(opcao)}
                 />
-                <span className="tw:relative tw:flex-1">{opcao}</span>
-                <span className="tw:relative tw:shrink-0 tw:text-sm tw:font-semibold tw:tabular-nums">
+                <span className="texto tw:relative">{opcao}</span>
+                <span className="contagem tw:relative tw:text-sm tw:font-semibold">
                   {votosNaOpcao}
                 </span>
               </label>
@@ -503,7 +498,7 @@ function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Prom
           <option value="">— escolhe a regra —</option>
           {regulamento.artigos.map((artigo) => (
             <optgroup key={artigo.id} label={`Art. ${artigo.numero} · ${artigo.titulo}`}>
-              {artigo.regras.map((regra) => (
+              {regrasAprovadas(artigo).map((regra) => (
                 <option key={regra.id} value={regra.id}>
                   {regra.id} · {regra.titulo}
                 </option>
@@ -526,8 +521,7 @@ function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Prom
         />
 
         <label htmlFor="melhor" className="tw:mt-4 tw:mb-1.5 tw:block tw:text-sm tw:font-semibold">
-          Como devia ser?{" "}
-          <span className="tw:font-normal tw:text-muted-foreground">(opcional)</span>
+          Como devia ser? <span className="opcional tw:text-muted-foreground">(opcional)</span>
         </label>
         <textarea
           id="melhor"
