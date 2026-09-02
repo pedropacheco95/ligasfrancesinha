@@ -56,8 +56,10 @@ accented and single-word player names, players with no `full_name` or
 
 ## Reading the results
 
-`compare-text.py` should report **677/677**, `compare-geometry.mjs` **30/30**,
-and `check-interactions.mjs` **29/29**. `check-rounding.mjs` should report
+`compare-text.py` should report **676/677**, `compare-geometry.mjs` **29/30**,
+and `check-interactions.mjs` **29/29**. The one page that no longer matches is
+`/`: it carries a news block below the standings that the Flask app never had.
+Every other page is still expected to be identical. `check-rounding.mjs` should report
 **59990/59990** — it is the one check that needs neither app running.
 
 Rounding gets its own script because the page comparison cannot catch a
@@ -66,7 +68,8 @@ regression there: the values that expose the difference between Python's
 appearances) are not in the current data, so every page would still match while
 the helper was quietly wrong.
 
-`compare-pixels.mjs` reports about 55/60 identical. The handful that differ are
+`compare-pixels.mjs` reports about 53/60 identical — the home page is two of
+those, at both widths, for the news block. The handful that differ are
 the longest pages — the games and "jogos realizados" listings — where React's server rendering splits
 interpolated text into several nodes; each run is then shaped and rounded
 independently, which shifts glyphs by a fraction of a pixel. Geometry comparison

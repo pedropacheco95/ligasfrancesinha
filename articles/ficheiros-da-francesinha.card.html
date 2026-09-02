@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #0A0F13; }
+  .card {
+    position: relative; width: 1200px; height: 630px; overflow: hidden;
+    font-family: "Oswald", Impact, sans-serif; color: #ECE5D8;
+  }
+  .photo {
+    position: absolute; inset: 0;
+    background: url("../public/static/images/Campo-Torrinha cor.jpg") center 62% / cover no-repeat;
+    filter: saturate(0.75) brightness(0.62) contrast(1.05);
+  }
+  .veil {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(100deg, rgba(10,15,19,0.97) 0%, rgba(10,15,19,0.93) 38%, rgba(10,15,19,0.55) 68%, rgba(10,15,19,0.35) 100%),
+      linear-gradient(0deg, rgba(10,15,19,0.9) 0%, rgba(10,15,19,0) 45%);
+  }
+  .content { position: absolute; inset: 0; padding: 64px 72px; display: flex; flex-direction: column; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #E4572E;
+  }
+  h1 {
+    margin-top: 26px; font-size: 108px; line-height: 0.9; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.005em; max-width: 15ch;
+  }
+  h1 .thin { display: block; font-weight: 300; color: #F6F2E9; }
+  .rule { margin-top: 34px; width: 132px; height: 5px; background: #E4572E; }
+  .stand {
+    margin-top: 26px; font-family: "IBM Plex Mono", monospace; font-size: 21px;
+    line-height: 1.5; color: #B9C6CF; max-width: 30ch; letter-spacing: 0.01em;
+  }
+  .facts { margin-top: auto; display: flex; gap: 54px; align-items: flex-end; }
+  .fact .n { font-size: 46px; font-weight: 600; line-height: 1; color: #F6F2E9; }
+  .fact .k {
+    margin-top: 8px; font-family: "IBM Plex Mono", monospace; font-size: 15px;
+    letter-spacing: 0.16em; text-transform: uppercase; color: #8FA0AB;
+  }
+  .brand {
+    position: absolute; right: 72px; bottom: 64px; display: flex; align-items: center; gap: 16px;
+    font-family: "IBM Plex Mono", monospace; font-size: 16px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #8FA0AB;
+  }
+  .brand img { height: 62px; }
+</style></head><body>
+<div class="card">
+  <div class="photo"></div>
+  <div class="veil"></div>
+  <div class="content">
+    <div class="eyebrow">MasterLeague · 2020–2026</div>
+    <h1>Os Ficheiros<span class="thin">da Francesinha</span></h1>
+    <div class="rule"></div>
+    <div class="stand">Seis épocas e sete anos de grupo, passados a pente fino à procura da verdade dos números.</div>
+    <div class="facts">
+      <div class="fact"><div class="n">204</div><div class="k">jogos</div></div>
+      <div class="fact"><div class="n">3.216</div><div class="k">golos</div></div>
+      <div class="fact"><div class="n">28.312</div><div class="k">mensagens</div></div>
+      <div class="fact"><div class="n">1</div><div class="k">recorde errado</div></div>
+    </div>
+  </div>
+  <div class="brand"><img src="../public/static/images/ligas_francesinha_logo.png" alt=""></div>
+</div>
+</body></html>

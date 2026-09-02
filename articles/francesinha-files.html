@@ -1,0 +1,1209 @@
+<title>The Francesinha Files</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  /* A committed single world: a floodlit Thursday night in Porto. Every colour is
+     painted explicitly so the page holds on any host ground, light or dark. */
+  :root {
+    --ground:    #0A0F13;
+    --surface:   #131C22;
+    --surface-2: #1C262E;
+    --line:      #2A3841;
+    --ink:       #ECE5D8;
+    --ink-dim:   #8FA0AB;
+    --ink-faint: #5E6E79;
+    --sauce:     #E4572E;
+    --sauce-dim: #8A3620;
+    --verify:    #7FAE8B;
+    --reject:    #CE5348;
+    --chalk:     #F6F2E9;
+
+    --display: "Oswald", "Haettenschweiler", Impact, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    --measure: 64ch;
+    --pad: clamp(1.1rem, 4vw, 2.75rem);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: clamp(1rem, 0.97rem + 0.16vw, 1.09rem);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--pad); }
+
+  h1, h2, h3, .num, .eyebrow, th, .stamp, .tag {
+    font-family: var(--display);
+    text-transform: uppercase;
+  }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 700; letter-spacing: 0.01em; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--sauce);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────────── */
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(228, 87, 46, 0.13), transparent 62%),
+      var(--ground);
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 13vw, 8.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.015em;
+  }
+  .hero h1 .thin { font-weight: 400; color: var(--ink-dim); display: block; }
+  .hero .standfirst {
+    max-width: var(--measure);
+    margin-top: 1.6rem;
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+    color: var(--ink);
+  }
+  .hero .standfirst strong { color: var(--sauce); font-weight: 500; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1px;
+    margin-top: clamp(2rem, 5vw, 3.25rem);
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .fact { background: var(--ground); padding: 1rem 1.1rem; }
+  .fact .n {
+    font-family: var(--display);
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact .k {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.13em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  /* ── Sections ─────────────────────────────────────────────────── */
+  section { padding: clamp(3rem, 8vw, 5.5rem) 0; border-bottom: 1px solid var(--line); }
+  .sec-head { margin-bottom: 2.5rem; }
+  .sec-head h2 { font-size: clamp(1.9rem, 6vw, 3.1rem); line-height: 0.95; margin-top: 0.5rem; }
+  .sec-head p { max-width: var(--measure); color: var(--ink-dim); margin: 0.9rem 0 0; }
+
+  /* ── Stat cards ───────────────────────────────────────────────── */
+  .cards { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cards.two { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+  .cards.three { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+  .card { background: var(--surface); padding: 1.5rem 1.4rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .card.dark { background: var(--ground); }
+  .card h3 { font-size: 1.12rem; line-height: 1.15; letter-spacing: 0.005em; }
+  .card p { margin: 0; font-size: 0.95rem; color: var(--ink-dim); }
+  .card p em { color: var(--ink); font-style: italic; }
+  .card .big {
+    font-family: var(--display);
+    font-size: clamp(2.6rem, 9vw, 4rem);
+    line-height: 0.9;
+    color: var(--sauce);
+    font-variant-numeric: tabular-nums;
+  }
+  .card .big small { font-size: 0.36em; color: var(--ink-dim); display: block; letter-spacing: 0.1em; }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--line);
+    padding-top: 0.7rem;
+    margin-top: auto;
+  }
+
+  /* ── The staircase ────────────────────────────────────────────── */
+  .stair { display: grid; gap: 0.55rem; margin: 0.5rem 0 0; }
+  .step { display: grid; grid-template-columns: 8.5rem 1fr auto; align-items: center; gap: 0.85rem; }
+  .step .lbl { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); letter-spacing: 0.04em; }
+  .step .bar { height: 1.5rem; background: var(--surface-2); position: relative; overflow: hidden; }
+  .step .bar i { position: absolute; inset: 0 auto 0 0; background: var(--sauce-dim); display: block; }
+  .step.peak .bar i { background: var(--sauce); }
+  .step .val {
+    font-family: var(--display); font-size: 1.15rem; font-variant-numeric: tabular-nums; min-width: 3.6rem; text-align: right;
+  }
+  @media (max-width: 520px) { .step { grid-template-columns: 6.5rem 1fr auto; } }
+
+  /* ── Tables ───────────────────────────────────────────────────── */
+  .scroll { overflow-x: auto; border: 1px solid var(--line); }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 560px; }
+  caption {
+    text-align: left; padding: 1rem 1.1rem; background: var(--surface);
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.13em;
+    color: var(--ink-faint); text-transform: uppercase; border-bottom: 1px solid var(--line);
+  }
+  th {
+    font-size: 0.72rem; letter-spacing: 0.1em; color: var(--ink-dim); font-weight: 600;
+    text-align: right; padding: 0.6rem 0.7rem; background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  th:first-child, td:first-child { text-align: left; padding-left: 1.1rem; }
+  th:nth-child(2), td:nth-child(2) { text-align: left; }
+  td {
+    padding: 0.5rem 0.7rem; text-align: right; font-family: var(--mono);
+    font-size: 0.82rem; border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.014); }
+  td.name { font-family: var(--body); font-size: 0.95rem; }
+  .rank { color: var(--ink-faint); }
+  .hi { color: var(--sauce); }
+  .lo { color: var(--ink-faint); }
+
+  /* ── Verdict stamps ───────────────────────────────────────────── */
+  .stamp {
+    display: inline-block; font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.14em; padding: 0.22rem 0.5rem; border: 1px solid currentColor;
+    align-self: flex-start;
+  }
+  .stamp.ok { color: var(--verify); }
+  .stamp.no { color: var(--reject); }
+  .stamp.hm { color: var(--ink-dim); }
+
+  .verdict { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .verdict .row { background: var(--surface); padding: 1.25rem 1.3rem; display: grid; gap: 0.55rem; }
+  .verdict .row.killed { background: var(--ground); }
+  .verdict h3 { font-size: 1rem; }
+  .verdict p { margin: 0; font-size: 0.92rem; color: var(--ink-dim); }
+  .verdict .killed h3 { color: var(--ink-dim); text-decoration: line-through; text-decoration-color: var(--reject); }
+
+  /* ── Pull quote ───────────────────────────────────────────────── */
+  .pull {
+    border-left: 3px solid var(--sauce); padding: 0.2rem 0 0.2rem 1.4rem;
+    margin: 2.25rem 0; max-width: var(--measure);
+    font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); line-height: 1.35;
+  }
+
+  .note {
+    font-family: var(--mono); font-size: 0.73rem; line-height: 1.65;
+    color: var(--ink-faint); border-top: 1px solid var(--line);
+    padding-top: 1rem; margin-top: 2.25rem; max-width: var(--measure);
+  }
+
+  footer { padding: clamp(2.5rem, 6vw, 4rem) 0 4rem; color: var(--ink-faint); }
+  footer p { max-width: var(--measure); font-size: 0.9rem; }
+  footer .eyebrow { color: var(--ink-faint); }
+
+  /* ── Charts ───────────────────────────────────────────────────── */
+  /* Diverging pair, validated against the #131C22 chart surface:
+     CVD ΔE 10.0 (deutan), normal-vision ΔE 28.1, both ≥ 3:1 contrast. */
+  :root { --good: #159C6E; --bad: #E4572E; --axis: #33434E; }
+
+  figure { margin: 0; }
+  figcaption {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em;
+    color: var(--ink-faint); margin-top: 0.9rem; max-width: var(--measure);
+  }
+  .legend { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+  .legend span { display: flex; align-items: center; gap: 0.42rem; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); letter-spacing: 0.04em; }
+  .legend i { width: 0.7rem; height: 0.7rem; border-radius: 2px; display: block; }
+
+  /* Diverging paired bars */
+  .infl { display: grid; gap: 0.15rem; }
+  .infl .r { display: grid; grid-template-columns: 8.5rem 1fr; align-items: center; gap: 0.7rem; padding: 0.2rem 0; }
+  .infl .who { font-size: 0.85rem; color: var(--ink); text-align: right; }
+  .infl .pair { display: grid; gap: 2px; }
+  .infl .track { position: relative; height: 0.72rem; background: linear-gradient(90deg, transparent calc(50% - 1px), var(--axis) calc(50% - 1px), var(--axis) calc(50% + 1px), transparent calc(50% + 1px)); }
+  .infl .track b { position: absolute; top: 0; bottom: 0; border-radius: 2px; display: block; }
+  .infl .track b.pos { left: 50%; background: var(--good); }
+  .infl .track b.neg { right: 50%; background: var(--bad); }
+  .infl .track em { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--mono); font-style: normal; font-size: 0.62rem; color: var(--ink-dim); white-space: nowrap; }
+  /* A long bar carries its own label, so it can never run off the track. */
+  .infl .track em.in { color: var(--ground); font-weight: 600; }
+  @media (max-width: 560px) { .infl .r { grid-template-columns: 6rem 1fr; } .infl .who { font-size: 0.75rem; } }
+
+  /* Column chart */
+  .cols { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0.6rem; align-items: end; height: 190px; border-bottom: 1px solid var(--axis); }
+  .cols .c { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 0.4rem; height: 100%; }
+  .cols .c i { width: 100%; max-width: 74px; background: var(--sauce); border-radius: 3px 3px 0 0; display: block; }
+  .cols .c.cool i { background: var(--good); }
+  .cols .c .v { font-family: var(--display); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+  .colkeys { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0.6rem; margin-top: 0.55rem; }
+  .colkeys span { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-faint); text-align: center; letter-spacing: 0.04em; }
+
+  /* Scatter */
+  .scatter { position: relative; height: 300px; border-left: 1px solid var(--axis); border-bottom: 1px solid var(--axis); margin: 0 1rem 0 2.4rem; }
+  .scatter .pt { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--sauce); transform: translate(-50%, 50%); box-shadow: 0 0 0 2px var(--surface); }
+  .scatter .pt.up { background: var(--good); }
+  .scatter .lb { position: absolute; transform: translateY(50%); margin-left: 0.85rem; font-family: var(--mono); font-size: 0.6rem; color: var(--ink-dim); white-space: nowrap; }
+  .scatter .lb.flip { transform: translate(-100%, 50%); margin-left: -0.85rem; }
+  @media (max-width: 560px) { .scatter .lb { font-size: 0.52rem; margin-left: 0.5rem; } .scatter .lb.flip { margin-left: -0.5rem; } }
+  .scatter .ax { position: absolute; font-family: var(--mono); font-size: 0.6rem; color: var(--ink-faint); }
+
+  /* Correlation bars */
+  .corr { display: grid; gap: 0.55rem; }
+  .cr { display: grid; grid-template-columns: 13rem 1fr 2.6rem; align-items: center; gap: 0.8rem; }
+  .crn { font-size: 0.85rem; color: var(--ink); text-align: right; }
+  .crb { height: 1.15rem; background: var(--surface-2); position: relative; }
+  .crb i { position: absolute; inset: 0 auto 0 0; display: block; border-radius: 0 2px 2px 0; }
+  .crb i.good { background: var(--good); }
+  .crb i.bad { background: var(--bad); }
+  .crv { font-family: var(--display); font-size: 1rem; font-variant-numeric: tabular-nums; text-align: right; }
+  @media (max-width: 560px) { .cr { grid-template-columns: 7.5rem 1fr 2.4rem; } .crn { font-size: 0.72rem; } }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .step .bar i { animation: grow 900ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+    @keyframes grow { from { transform: scaleX(0); transform-origin: left; } }
+  }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">MasterLeague · six seasons · 2020–2026</p>
+    <h1>The Francesinha<span class="thin">Files</span></h1>
+    <p class="standfirst">
+      Two hundred and four games. Three thousand two hundred and sixteen goals. Twenty-three men
+      who keep turning up. We put all of it through a database and went looking for the truth —
+      and found, among other things, that <strong>the record book was wrong</strong>.
+    </p>
+
+    <div class="facts">
+      <div class="fact"><div class="n">204</div><div class="k">games</div></div>
+      <div class="fact"><div class="n">3,216</div><div class="k">goals</div></div>
+      <div class="fact"><div class="n">2,037</div><div class="k">appearances</div></div>
+      <div class="fact"><div class="n">23</div><div class="k">players</div></div>
+      <div class="fact"><div class="n">6</div><div class="k">seasons</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════ LEDGER -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">01 — the ledger</p>
+      <h2>Everything, all at once</h2>
+      <p>
+        Every man who has played thirty games or more, ranked by the only thing that
+        actually counts. Goals per game is there too, for the people who prefer to change
+        the subject.
+      </p>
+    </div>
+
+    <div class="scroll">
+      <table>
+        <caption>All-time MasterLeague · minimum 30 appearances</caption>
+        <thead>
+          <tr>
+            <th>#</th><th>Player</th><th>Apps</th><th>W</th><th>D</th><th>L</th>
+            <th>Win&nbsp;%</th><th>Goals</th><th>G/game</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="rank">1</td><td class="name">Fanuca</td><td>61</td><td>38</td><td>5</td><td>18</td><td class="hi">62.3</td><td>62</td><td>1.02</td></tr>
+          <tr><td class="rank">2</td><td class="name">Manel</td><td>30</td><td>18</td><td>1</td><td>11</td><td class="hi">60.0</td><td>43</td><td>1.43</td></tr>
+          <tr><td class="rank">3</td><td class="name">Kiko TM</td><td>145</td><td>87</td><td>9</td><td>49</td><td class="hi">60.0</td><td>130</td><td>0.90</td></tr>
+          <tr><td class="rank">4</td><td class="name">Luis Fragoso</td><td>160</td><td>87</td><td>15</td><td>58</td><td class="hi">54.4</td><td>233</td><td>1.46</td></tr>
+          <tr><td class="rank">5</td><td class="name">João Perneta</td><td>43</td><td>21</td><td>4</td><td>18</td><td>48.8</td><td>46</td><td>1.07</td></tr>
+          <tr><td class="rank">6</td><td class="name">Bernardo Castro</td><td>161</td><td>76</td><td>16</td><td>69</td><td>47.2</td><td>181</td><td>1.12</td></tr>
+          <tr><td class="rank">7</td><td class="name">Zé SF</td><td>129</td><td>60</td><td>10</td><td>59</td><td>46.5</td><td class="hi">274</td><td class="hi">2.12</td></tr>
+          <tr><td class="rank">8</td><td class="name">Miguel</td><td>56</td><td>25</td><td>8</td><td>23</td><td>44.6</td><td>35</td><td>0.63</td></tr>
+          <tr><td class="rank">9</td><td class="name">Bernardo Queiroz</td><td>97</td><td>43</td><td>9</td><td>45</td><td>44.3</td><td>81</td><td>0.84</td></tr>
+          <tr><td class="rank">10</td><td class="name">Ferna</td><td>148</td><td>65</td><td>12</td><td>71</td><td>43.9</td><td>155</td><td>1.05</td></tr>
+          <tr><td class="rank">11</td><td class="name">Pedro Pacheco</td><td>169</td><td>74</td><td>17</td><td>78</td><td>43.8</td><td>228</td><td>1.35</td></tr>
+          <tr><td class="rank">12</td><td class="name">Bernardo Xavier</td><td>131</td><td>57</td><td>14</td><td>60</td><td>43.5</td><td>85</td><td>0.65</td></tr>
+          <tr><td class="rank">13</td><td class="name">Barros</td><td>35</td><td>15</td><td>4</td><td>16</td><td>42.9</td><td>33</td><td>0.94</td></tr>
+          <tr><td class="rank">14</td><td class="name">Chico Castro</td><td>78</td><td>31</td><td>10</td><td>37</td><td>39.7</td><td>31</td><td>0.40</td></tr>
+          <tr><td class="rank">15</td><td class="name">Zi</td><td>149</td><td>57</td><td>17</td><td>75</td><td>38.3</td><td>261</td><td>1.75</td></tr>
+          <tr><td class="rank">16</td><td class="name">Afonso Mariz</td><td>135</td><td>49</td><td>19</td><td>67</td><td>36.3</td><td>184</td><td>1.36</td></tr>
+          <tr><td class="rank">17</td><td class="name">Vinhas</td><td>113</td><td>40</td><td>9</td><td>64</td><td>35.4</td><td class="lo">25</td><td class="lo">0.22</td></tr>
+          <tr><td class="rank">18</td><td class="name">Mini Zi</td><td>95</td><td>29</td><td>11</td><td>55</td><td class="lo">30.5</td><td>100</td><td>1.05</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">
+      Bernardo Xavier's goals are shown corrected. The raw data credits him with 116; thirty-one of those are impossible and are removed here. See file 12.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ CHEMISTRY -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">02 — chemistry</p>
+      <h2>Some of you are better together</h2>
+      <p>
+        Teams are redrawn every week, which means six seasons have quietly run a controlled
+        experiment on all of you. Here is what it found.
+      </p>
+    </div>
+
+    <div class="pull">
+      Pedro Pacheco is a 44% player. Zé SF is a 46% player. Put them on the same team and
+      they are a 54% player — and the effect climbs in a perfectly straight line.
+    </div>
+
+    <div class="cards two">
+      <div class="card dark">
+        <span class="stamp ok">Strongest effect in the data</span>
+        <h3>The Pacheco–Zé SF staircase</h3>
+        <p>Pedro Pacheco's win rate, by where Zé SF was standing:</p>
+        <div class="stair">
+          <div class="step"><span class="lbl">Not playing</span><span class="bar"><i style="width:34.4%"></i></span><span class="val">34.4%</span></div>
+          <div class="step"><span class="lbl">Other team</span><span class="bar"><i style="width:44.4%"></i></span><span class="val">44.4%</span></div>
+          <div class="step peak"><span class="lbl">Same team</span><span class="bar"><i style="width:53.7%"></i></span><span class="val">53.7%</span></div>
+        </div>
+        <p class="meta">n = 61 / 54 / 54 · three independent samples, ordered perfectly · the same staircase appears from Zé SF's side</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Verified</span>
+        <h3>Fanuca and Kiko TM have lost twice. Ever.</h3>
+        <div class="big">90.5%<small>19 W · 0 D · 2 L</small></div>
+        <p>
+          Without Kiko on the pitch, Fanuca wins 33% of the time. With Kiko against him, 54%.
+          With Kiko beside him, nine times out of ten. We checked whether this was just a good
+          era for both men. It isn't.
+        </p>
+        <p class="meta">n = 21 together</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Verified</span>
+        <h3>Kiko TM is the best wingman in the league</h3>
+        <div class="big">+18.5<small>points of win rate, for everyone else</small></div>
+        <p>
+          Pooled across everyone who has played with him: teammates win <em>59.3%</em> alongside
+          Kiko, <em>40.8%</em> when he isn't playing, and <em>33.3%</em> when he's on the other side.
+          He is, statistically, the best thing that can happen to your Thursday.
+        </p>
+        <p class="meta">n = 617 / 515 / 760 appearances</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Verified</span>
+        <h3>The Big Three</h3>
+        <div class="big">80%<small>Ferna + Kiko TM + Fragoso</small></div>
+        <p>
+          Sixteen wins in twenty. The joke being that Ferna is a 43.9% player on his own —
+          he is not driving this bus, he is enjoying the ride.
+        </p>
+        <p class="meta">n = 20 games as a trio</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ CURSED -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">03 — the cursed</p>
+      <h2>And some of you really are not</h2>
+      <p>
+        The same experiment, run in reverse. One caveat up front, because it matters: the
+        same five names keep appearing here, which suggests the draw sometimes stacks the
+        weaker half of the pool together. That is probably one phenomenon, not five separate curses.
+      </p>
+    </div>
+
+    <div class="cards three">
+      <div class="card dark">
+        <span class="stamp no">2 wins in 18</span>
+        <h3>Zi + Mini Zi + Afonso Mariz</h3>
+        <div class="big">11.1%</div>
+        <p>The worst trio in recorded history. Eighteen attempts. Two wins.</p>
+        <p class="meta">n = 18</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp no">Monotonic</span>
+        <h3>Zi is kryptonite to Bernardo Queiroz</h3>
+        <div class="stair">
+          <div class="step"><span class="lbl">Zi alongside</span><span class="bar"><i style="width:22.2%"></i></span><span class="val">22.2%</span></div>
+          <div class="step"><span class="lbl">Zi not playing</span><span class="bar"><i style="width:47.2%"></i></span><span class="val">47.2%</span></div>
+          <div class="step peak"><span class="lbl">Zi opposing</span><span class="bar"><i style="width:58.8%"></i></span><span class="val">58.8%</span></div>
+        </div>
+        <p>Queiroz's best possible outcome is Zi on the other team. The identical pattern shows up independently for Fanuca.</p>
+        <p class="meta">n = 27 / 36 / 34</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp no">Eight months</span>
+        <h3>Mini Zi went 14 games without a win</h3>
+        <div class="big">14<small>28 Mar 2024 → 4 Nov 2024</small></div>
+        <p>Eleven defeats, three draws, across two off-seasons. The longest streak of any kind in league history.</p>
+        <p class="meta">career win rate 30.5%, the league's lowest</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Mostly true</span>
+        <h3>Fanuca's favourite sight is Mini Zi in the other shirt</h3>
+        <div class="stair">
+          <div class="step peak"><span class="lbl">Mini Zi opposing</span><span class="bar"><i style="width:80.0%"></i></span><span class="val">80.0%</span></div>
+          <div class="step"><span class="lbl">Not playing</span><span class="bar"><i style="width:57.1%"></i></span><span class="val">57.1%</span></div>
+          <div class="step"><span class="lbl">Mini Zi alongside</span><span class="bar"><i style="width:48.3%"></i></span><span class="val">48.3%</span></div>
+        </div>
+        <p>
+          Fanuca wins four in five against him and barely half with him. Honesty demands the
+          caveat: Mini Zi lifts <em>everyone</em> who faces him, by an average of 12.4 points. Fanuca's own lift is 17.7, so only about five of those points are personal.
+        </p>
+        <p class="meta">n = 25 opposing / 7 absent / 29 together</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Consistency</span>
+        <h3>Vinhas has finished 11th–13th. Every single year.</h3>
+        <p style="font-family:var(--mono);font-size:1.05rem;color:var(--ink);letter-spacing:0.06em">12 · 12 · 12 · 13 · 12 · 11</p>
+        <p>
+          Six editions, six finishes in the same three positions. The most statistically
+          consistent player in the league, and it is not a compliment.
+        </p>
+        <p class="meta">two wooden spoons · 0.22 goals per game, the lowest of anyone</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Drought</span>
+        <h3>Vinhas again: 18 games without scoring</h3>
+        <div class="big">18<small>24 Mar 2025 → 18 Dec 2025</small></div>
+        <p>Nine months of football. Twenty-five career goals in one hundred and thirteen games.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp no">Free fall</span>
+        <h3>Zi's six-season descent</h3>
+        <p style="font-family:var(--mono);font-size:1.05rem;color:var(--ink);letter-spacing:0.06em">2 · 2 · 7 · 9 · 9 · 14</p>
+        <p>
+          Runner-up twice, then a decline so orderly you could set a calendar by it. He finished
+          last in the most recent edition, with the second-most goals in league history to his name.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════ THE DRAW -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">04 — the draw</p>
+      <h2>The hat is not neutral</h2>
+      <p>
+        Teams are supposed to be drawn fresh each week. They are — but the algorithm sorts by
+        the league table and pairs the top with the bottom, which leaves fingerprints.
+      </p>
+    </div>
+
+    <div class="cards two">
+      <div class="card dark">
+        <span class="stamp ok">z = 3.2</span>
+        <h3>Zi and Mini Zi cannot be separated</h3>
+        <div class="big">66.7%<small>of shared games on the same team</small></div>
+        <p>
+          Forty-two of their sixty-three shared games. Chance would give about twenty-nine.
+          The strongest draw anomaly in six seasons — and together they win 19% of the time.
+        </p>
+        <p class="meta">n = 63 shared games</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">The split</span>
+        <h3>The league's two best players are kept apart</h3>
+        <div class="big">35.2%<small>Bernardo Castro with Zé SF</small></div>
+        <p>
+          Three-time champion and all-time top scorer, on the same team barely a third of the time
+          across one hundred and eight shared games — while Castro is over-paired with Fragoso,
+          Ferna and Queiroz. That is the snake draw working exactly as designed.
+        </p>
+        <p class="meta">n = 108 shared games</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════ ODDITIES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">05 — the strange</p>
+      <h2>Things we cannot explain</h2>
+    </div>
+
+    <div class="cards three">
+      <div class="card">
+        <span class="stamp ok">41 games</span>
+        <h3>September and October do not do draws</h3>
+        <div class="big">0<small>draws in 41 autumn games</small></div>
+        <p>Across six seasons. The league draws 12.3% of the time otherwise. December, meanwhile, runs at 19%.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">It lasted six years</span>
+        <h3>Zé SF had a perfectly level ledger</h3>
+        <div class="big">60–59<small>and ten draws</small></div>
+        <p>
+          The all-time leading scorer — 274 goals, more than anyone — spent six seasons on
+          exactly the same wins and losses: 59–59. Then he won the game of 27 August and broke
+          his own tie. It was the same game that won him the edition.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">r = 0.21</span>
+        <h3>Scoring barely helps you win</h3>
+        <p>
+          Across all 2,037 appearances, your goals explain under <em>5%</em> of whether your team wins.
+          Kiko TM wins 60% of his games scoring 0.9 a game. Zé SF wins 47% scoring 2.1.
+        </p>
+        <p class="meta">Pearson r = 0.21, n = 2,037</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">0 in 145</span>
+        <h3>Kiko TM has never been on the wrong end of a hiding</h3>
+        <div class="big">0<small>blowout defeats, 145 games</small></div>
+        <p>
+          Eleven games in league history were won by eight goals or more. Kiko TM played in four of
+          them and won all four. Everyone else averages <em>2.70</em> blowout defeats per hundred
+          appearances — which makes his expected tally about four. The next cleanest record is
+          Bernardo Xavier, with two in 131 games; the worst is Zé SF, with six in 129.
+        </p>
+        <p class="meta">margin ≥ 8 goals · a league-average player goes 145 games without one about 2% of the time · holds at a looser ≥ 6 threshold too (3 against ~10 expected)</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Coincidence</span>
+        <h3>Twinned careers</h3>
+        <div class="big">87 &amp; 87<small>Kiko TM and Fragoso</small></div>
+        <p>Exactly the same number of career wins, off 145 and 160 games respectively.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Whole population</span>
+        <h3>Maregões simply win more</h3>
+        <div class="big">104–80<small>with 20 draws</small></div>
+        <p>Over 204 games. Whatever the shirts are doing, they have been doing it for six years.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Verified</span>
+        <h3>The most average man in the league owns half its titles</h3>
+        <p>
+          Bernardo Castro's win rate, draw rate and goals per game are all within a whisker of the
+          league mean — he is the closest thing to a statistically average player here. He has also
+          won <em>three of the six editions</em>. Nobody else has more than one.
+        </p>
+        <p class="meta">1st · 2nd · 1st · 1st · then 12th of 14</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════ INFLUENCE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">06 — influence</p>
+      <h2>What you actually do to your team</h2>
+      <p>
+        Forget your own goals. This is what happens to the <em>team's</em> scoreline when you are
+        on it, against the same edition without you: how many more goals they score, and how many
+        fewer they let in. Both measured in goals per game, on the same scale.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> goals gained per game</span>
+        <span><i style="background:var(--bad)"></i> goals lost per game</span>
+      </div>
+      <div class="infl">
+      <div class="r"><span class="who">Fanuca</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:30.7%"></b><em class="in" style="left:calc(50% + 30.68719248334358% - 0.4rem);transform:translate(-100%,-50%)">+0.83</em></span><span class="track"><b class="pos" style="left:50%;width:37.0%"></b><em class="in" style="left:calc(50% + 37.0182535186099% - 0.4rem);transform:translate(-100%,-50%)">+1.00</em></span></span></div>
+      <div class="r"><span class="who">Kiko TM</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:21.6%"></b><em style="left:calc(50% + 21.619357022410952% + 0.35rem)">+0.58</em></span><span class="track"><b class="pos" style="left:50%;width:35.5%"></b><em class="in" style="left:calc(50% + 35.51651137613391% - 0.4rem);transform:translate(-100%,-50%)">+0.96</em></span></span></div>
+      <div class="r"><span class="who">Luis Fragoso</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:6.9%"></b><em style="left:calc(50% + 6.941085225346765% + 0.35rem)">+0.19</em></span><span class="track"><b class="pos" style="left:50%;width:34.8%"></b><em class="in" style="left:calc(50% + 34.84914484147243% - 0.4rem);transform:translate(-100%,-50%)">+0.94</em></span></span></div>
+      <div class="r"><span class="who">Bernardo Castro</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:9.3%"></b><em style="left:calc(50% + 9.320550624898454% + 0.35rem)">+0.25</em></span><span class="track"><b class="pos" style="left:50%;width:9.8%"></b><em style="left:calc(50% + 9.81873735496924% + 0.35rem)">+0.27</em></span></span></div>
+      <div class="r"><span class="who">Miguel</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:15.1%"></b><em style="left:calc(50% + 15.076665586869671% + 0.35rem)">+0.41</em></span><span class="track"><b class="neg" style="right:50%;width:5.0%"></b><em style="right:calc(50% + 4.980563654033015% + 0.35rem)">-0.13</em></span></span></div>
+      <div class="r"><span class="who">Bernardo Xavier</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:3.0%"></b><em style="right:calc(50% + 3.0359868923937228% + 0.35rem)">-0.08</em></span><span class="track"><b class="neg" style="right:50%;width:0.3%"></b><em style="right:calc(50% + 0.27674419642067627% + 0.35rem)">-0.01</em></span></span></div>
+      <div class="r"><span class="who">Bernardo Queiroz</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:9.1%"></b><em style="right:calc(50% + 9.124300325769955% + 0.35rem)">-0.25</em></span><span class="track"><b class="pos" style="left:50%;width:3.8%"></b><em style="left:calc(50% + 3.822313210336889% + 0.35rem)">+0.10</em></span></span></div>
+      <div class="r"><span class="who">Zé SF</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:7.2%"></b><em style="right:calc(50% + 7.191771038307475% + 0.35rem)">-0.19</em></span><span class="track"><b class="pos" style="left:50%;width:0.6%"></b><em style="left:calc(50% + 0.6494702957042151% + 0.35rem)">+0.02</em></span></span></div>
+      <div class="r"><span class="who">Ferna</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:20.1%"></b><em style="right:calc(50% + 20.144715010725402% + 0.35rem)">-0.54</em></span><span class="track"><b class="pos" style="left:50%;width:3.4%"></b><em style="left:calc(50% + 3.4272882463566976% + 0.35rem)">+0.09</em></span></span></div>
+      <div class="r"><span class="who">Zi</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:25.9%"></b><em class="in" style="right:calc(50% + 25.886587096170963% - 0.4rem);transform:translate(100%,-50%)">-0.70</em></span><span class="track"><b class="pos" style="left:50%;width:1.2%"></b><em style="left:calc(50% + 1.1717016838548928% + 0.35rem)">+0.03</em></span></span></div>
+      <div class="r"><span class="who">Pedro Pacheco</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:10.3%"></b><em style="right:calc(50% + 10.314956558803711% + 0.35rem)">-0.28</em></span><span class="track"><b class="neg" style="right:50%;width:17.8%"></b><em style="right:calc(50% + 17.754952398670667% + 0.35rem)">-0.48</em></span></span></div>
+      <div class="r"><span class="who">Afonso Mariz</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:14.7%"></b><em style="right:calc(50% + 14.74967052917096% + 0.35rem)">-0.40</em></span><span class="track"><b class="neg" style="right:50%;width:24.2%"></b><em class="in" style="right:calc(50% + 24.17688223028447% - 0.4rem);transform:translate(100%,-50%)">-0.65</em></span></span></div>
+      <div class="r"><span class="who">Chico Castro</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:24.4%"></b><em class="in" style="right:calc(50% + 24.373743437288585% - 0.4rem);transform:translate(100%,-50%)">-0.66</em></span><span class="track"><b class="neg" style="right:50%;width:15.3%"></b><em style="right:calc(50% + 15.33602035274275% + 0.35rem)">-0.41</em></span></span></div>
+      <div class="r"><span class="who">Vinhas</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:23.0%"></b><em class="in" style="right:calc(50% + 22.950422827739715% - 0.4rem);transform:translate(100%,-50%)">-0.62</em></span><span class="track"><b class="neg" style="right:50%;width:33.1%"></b><em class="in" style="right:calc(50% + 33.10072653440008% - 0.4rem);transform:translate(100%,-50%)">-0.89</em></span></span></div>
+      <div class="r"><span class="who">Mini Zi</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:33.7%"></b><em class="in" style="right:calc(50% + 33.658042814266715% - 0.4rem);transform:translate(100%,-50%)">-0.91</em></span><span class="track"><b class="neg" style="right:50%;width:39.0%"></b><em class="in" style="right:calc(50% + 39.0163017773711% - 0.4rem);transform:translate(100%,-50%)">-1.05</em></span></span></div>
+      </div>
+      <figcaption>
+        Both bars are goals gained per game, so right is always good: the upper is goals added to
+        your own team's attack, the lower is goals prevented at the other end. Sorted by the two
+        combined. Everyone shown played 50+ games. Kiko TM adds 0.58 goals to his team's attack and takes 0.96 off what they concede —
+        a swing of more than a goal and a half a game, and the reason a man who scores 0.9 per game
+        wins 60% of them. Mini Zi is the exact mirror: his team scores 0.91 fewer and concedes 1.05 more, a swing of nearly two goals the wrong way.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FORM -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">07 — form</p>
+      <h2>The hot spells</h2>
+      <p>Rolling windows across every player's career, counted in consecutive appearances.</p>
+    </div>
+
+    <div class="cards three">
+      <div class="card dark">
+        <span class="stamp ok">Five games</span>
+        <h3>Zi scored 23 goals in five games</h3>
+        <div class="big">23<small>8 Jul → 14 Oct 2021</small></div>
+        <p>The hottest spell anyone has had. He went on to finish last in the most recent edition.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Ten games</span>
+        <h3>And 38 in ten</h3>
+        <div class="big">38<small>8 Jul → 9 Dec 2021</small></div>
+        <p>Also Zi. The next best ten-game haul is Zé SF's 35, over the winter that followed.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Ten games</span>
+        <h3>Kiko TM won nine out of ten</h3>
+        <div class="big">9/10<small>Apr → Oct 2022</small></div>
+        <p>Four separate overlapping windows at 9–1 through 2022. Fanuca went one better in early 2026, with five; Fragoso has managed three.</p>
+      </div>
+    </div>
+
+    <figure style="margin-top:2.5rem">
+      <div class="cols">
+        <div class="c"><span class="v">19.1</span><i style="height:89%"></i></div>
+        <div class="c"><span class="v">20.8</span><i style="height:97%"></i></div>
+        <div class="c"><span class="v">13.9</span><i style="height:65%"></i></div>
+        <div class="c"><span class="v">14.4</span><i style="height:67%"></i></div>
+        <div class="c"><span class="v">13.6</span><i style="height:63%"></i></div>
+        <div class="c"><span class="v">15.2</span><i style="height:71%"></i></div>
+      </div>
+      <div class="colkeys">
+        <span>1ª<br>2020–21</span>
+        <span>2ª<br>2021–22</span>
+        <span>3ª<br>2022–23</span>
+        <span>4ª<br>2023–24</span>
+        <span>5ª<br>2024–25</span>
+        <span>6ª<br>2025–26</span>
+      </div>
+      <figcaption>
+        Goals per game, both sides combined, by edition. Something changed between 2022 and 2023:
+        scoring fell by a third and never came back. The first two seasons produced one draw between them in 49 games; every season since has had at
+        least four.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════ GOALS VS WINNING -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">08 — the great lie</p>
+      <h2>Scoring does not win you games</h2>
+      <p>
+        Every player with fifty games or more, plotted by what they score against how often they win.
+        If goals won games this would be a diagonal line. It is a cloud.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> wins more than half</span>
+        <span><i style="background:var(--sauce)"></i> wins less than half</span>
+      </div>
+      <div class="scatter">
+        <span class="pt" style="left:92.3%;bottom:51.4%"></span>
+        <span class="lb flip" style="left:92.3%;bottom:51.4%">Zé SF</span>
+        <span class="pt" style="left:76.2%;bottom:28.5%"></span>
+        <span class="lb flip" style="left:76.2%;bottom:28.5%">Zi</span>
+        <span class="pt up" style="left:63.3%;bottom:73.3%"></span>
+        <span class="lb flip" style="left:63.3%;bottom:73.3%">Luis Fragoso</span>
+        <span class="pt" style="left:59.3%;bottom:23.0%"></span>
+        <span class="pt" style="left:58.7%;bottom:43.9%"></span>
+        <span class="pt" style="left:48.9%;bottom:53.3%"></span>
+        <span class="pt" style="left:45.8%;bottom:7.0%"></span>
+        <span class="lb" style="left:45.8%;bottom:7.0%">Mini Zi</span>
+        <span class="pt" style="left:45.5%;bottom:44.2%"></span>
+        <span class="pt up" style="left:44.2%;bottom:95.3%"></span>
+        <span class="lb" style="left:44.2%;bottom:95.3%">Fanuca</span>
+        <span class="pt up" style="left:39.0%;bottom:88.9%"></span>
+        <span class="lb" style="left:39.0%;bottom:88.9%">Kiko TM</span>
+        <span class="pt" style="left:36.3%;bottom:45.4%"></span>
+        <span class="pt" style="left:28.2%;bottom:43.1%"></span>
+        <span class="pt" style="left:27.2%;bottom:46.2%"></span>
+        <span class="pt" style="left:17.3%;bottom:32.6%"></span>
+        <span class="pt" style="left:9.6%;bottom:20.6%"></span>
+        <span class="lb" style="left:9.6%;bottom:20.6%">Vinhas</span>
+        <span class="ax" style="left:-2.2rem;bottom:-0.5rem">28%</span>
+        <span class="ax" style="left:-2.2rem;top:-0.5rem">64%</span>
+        <span class="ax" style="left:0;bottom:-1.5rem">0</span>
+        <span class="ax" style="right:0;bottom:-1.5rem">2.3 goals/game</span>
+      </div>
+      <figcaption style="margin-top:2rem">
+        Vertical axis: win rate. Horizontal: goals per game. The two best win rates in the league,
+        Fanuca and Kiko TM, sit in the bottom-left third for scoring. The two heaviest scorers,
+        Zé SF and Zi, are at or below average for winning. Correlation across all 2,037 appearances: r = 0.21.
+      </figcaption>
+    </figure>
+
+    <div class="cards three" style="margin-top:2.5rem">
+      <div class="card">
+        <span class="stamp ok">n = 47</span>
+        <h3>Afonso Mariz scores like a different player next to Fragoso</h3>
+        <div class="big">+0.42<small>goals per game, vs his usual 1.36</small></div>
+        <p>1.79 a game with Fragoso alongside him. The biggest scoring lift any partnership produces.</p>
+      </div>
+      <div class="card">
+        <span class="stamp no">n = 50</span>
+        <h3>And Zi goes quiet next to Afonso Mariz</h3>
+        <div class="big">−0.63<small>from 1.75 down to 1.12</small></div>
+        <p>The largest suppression in the league. Zé SF loses 0.46 to the same man.</p>
+      </div>
+      <div class="card">
+        <span class="stamp no">Three victims</span>
+        <h3>Playing with Mini Zi costs you goals</h3>
+        <p>
+          Fragoso drops <em>0.49</em> a game beside him, Zi <em>0.51</em>, Pedro Pacheco <em>0.43</em>.
+          Three different players, the same partner, all well down on their usual — which fits his
+          −0.91 effect on the team's attack.
+        </p>
+        <p class="meta">n = 33 / 42 / 35</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ THE LEDGERS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">09 — the ledgers</p>
+      <h2>Small print, settled</h2>
+    </div>
+
+    <div class="cards three">
+      <div class="card">
+        <span class="stamp hm">Draws</span>
+        <h3>Afonso Mariz cannot finish a game</h3>
+        <div class="big">19<small>draws in 135 games — 14.1%</small></div>
+        <p>The most of anyone, and the highest rate. Zi is next on 17, Pedro Pacheco 17.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Goal difference</span>
+        <h3>Kiko TM's teams are +146 goals</h3>
+        <div class="big">+146<small>1,184 scored, 1,038 conceded</small></div>
+        <p>
+          The best in the league. Fanuca is the best per game at <em>+1.15</em>. At the other end:
+          Vinhas <em>−112</em> and Mini Zi <em>−111</em>, the latter across 18 fewer games.
+        </p>
+      </div>
+      <div class="card">
+        <span class="stamp hm">Attendance</span>
+        <h3>Chico Castro barely missed a week</h3>
+        <div class="big">88.6%<small>78 of 88 available games</small></div>
+        <p>
+          The best turnout of any long-server. Afonso Mariz 87.1%, Zé SF 84.9%, Bernardo Castro 84.3%.
+          Turning up, however, does almost nothing for your win rate: the two correlate at r = +0.06.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════ TOURNAMENTS + WHAT WINS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">10 — and it does not win titles either</p>
+      <h2>Scoring does not win tournaments</h2>
+      <p>
+        Same question, one level up. Every player-season of fifteen games or more, plotted by what
+        they scored against where they finished. Top of the chart is champion, bottom is last.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> won the edition</span>
+        <span><i style="background:var(--sauce)"></i> did not</span>
+      </div>
+      <div class="scatter">
+        <span class="pt" style="left:57.5%;bottom:72.7%"></span>
+        <span class="pt" style="left:46.9%;bottom:45.5%"></span>
+        <span class="pt up" style="left:68.7%;bottom:100.0%"></span>
+        <span class="lb flip" style="left:68.7%;bottom:100.0%">Castro '21</span>
+        <span class="pt" style="left:72.2%;bottom:36.4%"></span>
+        <span class="pt" style="left:53.8%;bottom:18.2%"></span>
+        <span class="pt" style="left:47.0%;bottom:54.5%"></span>
+        <span class="pt" style="left:83.9%;bottom:63.6%"></span>
+        <span class="pt" style="left:50.0%;bottom:27.3%"></span>
+        <span class="pt" style="left:96.7%;bottom:81.8%"></span>
+        <span class="lb flip" style="left:96.7%;bottom:81.8%">Zé SF</span>
+        <span class="pt" style="left:87.8%;bottom:90.9%"></span>
+        <span class="pt" style="left:23.0%;bottom:30.8%"></span>
+        <span class="pt" style="left:31.5%;bottom:0.0%"></span>
+        <span class="pt" style="left:42.4%;bottom:92.3%"></span>
+        <span class="pt" style="left:15.8%;bottom:7.7%"></span>
+        <span class="pt" style="left:12.1%;bottom:84.6%"></span>
+        <span class="pt" style="left:28.2%;bottom:23.1%"></span>
+        <span class="pt up" style="left:31.4%;bottom:100.0%"></span>
+        <span class="lb flip" style="left:31.4%;bottom:100.0%">Barros</span>
+        <span class="pt" style="left:21.8%;bottom:69.2%"></span>
+        <span class="pt" style="left:48.1%;bottom:76.9%"></span>
+        <span class="pt" style="left:44.0%;bottom:46.2%"></span>
+        <span class="pt" style="left:34.7%;bottom:38.5%"></span>
+        <span class="pt" style="left:12.1%;bottom:15.4%"></span>
+        <span class="lb" style="left:12.1%;bottom:15.4%">Vinhas</span>
+        <span class="pt" style="left:63.2%;bottom:61.5%"></span>
+        <span class="pt" style="left:40.9%;bottom:53.8%"></span>
+        <span class="pt" style="left:42.5%;bottom:53.8%"></span>
+        <span class="pt" style="left:13.9%;bottom:23.1%"></span>
+        <span class="pt" style="left:11.5%;bottom:46.2%"></span>
+        <span class="pt" style="left:37.5%;bottom:30.8%"></span>
+        <span class="pt" style="left:12.3%;bottom:69.2%"></span>
+        <span class="pt" style="left:31.1%;bottom:76.9%"></span>
+        <span class="pt" style="left:54.2%;bottom:38.5%"></span>
+        <span class="pt" style="left:27.3%;bottom:92.3%"></span>
+        <span class="pt" style="left:19.5%;bottom:61.5%"></span>
+        <span class="pt" style="left:48.5%;bottom:84.6%"></span>
+        <span class="pt" style="left:42.2%;bottom:15.4%"></span>
+        <span class="pt up" style="left:26.5%;bottom:100.0%"></span>
+        <span class="pt" style="left:4.2%;bottom:7.7%"></span>
+        <span class="lb" style="left:4.2%;bottom:7.7%">Vinhas</span>
+        <span class="pt" style="left:43.4%;bottom:76.9%"></span>
+        <span class="pt" style="left:46.1%;bottom:53.8%"></span>
+        <span class="pt" style="left:26.1%;bottom:92.3%"></span>
+        <span class="pt up" style="left:23.7%;bottom:100.0%"></span>
+        <span class="pt" style="left:27.6%;bottom:23.1%"></span>
+        <span class="pt" style="left:32.2%;bottom:69.2%"></span>
+        <span class="pt" style="left:15.9%;bottom:0.0%"></span>
+        <span class="pt" style="left:31.2%;bottom:84.6%"></span>
+        <span class="pt" style="left:35.6%;bottom:61.5%"></span>
+        <span class="pt" style="left:22.2%;bottom:30.8%"></span>
+        <span class="pt" style="left:31.2%;bottom:7.7%"></span>
+        <span class="pt" style="left:4.4%;bottom:15.4%"></span>
+        <span class="pt" style="left:61.8%;bottom:46.2%"></span>
+        <span class="pt" style="left:42.7%;bottom:38.5%"></span>
+        <span class="pt" style="left:39.6%;bottom:76.9%"></span>
+        <span class="pt" style="left:41.2%;bottom:92.3%"></span>
+        <span class="pt" style="left:11.1%;bottom:7.7%"></span>
+        <span class="pt" style="left:28.6%;bottom:61.5%"></span>
+        <span class="pt" style="left:43.3%;bottom:46.2%"></span>
+        <span class="pt" style="left:35.5%;bottom:84.6%"></span>
+        <span class="pt" style="left:32.4%;bottom:38.5%"></span>
+        <span class="pt" style="left:29.7%;bottom:69.2%"></span>
+        <span class="pt" style="left:24.4%;bottom:53.8%"></span>
+        <span class="pt up" style="left:63.9%;bottom:100.0%"></span>
+        <span class="pt" style="left:6.4%;bottom:23.1%"></span>
+        <span class="pt" style="left:32.1%;bottom:30.8%"></span>
+        <span class="pt" style="left:24.6%;bottom:15.4%"></span>
+        <span class="ax" style="left:-2.6rem;bottom:-0.5rem">last</span>
+        <span class="ax" style="left:-3.4rem;top:-0.5rem">champion</span>
+        <span class="ax" style="left:0;bottom:-1.5rem">0</span>
+        <span class="ax" style="right:0;bottom:-1.5rem">3.0 goals/game</span>
+      </div>
+      <figcaption style="margin-top:2rem">
+        r = +0.35 — a nudge, not a rule. Bernardo Castro won a title scoring 2.06 a game and two
+        more scoring 0.79 and 0.71. Barros won his at 0.94. Zé SF's 2.90 in 2021–22, the heaviest
+        scoring season on record, finished third. n = 64 player-seasons.
+      </figcaption>
+    </figure>
+
+    <div class="pull">
+      So we asked the obvious follow-up. If goals do not decide the table, what does?
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> won the edition</span>
+        <span><i style="background:var(--sauce)"></i> did not</span>
+      </div>
+      <div class="scatter">
+        <span class="pt" style="left:69.0%;bottom:72.7%"></span>
+        <span class="pt" style="left:64.3%;bottom:45.5%"></span>
+        <span class="pt up" style="left:78.6%;bottom:100.0%"></span>
+        <span class="pt" style="left:57.1%;bottom:36.4%"></span>
+        <span class="pt" style="left:61.9%;bottom:18.2%"></span>
+        <span class="pt" style="left:52.4%;bottom:54.5%"></span>
+        <span class="pt" style="left:69.0%;bottom:63.6%"></span>
+        <span class="pt" style="left:42.9%;bottom:27.3%"></span>
+        <span class="lb" style="left:42.9%;bottom:27.3%">Manel</span>
+        <span class="pt" style="left:71.4%;bottom:81.8%"></span>
+        <span class="pt" style="left:71.4%;bottom:90.9%"></span>
+        <span class="pt" style="left:69.0%;bottom:30.8%"></span>
+        <span class="pt" style="left:42.9%;bottom:0.0%"></span>
+        <span class="pt" style="left:78.6%;bottom:92.3%"></span>
+        <span class="pt" style="left:45.2%;bottom:7.7%"></span>
+        <span class="pt" style="left:78.6%;bottom:84.6%"></span>
+        <span class="pt" style="left:61.9%;bottom:23.1%"></span>
+        <span class="pt up" style="left:83.3%;bottom:100.0%"></span>
+        <span class="pt" style="left:61.9%;bottom:69.2%"></span>
+        <span class="pt" style="left:64.3%;bottom:76.9%"></span>
+        <span class="pt" style="left:66.7%;bottom:46.2%"></span>
+        <span class="pt" style="left:59.5%;bottom:38.5%"></span>
+        <span class="pt" style="left:52.4%;bottom:15.4%"></span>
+        <span class="pt" style="left:69.0%;bottom:61.5%"></span>
+        <span class="pt" style="left:73.8%;bottom:53.8%"></span>
+        <span class="pt" style="left:69.0%;bottom:53.8%"></span>
+        <span class="pt" style="left:57.1%;bottom:23.1%"></span>
+        <span class="pt" style="left:76.2%;bottom:46.2%"></span>
+        <span class="pt" style="left:57.1%;bottom:30.8%"></span>
+        <span class="pt" style="left:64.3%;bottom:69.2%"></span>
+        <span class="pt" style="left:71.4%;bottom:76.9%"></span>
+        <span class="pt" style="left:76.2%;bottom:38.5%"></span>
+        <span class="pt" style="left:78.6%;bottom:92.3%"></span>
+        <span class="pt" style="left:69.0%;bottom:61.5%"></span>
+        <span class="pt" style="left:78.6%;bottom:84.6%"></span>
+        <span class="pt" style="left:71.4%;bottom:15.4%"></span>
+        <span class="pt up" style="left:81.0%;bottom:100.0%"></span>
+        <span class="pt" style="left:57.1%;bottom:7.7%"></span>
+        <span class="pt" style="left:78.6%;bottom:76.9%"></span>
+        <span class="pt" style="left:81.0%;bottom:53.8%"></span>
+        <span class="pt" style="left:88.1%;bottom:92.3%"></span>
+        <span class="pt up" style="left:90.5%;bottom:100.0%"></span>
+        <span class="lb flip" style="left:90.5%;bottom:100.0%">Castro 38/38</span>
+        <span class="pt" style="left:69.0%;bottom:23.1%"></span>
+        <span class="pt" style="left:71.4%;bottom:69.2%"></span>
+        <span class="pt" style="left:54.8%;bottom:0.0%"></span>
+        <span class="pt" style="left:73.8%;bottom:84.6%"></span>
+        <span class="pt" style="left:69.0%;bottom:61.5%"></span>
+        <span class="pt" style="left:64.3%;bottom:30.8%"></span>
+        <span class="pt" style="left:73.8%;bottom:7.7%"></span>
+        <span class="pt" style="left:71.4%;bottom:15.4%"></span>
+        <span class="pt" style="left:81.0%;bottom:46.2%"></span>
+        <span class="pt" style="left:76.2%;bottom:38.5%"></span>
+        <span class="pt" style="left:88.1%;bottom:76.9%"></span>
+        <span class="pt" style="left:81.0%;bottom:92.3%"></span>
+        <span class="pt" style="left:35.7%;bottom:7.7%"></span>
+        <span class="pt" style="left:83.3%;bottom:61.5%"></span>
+        <span class="pt" style="left:95.2%;bottom:46.2%"></span>
+        <span class="pt" style="left:73.8%;bottom:84.6%"></span>
+        <span class="lb" style="left:73.8%;bottom:84.6%">Fanuca</span>
+        <span class="pt" style="left:81.0%;bottom:38.5%"></span>
+        <span class="pt" style="left:88.1%;bottom:69.2%"></span>
+        <span class="pt" style="left:71.4%;bottom:53.8%"></span>
+        <span class="pt up" style="left:85.7%;bottom:100.0%"></span>
+        <span class="pt" style="left:61.9%;bottom:23.1%"></span>
+        <span class="pt" style="left:61.9%;bottom:30.8%"></span>
+        <span class="pt" style="left:54.8%;bottom:15.4%"></span>
+        <span class="ax" style="left:-2.6rem;bottom:-0.5rem">last</span>
+        <span class="ax" style="left:-3.4rem;top:-0.5rem">champion</span>
+        <span class="ax" style="left:0;bottom:-1.5rem">0</span>
+        <span class="ax" style="right:0;bottom:-1.5rem">42 games played</span>
+      </div>
+      <figcaption style="margin-top:2rem">
+        Turning up. <em>r = +0.67</em> against final position — nearly twice the pull of goals, and
+        stronger than your win rate itself (+0.58). Against total points it is +0.91. Against your win
+        rate: <em>+0.05</em>. Showing up does not make you better. It makes you champion.
+      </figcaption>
+    </figure>
+
+    <div class="cards three" style="margin-top:2.5rem">
+      <div class="card dark">
+        <span class="stamp ok">The proof</span>
+        <h3>Barros won a title with a below-average win rate</h3>
+        <div class="big">42.9%<small>and 35 of 36 games played</small></div>
+        <p>He won fewer than half his games, in a league that averages 45%, and still took the trophy — because he barely missed a week.</p>
+      </div>
+      <div class="card">
+        <span class="stamp no">The counter-proof</span>
+        <h3>Manel won two thirds of his games and finished 9th</h3>
+        <div class="big">66.7%<small>but only 18 games</small></div>
+        <p>The second-best win rate of any season. Ninth of twelve. Fanuca went better in 2025–26 — 67.7% — and finished third.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Every champion</span>
+        <h3>No one has won this league on fewer than 80% attendance</h3>
+        <p>
+          Castro played <em>38 of 38</em> in 2024–25. Barros <em>35 of 36</em>. Castro again
+          <em>33 of 36</em> and <em>34 of 39</em>. And Zé SF has just won the sixth with <em>36 of 42</em> — the lowest of any champion, at 86%.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ WHAT DOES WIN -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">11 — so what does</p>
+      <h2>The thing that wins games</h2>
+      <p>
+        We tested every statistic we had against career win rate. Four of them, ranked by how much
+        of your winning they explain. The answer is not in the scoring column.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> explains winning</span>
+        <span><i style="background:var(--bad)"></i> explains nothing</span>
+      </div>
+      <div class="corr">
+        <div class="cr"><span class="crn">goals prevented per game</span><span class="crb"><i class="good" style="width:94%"></i></span><span class="crv">0.94</span></div>
+        <div class="cr"><span class="crn">goals added per game</span><span class="crb"><i class="good" style="width:89%"></i></span><span class="crv">0.89</span></div>
+        <div class="cr"><span class="crn">individual goals per game</span><span class="crb"><i class="bad" style="width:12%"></i></span><span class="crv">0.12</span></div>
+        <div class="cr"><span class="crn">share of team's goals</span><span class="crb"><i class="bad" style="width:2%"></i></span><span class="crv">0.02</span></div>
+      </div>
+      <figcaption>
+        Correlation with career win rate, players with 50+ games. What you do to your team's
+        scoreline explains almost everything. What you personally put in the net explains
+        <em>one percent</em>. Note the order: goals <em>prevented</em> beats goals
+        <em>added</em>. n = 15 players — a small field, so treat the exact figures as indicative,
+        but the gap between the top pair and the bottom pair is far too wide to be noise.
+      </figcaption>
+    </figure>
+
+    <div class="pull">
+      Kiko TM scores 0.9 a game and wins 60% of them. Zé SF scores 2.1 and wins 47%.
+      That is the whole finding in two men.
+    </div>
+
+    <p class="note">
+      One honest caveat. Goals conceded, on its own, already says a lot — it correlates with winning at
+      r = −0.69. It just says less than goals prevented does, and here is why: a high-scoring game is
+      high-scoring at both ends (r = +0.28 between a team's goals for and against), so conceding few is
+      partly just landing in quiet games. What separates
+      players is not how many go in behind them, but how many fewer go in <em>because they are
+      there</em> — which is exactly what the top bar measures.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ THE AUDIT -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">12 — the audit</p>
+      <h2>The record that never happened</h2>
+      <p>
+        The database says Bernardo Xavier scored twenty-two goals on 7 April 2022. His team won
+        that game 11–10. You cannot score twenty-two goals in an eleven-goal team.
+      </p>
+    </div>
+
+    <div class="verdict">
+      <div class="row killed">
+        <span class="stamp no">Struck from the record</span>
+        <h3>Bernardo Xavier, 22 goals, 7 April 2022</h3>
+        <p>
+          Impossible. Along with a second entry — nine goals on 6 March 2025, in a game his side
+          scored five. These are the only two rows in all 2,037 appearances where a player
+          out-scores his own team. Together they inflate his career total by 36%: from 85 goals to 116.
+        </p>
+      </div>
+      <div class="row">
+        <span class="stamp ok">The actual record</span>
+        <h3>Zi, 9 goals, 15 July 2021</h3>
+        <p>A 20–14 win, and the highest-scoring game in league history at 34 goals. That is the real one.</p>
+      </div>
+      <div class="row">
+        <span class="stamp hm">Unresolved</span>
+        <h3>926 goals have no owner</h3>
+        <p>
+          The scorelines add up to 3,216 goals. The names attached to them add up to 2,321.
+          Twenty-nine percent of every goal ever scored in this league belongs to nobody —
+          consistently, in every single edition. Own goals, forgotten scorers, or a long tradition
+          of nobody writing it down.
+        </p>
+      </div>
+    </div>
+
+    <p class="note">
+      Two findings were cut outright rather than corrected. "Fanuca owns Mini Zi" dissolved once we
+      accounted for Mini Zi being beatable by absolutely everyone. And a claim that a three-time
+      champion had finished stone last turned out to be a miscount — twelfth of fourteen, with Zi
+      propping up the table.
+    </p>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════ HONOURS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">13 — honours</p>
+      <h2>Who actually won things</h2>
+    </div>
+
+    <div class="scroll">
+      <table>
+        <caption>Champions and wooden spoons, by edition</caption>
+        <thead>
+          <tr><th>Edition</th><th>Champion</th><th>Points</th><th>Last</th><th>Points</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="rank">1ª · 2020–21</td><td class="name">Ferna</td><td>39.0</td><td class="name lo">Vinhas</td><td class="lo">0.0</td></tr>
+          <tr><td class="rank">2ª · 2021–22</td><td class="name">Bernardo Castro</td><td>93.8</td><td class="name lo">Vinhas</td><td class="lo">23.5</td></tr>
+          <tr><td class="rank">3ª · 2022–23</td><td class="name">Barros</td><td>87.3</td><td class="name lo">Totti</td><td class="lo">34.7</td></tr>
+          <tr><td class="rank">4ª · 2023–24</td><td class="name">Bernardo Castro</td><td>85.0</td><td class="name lo">João Perneta</td><td class="lo">14.0</td></tr>
+          <tr><td class="rank">5ª · 2024–25</td><td class="name">Bernardo Castro</td><td>102.0</td><td class="name lo">Ferna</td><td class="lo">56.0</td></tr>
+          <tr><td class="rank">6ª · 2025–26</td><td class="name">Zé SF</td><td>100.0</td><td class="name lo">Zi</td><td class="lo">21.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards three" style="margin-top:2.5rem">
+      <div class="card">
+        <h3>Barros: played one season, won it, left</h3>
+        <p>Thirty-five games, one title, never seen again. The most efficient career in league history.</p>
+      </div>
+      <div class="card">
+        <h3>Ferna won the first edition and finished last in the fifth</h3>
+        <p>Champion, then 10th, 11th, 10th, 14th, and back to 5th. The widest swing anyone has managed.</p>
+      </div>
+      <div class="card">
+        <h3>Six men have played all six seasons and won nothing</h3>
+        <p>Bernardo Xavier, Kiko TM, Luis Fragoso, Pedro Pacheco, Vinhas and Zi. Seven ever-presents in total; only Ferna has a title.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="eyebrow">Method</p>
+    <p>
+      Every figure here comes from the league's own database — 204 MasterLeague games between 15 October 2020 and 27 August 2026 — and every one was re-run independently before it went on
+      this page. Duo claims need at least fifteen games together, trios at least ten, and per-player
+      rates at least thirty appearances. Where a stat is a fun coincidence rather than a real effect,
+      it says so.
+    </p>
+    <p>
+      Updated on 2 September 2026 with the game of 27 August, which was missing from the database.
+      One game in 204 was enough to change who won the sixth edition.
+    </p>
+    <p>
+      Several findings that looked excellent did not survive that process and are not here. The
+      three most tempting are named in file 12, on the grounds that a record book you cannot argue
+      with is no fun at all.
+    </p>
+  </div>
+</footer>

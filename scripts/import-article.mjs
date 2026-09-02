@@ -1,0 +1,143 @@
+/**
+ * Turn a standalone article page into a news article this site can render.
+ *
+ *   node scripts/import-article.mjs <article.html> <slug>
+ *
+ * The articles are written as self-contained HTML pages — one `<style>` block
+ * and then the markup — so they can be previewed on their own. This site loads
+ * Bootstrap and the league's own stylesheet globally, so that CSS cannot be
+ * dropped in as-is: `body`, `table`, `th`, `footer` and friends would restyle
+ * every other page.
+ *
+ * So the stylesheet is rewritten with every selector scoped to `.news-article`,
+ * which is the element `src/routes/noticias/$slug.tsx` wraps the markup in.
+ * Scoping also raises specificity above Bootstrap's element rules, so the
+ * article keeps its own look inside the site chrome.
+ *
+ * Writes `src/content/news/<slug>.html` (markup) and `<slug>.css` (scoped).
+ */
+
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const SCOPE = ".news-article";
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+/** Split a rule body into top-level chunks, keeping nested blocks intact. */
+function splitRules(css) {
+  const rules = [];
+  let depth = 0;
+  let start = 0;
+  let inComment = false;
+
+  for (let i = 0; i < css.length; i += 1) {
+    if (inComment) {
+      if (css.startsWith("*/", i)) inComment = false;
+      continue;
+    }
+    if (css.startsWith("/*", i)) {
+      inComment = true;
+      continue;
+    }
+    if (css[i] === "{") depth += 1;
+    else if (css[i] === "}") {
+      depth -= 1;
+      if (depth === 0) {
+        rules.push(css.slice(start, i + 1));
+        start = i + 1;
+      }
+    }
+  }
+  const tail = css.slice(start);
+  if (tail.trim()) rules.push(tail);
+  return rules;
+}
+
+/** Split a selector list on the commas that separate whole selectors. */
+function splitSelectors(selector) {
+  const parts = [];
+  let depth = 0;
+  let start = 0;
+  for (let i = 0; i < selector.length; i += 1) {
+    const char = selector[i];
+    if (char === "(" || char === "[") depth += 1;
+    else if (char === ")" || char === "]") depth -= 1;
+    else if (char === "," && depth === 0) {
+      parts.push(selector.slice(start, i));
+      start = i + 1;
+    }
+  }
+  parts.push(selector.slice(start));
+  return parts.map((part) => part.trim()).filter(Boolean);
+}
+
+function scopeSelector(selector) {
+  return splitSelectors(selector)
+    .map((one) => {
+      // The custom properties and the page background belong to the container.
+      if (one === ":root" || one === "html" || one === "body") return SCOPE;
+      // The universal reset has to reach the container itself too.
+      if (one === "*") return `${SCOPE}, ${SCOPE} *`;
+      return `${SCOPE} ${one}`;
+    })
+    .join(", ");
+}
+
+function scopeCss(css) {
+  return splitRules(css)
+    .map((rule) => {
+      const open = rule.indexOf("{");
+      if (open === -1) return rule;
+      const body = rule.slice(open + 1, rule.lastIndexOf("}"));
+
+      // A comment sitting above a rule arrives as part of its prelude. Left
+      // there it would become part of the selector — `.news-article /* … */
+      // :root` reads as a descendant of the article, and matches nothing — so
+      // lift it out and keep it above the rule where it was written.
+      const raw = rule.slice(0, open);
+      const comments = raw.match(/\/\*[\s\S]*?\*\//g) ?? [];
+      const lead = comments.length ? `${comments.join("\n")}\n` : "";
+      const prelude = raw.replace(/\/\*[\s\S]*?\*\//g, " ").trim();
+
+      // Animation and font blocks name frames and faces, not elements.
+      if (/^@(keyframes|font-face|charset|import|property)\b/.test(prelude))
+        return `${lead}${prelude} {${body}}`;
+      // Conditional groups wrap rules, so scope what is inside them instead.
+      if (/^@(media|supports|layer|container)\b/.test(prelude)) {
+        return `${lead}${prelude} {\n${scopeCss(body)}\n}`;
+      }
+      return `${lead}${scopeSelector(prelude)} {${body}}`;
+    })
+    .join("\n");
+}
+
+const [input, slug] = process.argv.slice(2);
+if (!input || !slug) {
+  console.error("usage: node scripts/import-article.mjs <article.html> <slug>");
+  process.exit(1);
+}
+
+const source = readFileSync(resolve(input), "utf8");
+const styleMatch = source.match(/<style>([\s\S]*?)<\/style>/);
+if (!styleMatch) {
+  console.error(`${input}: no <style> block found`);
+  process.exit(1);
+}
+
+// Everything after the stylesheet is the article itself. The `<title>` and the
+// font `<link>` are dropped: the route sets the title, and the fonts are loaded
+// from its `head`, so they are requested with the rest of the page's links.
+const markup = source.slice(styleMatch.index + styleMatch[0].length).trim();
+const css = scopeCss(styleMatch[1]);
+
+const dir = resolve(root, "src/content/news");
+mkdirSync(dir, { recursive: true });
+writeFileSync(resolve(dir, `${slug}.html`), `${markup}\n`);
+writeFileSync(
+  resolve(dir, `${slug}.css`),
+  `/* Generated by scripts/import-article.mjs — every selector scoped to ${SCOPE}. */\n${css}\n`,
+);
+
+console.log(`src/content/news/${slug}.html  ${markup.split("\n").length} lines`);
+console.log(`src/content/news/${slug}.css   ${css.split("\n").length} lines`);

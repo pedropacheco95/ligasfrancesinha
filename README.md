@@ -33,10 +33,13 @@ npm run dev
 The Flask app is a server-rendered Jinja application backed by SQLite. This port
 is a self-contained frontend, so there is no backend to run.
 
-**Data.** `database.db` at the repository root is the source of truth. It is
-exported to `src/data/*.json`, one file per table, with rows ordered by primary
-key, by `python3 qa/export-database.py`. Drop in a newer dump and re-run that to
-refresh the app.
+**Data.** The cloud database is the source of truth. It is exported to
+`src/data/*.json`, one file per table, with rows ordered by primary key, by
+`python3 qa/export-supabase.py`. **Re-run that after any write that did not come
+from the app** — a game added with `npm run add-game`, a row edited by hand —
+or the server render will keep showing the old standings until the browser
+fetches the real rows. (`qa/export-database.py` does the same job from a
+`database.db` SQLite dump, which is where this data originally came from.)
 
 It has been cleaned up relative to the dump it came from: two players who
 belonged to no edition and had played no game were removed, and four portraits
@@ -139,6 +142,60 @@ These are bugs in the original that the port keeps, so both apps behave the same
   preview server looks for `dist/server/server.js`. This is a template issue —
   the untouched Lovable scaffold fails the same way — and does not affect
   `npm run dev` or `npm run build`.
+
+## Notícias
+
+The home page carries a news block below the standings, and each article has its
+own page at `/noticias/<slug>`.
+
+An article is written as a **standalone HTML page** — one `<style>` block and
+then the markup — so it can be opened and reviewed on its own before it goes
+anywhere near the site. Those pages live in `articles/` and are the source of
+truth: edit one there, then bring it in with
+
+```sh
+node scripts/import-article.mjs articles/<slug>.html <slug>
+```
+
+One article is assembled rather than written: `ficheiros-da-francesinha` has a
+second half generated from the group's WhatsApp archive by
+`scripts/chatstats/gen.py`. `node scripts/join-article.mjs` folds that page into
+the article between two markers, re-skinning it — its palette and its two
+display faces are remapped onto the article's, its sections rebuilt in the
+article's own header pattern, its CSS scoped to `.qh` and its classes renamed
+`qh-*` because both stylesheets use `.card`, `.big` and `.bar` for different
+things. It is idempotent: re-run it after every `gen.py` run, then re-import.
+
+That writes `src/content/news/<slug>.html` (the markup) and `<slug>.css` (the
+stylesheet, with **every selector scoped to `.news-article`**). The scoping is
+what makes this safe: the article's `body`, `table`, `th` and `footer` rules
+would otherwise restyle every other page, and Bootstrap's element rules would
+leak the other way. Scoping also lifts the article's specificity above
+Bootstrap's, so it keeps its own look inside the site chrome.
+
+Then add the entry to `src/data/news.ts` — slug, title, kicker, date, excerpt,
+image — and the card and the page both appear. Nothing else is wired by hand.
+
+**Link previews.** Sharing is the point of the WhatsApp button, so the `og:`
+tags are rendered on the server (they are in the HTML a crawler fetches; it runs
+no JavaScript) and every URL in them is absolute — a relative `og:image` is not
+resolved. `src/lib/site.ts` holds the origin: it defaults to
+`https://ligasfrancesinha.lovable.app` and `VITE_SITE_URL` overrides it for a
+deployment anywhere else. The share links themselves are rewritten after mount
+to whatever origin the reader is actually on.
+
+The preview image is `public/static/images/news/<slug>.jpg` at **1200×630**. It
+is itself a page — `articles/<slug>.card.html` — rendered to a JPEG:
+
+```sh
+npm i --no-save playwright
+node scripts/render-card.mjs <slug>
+```
+
+Keep it under ~300KB. WhatsApp is fussy about large images and will quietly
+show no card at all. It also caches a preview per URL and holds onto it, so the
+card has to be right *before* the link starts going around; changing the image
+afterwards will not update a link that has already been shared.
 
 ## Verifying against the Flask app
 

@@ -1,0 +1,1809 @@
+<title>Os Ficheiros da Francesinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  /* A committed single world: a floodlit Thursday night in Porto. Every colour is
+     painted explicitly so the page holds on any host ground, light or dark. */
+  :root {
+    --ground:    #0A0F13;
+    --surface:   #131C22;
+    --surface-2: #1C262E;
+    --line:      #2A3841;
+    --ink:       #ECE5D8;
+    --ink-dim:   #8FA0AB;
+    --ink-faint: #5E6E79;
+    --sauce:     #E4572E;
+    --sauce-dim: #8A3620;
+    --verify:    #7FAE8B;
+    --reject:    #CE5348;
+    --chalk:     #F6F2E9;
+
+    --display: "Oswald", "Haettenschweiler", Impact, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    --measure: 64ch;
+    --pad: clamp(1.1rem, 4vw, 2.75rem);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: clamp(1rem, 0.97rem + 0.16vw, 1.09rem);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--pad); }
+
+  h1, h2, h3, .num, .eyebrow, th, .stamp, .tag {
+    font-family: var(--display);
+    text-transform: uppercase;
+  }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 700; letter-spacing: 0.01em; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--sauce);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────────── */
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(228, 87, 46, 0.13), transparent 62%),
+      var(--ground);
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 13vw, 8.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.015em;
+  }
+  .hero h1 .thin { font-weight: 400; color: var(--ink-dim); display: block; }
+  .hero .standfirst {
+    max-width: var(--measure);
+    margin-top: 1.6rem;
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+    color: var(--ink);
+  }
+  .hero .standfirst strong { color: var(--sauce); font-weight: 500; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1px;
+    margin-top: clamp(2rem, 5vw, 3.25rem);
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .fact { background: var(--ground); padding: 1rem 1.1rem; }
+  .fact .n {
+    font-family: var(--display);
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact .k {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.13em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  /* ── Sections ─────────────────────────────────────────────────── */
+  section { padding: clamp(3rem, 8vw, 5.5rem) 0; border-bottom: 1px solid var(--line); }
+  .sec-head { margin-bottom: 2.5rem; }
+  .sec-head h2 { font-size: clamp(1.9rem, 6vw, 3.1rem); line-height: 0.95; margin-top: 0.5rem; }
+  .sec-head p { max-width: var(--measure); color: var(--ink-dim); margin: 0.9rem 0 0; }
+
+  /* ── Stat cards ───────────────────────────────────────────────── */
+  .cards { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cards.two { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+  .cards.three { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+  .card { background: var(--surface); padding: 1.5rem 1.4rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .card.dark { background: var(--ground); }
+  .card h3 { font-size: 1.12rem; line-height: 1.15; letter-spacing: 0.005em; }
+  .card p { margin: 0; font-size: 0.95rem; color: var(--ink-dim); }
+  .card p em { color: var(--ink); font-style: italic; }
+  .card .big {
+    font-family: var(--display);
+    font-size: clamp(2.6rem, 9vw, 4rem);
+    line-height: 0.9;
+    color: var(--sauce);
+    font-variant-numeric: tabular-nums;
+  }
+  .card .big small { font-size: 0.36em; color: var(--ink-dim); display: block; letter-spacing: 0.1em; }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--line);
+    padding-top: 0.7rem;
+    margin-top: auto;
+  }
+
+  /* ── The staircase ────────────────────────────────────────────── */
+  .stair { display: grid; gap: 0.55rem; margin: 0.5rem 0 0; }
+  .step { display: grid; grid-template-columns: 8.5rem 1fr auto; align-items: center; gap: 0.85rem; }
+  .step .lbl { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); letter-spacing: 0.04em; }
+  .step .bar { height: 1.5rem; background: var(--surface-2); position: relative; overflow: hidden; }
+  .step .bar i { position: absolute; inset: 0 auto 0 0; background: var(--sauce-dim); display: block; }
+  .step.peak .bar i { background: var(--sauce); }
+  .step .val {
+    font-family: var(--display); font-size: 1.15rem; font-variant-numeric: tabular-nums; min-width: 3.6rem; text-align: right;
+  }
+  @media (max-width: 520px) { .step { grid-template-columns: 6.5rem 1fr auto; } }
+
+  /* ── Tables ───────────────────────────────────────────────────── */
+  .scroll { overflow-x: auto; border: 1px solid var(--line); }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 560px; }
+  caption {
+    text-align: left; padding: 1rem 1.1rem; background: var(--surface);
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.13em;
+    color: var(--ink-faint); text-transform: uppercase; border-bottom: 1px solid var(--line);
+  }
+  th {
+    font-size: 0.72rem; letter-spacing: 0.1em; color: var(--ink-dim); font-weight: 600;
+    text-align: right; padding: 0.6rem 0.7rem; background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  th:first-child, td:first-child { text-align: left; padding-left: 1.1rem; }
+  th:nth-child(2), td:nth-child(2) { text-align: left; }
+  td {
+    padding: 0.5rem 0.7rem; text-align: right; font-family: var(--mono);
+    font-size: 0.82rem; border-bottom: 1px solid var(--line); color: var(--ink);
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.014); }
+  td.name { font-family: var(--body); font-size: 0.95rem; }
+  .rank { color: var(--ink-faint); }
+  .hi { color: var(--sauce); }
+  .lo { color: var(--ink-faint); }
+
+  /* ── Verdict stamps ───────────────────────────────────────────── */
+  .stamp {
+    display: inline-block; font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.14em; padding: 0.22rem 0.5rem; border: 1px solid currentColor;
+    align-self: flex-start;
+  }
+  .stamp.ok { color: var(--verify); }
+  .stamp.no { color: var(--reject); }
+  .stamp.hm { color: var(--ink-dim); }
+
+  .verdict { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .verdict .row { background: var(--surface); padding: 1.25rem 1.3rem; display: grid; gap: 0.55rem; }
+  .verdict .row.killed { background: var(--ground); }
+  .verdict h3 { font-size: 1rem; }
+  .verdict p { margin: 0; font-size: 0.92rem; color: var(--ink-dim); }
+  .verdict .killed h3 { color: var(--ink-dim); text-decoration: line-through; text-decoration-color: var(--reject); }
+
+  /* ── Pull quote ───────────────────────────────────────────────── */
+  .pull {
+    border-left: 3px solid var(--sauce); padding: 0.2rem 0 0.2rem 1.4rem;
+    margin: 2.25rem 0; max-width: var(--measure);
+    font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); line-height: 1.35;
+  }
+
+  .note {
+    font-family: var(--mono); font-size: 0.73rem; line-height: 1.65;
+    color: var(--ink-faint); border-top: 1px solid var(--line);
+    padding-top: 1rem; margin-top: 2.25rem; max-width: var(--measure);
+  }
+
+  footer { padding: clamp(2.5rem, 6vw, 4rem) 0 4rem; color: var(--ink-faint); }
+  footer p { max-width: var(--measure); font-size: 0.9rem; }
+  footer .eyebrow { color: var(--ink-faint); }
+
+  /* ── Charts ───────────────────────────────────────────────────── */
+  /* Diverging pair, validated against the #131C22 chart surface:
+     CVD ΔE 10.0 (deutan), normal-vision ΔE 28.1, both ≥ 3:1 contrast. */
+  :root { --good: #159C6E; --bad: #E4572E; --axis: #33434E; }
+
+  figure { margin: 0; }
+  figcaption {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em;
+    color: var(--ink-faint); margin-top: 0.9rem; max-width: var(--measure);
+  }
+  .legend { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+  .legend span { display: flex; align-items: center; gap: 0.42rem; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); letter-spacing: 0.04em; }
+  .legend i { width: 0.7rem; height: 0.7rem; border-radius: 2px; display: block; }
+
+  /* Diverging paired bars */
+  .infl { display: grid; gap: 0.15rem; }
+  .infl .r { display: grid; grid-template-columns: 8.5rem 1fr; align-items: center; gap: 0.7rem; padding: 0.2rem 0; }
+  .infl .who { font-size: 0.85rem; color: var(--ink); text-align: right; }
+  .infl .pair { display: grid; gap: 2px; }
+  .infl .track { position: relative; height: 0.72rem; background: linear-gradient(90deg, transparent calc(50% - 1px), var(--axis) calc(50% - 1px), var(--axis) calc(50% + 1px), transparent calc(50% + 1px)); }
+  .infl .track b { position: absolute; top: 0; bottom: 0; border-radius: 2px; display: block; }
+  .infl .track b.pos { left: 50%; background: var(--good); }
+  .infl .track b.neg { right: 50%; background: var(--bad); }
+  .infl .track em { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--mono); font-style: normal; font-size: 0.62rem; color: var(--ink-dim); white-space: nowrap; }
+  /* A long bar carries its own label, so it can never run off the track. */
+  .infl .track em.in { color: var(--ground); font-weight: 600; }
+  @media (max-width: 560px) { .infl .r { grid-template-columns: 6rem 1fr; } .infl .who { font-size: 0.75rem; } }
+
+  /* Column chart */
+  .cols { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0.6rem; align-items: end; height: 190px; border-bottom: 1px solid var(--axis); }
+  .cols .c { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 0.4rem; height: 100%; }
+  .cols .c i { width: 100%; max-width: 74px; background: var(--sauce); border-radius: 3px 3px 0 0; display: block; }
+  .cols .c.cool i { background: var(--good); }
+  .cols .c .v { font-family: var(--display); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+  .colkeys { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0.6rem; margin-top: 0.55rem; }
+  .colkeys span { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-faint); text-align: center; letter-spacing: 0.04em; }
+
+  /* Scatter */
+  .scatter { position: relative; height: 300px; border-left: 1px solid var(--axis); border-bottom: 1px solid var(--axis); margin: 0 1rem 0 2.4rem; }
+  .scatter .pt { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--sauce); transform: translate(-50%, 50%); box-shadow: 0 0 0 2px var(--surface); }
+  .scatter .pt.up { background: var(--good); }
+  .scatter .lb { position: absolute; transform: translateY(50%); margin-left: 0.85rem; font-family: var(--mono); font-size: 0.6rem; color: var(--ink-dim); white-space: nowrap; }
+  .scatter .lb.flip { transform: translate(-100%, 50%); margin-left: -0.85rem; }
+  @media (max-width: 560px) { .scatter .lb { font-size: 0.52rem; margin-left: 0.5rem; } .scatter .lb.flip { margin-left: -0.5rem; } }
+  .scatter .ax { position: absolute; font-family: var(--mono); font-size: 0.6rem; color: var(--ink-faint); }
+
+  /* Correlation bars */
+  .corr { display: grid; gap: 0.55rem; }
+  .cr { display: grid; grid-template-columns: 13rem 1fr 2.6rem; align-items: center; gap: 0.8rem; }
+  .crn { font-size: 0.85rem; color: var(--ink); text-align: right; }
+  .crb { height: 1.15rem; background: var(--surface-2); position: relative; }
+  .crb i { position: absolute; inset: 0 auto 0 0; display: block; border-radius: 0 2px 2px 0; }
+  .crb i.good { background: var(--good); }
+  .crb i.bad { background: var(--bad); }
+  .crv { font-family: var(--display); font-size: 1rem; font-variant-numeric: tabular-nums; text-align: right; }
+  @media (max-width: 560px) { .cr { grid-template-columns: 7.5rem 1fr 2.4rem; } .crn { font-size: 0.72rem; } }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .step .bar i { animation: grow 900ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+    @keyframes grow { from { transform: scaleX(0); transform-origin: left; } }
+  }
+  /* ── Quadro de Honra ─── generated by scripts/join-article.mjs ── */
+  .qh {
+    /* The chat page's palette, remapped onto the article's. Its pitch green
+       becomes the francesinha orange, and its second series the chart green
+       already validated against this surface. */
+    --bg: var(--ground);
+    --surface: #131C22;
+    --surface2: #1C262E;
+    --sunk: #0D141A;
+    --ink: #ECE5D8;
+    --ink2: #A9B7C0;
+    --muted: #5E6E79;
+    --line: #2A3841;
+    --pitch: var(--bad);
+    --pitch-ink: var(--bad);
+    --pitch-soft: var(--sauce-dim);
+    --yellow: #E0B040;
+    --red: var(--reject);
+    --s2: var(--good);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+  }
+
+  /* A grid item's default `min-width: auto` lets the 520px minimum on the
+     charts and tables push the whole page sideways on a phone. */
+  .qh .qh-charts > *, .qh .qh-chartscroll, .qh .qh-grid2 > *, .qh .qh-awards > * {
+    min-width: 0;
+  }
+
+  /* Tables in the two halves should read as the same publication: display
+     face in the header, body face on the names, mono on the numbers. */
+  .qh thead th { font-family: var(--display); letter-spacing: 0.1em; font-weight: 600; }
+  .qh .qh-nm { font-family: var(--body); font-size: 0.95rem; font-weight: 400; }
+  .qh h1, .qh h2, .qh h3, .qh .qh-bebas {font-family:var(--display);font-weight:400;letter-spacing:.02em;text-wrap:balance}
+  .qh .qh-mono, .qh code, .qh .qh-num, .qh .qh-wval, .qh .qh-rk {font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .qh .qh-awards {display:grid;grid-template-columns:repeat(auto-fill,minmax(min(310px,100%),1fr));gap:1px}
+  .qh .qh-award {background:var(--surface);padding:20px 20px 16px;display:flex;flex-direction:column;gap:11px;
+  box-shadow:0 0 0 1px var(--line)}
+  .qh .qh-award h3 {font-size:25px;margin:0;line-height:1.02;display:flex;align-items:center;gap:8px}
+  .qh .qh-award .qh-sub {margin:5px 0 0;font-size:13.5px;color:var(--muted);line-height:1.45}
+  .qh .qh-card {width:11px;height:15px;border-radius:2px;flex:none;display:inline-block;transform:rotate(8deg)}
+  .qh .qh-card.qh-y {background:var(--yellow)}
+  .qh .qh-card.qh-r {background:var(--red)}
+  .qh .qh-winner {display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0}
+  .qh .qh-wname {font-family:var(--display);font-size:27px;line-height:1}
+  .qh .qh-wval {font-size:21px;font-weight:600;color:var(--pitch-ink);white-space:nowrap}
+  .qh .qh-note {margin:0;font-size:14px;color:var(--ink2);line-height:1.5}
+  .qh .qh-receipt {margin:0;background:var(--sunk);border-left:2px solid var(--pitch);padding:11px 13px}
+  .qh .qh-receipt blockquote {margin:0;overflow-wrap:anywhere;font-family:var(--mono);font-size:12.5px;
+  line-height:1.55;color:var(--ink)}
+  .qh .qh-receipt figcaption {margin-top:7px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  .qh details {margin-top:auto}
+  .qh summary {cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);padding-top:4px}
+  .qh summary:hover {color:var(--pitch-ink)}
+  .qh .qh-runners {list-style:none;margin:9px 0 0;padding:0;font-size:13.5px}
+  .qh .qh-runners li {display:flex;justify-content:space-between;gap:10px;padding:4px 0;
+  border-bottom:1px dotted var(--line);color:var(--ink2)}
+  .qh .qh-runners b {font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+  .qh .qh-charts {display:grid;gap:2px;background:var(--line);border:1px solid var(--line)}
+  .qh .qh-chartbox {background:var(--surface);padding:20px 18px 14px}
+  .qh .qh-chartbox h3 {font-size:21px;margin:0 0 2px}
+  .qh .qh-chartbox p {margin:0 0 12px;font-size:13.5px;color:var(--muted)}
+  .qh .qh-chartscroll {overflow-x:auto}
+  .qh .qh-chart {width:100%;min-width:520px;height:auto;display:block;overflow:visible}
+  .qh .qh-chart .qh-bar {fill:var(--pitch);opacity:.42;transition:opacity .15s}
+  .qh .qh-chart .qh-bar.qh-hi {opacity:1}
+  .qh .qh-chart .qh-grid {stroke:var(--line);stroke-width:1}
+  .qh .qh-chart .qh-ytick {fill:var(--muted);font-size:10px;text-anchor:end;
+  font-family:var(--mono)}
+  .qh .qh-chart .qh-xtick {fill:var(--muted);font-size:10.5px;text-anchor:middle;
+  font-family:var(--mono)}
+  .qh .qh-chart .qh-xtick.qh-hi {fill:var(--pitch-ink);font-weight:600}
+  .qh .qh-chart .qh-bar.qh-s1 {fill:var(--pitch);opacity:.9}
+  .qh .qh-chart .qh-bar.qh-s2 {fill:var(--s2);opacity:.9}
+  .qh .qh-chart .qh-line {fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .qh .qh-chart .qh-line.qh-s1 {stroke:var(--pitch)}
+  .qh .qh-chart .qh-line.qh-s2 {stroke:var(--s2)}
+  .qh .qh-chart .qh-dot.qh-s1 {fill:var(--pitch)}
+  .qh .qh-chart .qh-dot.qh-s2 {fill:var(--s2)}
+  .qh .qh-chart .qh-dot {opacity:.85;r:3}
+  .qh .qh-chart .qh-bar:hover, .qh .qh-chart .qh-bar.qh-s1:hover, .qh .qh-chart .qh-bar.qh-s2:hover {opacity:1}
+  .qh .qh-chart .qh-dot:hover {opacity:1;r:6}
+  .qh .qh-legend {display:flex;gap:18px;flex-wrap:wrap;margin:0 0 10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink2)}
+  .qh .qh-lg {display:inline-flex;align-items:center;gap:6px}
+  .qh .qh-sw {width:11px;height:11px;border-radius:2px;display:inline-block;flex:none}
+  .qh .qh-sw.qh-s1 {background:var(--pitch)}
+  .qh .qh-sw.qh-s2 {background:var(--s2)}
+  .qh .qh-tablebox {border:1px solid var(--line);background:var(--surface);overflow-x:auto}
+  .qh table {width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+  .qh thead th {font-family:var(--mono);font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);text-align:right;padding:12px 14px;
+  border-bottom:1px solid var(--line);font-weight:500}
+  .qh thead th:nth-child(-n+3) {text-align:left}
+  .qh tbody td {padding:8px 14px;border-bottom:1px solid var(--line)}
+  .qh tbody tr:last-child td {border-bottom:0}
+  .qh .qh-rk {color:var(--muted);font-size:12px;width:38px}
+  .qh .qh-nm {font-weight:600;white-space:nowrap}
+  .qh .qh-barcell {width:38%;min-width:110px}
+  .qh .qh-minibar {display:block;height:8px;background:var(--pitch);opacity:.55;border-radius:0 2px 2px 0}
+  .qh .qh-num {text-align:right;white-space:nowrap}
+  .qh .qh-dim {color:var(--muted)}
+  .qh .qh-dic {border:1px solid var(--line);background:var(--surface)}
+  .qh .qh-dicrow {display:grid;grid-template-columns:130px 1fr 150px;gap:14px;align-items:center;
+  padding:11px 16px;border-bottom:1px solid var(--line)}
+  .qh .qh-dicrow:last-child {border-bottom:0}
+  .qh .qh-dicname {font-family:var(--display);font-size:19px;line-height:1}
+  .qh .qh-dicwords {display:flex;flex-wrap:wrap;gap:5px}
+  .qh .qh-chip {background:var(--surface2);border:1px solid var(--line);border-radius:2px;
+  padding:2px 7px;font-family:var(--mono);font-size:11.5px;color:var(--ink2)}
+  .qh .qh-chip i {color:var(--muted);font-style:normal;margin-left:5px;font-size:10px}
+  .qh .qh-dicshare {text-align:right;font-size:11px;color:var(--muted);line-height:1.25}
+  .qh .qh-dicshare b {display:block;font-family:var(--display);font-size:23px;color:var(--pitch-ink)}
+  .qh .qh-grid2 {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:1px}
+  .qh .qh-panel {background:var(--surface);padding:19px;box-shadow:0 0 0 1px var(--line)}
+  .qh .qh-panel h3 {font-size:21px;margin:0 0 3px}
+  .qh .qh-panel>p.qh-k {margin:0 0 13px;font-size:13px;color:var(--muted)}
+  .qh .qh-panel ul, .qh .qh-panel ol {list-style:none;margin:0;padding:0;font-size:14px}
+  .qh .qh-panel li {padding:7px 0;border-bottom:1px dotted var(--line);display:flex;gap:10px;
+  align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+  .qh .qh-panel li:last-child {border-bottom:0}
+  .qh .qh-panel li b {font-family:var(--mono);color:var(--pitch-ink);white-space:nowrap}
+  .qh .qh-panel li code {font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+  .qh .qh-panel li span {color:var(--ink2)}
+  .qh .qh-panel li em {flex-basis:100%;font-size:12.5px;color:var(--muted);font-style:italic}
+  .qh .qh-panel li i {color:var(--muted);font-style:normal;padding:0 3px}
+  .qh .qh-tbar {height:7px;background:var(--pitch);opacity:.45;border-radius:2px;flex:none}
+  .qh .qh-polls {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px}
+  .qh .qh-poll h4 {font-family:var(--display);font-size:19px;margin:0;line-height:1.05}
+  .qh .qh-poll .qh-pk {margin:2px 0 9px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .qh .qh-popts {list-style:none;margin:0;padding:0;font-size:13.5px}
+  .qh .qh-popts li {display:grid;grid-template-columns:1fr 90px auto;gap:9px;align-items:center;
+  padding:5px 0;border-bottom:1px dotted var(--line);color:var(--ink2)}
+  .qh .qh-popts li:last-child {border-bottom:0}
+  .qh .qh-popts li.qh-win {color:var(--ink);font-weight:600}
+  .qh .qh-pbar {height:7px;background:var(--pitch);opacity:.35;border-radius:2px;display:block}
+  .qh .qh-popts li.qh-win .qh-pbar {opacity:.85}
+  .qh .qh-popts b {font-family:var(--mono);font-variant-numeric:tabular-nums;min-width:18px;text-align:right}
+  .qh .qh-big {font-family:var(--display);font-size:56px;line-height:.95;color:var(--pitch-ink)}
+  .qh .qh-sub2 {font-family:var(--display);font-size:20px;margin:18px 0 6px;line-height:1}
+  .qh .qh-transcript {list-style:none;margin:0;padding:0;border-left:2px solid var(--pitch);
+  background:var(--sunk)}
+  .qh .qh-transcript li {display:grid;grid-template-columns:52px 96px 1fr;gap:10px;align-items:baseline;
+  padding:8px 13px;border-bottom:1px dotted var(--line);font-size:13px}
+  .qh .qh-transcript li:last-child {border-bottom:0}
+  .qh .qh-transcript .qh-th {font-family:var(--mono);font-size:11px;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+  .qh .qh-transcript .qh-tn {font-family:var(--mono);font-size:11px;color:var(--pitch-ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .qh .qh-transcript .qh-tt {font-family:var(--mono);font-size:12.5px;color:var(--ink);
+  overflow-wrap:anywhere}
+  @media (max-width:560px) {
+  .qh .qh-transcript li {grid-template-columns:46px 1fr}
+  .qh .qh-transcript .qh-tt {grid-column:1/-1}
+  }
+  .qh .qh-longmsg {background:var(--sunk);border-left:2px solid var(--pitch);padding:14px;overflow-wrap:anywhere;
+  font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:0}
+  .qh .qh-longmsg cite {display:block;margin-top:9px;font-style:normal;font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .qh a {color:var(--pitch-ink)}
+  @media (max-width:640px) {
+  .qh .qh-dicrow {grid-template-columns:1fr;gap:7px}
+  .qh .qh-dicshare {text-align:left}
+  }
+  .qh :focus-visible {outline:2px solid var(--pitch);outline-offset:2px}
+  /* ── end Quadro de Honra ─────────────────────────────────────── */
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">MasterLeague · seis épocas · 2020–2026</p>
+    <h1>Os Ficheiros<span class="thin">da Francesinha</span></h1>
+    <p class="standfirst">
+      Duzentos e quatro jogos. Três mil duzentos e dezasseis golos. Vinte e três homens que lá vão
+      aparecendo às quintas. Metemos tudo numa base de dados à procura da verdade dos números —
+      e descobrimos, entre outras coisas, que <strong>o livro de recordes estava errado</strong>.
+      E depois fomos ler as 28.312 mensagens do grupo, porque metade desta liga joga-se no
+      telemóvel.
+    </p>
+
+    <div class="facts">
+      <div class="fact"><div class="n">204</div><div class="k">jogos</div></div>
+      <div class="fact"><div class="n">3.216</div><div class="k">golos</div></div>
+      <div class="fact"><div class="n">2.037</div><div class="k">presenças</div></div>
+      <div class="fact"><div class="n">23</div><div class="k">jogadores</div></div>
+      <div class="fact"><div class="n">6</div><div class="k">épocas</div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">01 — a tabela</p>
+      <h2>Tudo, de uma assentada</h2>
+      <p>
+        Todos os que fizeram trinta jogos ou mais, ordenados pela única coisa que conta a sério.
+        A média de golos também lá está, para quem preferir mudar de assunto.
+      </p>
+    </div>
+    <div class="scroll">
+      <table>
+        <caption>Classificação de sempre · mínimo 30 presenças</caption>
+        <thead><tr><th>#</th><th>Jogador</th><th>Jogos</th><th>V</th><th>E</th><th>D</th><th>%&nbsp;vit.</th><th>Golos</th><th>Média</th></tr></thead>
+        <tbody>
+          <tr><td class="rank">1</td><td class="name">Fanuca</td><td>61</td><td>38</td><td>5</td><td>18</td><td class="hi">62,3</td><td>62</td><td>1,02</td></tr>
+          <tr><td class="rank">2</td><td class="name">Manel</td><td>30</td><td>18</td><td>1</td><td>11</td><td class="hi">60,0</td><td>43</td><td>1,43</td></tr>
+          <tr><td class="rank">3</td><td class="name">Kiko TM</td><td>145</td><td>87</td><td>9</td><td>49</td><td class="hi">60,0</td><td>130</td><td>0,90</td></tr>
+          <tr><td class="rank">4</td><td class="name">Luis Fragoso</td><td>160</td><td>87</td><td>15</td><td>58</td><td class="hi">54,4</td><td>233</td><td>1,46</td></tr>
+          <tr><td class="rank">5</td><td class="name">João Perneta</td><td>43</td><td>21</td><td>4</td><td>18</td><td>48,8</td><td>46</td><td>1,07</td></tr>
+          <tr><td class="rank">6</td><td class="name">Bernardo Castro</td><td>161</td><td>76</td><td>16</td><td>69</td><td>47,2</td><td>181</td><td>1,12</td></tr>
+          <tr><td class="rank">7</td><td class="name">Zé SF</td><td>129</td><td>60</td><td>10</td><td>59</td><td>46,5</td><td class="hi">274</td><td class="hi">2,12</td></tr>
+          <tr><td class="rank">8</td><td class="name">Miguel</td><td>56</td><td>25</td><td>8</td><td>23</td><td>44,6</td><td>35</td><td>0,63</td></tr>
+          <tr><td class="rank">9</td><td class="name">Bernardo Queiroz</td><td>97</td><td>43</td><td>9</td><td>45</td><td>44,3</td><td>81</td><td>0,84</td></tr>
+          <tr><td class="rank">10</td><td class="name">Ferna</td><td>148</td><td>65</td><td>12</td><td>71</td><td>43,9</td><td>155</td><td>1,05</td></tr>
+          <tr><td class="rank">11</td><td class="name">Pedro Pacheco</td><td>169</td><td>74</td><td>17</td><td>78</td><td>43,8</td><td>228</td><td>1,35</td></tr>
+          <tr><td class="rank">12</td><td class="name">Bernardo Xavier</td><td>131</td><td>57</td><td>14</td><td>60</td><td>43,5</td><td>85</td><td>0,65</td></tr>
+          <tr><td class="rank">13</td><td class="name">Barros</td><td>35</td><td>15</td><td>4</td><td>16</td><td>42,9</td><td>33</td><td>0,94</td></tr>
+          <tr><td class="rank">14</td><td class="name">Chico Castro</td><td>78</td><td>31</td><td>10</td><td>37</td><td>39,7</td><td>31</td><td>0,40</td></tr>
+          <tr><td class="rank">15</td><td class="name">Zi</td><td>149</td><td>57</td><td>17</td><td>75</td><td>38,3</td><td>261</td><td>1,75</td></tr>
+          <tr><td class="rank">16</td><td class="name">Afonso Mariz</td><td>135</td><td>49</td><td>19</td><td>67</td><td>36,3</td><td>184</td><td>1,36</td></tr>
+          <tr><td class="rank">17</td><td class="name">Vinhas</td><td>113</td><td>40</td><td>9</td><td>64</td><td>35,4</td><td class="lo">25</td><td class="lo">0,22</td></tr>
+          <tr><td class="rank">18</td><td class="name">Mini Zi</td><td>95</td><td>29</td><td>11</td><td>55</td><td class="lo">30,5</td><td>100</td><td>1,05</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      Os golos do Bernardo Xavier aparecem corrigidos. Os dados em bruto dão-lhe 116; trinta e um desses são impossíveis e foram retirados. Ver ficheiro
+      12.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">02 — química</p>
+      <h2>Há quem se dê bem</h2>
+      <p>
+        As equipas são sorteadas de novo todas as semanas, o que quer dizer que seis épocas
+        andaram sem querer a fazer uma experiência científica convosco. Eis o que ela deu.
+      </p>
+    </div>
+
+    <div class="pull">
+      O Pedro Pacheco é um jogador de 44%. O Zé SF é um jogador de 46%. Juntem-nos na mesma
+      equipa e passam a valer 54% — e o efeito sobe a direito, sem margem para dúvidas.
+    </div>
+
+    <div class="cards two">
+      <div class="card dark">
+        <span class="stamp ok">O efeito mais forte de todos</span>
+        <h3>A escadinha Pacheco–Zé SF</h3>
+        <p>Percentagem de vitórias do Pedro Pacheco, conforme o sítio onde está o Zé SF:</p>
+        <div class="stair">
+          <div class="step"><span class="lbl">Não joga</span><span class="bar"><i style="width:34.4%"></i></span><span class="val">34,4%</span></div>
+          <div class="step"><span class="lbl">Equipa contrária</span><span class="bar"><i style="width:44.4%"></i></span><span class="val">44,4%</span></div>
+          <div class="step peak"><span class="lbl">Mesma equipa</span><span class="bar"><i style="width:53.7%"></i></span><span class="val">53,7%</span></div>
+        </div>
+        <p class="meta">n = 61 / 54 / 54 · três amostras independentes, todas pela mesma ordem · a escadinha repete-se vista do lado do Zé SF</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Confirmado</span>
+        <h3>Fanuca e Kiko TM perderam duas vezes. Ao todo.</h3>
+        <div class="big">90,5%<small>19 V · 0 E · 2 D</small></div>
+        <p>
+          Sem o Kiko em campo, o Fanuca ganha 33% das vezes. Com o Kiko pela frente, 54%.
+          Com o Kiko ao lado, nove em cada dez. Fomos ver se era só uma boa fase dos dois.
+          Não é.
+        </p>
+        <p class="meta">n = 21 jogos juntos</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Confirmado</span>
+        <h3>Kiko TM é o melhor companheiro de equipa da liga</h3>
+        <div class="big">+18,5<small>pontos percentuais, para os outros</small></div>
+        <p>
+          Somando toda a gente que já jogou com ele: os companheiros ganham <em>59,3%</em> ao lado
+          do Kiko, <em>40,8%</em> quando ele não joga e <em>33,3%</em> quando o apanham pela
+          frente. É, friamente, a melhor coisa que vos pode acontecer numa quinta-feira.
+        </p>
+        <p class="meta">n = 617 / 515 / 760 presenças</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Confirmado</span>
+        <h3>Os Três Grandes</h3>
+        <div class="big">80%<small>Ferna + Kiko TM + Fragoso</small></div>
+        <p>
+          Dezasseis vitórias em vinte. A graça é que o Ferna, sozinho, é um jogador de 43,9% —
+          não é ele que leva o carro, vai à boleia.
+        </p>
+        <p class="meta">n = 20 jogos como trio</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">03 — o outro lado</p>
+      <h2>E há quem se dê muito mal</h2>
+      <p>
+        A mesma experiência, ao contrário. Um aviso já a seguir, porque interessa: são sempre os
+        mesmos cinco nomes a aparecer aqui, o que sugere que o sorteio às vezes empilha a metade
+        mais fraca do lote toda do mesmo lado. Provavelmente é um fenómeno só, não cinco maldições.
+      </p>
+    </div>
+
+    <div class="cards three">
+      <div class="card dark">
+        <span class="stamp no">2 vitórias em 18</span>
+        <h3>Zi + Mini Zi + Afonso Mariz</h3>
+        <div class="big">11,1%</div>
+        <p>O pior trio de que há memória. Dezoito tentativas. Duas vitórias.</p>
+        <p class="meta">n = 18</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Quase tudo verdade</span>
+        <h3>O que o Fanuca mais gosta de ver é o Mini Zi na outra equipa</h3>
+        <div class="stair">
+          <div class="step peak"><span class="lbl">Mini Zi contra</span><span class="bar"><i style="width:80.0%"></i></span><span class="val">80,0%</span></div>
+          <div class="step"><span class="lbl">Não joga</span><span class="bar"><i style="width:57.1%"></i></span><span class="val">57,1%</span></div>
+          <div class="step"><span class="lbl">Mini Zi ao lado</span><span class="bar"><i style="width:48.3%"></i></span><span class="val">48,3%</span></div>
+        </div>
+        <p>
+          Ganha quatro em cada cinco contra ele e pouco mais de metade com ele. A honestidade
+          obriga ao reparo: o Mini Zi dá uma ajuda a <em>toda a gente</em> que o defronta, em
+          média 12,4 pontos. O ganho do Fanuca é 17,7, portanto só uns cinco é que são pessoais.
+        </p>
+        <p class="meta">n = 25 contra / 7 ausente / 29 juntos</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp no">Escada abaixo</span>
+        <h3>O Zi é o carrasco do Bernardo Queiroz</h3>
+        <div class="stair">
+          <div class="step"><span class="lbl">Zi ao lado</span><span class="bar"><i style="width:22.2%"></i></span><span class="val">22,2%</span></div>
+          <div class="step"><span class="lbl">Zi não joga</span><span class="bar"><i style="width:47.2%"></i></span><span class="val">47,2%</span></div>
+          <div class="step peak"><span class="lbl">Zi contra</span><span class="bar"><i style="width:58.8%"></i></span><span class="val">58,8%</span></div>
+        </div>
+        <p>O melhor que pode acontecer ao Queiroz é ver o Zi do outro lado. O mesmo padrão repete-se, sozinho, com o Fanuca.</p>
+        <p class="meta">n = 27 / 36 / 34</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Regularidade</span>
+        <h3>O Vinhas ficou entre 11.º e 13.º. Todos os anos.</h3>
+        <p style="font-family:var(--mono);font-size:1.05rem;color:var(--ink);letter-spacing:0.06em">12 · 12 · 12 · 13 · 12 · 11</p>
+        <p>
+          Seis edições, seis classificações nos mesmos três lugares. O jogador mais regular da
+          liga, e não é elogio.
+        </p>
+        <p class="meta">duas lanternas vermelhas · 0,22 golos por jogo, o pior de todos</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Jejum</span>
+        <h3>Vinhas outra vez: 18 jogos sem marcar</h3>
+        <div class="big">18<small>24 mar. 2025 → 18 dez. 2025</small></div>
+        <p>Nove meses de bola. Vinte e cinco golos em cento e treze jogos de carreira.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp no">Queda a pique</span>
+        <h3>A descida do Zi, seis épocas a fio</h3>
+        <p style="font-family:var(--mono);font-size:1.05rem;color:var(--ink);letter-spacing:0.06em">2 · 2 · 7 · 9 · 9 · 14</p>
+        <p>
+          Vice-campeão duas vezes e depois uma queda tão certinha que dava para acertar o
+          relógio. Fechou a última edição em último, com o segundo melhor registo de golos da
+          história da prova no currículo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">04 — o sorteio</p>
+      <h2>O chapéu não é inocente</h2>
+      <p>
+        As equipas deviam sair à sorte todas as semanas. E saem — só que o algoritmo ordena pela
+        classificação e junta os de cima com os de baixo, e isso deixa marcas.
+      </p>
+    </div>
+
+    <div class="cards two">
+      <div class="card dark">
+        <span class="stamp ok">z = 3,2</span>
+        <h3>Zi e Mini Zi não há quem os separe</h3>
+        <div class="big">66,7%<small>dos jogos partilhados, na mesma equipa</small></div>
+        <p>
+          Quarenta e dois dos sessenta e três jogos que partilharam. À sorte seriam uns vinte e
+          nove. É o maior desvio de sorteio em seis épocas — e juntos ganham 19% das vezes.
+        </p>
+        <p class="meta">n = 63 jogos partilhados</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">A separação</span>
+        <h3>Os dois melhores da liga andam sempre separados</h3>
+        <div class="big">35,2%<small>Bernardo Castro com Zé SF</small></div>
+        <p>
+          Tricampeão e melhor marcador de sempre, na mesma equipa em pouco mais de um terço dos
+          cento e oito jogos que partilharam — enquanto o Castro calha vezes a mais com o
+          Fragoso, o Ferna e o Queiroz. É o sorteio a fazer exactamente aquilo para que foi feito.
+        </p>
+        <p class="meta">n = 108 jogos partilhados</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">05 — o insólito</p>
+      <h2>Coisas sem explicação</h2>
+    </div>
+
+    <div class="cards three">
+      <div class="card">
+        <span class="stamp ok">41 jogos</span>
+        <h3>Setembro e Outubro não sabem o que é empatar</h3>
+        <div class="big">0<small>empates em 41 jogos de outono</small></div>
+        <p>Em seis épocas. No resto do ano a liga empata 12,3% das vezes. Dezembro, esse, vai nos 19%.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">0 em 145</span>
+        <h3>O Kiko TM nunca levou uma abada</h3>
+        <div class="big">0<small>derrotas por goleada, em 145 jogos</small></div>
+        <p>
+          Onze jogos na história da prova acabaram com oito ou mais golos de diferença. O Kiko
+          jogou quatro e ganhou os quatro. Os outros levam, em média, <em>2,70</em> abadas por
+          cada cem jogos — o que lhe daria umas quatro. A seguir vem o Bernardo Xavier, com duas
+          em 131; o pior é o Zé SF, com seis em 129.
+        </p>
+        <p class="meta">diferença ≥ 8 golos · um jogador médio passa 145 jogos sem levar uma em cerca de 2% dos casos</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Durou seis anos</span>
+        <h3>O Zé SF tinha as contas certinhas</h3>
+        <div class="big">60–59<small>e dez empates</small></div>
+        <p>
+          O melhor marcador de sempre — 274 golos, mais do que ninguém — passou seis épocas com
+          exactamente as mesmas vitórias e derrotas: 59–59. Depois ganhou o jogo de 27 de Agosto
+          e desempatou-se a si próprio. Foi o mesmo jogo que lhe deu a edição.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="stamp hm">Coincidência</span>
+        <h3>Carreiras gémeas</h3>
+        <div class="big">87 e 87<small>Kiko TM e Fragoso</small></div>
+        <p>Exactamente as mesmas vitórias de carreira, em 145 e 160 jogos respectivamente.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">População inteira</span>
+        <h3>Os Maregões ganham mais e pronto</h3>
+        <div class="big">104–80<small>com 20 empates</small></div>
+        <p>Em 204 jogos. Seja lá o que for que a camisola faz, faz há seis anos.</p>
+      </div>
+
+      <div class="card">
+        <span class="stamp ok">Confirmado</span>
+        <h3>O jogador mais banal da liga tem metade dos títulos</h3>
+        <p>
+          A percentagem de vitórias, a de empates e a média de golos do Bernardo Castro estão
+          todas coladinhas à média da liga — é o mais estatisticamente banal que por aqui anda.
+          Também já ganhou <em>três das seis edições</em>. Mais ninguém tem mais do que uma.
+        </p>
+        <p class="meta">1.º · 2.º · 1.º · 1.º · e depois 12.º em 14</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">06 — o peso na equipa</p>
+      <h2>O que vocês fazem mesmo à equipa</h2>
+      <p>
+        Esqueçam os golos que marcam. Isto é o que acontece ao <em>marcador</em> da equipa quando
+        lá estão, comparado com a mesma edição sem vocês: quantos golos a mais é que ela faz e
+        quantos a menos é que sofre. Tudo em golos por jogo, na mesma escala.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> golos ganhos por jogo</span>
+        <span><i style="background:var(--bad)"></i> golos perdidos por jogo</span>
+      </div>
+      <div class="infl">
+      <div class="r"><span class="who">Fanuca</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:30.7%"></b><em class="in" style="left:calc(50% + 30.68719248334358% - 0.4rem);transform:translate(-100%,-50%)">+0,83</em></span><span class="track"><b class="pos" style="left:50%;width:37.0%"></b><em class="in" style="left:calc(50% + 37.0182535186099% - 0.4rem);transform:translate(-100%,-50%)">+1,00</em></span></span></div>
+      <div class="r"><span class="who">Kiko TM</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:21.6%"></b><em style="left:calc(50% + 21.619357022410952% + 0.35rem)">+0,58</em></span><span class="track"><b class="pos" style="left:50%;width:35.5%"></b><em class="in" style="left:calc(50% + 35.51651137613391% - 0.4rem);transform:translate(-100%,-50%)">+0,96</em></span></span></div>
+      <div class="r"><span class="who">Luis Fragoso</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:6.9%"></b><em style="left:calc(50% + 6.941085225346765% + 0.35rem)">+0,19</em></span><span class="track"><b class="pos" style="left:50%;width:34.8%"></b><em class="in" style="left:calc(50% + 34.84914484147243% - 0.4rem);transform:translate(-100%,-50%)">+0,94</em></span></span></div>
+      <div class="r"><span class="who">Bernardo Castro</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:9.3%"></b><em style="left:calc(50% + 9.320550624898454% + 0.35rem)">+0,25</em></span><span class="track"><b class="pos" style="left:50%;width:9.8%"></b><em style="left:calc(50% + 9.81873735496924% + 0.35rem)">+0,27</em></span></span></div>
+      <div class="r"><span class="who">Miguel</span><span class="pair"><span class="track"><b class="pos" style="left:50%;width:15.1%"></b><em style="left:calc(50% + 15.076665586869671% + 0.35rem)">+0,41</em></span><span class="track"><b class="neg" style="right:50%;width:5.0%"></b><em style="right:calc(50% + 4.980563654033015% + 0.35rem)">-0,13</em></span></span></div>
+      <div class="r"><span class="who">Bernardo Xavier</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:3.0%"></b><em style="right:calc(50% + 3.0359868923937228% + 0.35rem)">-0,08</em></span><span class="track"><b class="neg" style="right:50%;width:0.3%"></b><em style="right:calc(50% + 0.27674419642067627% + 0.35rem)">-0,01</em></span></span></div>
+      <div class="r"><span class="who">Bernardo Queiroz</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:9.1%"></b><em style="right:calc(50% + 9.124300325769955% + 0.35rem)">-0,25</em></span><span class="track"><b class="pos" style="left:50%;width:3.8%"></b><em style="left:calc(50% + 3.822313210336889% + 0.35rem)">+0,10</em></span></span></div>
+      <div class="r"><span class="who">Zé SF</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:7.2%"></b><em style="right:calc(50% + 7.191771038307475% + 0.35rem)">-0,19</em></span><span class="track"><b class="pos" style="left:50%;width:0.6%"></b><em style="left:calc(50% + 0.6494702957042151% + 0.35rem)">+0,02</em></span></span></div>
+      <div class="r"><span class="who">Ferna</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:20.1%"></b><em style="right:calc(50% + 20.144715010725402% + 0.35rem)">-0,54</em></span><span class="track"><b class="pos" style="left:50%;width:3.4%"></b><em style="left:calc(50% + 3.4272882463566976% + 0.35rem)">+0,09</em></span></span></div>
+      <div class="r"><span class="who">Zi</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:25.9%"></b><em class="in" style="right:calc(50% + 25.886587096170963% - 0.4rem);transform:translate(100%,-50%)">-0,70</em></span><span class="track"><b class="pos" style="left:50%;width:1.2%"></b><em style="left:calc(50% + 1.1717016838548928% + 0.35rem)">+0,03</em></span></span></div>
+      <div class="r"><span class="who">Pedro Pacheco</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:10.3%"></b><em style="right:calc(50% + 10.314956558803711% + 0.35rem)">-0,28</em></span><span class="track"><b class="neg" style="right:50%;width:17.8%"></b><em style="right:calc(50% + 17.754952398670667% + 0.35rem)">-0,48</em></span></span></div>
+      <div class="r"><span class="who">Afonso Mariz</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:14.7%"></b><em style="right:calc(50% + 14.74967052917096% + 0.35rem)">-0,40</em></span><span class="track"><b class="neg" style="right:50%;width:24.2%"></b><em class="in" style="right:calc(50% + 24.17688223028447% - 0.4rem);transform:translate(100%,-50%)">-0,65</em></span></span></div>
+      <div class="r"><span class="who">Chico Castro</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:24.4%"></b><em class="in" style="right:calc(50% + 24.373743437288585% - 0.4rem);transform:translate(100%,-50%)">-0,66</em></span><span class="track"><b class="neg" style="right:50%;width:15.3%"></b><em style="right:calc(50% + 15.33602035274275% + 0.35rem)">-0,41</em></span></span></div>
+      <div class="r"><span class="who">Vinhas</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:23.0%"></b><em class="in" style="right:calc(50% + 22.950422827739715% - 0.4rem);transform:translate(100%,-50%)">-0,62</em></span><span class="track"><b class="neg" style="right:50%;width:33.1%"></b><em class="in" style="right:calc(50% + 33.10072653440008% - 0.4rem);transform:translate(100%,-50%)">-0,89</em></span></span></div>
+      <div class="r"><span class="who">Mini Zi</span><span class="pair"><span class="track"><b class="neg" style="right:50%;width:33.7%"></b><em class="in" style="right:calc(50% + 33.658042814266715% - 0.4rem);transform:translate(100%,-50%)">-0,91</em></span><span class="track"><b class="neg" style="right:50%;width:39.0%"></b><em class="in" style="right:calc(50% + 39.0163017773711% - 0.4rem);transform:translate(100%,-50%)">-1,05</em></span></span></div>
+      </div>
+      <figcaption>
+        As duas barras são golos ganhos por jogo, portanto para a direita é sempre bom: a de cima
+        é o que acrescentam ao ataque da própria equipa, a de baixo são os golos que evitam do
+        outro lado. Ordenado pela soma das duas. Todos com 50+ jogos. O Kiko TM põe 0,58 golos no ataque da equipa e tira 0,96 ao que ela sofre — uma diferença de mais de golo e meio por
+        jogo, e a explicação para um homem que marca 0,9 por jogo ganhar 60% deles.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">07 — a forma</p>
+      <h2>As boas fases</h2>
+      <p>Janelas móveis ao longo da carreira de cada um, contadas em jogos seguidos.</p>
+    </div>
+
+    <div class="cards three">
+      <div class="card dark">
+        <span class="stamp ok">Cinco jogos</span>
+        <h3>O Zi marcou 23 golos em cinco jogos</h3>
+        <div class="big">23<small>8 jul. → 14 out. 2021</small></div>
+        <p>A melhor fase que alguém já teve por aqui. Acabou a última edição em último lugar.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Dez jogos</span>
+        <h3>E 38 em dez</h3>
+        <div class="big">38<small>8 jul. → 9 dez. 2021</small></div>
+        <p>Zi outra vez. A seguir vem o Zé SF, com 35, no inverno logo a seguir.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Dez jogos</span>
+        <h3>O Kiko TM ganhou nove em dez</h3>
+        <div class="big">9/10<small>abr. → out. 2022</small></div>
+        <p>Quatro janelas sobrepostas a 9–1 ao longo de 2022. O Fanuca fez ainda melhor no início de 2026, com cinco; o Fragoso conseguiu três.</p>
+      </div>
+    </div>
+
+    <figure style="margin-top:2.5rem">
+      <div class="cols">
+        <div class="c"><span class="v">19,1</span><i style="height:89%"></i></div>
+        <div class="c"><span class="v">20,8</span><i style="height:97%"></i></div>
+        <div class="c"><span class="v">13,9</span><i style="height:65%"></i></div>
+        <div class="c"><span class="v">14,4</span><i style="height:67%"></i></div>
+        <div class="c"><span class="v">13,6</span><i style="height:63%"></i></div>
+        <div class="c"><span class="v">15,2</span><i style="height:71%"></i></div>
+      </div>
+      <div class="colkeys">
+        <span>1.ª<br>2020–21</span>
+        <span>2.ª<br>2021–22</span>
+        <span>3.ª<br>2022–23</span>
+        <span>4.ª<br>2023–24</span>
+        <span>5.ª<br>2024–25</span>
+        <span>6.ª<br>2025–26</span>
+      </div>
+      <figcaption>
+        Golos por jogo, somando as duas equipas, por edição. Alguma coisa mudou entre 2022 e
+        2023: marcou-se menos um terço e nunca mais voltou ao que era. As duas primeiras épocas tiveram um empate em 49 jogos; cada uma das seguintes teve pelo menos
+        quatro.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">08 — a grande mentira</p>
+      <h2>Marcar golos não ganha jogos</h2>
+      <p>
+        Todos os jogadores com cinquenta jogos ou mais, postos no gráfico pelo que marcam contra
+        as vezes que ganham. Se golos ganhassem jogos, isto era uma diagonal. É uma nuvem.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> ganha mais de metade</span>
+        <span><i style="background:var(--sauce)"></i> ganha menos de metade</span>
+      </div>
+      <div class="scatter">
+        <span class="pt" style="left:92.3%;bottom:51.4%"></span>
+        <span class="lb flip" style="left:92.3%;bottom:51.4%">Zé SF</span>
+        <span class="pt" style="left:76.2%;bottom:28.5%"></span>
+        <span class="lb flip" style="left:76.2%;bottom:28.5%">Zi</span>
+        <span class="pt up" style="left:63.3%;bottom:73.3%"></span>
+        <span class="lb flip" style="left:63.3%;bottom:73.3%">Luis Fragoso</span>
+        <span class="pt" style="left:59.3%;bottom:23.0%"></span>
+        <span class="pt" style="left:58.7%;bottom:43.9%"></span>
+        <span class="pt" style="left:48.9%;bottom:53.3%"></span>
+        <span class="pt" style="left:45.8%;bottom:7.0%"></span>
+        <span class="lb" style="left:45.8%;bottom:7.0%">Mini Zi</span>
+        <span class="pt" style="left:45.5%;bottom:44.2%"></span>
+        <span class="pt up" style="left:44.2%;bottom:95.3%"></span>
+        <span class="lb" style="left:44.2%;bottom:95.3%">Fanuca</span>
+        <span class="pt up" style="left:39.0%;bottom:88.9%"></span>
+        <span class="lb" style="left:39.0%;bottom:88.9%">Kiko TM</span>
+        <span class="pt" style="left:36.3%;bottom:45.4%"></span>
+        <span class="pt" style="left:28.2%;bottom:43.1%"></span>
+        <span class="pt" style="left:27.2%;bottom:46.2%"></span>
+        <span class="pt" style="left:17.3%;bottom:32.6%"></span>
+        <span class="pt" style="left:9.6%;bottom:20.6%"></span>
+        <span class="lb" style="left:9.6%;bottom:20.6%">Vinhas</span>
+        <span class="ax" style="left:-2.2rem;bottom:-0.5rem">28%</span>
+        <span class="ax" style="left:-2.2rem;top:-0.5rem">64%</span>
+        <span class="ax" style="left:0;bottom:-1.5rem">0</span>
+        <span class="ax" style="right:0;bottom:-1.5rem">2,3 golos/jogo</span>
+      </div>
+      <figcaption style="margin-top:2rem">
+        Eixo vertical: percentagem de vitórias. Horizontal: golos por jogo. Os dois melhores da
+        liga a ganhar, Fanuca e Kiko TM, estão no terço de baixo a marcar. Os dois maiores
+        goleadores, Zé SF e Zi, andam na média ou abaixo dela a ganhar. Correlação nas 2.037 presenças: r = 0,21.
+      </figcaption>
+    </figure>
+
+    <div class="cards three" style="margin-top:2.5rem">
+      <div class="card">
+        <span class="stamp ok">n = 47</span>
+        <h3>O Afonso Mariz marca como outro homem ao lado do Fragoso</h3>
+        <div class="big">+0,42<small>golos por jogo, contra os 1,36 do costume</small></div>
+        <p>1,79 por jogo com o Fragoso ao lado. O maior salto que uma dupla produz na prova.</p>
+      </div>
+      <div class="card">
+        <span class="stamp no">n = 50</span>
+        <h3>E o Zi cala-se ao lado do Afonso Mariz</h3>
+        <div class="big">−0,63<small>de 1,75 para 1,12</small></div>
+        <p>A maior travagem da liga. O Zé SF perde 0,46 ao lado do mesmo homem.</p>
+      </div>
+      <div class="card">
+        <span class="stamp no">Três vítimas</span>
+        <h3>Jogar com o Mini Zi sai-vos caro em golos</h3>
+        <p>
+          O Fragoso perde <em>0,49</em> por jogo ao lado dele, o Zi <em>0,51</em>, o Pedro Pacheco
+          <em>0,43</em>. Três jogadores diferentes, o mesmo companheiro, todos bem abaixo
+          do que costumam fazer.
+        </p>
+        <p class="meta">n = 33 / 42 / 35</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">09 — as miudezas</p>
+      <h2>Contas pequenas, arrumadas</h2>
+    </div>
+
+    <div class="cards three">
+      <div class="card">
+        <span class="stamp hm">Empates</span>
+        <h3>O Afonso Mariz não consegue fechar um jogo</h3>
+        <div class="big">19<small>empates em 135 jogos — 14,1%</small></div>
+        <p>Mais do que ninguém, e a percentagem mais alta. A seguir vêm o Zi e o Pedro Pacheco, com 17.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Diferença de golos</span>
+        <h3>As equipas do Kiko TM estão em +146</h3>
+        <div class="big">+146<small>1.184 marcados, 1.038 sofridos</small></div>
+        <p>
+          A melhor da liga. Por jogo, o melhor é o Fanuca, com <em>+1,15</em>. Do outro lado: Vinhas <em>−112</em> e Mini
+          Zi <em>−111</em>, este último em menos 18 jogos.
+        </p>
+      </div>
+      <div class="card">
+        <span class="stamp hm">Assiduidade</span>
+        <h3>O Chico Castro quase não falhou uma quinta</h3>
+        <div class="big">88,6%<small>78 dos 88 jogos disponíveis</small></div>
+        <p>
+          A melhor presença de quem cá anda há muito. Afonso Mariz 87,1%, Zé SF 84,9%, Bernardo Castro
+          84,3%. Aparecer, no entanto, quase não serve de nada para ganhar jogos: a assiduidade e a
+          percentagem de vitórias andam a r = +0,06.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════ TORNEIOS + O QUE GANHA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">10 — e torneios também não</p>
+      <h2>Marcar não ganha torneios</h2>
+      <p>
+        A mesma pergunta, um andar acima. Todas as épocas individuais com quinze jogos ou mais,
+        postas no gráfico pelo que marcaram contra o lugar em que acabaram. Em cima é campeão,
+        em baixo é lanterna vermelha.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> ganhou a edição</span>
+        <span><i style="background:var(--sauce)"></i> não ganhou</span>
+      </div>
+      <div class="scatter">
+        <span class="pt" style="left:57.5%;bottom:72.7%"></span>
+        <span class="pt" style="left:46.9%;bottom:45.5%"></span>
+        <span class="pt up" style="left:68.7%;bottom:100.0%"></span>
+        <span class="lb flip" style="left:68.7%;bottom:100.0%">Castro '21</span>
+        <span class="pt" style="left:72.2%;bottom:36.4%"></span>
+        <span class="pt" style="left:53.8%;bottom:18.2%"></span>
+        <span class="pt" style="left:47.0%;bottom:54.5%"></span>
+        <span class="pt" style="left:83.9%;bottom:63.6%"></span>
+        <span class="pt" style="left:50.0%;bottom:27.3%"></span>
+        <span class="pt" style="left:96.7%;bottom:81.8%"></span>
+        <span class="lb flip" style="left:96.7%;bottom:81.8%">Zé SF</span>
+        <span class="pt" style="left:87.8%;bottom:90.9%"></span>
+        <span class="pt" style="left:23.0%;bottom:30.8%"></span>
+        <span class="pt" style="left:31.5%;bottom:0.0%"></span>
+        <span class="pt" style="left:42.4%;bottom:92.3%"></span>
+        <span class="pt" style="left:15.8%;bottom:7.7%"></span>
+        <span class="pt" style="left:12.1%;bottom:84.6%"></span>
+        <span class="pt" style="left:28.2%;bottom:23.1%"></span>
+        <span class="pt up" style="left:31.4%;bottom:100.0%"></span>
+        <span class="lb flip" style="left:31.4%;bottom:100.0%">Barros</span>
+        <span class="pt" style="left:21.8%;bottom:69.2%"></span>
+        <span class="pt" style="left:48.1%;bottom:76.9%"></span>
+        <span class="pt" style="left:44.0%;bottom:46.2%"></span>
+        <span class="pt" style="left:34.7%;bottom:38.5%"></span>
+        <span class="pt" style="left:12.1%;bottom:15.4%"></span>
+        <span class="lb" style="left:12.1%;bottom:15.4%">Vinhas</span>
+        <span class="pt" style="left:63.2%;bottom:61.5%"></span>
+        <span class="pt" style="left:40.9%;bottom:53.8%"></span>
+        <span class="pt" style="left:42.5%;bottom:53.8%"></span>
+        <span class="pt" style="left:13.9%;bottom:23.1%"></span>
+        <span class="pt" style="left:11.5%;bottom:46.2%"></span>
+        <span class="pt" style="left:37.5%;bottom:30.8%"></span>
+        <span class="pt" style="left:12.3%;bottom:69.2%"></span>
+        <span class="pt" style="left:31.1%;bottom:76.9%"></span>
+        <span class="pt" style="left:54.2%;bottom:38.5%"></span>
+        <span class="pt" style="left:27.3%;bottom:92.3%"></span>
+        <span class="pt" style="left:19.5%;bottom:61.5%"></span>
+        <span class="pt" style="left:48.5%;bottom:84.6%"></span>
+        <span class="pt" style="left:42.2%;bottom:15.4%"></span>
+        <span class="pt up" style="left:26.5%;bottom:100.0%"></span>
+        <span class="pt" style="left:4.2%;bottom:7.7%"></span>
+        <span class="lb" style="left:4.2%;bottom:7.7%">Vinhas</span>
+        <span class="pt" style="left:43.4%;bottom:76.9%"></span>
+        <span class="pt" style="left:46.1%;bottom:53.8%"></span>
+        <span class="pt" style="left:26.1%;bottom:92.3%"></span>
+        <span class="pt up" style="left:23.7%;bottom:100.0%"></span>
+        <span class="pt" style="left:27.6%;bottom:23.1%"></span>
+        <span class="pt" style="left:32.2%;bottom:69.2%"></span>
+        <span class="pt" style="left:15.9%;bottom:0.0%"></span>
+        <span class="pt" style="left:31.2%;bottom:84.6%"></span>
+        <span class="pt" style="left:35.6%;bottom:61.5%"></span>
+        <span class="pt" style="left:22.2%;bottom:30.8%"></span>
+        <span class="pt" style="left:31.2%;bottom:7.7%"></span>
+        <span class="pt" style="left:4.4%;bottom:15.4%"></span>
+        <span class="pt" style="left:61.8%;bottom:46.2%"></span>
+        <span class="pt" style="left:42.7%;bottom:38.5%"></span>
+        <span class="pt" style="left:39.6%;bottom:76.9%"></span>
+        <span class="pt" style="left:41.2%;bottom:92.3%"></span>
+        <span class="pt" style="left:11.1%;bottom:7.7%"></span>
+        <span class="pt" style="left:28.6%;bottom:61.5%"></span>
+        <span class="pt" style="left:43.3%;bottom:46.2%"></span>
+        <span class="pt" style="left:35.5%;bottom:84.6%"></span>
+        <span class="pt" style="left:32.4%;bottom:38.5%"></span>
+        <span class="pt" style="left:29.7%;bottom:69.2%"></span>
+        <span class="pt" style="left:24.4%;bottom:53.8%"></span>
+        <span class="pt up" style="left:63.9%;bottom:100.0%"></span>
+        <span class="pt" style="left:6.4%;bottom:23.1%"></span>
+        <span class="pt" style="left:32.1%;bottom:30.8%"></span>
+        <span class="pt" style="left:24.6%;bottom:15.4%"></span>
+        <span class="ax" style="left:-3rem;bottom:-0.5rem">último</span>
+        <span class="ax" style="left:-3.2rem;top:-0.5rem">campeão</span>
+        <span class="ax" style="left:0;bottom:-1.5rem">0</span>
+        <span class="ax" style="right:0;bottom:-1.5rem">3,0 golos/jogo</span>
+      </div>
+      <figcaption style="margin-top:2rem">
+        r = +0,35 — um empurrãozinho, não uma regra. O Bernardo Castro ganhou um título a marcar
+        2,06 por jogo e mais dois a marcar 0,79 e 0,71. O Barros ganhou o dele com 0,94. Os 2,90
+        do Zé SF em 2021–22, a época mais goleadora de que há registo, deram terceiro lugar.
+        n = 64 épocas individuais.
+      </figcaption>
+    </figure>
+
+    <div class="pull">
+      Fomos então à pergunta seguinte. Se não são os golos que decidem a tabela, o que é?
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> ganhou a edição</span>
+        <span><i style="background:var(--sauce)"></i> não ganhou</span>
+      </div>
+      <div class="scatter">
+        <span class="pt" style="left:69.0%;bottom:72.7%"></span>
+        <span class="pt" style="left:64.3%;bottom:45.5%"></span>
+        <span class="pt up" style="left:78.6%;bottom:100.0%"></span>
+        <span class="pt" style="left:57.1%;bottom:36.4%"></span>
+        <span class="pt" style="left:61.9%;bottom:18.2%"></span>
+        <span class="pt" style="left:52.4%;bottom:54.5%"></span>
+        <span class="pt" style="left:69.0%;bottom:63.6%"></span>
+        <span class="pt" style="left:42.9%;bottom:27.3%"></span>
+        <span class="lb" style="left:42.9%;bottom:27.3%">Manel</span>
+        <span class="pt" style="left:71.4%;bottom:81.8%"></span>
+        <span class="pt" style="left:71.4%;bottom:90.9%"></span>
+        <span class="pt" style="left:69.0%;bottom:30.8%"></span>
+        <span class="pt" style="left:42.9%;bottom:0.0%"></span>
+        <span class="pt" style="left:78.6%;bottom:92.3%"></span>
+        <span class="pt" style="left:45.2%;bottom:7.7%"></span>
+        <span class="pt" style="left:78.6%;bottom:84.6%"></span>
+        <span class="pt" style="left:61.9%;bottom:23.1%"></span>
+        <span class="pt up" style="left:83.3%;bottom:100.0%"></span>
+        <span class="pt" style="left:61.9%;bottom:69.2%"></span>
+        <span class="pt" style="left:64.3%;bottom:76.9%"></span>
+        <span class="pt" style="left:66.7%;bottom:46.2%"></span>
+        <span class="pt" style="left:59.5%;bottom:38.5%"></span>
+        <span class="pt" style="left:52.4%;bottom:15.4%"></span>
+        <span class="pt" style="left:69.0%;bottom:61.5%"></span>
+        <span class="pt" style="left:73.8%;bottom:53.8%"></span>
+        <span class="pt" style="left:69.0%;bottom:53.8%"></span>
+        <span class="pt" style="left:57.1%;bottom:23.1%"></span>
+        <span class="pt" style="left:76.2%;bottom:46.2%"></span>
+        <span class="pt" style="left:57.1%;bottom:30.8%"></span>
+        <span class="pt" style="left:64.3%;bottom:69.2%"></span>
+        <span class="pt" style="left:71.4%;bottom:76.9%"></span>
+        <span class="pt" style="left:76.2%;bottom:38.5%"></span>
+        <span class="pt" style="left:78.6%;bottom:92.3%"></span>
+        <span class="pt" style="left:69.0%;bottom:61.5%"></span>
+        <span class="pt" style="left:78.6%;bottom:84.6%"></span>
+        <span class="pt" style="left:71.4%;bottom:15.4%"></span>
+        <span class="pt up" style="left:81.0%;bottom:100.0%"></span>
+        <span class="pt" style="left:57.1%;bottom:7.7%"></span>
+        <span class="pt" style="left:78.6%;bottom:76.9%"></span>
+        <span class="pt" style="left:81.0%;bottom:53.8%"></span>
+        <span class="pt" style="left:88.1%;bottom:92.3%"></span>
+        <span class="pt up" style="left:90.5%;bottom:100.0%"></span>
+        <span class="lb flip" style="left:90.5%;bottom:100.0%">Castro 38/38</span>
+        <span class="pt" style="left:69.0%;bottom:23.1%"></span>
+        <span class="pt" style="left:71.4%;bottom:69.2%"></span>
+        <span class="pt" style="left:54.8%;bottom:0.0%"></span>
+        <span class="pt" style="left:73.8%;bottom:84.6%"></span>
+        <span class="pt" style="left:69.0%;bottom:61.5%"></span>
+        <span class="pt" style="left:64.3%;bottom:30.8%"></span>
+        <span class="pt" style="left:73.8%;bottom:7.7%"></span>
+        <span class="pt" style="left:71.4%;bottom:15.4%"></span>
+        <span class="pt" style="left:81.0%;bottom:46.2%"></span>
+        <span class="pt" style="left:76.2%;bottom:38.5%"></span>
+        <span class="pt" style="left:88.1%;bottom:76.9%"></span>
+        <span class="pt" style="left:81.0%;bottom:92.3%"></span>
+        <span class="pt" style="left:35.7%;bottom:7.7%"></span>
+        <span class="pt" style="left:83.3%;bottom:61.5%"></span>
+        <span class="pt" style="left:95.2%;bottom:46.2%"></span>
+        <span class="pt" style="left:73.8%;bottom:84.6%"></span>
+        <span class="lb" style="left:73.8%;bottom:84.6%">Fanuca</span>
+        <span class="pt" style="left:81.0%;bottom:38.5%"></span>
+        <span class="pt" style="left:88.1%;bottom:69.2%"></span>
+        <span class="pt" style="left:71.4%;bottom:53.8%"></span>
+        <span class="pt up" style="left:85.7%;bottom:100.0%"></span>
+        <span class="pt" style="left:61.9%;bottom:23.1%"></span>
+        <span class="pt" style="left:61.9%;bottom:30.8%"></span>
+        <span class="pt" style="left:54.8%;bottom:15.4%"></span>
+        <span class="ax" style="left:-3rem;bottom:-0.5rem">último</span>
+        <span class="ax" style="left:-3.2rem;top:-0.5rem">campeão</span>
+        <span class="ax" style="left:0;bottom:-1.5rem">0</span>
+        <span class="ax" style="right:0;bottom:-1.5rem">42 jogos feitos</span>
+      </div>
+      <figcaption style="margin-top:2rem">
+        Aparecer. <em>r = +0,67</em> com o lugar final — quase o dobro do peso dos golos, e mais forte
+        do que a própria percentagem de vitórias (+0,58). Com os pontos totais vai a +0,91. Com a
+        percentagem de vitórias: <em>+0,05</em>. Aparecer não vos torna melhores. Torna-vos
+        campeões.
+      </figcaption>
+    </figure>
+
+    <div class="cards three" style="margin-top:2.5rem">
+      <div class="card dark">
+        <span class="stamp ok">A prova</span>
+        <h3>O Barros foi campeão a ganhar menos de metade</h3>
+        <div class="big">42,9%<small>e 35 dos 36 jogos</small></div>
+        <p>Ganhou menos de metade dos jogos, numa liga que anda nos 45%, e levou o troféu na mesma — porque quase não falhou uma quinta.</p>
+      </div>
+      <div class="card">
+        <span class="stamp no">A contraprova</span>
+        <h3>O Manel ganhou dois terços dos jogos e ficou em 9.º</h3>
+        <div class="big">66,7%<small>mas só 18 jogos</small></div>
+        <p>A segunda melhor percentagem de sempre numa época. Nono em doze. O Fanuca fez melhor em 2025–26 — 67,7% — e ficou em terceiro.</p>
+      </div>
+      <div class="card">
+        <span class="stamp ok">Todos os campeões</span>
+        <h3>Ninguém ganhou esta liga com menos de 80% de presenças</h3>
+        <p>
+          O Castro fez <em>38 em 38</em> em 2024–25. O Barros <em>35 em 36</em>. O Castro outra
+          vez <em>33 em 36</em> e <em>34 em 39</em>. E o Zé SF acaba de ganhar a sexta com <em>36 em 42</em> — o mais baixo de todos os campeões, e
+          ainda assim 86%.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ O QUE GANHA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">11 — então o que é que ganha</p>
+      <h2>A estatística que ganha jogos</h2>
+      <p>
+        Pusemos à prova todas as estatísticas que tínhamos contra a percentagem de vitórias de
+        carreira. Quatro delas, ordenadas por quanto explicam das vossas vitórias. A resposta não
+        está na coluna dos golos.
+      </p>
+    </div>
+
+    <figure>
+      <div class="legend">
+        <span><i style="background:var(--good)"></i> explica as vitórias</span>
+        <span><i style="background:var(--bad)"></i> não explica nada</span>
+      </div>
+      <div class="corr">
+        <div class="cr"><span class="crn">golos evitados por jogo</span><span class="crb"><i class="good" style="width:94%"></i></span><span class="crv">0.94</span></div>
+        <div class="cr"><span class="crn">golos acrescentados por jogo</span><span class="crb"><i class="good" style="width:89%"></i></span><span class="crv">0.89</span></div>
+        <div class="cr"><span class="crn">golos que marca por jogo</span><span class="crb"><i class="bad" style="width:12%"></i></span><span class="crv">0.12</span></div>
+        <div class="cr"><span class="crn">quota dos golos da equipa</span><span class="crb"><i class="bad" style="width:2%"></i></span><span class="crv">0.02</span></div>
+      </div>
+      <figcaption>
+        Correlação com a percentagem de vitórias de carreira, jogadores com 50+ jogos. O que
+        fazem ao marcador da equipa explica quase tudo. O que metem lá dentro com o pé explica
+        <em>um por cento</em>. E reparem na ordem: os golos <em>evitados</em> pesam mais do que os
+        golos <em>acrescentados</em>. n = 15 jogadores — poucos, portanto levem os valores exactos
+        como indicativos, mas a distância entre as duas de cima e as duas de baixo é larga demais
+        para ser acaso.
+      </figcaption>
+    </figure>
+
+    <div class="pull">
+      O Kiko TM marca 0,9 por jogo e ganha 60% deles. O Zé SF marca 2,1 e ganha 47%.
+      Está tudo dito em dois homens.
+    </div>
+
+    <p class="note">
+      Um reparo honesto. Os golos que a equipa sofre, por si só, já dizem muito — r = −0,69 com a
+      percentagem de vitórias. Mas dizem menos do que os golos evitados, e a razão é esta: um jogo com
+      muitos golos tem muitos golos dos dois lados (r = +0,28 entre golos marcados e sofridos pela mesma
+      equipa), portanto sofrer pouco é em parte só calhar em jogos pequenos.
+      O que separa os jogadores não é quantos entram atrás deles, é quantos deixam de entrar
+      <em>por eles lá estarem</em> — que é exactamente o que a barra de cima mede.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">12 — a auditoria</p>
+      <h2>O recorde que nunca existiu</h2>
+      <p>
+        A base de dados diz que o Bernardo Xavier marcou vinte e dois golos a 7 de Abril de 2022.
+        Nesse jogo a equipa dele ganhou 11–10. Não se marcam vinte e dois golos numa equipa que
+        fez onze.
+      </p>
+    </div>
+
+    <div class="verdict">
+      <div class="row killed">
+        <span class="stamp no">Riscado dos registos</span>
+        <h3>Bernardo Xavier, 22 golos, 7 de Abril de 2022</h3>
+        <p>
+          Impossível. Como impossível é o outro registo — nove golos a 6 de Março de 2025, num
+          jogo em que a equipa dele fez cinco. São as duas únicas linhas em 2.037 presenças em que
+          um jogador marca mais do que a própria equipa. Juntas, inflacionam-lhe a carreira em
+          36%: de 85 golos para 116.
+        </p>
+      </div>
+      <div class="row">
+        <span class="stamp ok">O recorde a sério</span>
+        <h3>Zi, 9 golos, 15 de Julho de 2021</h3>
+        <p>Vitória por 20–14, e o jogo com mais golos da história da prova, 34 ao todo. É este o verdadeiro.</p>
+      </div>
+      <div class="row">
+        <span class="stamp hm">Por resolver</span>
+        <h3>926 golos não têm dono</h3>
+        <p>
+          Os resultados somam 3.216 golos. Os nomes agarrados a esses golos somam 2.321. Vinte e
+          nove por cento de todos os golos alguma vez marcados nesta liga não são de ninguém —
+          e isto de forma consistente, em todas as edições. Autogolos, marcadores esquecidos, ou
+          uma velha tradição de não apontar nada.
+        </p>
+      </div>
+    </div>
+
+    <p class="note">
+      Duas descobertas foram cortadas em vez de corrigidas. O "Fanuca dá cabo do Mini Zi"
+      desfez-se assim que se percebeu que o Mini Zi é batido por toda a gente. E a ideia de que um
+      tricampeão tinha ficado em último era contagem errada — foi 12.º em 14, com o Zi a
+      segurar a lanterna.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">13 — o palmarés</p>
+      <h2>Quem ganhou alguma coisa</h2>
+    </div>
+
+    <div class="scroll">
+      <table>
+        <caption>Campeões e lanternas vermelhas, por edição</caption>
+        <thead><tr><th>Edição</th><th>Campeão</th><th>Pontos</th><th>Último</th><th>Pontos</th></tr></thead>
+        <tbody>
+          <tr><td class="rank">1.ª · 2020–21</td><td class="name">Ferna</td><td>39,0</td><td class="name lo">Vinhas</td><td class="lo">0,0</td></tr>
+          <tr><td class="rank">2.ª · 2021–22</td><td class="name">Bernardo Castro</td><td>93,8</td><td class="name lo">Vinhas</td><td class="lo">23,5</td></tr>
+          <tr><td class="rank">3.ª · 2022–23</td><td class="name">Barros</td><td>87,3</td><td class="name lo">Totti</td><td class="lo">34,7</td></tr>
+          <tr><td class="rank">4.ª · 2023–24</td><td class="name">Bernardo Castro</td><td>85,0</td><td class="name lo">João Perneta</td><td class="lo">14,0</td></tr>
+          <tr><td class="rank">5.ª · 2024–25</td><td class="name">Bernardo Castro</td><td>102,0</td><td class="name lo">Ferna</td><td class="lo">56,0</td></tr>
+          <tr><td class="rank">6.ª · 2025–26</td><td class="name">Zé SF</td><td>100,0</td><td class="name lo">Zi</td><td class="lo">21,0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards three" style="margin-top:2.5rem">
+      <div class="card">
+        <h3>Barros: jogou uma época, ganhou-a, foi-se embora</h3>
+        <p>Trinta e cinco jogos, um título, nunca mais visto. A carreira mais rentável da história da prova.</p>
+      </div>
+      <div class="card">
+        <h3>O Ferna ganhou a primeira edição e ficou em último na quinta</h3>
+        <p>Campeão, depois 10.º, 11.º, 10.º, 14.º, e de volta ao 5.º. A maior montanha-russa que por aqui houve.</p>
+      </div>
+      <div class="card">
+        <h3>Seis homens fizeram as seis épocas e não ganharam nada</h3>
+        <p>Bernardo Xavier, Kiko TM, Luis Fragoso, Pedro Pacheco, Vinhas e Zi. São sete os presentes em todas; só o Ferna é que tem título.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">segunda parte — fora das quatro linhas</p>
+      <h2>E o grupo, esse, nunca pára</h2>
+      <p>
+        Até aqui foram os jogos. Falta a outra metade da prova, aquela em que ninguém corre: sete
+        anos de grupo de WhatsApp, do primeiro «alguém joga quinta?» até ontem. Mesmo crivo, mesma
+        teimosia. Cada prémio traz a mensagem que o justifica, copiada tal e qual do arquivo.
+      </p>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="n">28.312</div><div class="k">mensagens</div></div>
+      <div class="fact"><div class="n">214</div><div class="k">convocatórias</div></div>
+      <div class="fact"><div class="n">2.525</div><div class="k">dias de grupo</div></div>
+      <div class="fact"><div class="n">19</div><div class="k">em prova</div></div>
+      <div class="fact"><div class="n">30</div><div class="k">prémios</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Quadro de Honra — generated by scripts/join-article.mjs, do not edit here -->
+<section id="quadro-ranking">
+  <div class="wrap qh">
+  <div class="sec-head"><p class="eyebrow">14 — a tagarelice</p><h2>A Classificação</h2>
+  <p>Mensagens e palavras. Duas coisas diferentes.</p></div>
+  <div class="qh-tablebox"><table>
+    <thead><tr><th>#</th><th>Jogador</th><th>Volume</th><th>Mensagens</th><th>Palavras</th><th>Pal./msg</th></tr></thead>
+    <tbody><tr><td class="qh-rk">1</td><td class="qh-nm">Pedro Pacheco</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:100.0%"></span></td>
+<td class="qh-num">4.341</td><td class="qh-num qh-dim">34.708</td><td class="qh-num qh-dim">8.0</td></tr><tr><td class="qh-rk">2</td><td class="qh-nm">Zé SF</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:78.1%"></span></td>
+<td class="qh-num">3.391</td><td class="qh-num qh-dim">27.967</td><td class="qh-num qh-dim">8.25</td></tr><tr><td class="qh-rk">3</td><td class="qh-nm">Bernardo X</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:51.7%"></span></td>
+<td class="qh-num">2.244</td><td class="qh-num qh-dim">20.500</td><td class="qh-num qh-dim">9.14</td></tr><tr><td class="qh-rk">4</td><td class="qh-nm">Ferna</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:47.3%"></span></td>
+<td class="qh-num">2.053</td><td class="qh-num qh-dim">16.662</td><td class="qh-num qh-dim">8.12</td></tr><tr><td class="qh-rk">5</td><td class="qh-nm">Afonso Mariz</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:43.1%"></span></td>
+<td class="qh-num">1.870</td><td class="qh-num qh-dim">15.736</td><td class="qh-num qh-dim">8.41</td></tr><tr><td class="qh-rk">6</td><td class="qh-nm">Fragoso</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:42.9%"></span></td>
+<td class="qh-num">1.861</td><td class="qh-num qh-dim">24.254</td><td class="qh-num qh-dim">13.03</td></tr><tr><td class="qh-rk">7</td><td class="qh-nm">Vinhas</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:34.8%"></span></td>
+<td class="qh-num">1.511</td><td class="qh-num qh-dim">15.609</td><td class="qh-num qh-dim">10.33</td></tr><tr><td class="qh-rk">8</td><td class="qh-nm">Bernardo C</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:32.3%"></span></td>
+<td class="qh-num">1.402</td><td class="qh-num qh-dim">15.751</td><td class="qh-num qh-dim">11.23</td></tr><tr><td class="qh-rk">9</td><td class="qh-nm">João Magalhães</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:29.7%"></span></td>
+<td class="qh-num">1.291</td><td class="qh-num qh-dim">8.418</td><td class="qh-num qh-dim">6.52</td></tr><tr><td class="qh-rk">10</td><td class="qh-nm">Bernardo Q</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:29.0%"></span></td>
+<td class="qh-num">1.261</td><td class="qh-num qh-dim">11.560</td><td class="qh-num qh-dim">9.17</td></tr><tr><td class="qh-rk">11</td><td class="qh-nm">Chico</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:28.5%"></span></td>
+<td class="qh-num">1.236</td><td class="qh-num qh-dim">11.167</td><td class="qh-num qh-dim">9.03</td></tr><tr><td class="qh-rk">12</td><td class="qh-nm">Zi</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:28.4%"></span></td>
+<td class="qh-num">1.231</td><td class="qh-num qh-dim">10.512</td><td class="qh-num qh-dim">8.54</td></tr><tr><td class="qh-rk">13</td><td class="qh-nm">Kiko</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:26.0%"></span></td>
+<td class="qh-num">1.128</td><td class="qh-num qh-dim">12.461</td><td class="qh-num qh-dim">11.05</td></tr><tr><td class="qh-rk">14</td><td class="qh-nm">Perneta</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:18.5%"></span></td>
+<td class="qh-num">804</td><td class="qh-num qh-dim">7.675</td><td class="qh-num qh-dim">9.55</td></tr><tr><td class="qh-rk">15</td><td class="qh-nm">Afonso Pires</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:12.8%"></span></td>
+<td class="qh-num">557</td><td class="qh-num qh-dim">4.546</td><td class="qh-num qh-dim">8.16</td></tr><tr><td class="qh-rk">16</td><td class="qh-nm">Barros</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:11.0%"></span></td>
+<td class="qh-num">477</td><td class="qh-num qh-dim">3.914</td><td class="qh-num qh-dim">8.21</td></tr><tr><td class="qh-rk">17</td><td class="qh-nm">Nuno Aroso</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:10.9%"></span></td>
+<td class="qh-num">475</td><td class="qh-num qh-dim">7.443</td><td class="qh-num qh-dim">15.67</td></tr><tr><td class="qh-rk">18</td><td class="qh-nm">Fanuca</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:6.8%"></span></td>
+<td class="qh-num">296</td><td class="qh-num qh-dim">4.773</td><td class="qh-num qh-dim">16.12</td></tr><tr><td class="qh-rk">19</td><td class="qh-nm">Miguel Girão</td>
+<td class="qh-barcell"><span class="qh-minibar" style="width:4.9%"></span></td>
+<td class="qh-num">214</td><td class="qh-num qh-dim">2.571</td><td class="qh-num qh-dim">12.01</td></tr></tbody>
+  </table></div>
+  <p style="font-size:14px;color:var(--muted);margin:12px 0 0">
+  Reparem na última coluna: o Zi manda mais mensagens que o Fragoso e mesmo assim escreve
+  menos de metade das palavras. Há quem converse e há quem dispare.</p>
+  </div>
+</section>
+
+<section id="quadro-ritmo">
+  <div class="wrap qh">
+  <div class="sec-head"><p class="eyebrow">15 — o pulso</p><h2>O Ritmo</h2><p>Quando é que este grupo está vivo.</p></div>
+  <div class="qh-charts">
+    <div class="qh-chartbox"><h3>O dia em que se joga mudou</h3>
+      <p>Durante quase cinco anos o jogo foi à quinta. Em 2024-09-02 passou para segunda,
+      de um dia para o outro: em Agosto de 2024 havia 110 mensagens à quinta e 20 à segunda;
+      em Setembro, 312 à segunda e zero à quinta. Quem juntar os sete anos numa só contagem
+      não vê nenhuma das duas coisas.</p><div class="qh-legend"><span class="qh-lg"><i class="qh-sw qh-s1"></i>Até Ago 2024 (quinta)</span><span class="qh-lg"><i class="qh-sw qh-s2"></i>Desde Set 2024 (segunda)</span></div><div class="qh-chartscroll"><svg viewBox="-20 0 780 216" role="img" class="qh-chart" aria-label="Mensagens por dia da semana, antes e depois da mudanca de dia de jogo"><line x1="34" y1="34.0" x2="726" y2="34.0" class="qh-grid"/><text x="26" y="38.0" class="qh-ytick">10.061</text><line x1="34" y1="86.0" x2="726" y2="86.0" class="qh-grid"/><text x="26" y="90.0" class="qh-ytick">6.707</text><line x1="34" y1="138.0" x2="726" y2="138.0" class="qh-grid"/><text x="26" y="142.0" class="qh-ytick">3.353</text><line x1="34" y1="190.0" x2="726" y2="190.0" class="qh-grid"/><text x="26" y="194.0" class="qh-ytick">0</text><rect x="34.0" y="169.7" width="45.3" height="20.3" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Seg: 1307 mensagens</title></rect><rect x="133.6" y="158.0" width="45.3" height="32.0" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Ter: 2066 mensagens</title></rect><rect x="233.1" y="133.5" width="45.3" height="56.5" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Qua: 3642 mensagens</title></rect><rect x="332.7" y="34.0" width="45.3" height="156.0" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Qui: 10061 mensagens</title></rect><rect x="432.3" y="157.5" width="45.3" height="32.5" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Sex: 2093 mensagens</title></rect><rect x="531.9" y="182.2" width="45.3" height="7.8" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Sáb: 500 mensagens</title></rect><rect x="631.4" y="184.4" width="45.3" height="5.6" rx="2" class="qh-bar qh-s1"><title>Era da quinta-feira — Dom: 358 mensagens</title></rect><rect x="81.3" y="108.8" width="45.3" height="81.2" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Seg: 5237 mensagens</title></rect><rect x="180.9" y="183.2" width="45.3" height="6.8" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Ter: 441 mensagens</title></rect><rect x="280.4" y="182.3" width="45.3" height="7.7" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Qua: 499 mensagens</title></rect><rect x="380.0" y="186.7" width="45.3" height="3.3" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Qui: 214 mensagens</title></rect><rect x="479.6" y="188.1" width="45.3" height="1.9" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Sex: 124 mensagens</title></rect><rect x="579.1" y="182.4" width="45.3" height="7.6" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Sáb: 493 mensagens</title></rect><rect x="678.7" y="170.2" width="45.3" height="19.8" rx="2" class="qh-bar qh-s2"><title>Era da segunda-feira — Dom: 1277 mensagens</title></rect><text x="81.3" y="206" class="qh-xtick">Seg</text><text x="180.9" y="206" class="qh-xtick">Ter</text><text x="280.4" y="206" class="qh-xtick">Qua</text><text x="380.0" y="206" class="qh-xtick">Qui</text><text x="479.6" y="206" class="qh-xtick">Sex</text><text x="579.1" y="206" class="qh-xtick">Sáb</text><text x="678.7" y="206" class="qh-xtick">Dom</text></svg></div></div>
+    <div class="qh-chartbox"><h3>O buraco do apito inicial</h3>
+      <p>Mensagens por hora, por mil, comparando o dia de jogo com todos os outros.
+      No dia de jogo há um pico às 18–19h a confirmar quem vai, cai enquanto se joga, e
+      volta às 23h para o balanço. Nos outros dias a noite apenas se apaga: às 23h o dia de
+      jogo está em 63 por mil e um dia normal em 34.</p><div class="qh-legend"><span class="qh-lg"><i class="qh-sw qh-s1"></i>Dia de jogo</span><span class="qh-lg"><i class="qh-sw qh-s2"></i>Outros dias</span></div><div class="qh-chartscroll"><svg viewBox="-20 0 780 228" role="img" class="qh-chart" aria-label="Mensagens por hora, dia de jogo comparado com os outros dias"><line x1="36" y1="36.0" x2="724" y2="36.0" class="qh-grid"/><text x="28" y="40.0" class="qh-ytick">103</text><line x1="36" y1="90.7" x2="724" y2="90.7" class="qh-grid"/><text x="28" y="94.7" class="qh-ytick">68</text><line x1="36" y1="145.3" x2="724" y2="145.3" class="qh-grid"/><text x="28" y="149.3" class="qh-ytick">34</text><line x1="36" y1="200.0" x2="724" y2="200.0" class="qh-grid"/><text x="28" y="204.0" class="qh-ytick">0</text><polyline points="36.0,184.1 81.9,139.5 127.7,133.1 173.6,117.2 219.5,117.2 265.3,115.6 311.2,96.5 357.1,90.1 402.9,87.0 448.8,53.5 494.7,36.0 540.5,39.2 586.4,93.3 632.3,106.1 678.1,117.2 724.0,99.7" class="qh-line qh-s1"/><circle cx="36.0" cy="184.1" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 8h: 10 por mil</title></circle><circle cx="81.9" cy="139.5" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 9h: 38 por mil</title></circle><circle cx="127.7" cy="133.1" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 10h: 42 por mil</title></circle><circle cx="173.6" cy="117.2" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 11h: 52 por mil</title></circle><circle cx="219.5" cy="117.2" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 12h: 52 por mil</title></circle><circle cx="265.3" cy="115.6" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 13h: 53 por mil</title></circle><circle cx="311.2" cy="96.5" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 14h: 65 por mil</title></circle><circle cx="357.1" cy="90.1" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 15h: 69 por mil</title></circle><circle cx="402.9" cy="87.0" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 16h: 71 por mil</title></circle><circle cx="448.8" cy="53.5" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 17h: 92 por mil</title></circle><circle cx="494.7" cy="36.0" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 18h: 103 por mil</title></circle><circle cx="540.5" cy="39.2" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 19h: 101 por mil</title></circle><circle cx="586.4" cy="93.3" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 20h: 67 por mil</title></circle><circle cx="632.3" cy="106.1" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 21h: 59 por mil</title></circle><circle cx="678.1" cy="117.2" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 22h: 52 por mil</title></circle><circle cx="724.0" cy="99.7" r="7" class="qh-dot qh-s1"><title>Dia de jogo — 23h: 63 por mil</title></circle><polyline points="36.0,166.6 81.9,134.7 127.7,99.7 173.6,83.8 219.5,71.0 265.3,74.2 311.2,66.3 357.1,74.2 402.9,88.5 448.8,133.1 494.7,101.3 540.5,99.7 586.4,101.3 632.3,133.1 678.1,142.7 724.0,145.9" class="qh-line qh-s2"/><circle cx="36.0" cy="166.6" r="7" class="qh-dot qh-s2"><title>Outros dias — 8h: 21 por mil</title></circle><circle cx="81.9" cy="134.7" r="7" class="qh-dot qh-s2"><title>Outros dias — 9h: 41 por mil</title></circle><circle cx="127.7" cy="99.7" r="7" class="qh-dot qh-s2"><title>Outros dias — 10h: 63 por mil</title></circle><circle cx="173.6" cy="83.8" r="7" class="qh-dot qh-s2"><title>Outros dias — 11h: 73 por mil</title></circle><circle cx="219.5" cy="71.0" r="7" class="qh-dot qh-s2"><title>Outros dias — 12h: 81 por mil</title></circle><circle cx="265.3" cy="74.2" r="7" class="qh-dot qh-s2"><title>Outros dias — 13h: 79 por mil</title></circle><circle cx="311.2" cy="66.3" r="7" class="qh-dot qh-s2"><title>Outros dias — 14h: 84 por mil</title></circle><circle cx="357.1" cy="74.2" r="7" class="qh-dot qh-s2"><title>Outros dias — 15h: 79 por mil</title></circle><circle cx="402.9" cy="88.5" r="7" class="qh-dot qh-s2"><title>Outros dias — 16h: 70 por mil</title></circle><circle cx="448.8" cy="133.1" r="7" class="qh-dot qh-s2"><title>Outros dias — 17h: 42 por mil</title></circle><circle cx="494.7" cy="101.3" r="7" class="qh-dot qh-s2"><title>Outros dias — 18h: 62 por mil</title></circle><circle cx="540.5" cy="99.7" r="7" class="qh-dot qh-s2"><title>Outros dias — 19h: 63 por mil</title></circle><circle cx="586.4" cy="101.3" r="7" class="qh-dot qh-s2"><title>Outros dias — 20h: 62 por mil</title></circle><circle cx="632.3" cy="133.1" r="7" class="qh-dot qh-s2"><title>Outros dias — 21h: 42 por mil</title></circle><circle cx="678.1" cy="142.7" r="7" class="qh-dot qh-s2"><title>Outros dias — 22h: 36 por mil</title></circle><circle cx="724.0" cy="145.9" r="7" class="qh-dot qh-s2"><title>Outros dias — 23h: 34 por mil</title></circle><text x="36.0" y="218" class="qh-xtick">8</text><text x="127.7" y="218" class="qh-xtick">10</text><text x="219.5" y="218" class="qh-xtick">12</text><text x="311.2" y="218" class="qh-xtick">14</text><text x="402.9" y="218" class="qh-xtick">16</text><text x="494.7" y="218" class="qh-xtick">18</text><text x="586.4" y="218" class="qh-xtick">20</text><text x="678.1" y="218" class="qh-xtick">22</text></svg></div></div>
+    <div class="qh-chartbox"><h3>As horas do dia</h3>
+      <p>Todas as mensagens por hora, ao longo dos sete anos. O pico é às 18h.
+      Entre as 2h e as 6h existem 36 mensagens em sete anos.</p><div class="qh-chartscroll"><svg viewBox="-20 0 780 216" role="img" class="qh-chart" aria-label="Mensagens por hora do dia, 2019-2026"><line x1="34" y1="34.0" x2="726" y2="34.0" class="qh-grid"/><text x="26" y="38.0" class="qh-ytick">2.381</text><line x1="34" y1="86.0" x2="726" y2="86.0" class="qh-grid"/><text x="26" y="90.0" class="qh-ytick">1.587</text><line x1="34" y1="138.0" x2="726" y2="138.0" class="qh-grid"/><text x="26" y="142.0" class="qh-ytick">793</text><line x1="34" y1="190.0" x2="726" y2="190.0" class="qh-grid"/><text x="26" y="194.0" class="qh-ytick">0</text><rect x="34.0" y="142.2" width="25.0" height="47.8" rx="3" class="qh-bar"><title>00h — 730 mensagens</title></rect><text x="46.5" y="206" class="qh-xtick">00</text><rect x="63.0" y="183.1" width="25.0" height="6.9" rx="3" class="qh-bar"><title>01h — 106 mensagens</title></rect><text x="75.5" y="206" class="qh-xtick">01</text><rect x="92.0" y="189.0" width="25.0" height="1.0" rx="3" class="qh-bar"><title>02h — 16 mensagens</title></rect><text x="104.5" y="206" class="qh-xtick">02</text><rect x="121.0" y="189.5" width="25.0" height="1.0" rx="3" class="qh-bar"><title>03h — 7 mensagens</title></rect><text x="133.5" y="206" class="qh-xtick">03</text><rect x="150.0" y="189.5" width="25.0" height="1.0" rx="3" class="qh-bar"><title>04h — 8 mensagens</title></rect><text x="162.5" y="206" class="qh-xtick">04</text><rect x="179.0" y="189.7" width="25.0" height="1.0" rx="3" class="qh-bar"><title>05h — 5 mensagens</title></rect><text x="191.5" y="206" class="qh-xtick">05</text><rect x="208.0" y="187.7" width="25.0" height="2.3" rx="3" class="qh-bar"><title>06h — 35 mensagens</title></rect><text x="220.5" y="206" class="qh-xtick">06</text><rect x="237.0" y="181.0" width="25.0" height="9.0" rx="3" class="qh-bar"><title>07h — 138 mensagens</title></rect><text x="249.5" y="206" class="qh-xtick">07</text><rect x="266.0" y="161.5" width="25.0" height="28.5" rx="3" class="qh-bar"><title>08h — 435 mensagens</title></rect><text x="278.5" y="206" class="qh-xtick">08</text><rect x="295.0" y="117.3" width="25.0" height="72.7" rx="3" class="qh-bar"><title>09h — 1109 mensagens</title></rect><text x="307.5" y="206" class="qh-xtick">09</text><rect x="324.0" y="94.9" width="25.0" height="95.1" rx="3" class="qh-bar"><title>10h — 1451 mensagens</title></rect><text x="336.5" y="206" class="qh-xtick">10</text><rect x="353.0" y="75.3" width="25.0" height="114.7" rx="3" class="qh-bar"><title>11h — 1750 mensagens</title></rect><text x="365.5" y="206" class="qh-xtick">11</text><rect x="382.0" y="68.9" width="25.0" height="121.1" rx="3" class="qh-bar"><title>12h — 1849 mensagens</title></rect><text x="394.5" y="206" class="qh-xtick">12</text><rect x="411.0" y="69.1" width="25.0" height="120.9" rx="3" class="qh-bar"><title>13h — 1845 mensagens</title></rect><text x="423.5" y="206" class="qh-xtick">13</text><rect x="440.0" y="53.5" width="25.0" height="136.5" rx="3" class="qh-bar"><title>14h — 2084 mensagens</title></rect><text x="452.5" y="206" class="qh-xtick">14</text><rect x="469.0" y="53.4" width="25.0" height="136.6" rx="3" class="qh-bar"><title>15h — 2085 mensagens</title></rect><text x="481.5" y="206" class="qh-xtick">15</text><rect x="498.0" y="58.4" width="25.0" height="131.6" rx="3" class="qh-bar"><title>16h — 2008 mensagens</title></rect><text x="510.5" y="206" class="qh-xtick">16</text><rect x="527.0" y="61.6" width="25.0" height="128.4" rx="3" class="qh-bar"><title>17h — 1960 mensagens</title></rect><text x="539.5" y="206" class="qh-xtick">17</text><rect x="556.0" y="34.0" width="25.0" height="156.0" rx="3" class="qh-bar qh-hi"><title>18h — 2381 mensagens</title></rect><text x="568.5" y="206" class="qh-xtick qh-hi">18</text><rect x="585.0" y="34.9" width="25.0" height="155.1" rx="3" class="qh-bar"><title>19h — 2367 mensagens</title></rect><text x="597.5" y="206" class="qh-xtick">19</text><rect x="614.0" y="70.4" width="25.0" height="119.6" rx="3" class="qh-bar"><title>20h — 1826 mensagens</title></rect><text x="626.5" y="206" class="qh-xtick">20</text><rect x="643.0" y="94.9" width="25.0" height="95.1" rx="3" class="qh-bar"><title>21h — 1452 mensagens</title></rect><text x="655.5" y="206" class="qh-xtick">21</text><rect x="672.0" y="107.8" width="25.0" height="82.2" rx="3" class="qh-bar"><title>22h — 1255 mensagens</title></rect><text x="684.5" y="206" class="qh-xtick">22</text><rect x="701.0" y="97.6" width="25.0" height="92.4" rx="3" class="qh-bar"><title>23h — 1410 mensagens</title></rect><text x="713.5" y="206" class="qh-xtick">23</text></svg></div></div>
+    <div class="qh-chartbox"><h3>As temporadas</h3>
+      <p>2022 foi o ano do grande falatório. 2019 e 2026 estão incompletos.</p><div class="qh-chartscroll"><svg viewBox="-20 0 780 216" role="img" class="qh-chart" aria-label="Mensagens por ano"><line x1="34" y1="34.0" x2="726" y2="34.0" class="qh-grid"/><text x="26" y="38.0" class="qh-ytick">7.241</text><line x1="34" y1="86.0" x2="726" y2="86.0" class="qh-grid"/><text x="26" y="90.0" class="qh-ytick">4.827</text><line x1="34" y1="138.0" x2="726" y2="138.0" class="qh-grid"/><text x="26" y="142.0" class="qh-ytick">2.413</text><line x1="34" y1="190.0" x2="726" y2="190.0" class="qh-grid"/><text x="26" y="194.0" class="qh-ytick">0</text><rect x="34.0" y="187.8" width="83.0" height="2.2" rx="3" class="qh-bar"><title>2019 — 102 mensagens</title></rect><text x="75.5" y="206" class="qh-xtick">2019</text><rect x="121.0" y="155.2" width="83.0" height="34.8" rx="3" class="qh-bar"><title>2020 — 1615 mensagens</title></rect><text x="162.5" y="206" class="qh-xtick">2020</text><rect x="208.0" y="90.1" width="83.0" height="99.9" rx="3" class="qh-bar"><title>2021 — 4639 mensagens</title></rect><text x="249.5" y="206" class="qh-xtick">2021</text><rect x="295.0" y="34.0" width="83.0" height="156.0" rx="3" class="qh-bar qh-hi"><title>2022 — 7241 mensagens</title></rect><text x="336.5" y="206" class="qh-xtick qh-hi">2022</text><rect x="382.0" y="99.3" width="83.0" height="90.7" rx="3" class="qh-bar"><title>2023 — 4211 mensagens</title></rect><text x="423.5" y="206" class="qh-xtick">2023</text><rect x="469.0" y="99.3" width="83.0" height="90.7" rx="3" class="qh-bar"><title>2024 — 4211 mensagens</title></rect><text x="510.5" y="206" class="qh-xtick">2024</text><rect x="556.0" y="107.3" width="83.0" height="82.7" rx="3" class="qh-bar"><title>2025 — 3838 mensagens</title></rect><text x="597.5" y="206" class="qh-xtick">2025</text><rect x="643.0" y="137.1" width="83.0" height="52.9" rx="3" class="qh-bar"><title>2026 — 2455 mensagens</title></rect><text x="684.5" y="206" class="qh-xtick">2026</text></svg></div></div>
+  </div>
+  </div>
+</section>
+
+<section id="quadro-palavra">
+  <div class="wrap qh">
+<div class="sec-head"><p class="eyebrow">16 — prémios: a palavra</p><h2>Prémios de Palavra</h2><p>Quem fala, quanto fala, e de que maneira.</p></div>
+<div class="qh-awards"><article class="qh-award">
+<header><h3><span class="qh-card qh-y" title="Cartão amarelo"></span>O Tagarela-Mor</h3><p class="qh-sub">Mais mensagens enviadas em sete anos.</p></header>
+<div class="qh-winner"><span class="qh-wname">Pedro Pacheco</span><span class="qh-wval">4.341</span></div>
+<p class="qh-note">15% de tudo o que aqui se escreveu é dele. Contagem total, listas incluídas.</p><figure class="qh-receipt"><blockquote>Supostamente o último jogo era sábado 10 e passa para quinta 15</blockquote>
+<figcaption>Pedro Pacheco · 2021-06-26</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zé SF</span><b>3.391</b></li><li><span>Bernardo X</span><b>2.244</b></li><li><span>Ferna</span><b>2.053</b></li><li><span>Afonso Mariz</span><b>1.870</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Romancista</h3><p class="qh-sub">Mais palavras por mensagem, só em conversa (listas excluídas).</p></header>
+<div class="qh-winner"><span class="qh-wname">Fragoso</span><span class="qh-wval">9.7</span></div>
+<figure class="qh-receipt"><blockquote>Acho que vamos ter mais do que uma vaga, mas por exemplo, se só houvesse uma e as alternativas fossem o fanuca e o zé, assumindo que os dois tinham disponibilidade preferia o zé porque já jogou na liga. Se fosse entre o fanuca e aquele manel que jogava nos tempos do torrinha, preferia o fanuca</blockquote>
+<figcaption>Fragoso · 2024-07-02</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Perneta</span><b>6.8</b></li><li><span>Vinhas</span><b>6.6</b></li><li><span>Bernardo X</span><b>6.5</b></li><li><span>Zé SF</span><b>6.4</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Telegrama</h3><p class="qh-sub">Menos palavras por mensagem. Fala por códigos.</p></header>
+<div class="qh-winner"><span class="qh-wname">Zi</span><span class="qh-wval">4.3</span></div>
+<figure class="qh-receipt"><blockquote>Tb eu</blockquote>
+<figcaption>Zi · 2023-04-06</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Bernardo C</span><b>4.4</b></li><li><span>Nuno Aroso</span><b>4.8</b></li><li><span>Afonso Mariz</span><b>5.2</b></li><li><span>Chico</span><b>5.2</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Interrogador</h3><p class="qh-sub">Pontos de interrogação por mil mensagens.</p></header>
+<div class="qh-winner"><span class="qh-wname">Zé SF</span><span class="qh-wval">214.4</span></div>
+<figure class="qh-receipt"><blockquote>?? Oh bro isso não faz o mínimo sentido? Os 10 não são prejudicados nesse sentido. Faltam ao jogo levam zero pontos.</blockquote>
+<figcaption>Zé SF · 2021-12-02</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>207.6</b></li><li><span>Chico</span><b>196.1</b></li><li><span>Pedro Pacheco</span><b>189.7</b></li><li><span>Fragoso</span><b>173.6</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Entusiasta</h3><p class="qh-sub">Pontos de exclamação por mil mensagens.</p></header>
+<div class="qh-winner"><span class="qh-wname">Pedro Pacheco</span><span class="qh-wval">136.5</span></div>
+<figure class="qh-receipt"><blockquote>João!! Estavas com 3 vitórias seguidas!!</blockquote>
+<figcaption>Pedro Pacheco · 2020-12-02</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>97.1</b></li><li><span>Afonso Pires</span><b>97.0</b></li><li><span>Bernardo X</span><b>88.4</b></li><li><span>João Magalhães</span><b>64.9</b></li></ol></details>
+</article></div>  </div>
+</section><section id="quadro-riso">
+  <div class="wrap qh">
+<div class="sec-head"><p class="eyebrow">17 — prémios: o riso</p><h2>Prémios de Riso</h2><p>Rir é fácil. Fazer rir é que são elas.</p></div>
+<div class="qh-awards"><article class="qh-award">
+<header><h3>Quem Faz Rir</h3><p class="qh-sub">Risos provocados nos outros nos 3 minutos seguintes, por mil mensagens. O unico premio que não se compra com volume.</p></header>
+<div class="qh-winner"><span class="qh-wname">João Magalhães</span><span class="qh-wval">225.5</span></div>
+<figure class="qh-receipt"><blockquote>Eu olho o nos olhos e mando o po crlh</blockquote>
+<figcaption>João Magalhães · 2021-07-01</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Ferna</span><b>181.3</b></li><li><span>Bernardo X</span><b>164.7</b></li><li><span>Kiko</span><b>163.4</b></li><li><span>Zi</span><b>158.3</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>Quem Mais Ri</h3><p class="qh-sub">Mensagens com riso, por mil. Mede quem ri, não quem tem piada.</p></header>
+<div class="qh-winner"><span class="qh-wname">Bernardo X</span><span class="qh-wval">120.3</span></div>
+<figure class="qh-receipt"><blockquote>Posso perguntar ao Melo como te tinha dito 😂</blockquote>
+<figcaption>Bernardo X · 2021-10-12</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Bernardo C</span><b>91.9</b></li><li><span>Ferna</span><b>91.2</b></li><li><span>Kiko</span><b>88.5</b></li><li><span>Barros</span><b>82.7</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-r" title="Cartão vermelho"></span>Cara de Pau</h3><p class="qh-sub">Quem menos ri de tudo.</p></header>
+<div class="qh-winner"><span class="qh-wname">Zé SF</span><span class="qh-wval">5.8</span></div>
+<p class="qh-note">Não há citação possível para uma ausência: o número é a piada. Riu 18 vezes em 3.102 mensagens de conversa, menos de metade do segundo classificado. Provoca 22 risos nos outros por cada um que dá.</p>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Chico</span><b>12.6</b></li><li><span>Zi</span><b>19.8</b></li><li><span>Vinhas</span><b>21.1</b></li><li><span>Nuno Aroso</span><b>36.1</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>A Metralhadora</h3><p class="qh-sub">Rajadas de 4+ mensagens seguidas em 90 segundos, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">João Magalhães</span><span class="qh-wval">36.5</span></div>
+<figure class="qh-receipt"><blockquote>Mentira...já tinha atirado a toalha ao chão</blockquote>
+<figcaption>João Magalhães · 2021-04-29</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zé SF</span><b>29.3</b></li><li><span>Ferna</span><b>19.8</b></li><li><span>Pedro Pacheco</span><b>17.6</b></li><li><span>Zi</span><b>16.7</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-y" title="Cartão amarelo"></span>Boca Suja</h3><p class="qh-sub">Asneiras por mil mensagens.</p></header>
+<div class="qh-winner"><span class="qh-wname">João Magalhães</span><span class="qh-wval">81.9</span></div>
+<figure class="qh-receipt"><blockquote>O Vinhas ta a dormir crlh</blockquote>
+<figcaption>João Magalhães · 2020-04-01</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Vinhas</span><b>48.7</b></li><li><span>Bernardo Q</span><b>32.2</b></li><li><span>Zé SF</span><b>28.0</b></li><li><span>Ferna</span><b>27.3</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-y" title="Cartão amarelo"></span>O Passivo-Agressivo</h3><p class="qh-sub">Mensagens que são apenas um ponto final, &quot;...&quot; ou &quot;ok&quot;. Por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Chico</span><span class="qh-wval">22.3</span></div>
+<p class="qh-note">Não discute. Manda um ponto final e deixa a pessoa a pensar no que fez.</p><figure class="qh-receipt"><blockquote>Ok</blockquote>
+<figcaption>Chico · 2022-11-24</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Bernardo C</span><b>22.2</b></li><li><span>Nuno Aroso</span><b>16.1</b></li><li><span>Afonso Mariz</span><b>14.2</b></li><li><span>Zi</span><b>9.4</b></li></ol></details>
+</article></div>  </div>
+</section><section id="quadro-relogio">
+  <div class="wrap qh">
+<div class="sec-head"><p class="eyebrow">18 — prémios: o relógio</p><h2>Prémios de Relógio</h2><p>A que horas é que este grupo existe.</p></div>
+<div class="qh-awards"><article class="qh-award">
+<header><h3>A Coruja</h3><p class="qh-sub">Mensagens entre a meia-noite e as 6h, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Vinhas</span><span class="qh-wval">54.4</span></div>
+<figure class="qh-receipt"><blockquote>Por mim não jogava</blockquote>
+<figcaption>Vinhas · 2023-01-05</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zi</span><b>52.1</b></li><li><span>Ferna</span><b>44.2</b></li><li><span>Fragoso</span><b>43.1</b></li><li><span>Pedro Pacheco</span><b>40.0</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Galo</h3><p class="qh-sub">Mensagens entre as 6h e as 9h, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Perneta</span><span class="qh-wval">49.7</span></div>
+<figure class="qh-receipt"><blockquote>Porque não é daquelas oficiais de 100 pau</blockquote>
+<figcaption>Perneta · 2022-10-11</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>47.9</b></li><li><span>Fragoso</span><b>38.3</b></li><li><span>Afonso Pires</span><b>32.3</b></li><li><span>João Magalhães</span><b>25.1</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>Gatilho Rápido</h3><p class="qh-sub">Mediana de tempo a responder a outra pessoa.</p></header>
+<div class="qh-winner"><span class="qh-wname">Barros</span><span class="qh-wval">23s</span></div>
+<figure class="qh-receipt"><blockquote>por mim pode ficar assim</blockquote>
+<figcaption>Barros · 2022-12-15</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zi</span><b>29s</b></li><li><span>Ferna</span><b>31s</b></li><li><span>Chico</span><b>34s</b></li><li><span>Afonso Mariz</span><b>44s</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-y" title="Cartão amarelo"></span>O Sr. Sem Pressa</h3><p class="qh-sub">Mediana de tempo a responder a outra pessoa.</p></header>
+<div class="qh-winner"><span class="qh-wname">Afonso Pires</span><span class="qh-wval">142s</span></div>
+<figure class="qh-receipt"><blockquote>Eu amanhã não posso ainda, para a semana já jogo. Se puderem arranjar sub agradecia</blockquote>
+<figcaption>Afonso Pires · 2022-01-13</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>108s</b></li><li><span>Perneta</span><b>106s</b></li><li><span>Fragoso</span><b>93s</b></li><li><span>Zé SF</span><b>89s</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-r" title="Cartão vermelho"></span>O Vazio</h3><p class="qh-sub">Mensagens que ficaram sozinhas: 45 minutos de silêncio antes e depois. Por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Zé SF</span><span class="qh-wval">78.7</span></div>
+<p class="qh-note">Falou. Ninguém apareceu.</p><figure class="qh-receipt"><blockquote>A questão é se marcaste golos</blockquote>
+<figcaption>Zé SF · 2022-06-09</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Vinhas</span><b>63.4</b></li><li><span>João Magalhães</span><b>63.3</b></li><li><span>Perneta</span><b>59.9</b></li><li><span>Chico</span><b>57.3</b></li></ol></details>
+</article></div>  </div>
+</section><section id="quadro-balneario">
+  <div class="wrap qh">
+<div class="sec-head"><p class="eyebrow">19 — prémios: o balneário</p><h2>Prémios de Balneário</h2><p>A parte que interessa: quem joga e quem fura.</p></div>
+<div class="qh-awards"><article class="qh-award">
+<header><h3><span class="qh-card qh-r" title="Cartão vermelho"></span>O Furão-Mor</h3><p class="qh-sub">Vezes que apareceu como &quot;(sub X)&quot; na convocatória final, ou seja, precisou de substituto.</p></header>
+<div class="qh-winner"><span class="qh-wname">Vinhas</span><span class="qh-wval">70</span></div>
+<figure class="qh-receipt"><blockquote>Estou na tanga, não posso ir</blockquote>
+<figcaption>Vinhas · 2022-07-05</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>51</b></li><li><span>Zi</span><b>50</b></li><li><span>Ferna</span><b>46</b></li><li><span>Perneta</span><b>42</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Inquebrável</h3><p class="qh-sub">Presenças na convocatória final reconstruída, de 214 jogos.</p></header>
+<div class="qh-winner"><span class="qh-wname">Bernardo C</span><span class="qh-wval">167</span></div>
+
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>159</b></li><li><span>Pedro Pacheco</span><b>159</b></li><li><span>Fragoso</span><b>159</b></li><li><span>Ferna</span><b>153</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Ansioso</h3><p class="qh-sub">Vezes que apareceu em 1.º lugar na lista. Inscreve-se antes de haver lista.</p></header>
+<div class="qh-winner"><span class="qh-wname">Afonso Mariz</span><span class="qh-wval">55</span></div>
+<figure class="qh-receipt"><blockquote>Como se faz com contratações</blockquote>
+<figcaption>Afonso Mariz · 2024-07-02</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Vinhas</span><b>24</b></li><li><span>Zi</span><b>19</b></li><li><span>Pedro Pacheco</span><b>13</b></li><li><span>Fragoso</span><b>13</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Cobrador</h3><p class="qh-sub">Mensagens sobre dinheiro, pagamentos e MB Way, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Fragoso</span><span class="qh-wval">70.4</span></div>
+<figure class="qh-receipt"><blockquote>Pagamos todos a mais no mês passado</blockquote>
+<figcaption>Fragoso · 2022-11-03</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>59.0</b></li><li><span>Bernardo C</span><b>39.4</b></li><li><span>Bernardo Q</span><b>33.1</b></li><li><span>João Magalhães</span><b>30.0</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-y" title="Cartão amarelo"></span>O Selecionador de Bancada</h3><p class="qh-sub">Fala de equipas, coletes, brancos e escuros, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Bernardo Q</span><span class="qh-wval">86.7</span></div>
+<figure class="qh-receipt"><blockquote>@Pedro Pacheco faz as equipas sff</blockquote>
+<figcaption>Bernardo Q · 2024-10-28</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Afonso Mariz</span><b>78.5</b></li><li><span>Kiko</span><b>40.5</b></li><li><span>Ferna</span><b>36.0</b></li><li><span>Perneta</span><b>35.1</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>As Desculpas</h3><p class="qh-sub">Pedidos de desculpa por mil mensagens.</p></header>
+<div class="qh-winner"><span class="qh-wname">Vinhas</span><span class="qh-wval">40.6</span></div>
+<figure class="qh-receipt"><blockquote>Eu corro o risco de chegar atrasado. Ainda estou no hospital, e ainda tenho de ir deixar os meus avós a Cristo Rei. Desculpem</blockquote>
+<figcaption>Vinhas · 2022-10-06</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Afonso Pires</span><b>18.2</b></li><li><span>Afonso Mariz</span><b>15.5</b></li><li><span>Kiko</span><b>14.7</b></li><li><span>Fragoso</span><b>13.0</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-r" title="Cartão vermelho"></span>Estou Fora</h3><p class="qh-sub">Anúncios de que não pode jogar, por mil mensagens.</p></header>
+<div class="qh-winner"><span class="qh-wname">Afonso Pires</span><span class="qh-wval">97.0</span></div>
+<figure class="qh-receipt"><blockquote>Eu é que assumi que estávamos conversados e fiz planos para jantar que não posso alterar agora</blockquote>
+<figcaption>Afonso Pires · 2021-12-21</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Kiko</span><b>34.4</b></li><li><span>Vinhas</span><b>27.6</b></li><li><span>Bernardo X</span><b>25.6</b></li><li><span>Bernardo C</span><b>24.2</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Clube dos Primos</h3><p class="qh-sub">Vezes que ofereceu um familiar para tapar o buraco: &quot;o meu primo&quot;, &quot;o meu irmão&quot;.</p></header>
+<div class="qh-winner"><span class="qh-wname">Zi</span><span class="qh-wval">40</span></div>
+<p class="qh-note">Quando falta gente, há dois homens neste grupo cuja solução é sempre a própria família.</p><figure class="qh-receipt"><blockquote>Meu irmão pode entrar</blockquote>
+<figcaption>Zi · 2022-06-10</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Chico</span><b>40</b></li><li><span>Bernardo X</span><b>30</b></li><li><span>Pedro Pacheco</span><b>22</b></li><li><span>Bernardo C</span><b>15</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-y" title="Cartão amarelo"></span>O Capataz</h3><p class="qh-sub">Ordens de serviço passadas ao Pacheco: &quot;@Pedro Pacheco faz as equipas sff&quot;.</p></header>
+<div class="qh-winner"><span class="qh-wname">Bernardo Q</span><span class="qh-wval">34</span></div>
+<p class="qh-note">O Pacheco leva os prémios todos e ainda é o departamento informático do grupo. Há quem tenha percebido que basta mandar.</p><figure class="qh-receipt"><blockquote>@Pedro Pacheco faz a tua magia</blockquote>
+<figcaption>Bernardo Q · 2024-10-07</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zé SF</span><b>11</b></li><li><span>Afonso Mariz</span><b>11</b></li><li><span>Bernardo X</span><b>8</b></li><li><span>João Magalhães</span><b>4</b></li></ol></details>
+</article></div>  </div>
+</section><section id="quadro-estilo">
+  <div class="wrap qh">
+<div class="sec-head"><p class="eyebrow">20 — prémios: o estilo</p><h2>Prémios de Estilo</h2><p>Emojis, stickers, áudios e outros crimes.</p></div>
+<div class="qh-awards"><article class="qh-award">
+<header><h3>Rei do Emoji</h3><p class="qh-sub">Mensagens com emoji, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Bernardo X</span><span class="qh-wval">254.2</span></div>
+<figure class="qh-receipt"><blockquote>😂😂😂 @Pedro Pacheco alguém anda mesmo a brincar às equipas</blockquote>
+<figcaption>Bernardo X · 2021-11-04</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Fragoso</span><b>163.4</b></li><li><span>Kiko</span><b>143.7</b></li><li><span>Ferna</span><b>115.6</b></li><li><span>Afonso Pires</span><b>107.1</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3><span class="qh-card qh-r" title="Cartão vermelho"></span>O Homem dos Áudios</h3><p class="qh-sub">Mensagens de voz enviadas. O grupo enviou 50 em sete anos.</p></header>
+<div class="qh-winner"><span class="qh-wname">Zé SF</span><span class="qh-wval">39</span></div>
+
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Ferna</span><b>3</b></li><li><span>Fragoso</span><b>3</b></li><li><span>Vinhas</span><b>2</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Colecionador de Stickers</h3><p class="qh-sub">Stickers enviados.</p></header>
+<div class="qh-winner"><span class="qh-wname">Vinhas</span><span class="qh-wval">99</span></div>
+
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zi</span><b>60</b></li><li><span>Afonso Mariz</span><b>27</b></li><li><span>Fragoso</span><b>18</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Fotógrafo</h3><p class="qh-sub">Imagens enviadas.</p></header>
+<div class="qh-winner"><span class="qh-wname">Pedro Pacheco</span><span class="qh-wval">223</span></div>
+
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Zé SF</span><b>83</b></li><li><span>Vinhas</span><b>69</b></li><li><span>Ferna</span><b>45</b></li></ol></details>
+</article><article class="qh-award">
+<header><h3>O Revisionista</h3><p class="qh-sub">Mensagens editadas depois de enviadas, por mil.</p></header>
+<div class="qh-winner"><span class="qh-wname">Afonso Mariz</span><span class="qh-wval">21.6</span></div>
+<p class="qh-note">Escreve, arrepende-se, corrige.</p><figure class="qh-receipt"><blockquote>@Chico Castro @Ferna @Perneta  @Nuno Zi</blockquote>
+<figcaption>Afonso Mariz · 2024-07-23</figcaption></figure>
+<details><summary>Restante pódio</summary><ol class="qh-runners"><li><span>Bernardo Q</span><b>15.6</b></li><li><span>Vinhas</span><b>15.4</b></li><li><span>Fragoso</span><b>6.2</b></li><li><span>Pedro Pacheco</span><b>5.9</b></li></ol></details>
+</article></div>  </div>
+</section>
+
+<section id="quadro-dicionario">
+  <div class="wrap qh">
+  <div class="sec-head"><p class="eyebrow">21 — o dicionário</p><h2>Dicionário</h2>
+  <p>As palavras que só aquela pessoa diz.</p></div>
+  <div class="qh-dic"><div class="qh-dicrow"><div class="qh-dicname">Zi</div>
+<div class="qh-dicwords"><span class="qh-chip">irmão<i>39</i></span><span class="qh-chip">marquei<i>13</i></span><span class="qh-chip">campo<i>14</i></span><span class="qh-chip">jogar<i>25</i></span><span class="qh-chip">preciso<i>16</i></span></div>
+<div class="qh-dicshare"><b>20%</b><span>dos «irmão» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Bernardo C</div>
+<div class="qh-dicwords"><span class="qh-chip">arranja<i>15</i></span><span class="qh-chip">pago<i>14</i></span><span class="qh-chip">afinal<i>17</i></span><span class="qh-chip">tentar<i>16</i></span><span class="qh-chip">alguém<i>42</i></span></div>
+<div class="qh-dicshare"><b>16%</b><span>dos «arranja» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Fragoso</div>
+<div class="qh-dicwords"><span class="qh-chip">dinheiro<i>28</i></span><span class="qh-chip">setembro<i>18</i></span><span class="qh-chip">maio<i>16</i></span><span class="qh-chip">pessoa<i>12</i></span><span class="qh-chip">opção<i>14</i></span></div>
+<div class="qh-dicshare"><b>50%</b><span>dos «dinheiro» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Afonso Mariz</div>
+<div class="qh-dicwords"><span class="qh-chip">pretos<i>75</i></span><span class="qh-chip">conseguires<i>15</i></span><span class="qh-chip">brancos<i>74</i></span><span class="qh-chip">precisar<i>22</i></span><span class="qh-chip">desculpa<i>15</i></span></div>
+<div class="qh-dicshare"><b>70%</b><span>dos «pretos» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Zé SF</div>
+<div class="qh-dicwords"><span class="qh-chip">tabelas<i>30</i></span><span class="qh-chip">caros<i>12</i></span><span class="qh-chip">tondela<i>17</i></span><span class="qh-chip">euros<i>13</i></span><span class="qh-chip">sporting<i>15</i></span></div>
+<div class="qh-dicshare"><b>61%</b><span>dos «tabelas» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Chico</div>
+<div class="qh-dicwords"><span class="qh-chip">primo<i>28</i></span><span class="qh-chip">arranja<i>12</i></span><span class="qh-chip">afinal<i>21</i></span><span class="qh-chip">irmão<i>18</i></span><span class="qh-chip">último<i>13</i></span></div>
+<div class="qh-dicshare"><b>27%</b><span>dos «primo» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Perneta</div>
+<div class="qh-dicwords"><span class="qh-chip">mano<i>12</i></span><span class="qh-chip">conseguir<i>15</i></span><span class="qh-chip">consigo<i>16</i></span><span class="qh-chip">alguém<i>45</i></span><span class="qh-chip">arranjar<i>17</i></span></div>
+<div class="qh-dicshare"><b>86%</b><span>dos «mano» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Vinhas</div>
+<div class="qh-dicwords"><span class="qh-chip">desculpem<i>32</i></span><span class="qh-chip">devo<i>14</i></span><span class="qh-chip">confirmo<i>15</i></span><span class="qh-chip">conseguir<i>31</i></span><span class="qh-chip">chegar<i>13</i></span></div>
+<div class="qh-dicshare"><b>30%</b><span>dos «desculpem» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">João Magalhães</div>
+<div class="qh-dicwords"><span class="qh-chip">peeps<i>12</i></span><span class="qh-chip">crlh<i>69</i></span><span class="qh-chip">falar<i>13</i></span><span class="qh-chip">obrigado<i>37</i></span><span class="qh-chip">gajo<i>32</i></span></div>
+<div class="qh-dicshare"><b>86%</b><span>dos «peeps» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Ferna</div>
+<div class="qh-dicwords"><span class="qh-chip">fdss<i>13</i></span><span class="qh-chip">johnny<i>18</i></span><span class="qh-chip">tipo<i>16</i></span><span class="qh-chip">igual<i>14</i></span><span class="qh-chip">lamas<i>23</i></span></div>
+<div class="qh-dicshare"><b>100%</b><span>dos «fdss» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Pedro Pacheco</div>
+<div class="qh-dicwords"><span class="qh-chip">maneira<i>15</i></span><span class="qh-chip">ponho<i>13</i></span><span class="qh-chip">supostamente<i>16</i></span><span class="qh-chip">escuros<i>22</i></span><span class="qh-chip">aleatório<i>14</i></span></div>
+<div class="qh-dicshare"><b>75%</b><span>dos «maneira» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Bernardo X</div>
+<div class="qh-dicwords"><span class="qh-chip">puder<i>16</i></span><span class="qh-chip">21h30<i>15</i></span><span class="qh-chip">tiver<i>14</i></span><span class="qh-chip">verdade<i>16</i></span><span class="qh-chip">fora<i>30</i></span></div>
+<div class="qh-dicshare"><b>46%</b><span>dos «puder» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Bernardo Q</div>
+<div class="qh-dicwords"><span class="qh-chip">equipas<i>61</i></span><span class="qh-chip">siga<i>13</i></span><span class="qh-chip">bola<i>20</i></span><span class="qh-chip">pago<i>12</i></span><span class="qh-chip">merda<i>17</i></span></div>
+<div class="qh-dicshare"><b>15%</b><span>dos «equipas» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Kiko</div>
+<div class="qh-dicwords"><span class="qh-chip">precisar<i>15</i></span><span class="qh-chip">pagar<i>15</i></span><span class="qh-chip">afinal<i>13</i></span><span class="qh-chip">obrigado<i>22</i></span><span class="qh-chip">preciso<i>27</i></span></div>
+<div class="qh-dicshare"><b>14%</b><span>dos «precisar» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Nuno Aroso</div>
+<div class="qh-dicwords"><span class="qh-chip">preciso<i>27</i></span><span class="qh-chip">tenho<i>12</i></span><span class="qh-chip">acho<i>12</i></span></div>
+<div class="qh-dicshare"><b>7%</b><span>dos «preciso» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Afonso Pires</div>
+<div class="qh-dicwords"><span class="qh-chip">jogar<i>28</i></span><span class="qh-chip">tenho<i>15</i></span><span class="qh-chip">acho<i>21</i></span></div>
+<div class="qh-dicshare"><b>5%</b><span>dos «jogar» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Barros</div>
+<div class="qh-dicwords"><span class="qh-chip">acho<i>28</i></span><span class="qh-chip">tenho<i>12</i></span></div>
+<div class="qh-dicshare"><b>4%</b><span>dos «acho» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Fanuca</div>
+<div class="qh-dicwords"><span class="qh-chip">precisar<i>12</i></span></div>
+<div class="qh-dicshare"><b>11%</b><span>dos «precisar» do grupo</span></div></div><div class="qh-dicrow"><div class="qh-dicname">Miguel Girão</div>
+<div class="qh-dicwords"><span class="qh-chip">preciso<i>17</i></span></div>
+<div class="qh-dicshare"><b>4%</b><span>dos «preciso» do grupo</span></div></div></div>
+  <p style="font-size:14px;color:var(--muted);margin:12px 0 0">
+  Cada palavra é comparada com o uso de toda a gente: aparecem aqui as que cada um usa
+  muito acima da média do grupo. Nomes próprios e listas de convocatória foram retirados.</p>
+  </div>
+</section>
+
+<section id="quadro-arquivo">
+  <div class="wrap qh">
+  <div class="sec-head"><p class="eyebrow">22 — o arquivo</p><h2>O Arquivo</h2><p>Recordes absolutos, sem normalizações.</p></div>
+  <div class="qh-grid2">
+    <div class="qh-panel"><h3>A frase do grupo</h3>
+      <p class="qh-k">Mensagens curtas repetidas mais vezes ao longo de sete anos.</p>
+      <ul><li><code>obrigado</code><b>69×</b></li><li><code>😂😂😂😂</code><b>56×</b></li><li><code>preciso de sub</code><b>52×</b></li><li><code>@pedro pacheco</code><b>45×</b></li><li><code>siga</code><b>35×</b></li><li><code>@vinhas</code><b>34×</b></li><li><code>obrigado!</code><b>33×</b></li><li><code>claro</code><b>27×</b></li></ul></div>
+    <div class="qh-panel"><h3>Os grandes silêncios</h3>
+      <p class="qh-k">Maiores intervalos entre duas mensagens, e quem os quebrou.</p>
+      <ul><li><b>130.0 dias</b><span>2020-06-04 → 2020-10-12</span>
+<em>Quebrado por JP Tete Machado: «JP Tete Machado foi adicionado/a ao grupo»</em></li><li><b>37.1 dias</b><span>2023-06-27 → 2023-08-03</span>
+<em>Quebrado por Fragoso: «Pessoal liguei para o maria lamas para tentar reservar o campo para a »</em></li><li><b>32.2 dias</b><span>2021-02-11 → 2021-03-15</span>
+<em>Quebrado por Pedro Pacheco: «Pessoal!! 22 de abril estamos de volta aos relvados!»</em></li><li><b>32.0 dias</b><span>2021-07-29 → 2021-08-30</span>
+<em>Quebrado por Zi: «1.zi»</em></li></ul></div>
+    <div class="qh-panel"><h3>A avalanche</h3>
+      <p class="qh-k">A mensagem que mais gente pôs a escrever.</p>
+      <p class="qh-big">69</p>
+      <p style="margin:0 0 12px;font-size:13.5px;color:var(--ink2)">mensagens nos 10 minutos seguintes a isto:</p>
+      <p class="qh-longmsg">isto nao se pode fazer assim<cite>Zé SF · 2025-12-15</cite></p></div>
+    <div class="qh-panel"><h3>Os dias de loucura</h3>
+      <p class="qh-k">Mais mensagens num só dia.</p>
+      <ul><li><b>358</b><span>2022-03-16</span></li><li><b>303</b><span>2021-12-02</span></li><li><b>208</b><span>2024-12-02</span></li><li><b>205</b><span>2026-02-11</span></li><li><b>188</b><span>2025-12-15</span></li></ul>
+      <p style="margin:10px 0 0;font-size:13px;color:var(--muted)">O recorde não foi num dia de
+      jogo. Foi numa quarta-feira.</p></div>
+    <div class="qh-panel" style="grid-column:1/-1"><h3>16 de Março de 2022</h3>
+      <p class="qh-k">358 mensagens num só dia — o recorde absoluto, e numa quarta-feira.
+      Às 18h13 soube-se que o campo tinha sido marcado para a noite seguinte.</p>
+      <figure class="qh-receipt" style="margin-bottom:9px"><blockquote>Pessoal ela enganou se a marcar e marcou para amanhã as 20:30 em vez de para hoje as 20:30. Não temos vaga….</blockquote><figcaption>Pedro Pacheco · 18:13</figcaption></figure>
+      <h4 class="qh-sub2">O nível do debate</h4>
+      <p style="margin:0 0 12px;font-size:13.5px;color:var(--ink2)">Seguiu-se aquilo a que nesta
+      casa se chama uma troca de impressões. Reproduz-se na íntegra, pela elevação do discurso,
+      pelo rigor analítico e sobretudo pela contenção verbal que sempre distinguiram esta
+      colectividade:</p>
+      <ol class="qh-transcript"><li><span class="qh-th">19:08</span><span class="qh-tn">Zé SF</span><span class="qh-tt">Eu tinha 100% certeza que ia dar merda isto</span></li><li><span class="qh-th">19:09</span><span class="qh-tn">Pedro Pacheco</span><span class="qh-tt">Podias ter avisado caralho!</span></li><li><span class="qh-th">19:12</span><span class="qh-tn">Vinhas</span><span class="qh-tt">Fds ela não marcou direito?</span></li><li><span class="qh-th">19:12</span><span class="qh-tn">Zé SF</span><span class="qh-tt">Foda-se pá burra do caralho</span></li><li><span class="qh-th">19:16</span><span class="qh-tn">Zé SF</span><span class="qh-tt">Tou aqui a pensar se ela não terá pensado: “as 21h já há campo marcado”</span></li></ol>
+      <p style="margin:14px 0 0;font-size:13.5px;color:var(--ink2)">Quatro minutos. Do «eu bem
+      disse» à análise psicológica da senhora dos campos, sem escala. E convém registar que o
+      cavalheiro das 19h12 é o mesmo que, em sete anos e 3.102 mensagens de conversa, se riu
+      dezoito vezes — de modo que aquilo, tecnicamente, é dos momentos mais expressivos da
+      carreira dele. Às 19h16 já estava a reconstruir com empatia o raciocínio da senhora.
+      Pedido de desculpa: não consta do arquivo.</p>
+      <figure class="qh-receipt" style="margin-bottom:9px"><blockquote>Tens que mandar o teu sub com o caralho 😂</blockquote><figcaption>Bernardo X · 21:10</figcaption></figure>
+      <p style="margin:12px 0 0;font-size:13.5px;color:var(--ink2)">Seguiram-se três horas a
+      tentar campo noutro sítio, a apurar quem podia no dia seguinte e — o verdadeiro tema da
+      noite — a decidir se quem não pudesse devia sair prejudicado na classificação. Um erro de
+      marcação gerou mais mensagens do que qualquer jogo alguma vez gerou.</p></div>
+    <div class="qh-panel"><h3>O império do «sub»</h3>
+      <p class="qh-k">Mensagens de conversa que contêm a palavra «sub».</p>
+      <p class="qh-big">1 em 19</p>
+      <p style="margin:0;font-size:13.5px;color:var(--ink2)">1.262 das 23.585
+      mensagens de conversa contêm a palavra «sub» — e isto já exclui as convocatórias, onde a
+      palavra aparece por obrigação. Contando o arquivo inteiro é 1 em 8.
+      A frase mais repetida da história do grupo é «preciso de sub». Sete anos de futebol e o
+      problema nunca foi jogar: foi arranjar quem jogasse.</p></div>
+    <div class="qh-panel"><h3>Prémios negativos</h3>
+      <p class="qh-k">O que este grupo, em sete anos, nunca fez.</p>
+      <ul>
+        <li><span>Links partilhados</span><b>31</b></li>
+        <li><span>Mensagens de voz</span><b>51</b></li>
+        <li><span>Vídeos</span><b>22</b></li>
+        <li><span>Imagens</span><b>543</b></li>
+        <li><span>Stickers</span><b>262</b></li>
+      </ul>
+      <p style="margin:9px 0 0;font-size:13px;color:var(--muted)">Trinta e um links em sete anos.
+      Não há prémio para o campeão dos links.</p></div>
+    <div class="qh-panel" style="grid-column:1/-1"><h3>A democracia</h3>
+      <p class="qh-k">29 sondagens em sete anos. Duas dizem tudo.</p>
+      <div class="qh-polls"><div class="qh-poll"><h4>Critério de desempate da liga</h4><p class="qh-pk">Pedro Pacheco · 2025-06-02 · 8 votos</p><ul class="qh-popts"><li><span>Presenças, diferença de golos (equipa), golos marcados (equipa), golos marcados (pessoal)</span><span class="qh-pbar" style="width:50%"></span><b>2</b></li><li><span>Percentagem de vitória, diferença de golos (equipa), golos marcados (equipa), golos marcados (pessoa</span><span class="qh-pbar" style="width:0%"></span><b>0</b></li><li><span>Vitórias, golos marcados (pessoal), diferença de golos (equipa), golos marcados (equipa)</span><span class="qh-pbar" style="width:0%"></span><b>0</b></li><li class="qh-win"><span>Penaltis no final do jogo (até aos 5)</span><span class="qh-pbar" style="width:100%"></span><b>4</b></li><li><span>Toques no final do jogo</span><span class="qh-pbar" style="width:50%"></span><b>2</b></li></ul></div><div class="qh-poll"><h4>Época 2025/2026</h4><p class="qh-pk">Pedro Pacheco · 2025-08-18 · 13 votos</p><ul class="qh-popts"><li class="qh-win"><span>Estarei presente e pretendo ganhar</span><span class="qh-pbar" style="width:100%"></span><b>10</b></li><li><span>Estarei presente para fazer número</span><span class="qh-pbar" style="width:30%"></span><b>3</b></li><li><span>Não poderei participar</span><span class="qh-pbar" style="width:0%"></span><b>0</b></li></ul></div></div>
+      <p style="margin:12px 0 0;font-size:13.5px;color:var(--ink2)">
+      Em cima: três critérios de desempate estatísticos, cuidadosamente redigidos, somaram
+      dois votos. Ganharam os penáltis. Em baixo: três homens declararam publicamente,
+      em votação, que vinham apenas para fazer número.</p></div>
+    <div class="qh-panel"><h3>A palavra mais longa</h3>
+      <p class="qh-k">Maior palavra portuguesa a sério escrita no grupo.</p>
+      <p class="qh-big" style="font-size:30px;line-height:1.1;word-break:break-word">desequilibradissimas</p>
+      <p style="margin:9px 0 0;font-size:13.5px;color:var(--ink2)">20 letras. Um grupo cuja
+      palavra mais longa é uma queixa sobre equipas desequilibradas escreve as próprias piadas.</p></div>
+    <div class="qh-panel" style="grid-column:1/-1"><h3>A mensagem mais longa da história</h3>
+      <p class="qh-k">786 caracteres, Pedro Pacheco, 2022-06-10. Listas de convocatória não contam.</p>
+      <p class="qh-longmsg">Pessoal a época supostamente acabava ontem. Não sei como querem fazer. Eu não jogo durante uns tempos. E além disso não quero jogar mais no torrinha. Por mim acabava a época e para o ano escolhemos outro campo. Além das questões das bolas e estado do campo gasto horas todos os meses a tratar da puta do pagamento. Acabou de me dizer que estamos a dever 240€ quando pagamos tudo isso há umas semanas. (POR FAVOR DIGAM ME RÁPIDO SE ALGUÉM NÃO PAGOU). Disse me também que não há pagamentos desde dia 17 de maio e tenho o comprovativo da transferência do João dia 19. Se os outros também me pudessem mandar os comprovativos era top. Não dá para ter uma relação de confiança com uma pessoa que faz as contas assim. Eu estou fora, ou no mínimo dos mínimos não trato mais de dinheiro com ela.<cite>Pedro Pacheco · 2022-06-10</cite></p></div>
+  </div>
+  </div>
+</section>
+
+<section id="quadro-social">
+  <div class="wrap qh">
+  <div class="sec-head"><p class="eyebrow">23 — a teia</p><h2>A Teia</h2><p>Quem fala com quem, e de quem se fala.</p></div>
+  <div class="qh-grid2">
+    <div class="qh-panel"><h3>As duplas</h3>
+      <p class="qh-k">Quantas vezes mais do que seria de esperar é que estes dois se respondem
+      um ao outro. Contagem bruta só devolvia a tabela dos faladores; isto devolve as duplas
+      a sério. Mínimo de 40 trocas.</p>
+      <ul><li><span>Barros <i>+</i> Perneta</span><b>3.55×</b></li><li><span>Chico <i>+</i> Barros</span><b>2.8×</b></li><li><span>Afonso Mariz <i>+</i> Bernardo Q</span><b>2.8×</b></li><li><span>Bernardo X <i>+</i> João Magalhães</span><b>2.32×</b></li><li><span>Afonso Pires <i>+</i> Zé SF</span><b>2.18×</b></li><li><span>Chico <i>+</i> Perneta</span><b>2.11×</b></li><li><span>Afonso Mariz <i>+</i> Vinhas</span><b>2.05×</b></li></ul></div>
+    <div class="qh-panel"><h3>Falado nas costas</h3>
+      <p class="qh-k">Vezes que o nome de cada um apareceu numa mensagem escrita por outra pessoa.</p>
+      <ul><li><span>Pedro Pacheco</span><span class="qh-tbar" style="width:100%"></span><b>682</b></li><li><span>Vinhas</span><span class="qh-tbar" style="width:57%"></span><b>388</b></li><li><span>Afonso Mariz</span><span class="qh-tbar" style="width:46%"></span><b>311</b></li><li><span>Kiko</span><span class="qh-tbar" style="width:34%"></span><b>234</b></li><li><span>Fragoso</span><span class="qh-tbar" style="width:31%"></span><b>214</b></li><li><span>Bernardo C</span><span class="qh-tbar" style="width:28%"></span><b>191</b></li><li><span>Ferna</span><span class="qh-tbar" style="width:26%"></span><b>176</b></li><li><span>Chico</span><span class="qh-tbar" style="width:22%"></span><b>151</b></li></ul></div>
+    <div class="qh-panel"><h3>Quem levou mais prémios</h3>
+      <p class="qh-k">Contagem final deste quadro de honra.</p>
+      <ul><li><b>4</b><span>Zé SF</span></li><li><b>4</b><span>Vinhas</span></li><li><b>3</b><span>Pedro Pacheco</span></li><li><b>3</b><span>João Magalhães</span></li><li><b>2</b><span>Fragoso</span></li><li><b>2</b><span>Zi</span></li></ul></div>
+  </div>
+  </div>
+</section>
+<!-- end Quadro de Honra -->
+
+<footer>
+  <div class="wrap">
+    <p class="eyebrow">Método</p>
+    <p>
+      Todos os números aqui saem da base de dados da própria liga — 204 jogos da MasterLeague entre 15 de Outubro de 2020 e 27 de Agosto de 2026 — e todos foram recalculados de forma
+      independente antes de irem para esta página. Uma dupla só conta com quinze jogos juntos no
+      mínimo, um trio com dez, e as médias por jogador com trinta presenças. Quando um número é
+      só uma coincidência gira e não um efeito a sério, está lá dito.
+    </p>
+    <p>
+      A segunda parte sai de outro arquivo: 28.312 mensagens do grupo entre 3 de Outubro de 2019 e
+      2 de Setembro de 2026, e 214 convocatórias reconstruídas a partir das listas. São dois
+      conjuntos de dados diferentes, com janelas diferentes — os jogos começam em Outubro de 2020,
+      o grupo um ano antes — e em lado nenhum foram somados um ao outro. Os prémios por taxa
+      («por mil mensagens») contam só conversa: as listas de convocatória ficaram de fora, porque
+      para alguns jogadores são metade do que escrevem e falseavam tudo. Nas listas antigas há
+      nomes ambíguos («Bernardo», «Miguel») que podiam ser mais do que uma pessoa; esses não são
+      atribuídos a ninguém, portanto as contagens de presenças e de furos são um mínimo, não um
+      total.
+    </p>
+    <p>
+      Actualizado a 2 de Setembro de 2026 com o jogo de 27 de Agosto, que faltava à base de dados.
+      Um jogo em 204 chegou para mudar o campeão da sexta edição.
+    </p>
+    <p>
+      Várias descobertas que davam belos títulos não sobreviveram a esse crivo e não estão aqui.
+      As duas mais tentadoras vêm nomeadas no ficheiro 12, porque um livro de recordes com que
+      não se possa discutir não tem piada nenhuma.
+    </p>
+  </div>
+</footer>

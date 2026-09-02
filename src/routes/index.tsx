@@ -4,12 +4,19 @@ import { useState } from "react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { GamesCarousel } from "@/components/GamesCarousel";
 import { Layout } from "@/components/Layout";
+import { NewsCard } from "@/components/NewsCard";
 import { StandingsTable } from "@/components/StandingsTable";
+import { articles } from "@/data/news";
 import { useDataset } from "@/hooks/use-app-data";
 import { leagueImageUrl, nextGameDatetime } from "@/lib/domain";
 
+import newsCss from "@/styles/news.css?url";
+
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Ligas Francesinha" }] }),
+  head: () => ({
+    meta: [{ title: "Ligas Francesinha" }],
+    links: [{ rel: "stylesheet", href: newsCss }],
+  }),
   component: IndexPage,
 });
 
@@ -81,6 +88,20 @@ function IndexPage() {
             })}
           </div>
         </div>
+
+        {articles.length > 0 ? (
+          <div className="news_section">
+            <div className="news_container">
+              <div className="news_header">
+                <h2>Notícias</h2>
+                <span>O que os números andam a dizer</span>
+              </div>
+              {articles.map((article) => (
+                <NewsCard key={article.slug} article={article} />
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </Layout>
   );
