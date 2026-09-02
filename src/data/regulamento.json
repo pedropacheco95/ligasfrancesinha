@@ -1,0 +1,977 @@
+{
+  "versao": "2026-09-03",
+  "notaMetodo": "Reconstruído a partir do export completo do grupo — 27 453 mensagens entre 3 de outubro de 2019 e 2 de setembro de 2026. Cada regra traz a data, o autor e a frase em que foi fixada.",
+  "artigos": [
+    {
+      "id": "a1",
+      "numero": 1,
+      "titulo": "Pontos e classificação",
+      "nota": "A única parte do regulamento que existe escrita — em código, não em texto.",
+      "regras": [
+        {
+          "id": "1.1",
+          "titulo": "Vitória vale 4 pontos, empate 2, derrota 1.",
+          "detalhe": "O ponto da derrota é, na prática, o ponto de presença: aparecer garante-o.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "4 pontos vitória, 2 empate e 1 derrota, continua a ser isto certo? — Isso mesmo.",
+              "autor": "Zé Soares Franco / Afonso Mariz",
+              "data": "08 set 2024"
+            }
+          ],
+          "verificacao": {
+            "titulo": "Verificado no código",
+            "texto": "src/lib/domain.ts:527 — points: wins * 4 + draws * 2 + losts + goals * goalValue"
+          }
+        },
+        {
+          "id": "1.2",
+          "titulo": "Os golos deixaram de contar para os pontos.",
+          "detalhe": "Valeram 0,1 ponto cada até à 3.ª edição (2022/23). A partir da 4.ª (2023/24) são apenas estatística.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "E não conta. E isto era uma das razões pelas quais eu queria que contasse. Assim vai estar tudo a cagar para pôr, e eu acho fixe ter a estatística.",
+              "autor": "Pedro Pacheco",
+              "data": "11 out 2023"
+            }
+          ],
+          "verificacao": {
+            "titulo": "Verificado nos dados",
+            "texto": "editions.json — goalValue 0.1 nas edições 1–3 da Master League, 0 a partir da 4.ª. A Tuesday League manteve 0,1."
+          }
+        },
+        {
+          "id": "1.3",
+          "titulo": "Quem não põe o nome na lista final não pontua.",
+          "detalhe": "A lista da convocatória é o registo oficial: é dela que sai o jogo no site. Todos os presentes têm de constar, mesmo com zero golos.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Queria avisar que este ano quem não se puser perde os pontos!",
+              "autor": "Pedro Pacheco",
+              "data": "14 set 2023"
+            },
+            {
+              "texto": "Isto não é só para golos. É a lista final que ponho no site.",
+              "autor": "Pedro Pacheco",
+              "data": "09 nov 2023"
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "titulo": "Quem falta leva zero — e mais nada.",
+          "detalhe": "Nunca houve penalização acrescida por faltar, nem por não arranjar substituto.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Quem não vai não faz pontos. E simples.",
+              "autor": "Pedro Pacheco",
+              "data": "16 mar 2022"
+            },
+            {
+              "texto": "Quem não vai e não arranja sub perde 5 pontos. — Nunca.",
+              "autor": "Kiko / Bernardo Queiroz",
+              "data": "02 dez 2024 — proposta rejeitada"
+            }
+          ]
+        },
+        {
+          "id": "1.5",
+          "titulo": "Desempate: número de vitórias, depois diferença de golos.",
+          "detalhe": "Votado por sondagem em setembro de 2025 (6 votos contra 0). O site ainda não o implementa — a classificação ordena só por pontos e, em caso de empate, mantém a ordem de inserção dos jogadores.",
+          "estado": "pendente",
+          "citacoes": [
+            {
+              "texto": "Caso também haja empate no nr de vitórias fica a diferença de golos como segundo critério.",
+              "autor": "Zé Soares Franco",
+              "data": "07 set 2025"
+            }
+          ],
+          "verificacao": {
+            "titulo": "Divergência confirmada no código",
+            "texto": "domain.ts:195 — «points descending, ties keep id order». Em junho de 2026 o Zé SF acabou empatado com o Fragoso e voltou a perguntar qual era o critério."
+          },
+          "votacao": {
+            "data": "07 set 2025",
+            "pergunta": "Critério de desempate",
+            "resultado": [
+              {
+                "opcao": "Nº de vitórias",
+                "votos": 6
+              },
+              {
+                "opcao": "Diferença de golos",
+                "votos": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "1.6",
+          "titulo": "O que o substituto faz não conta para ele.",
+          "detalhe": "Golos, vitórias e presenças do sub não entram na classificação — o lugar pontua, não a pessoa.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Os teus não contam oh sub.",
+              "autor": "Pedro Pacheco",
+              "data": "29 abr 2021"
+            }
+          ]
+        },
+        {
+          "id": "1.7",
+          "titulo": "Atraso desconta 1 ponto.",
+          "detalhe": "Votada favoravelmente em setembro de 2024, com registo manual e desconto no fim da época. Nunca chegou a ser aplicada por falta de mecanismo.",
+          "estado": "proposta",
+          "citacoes": [
+            {
+              "texto": "Falando em regras… não querem pensar na questão de atrasos tirar 1 ponto? — Eu voto a favor.",
+              "autor": "Fragoso / Bernardo Xavier",
+              "data": "08 set 2024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "numero": 2,
+      "titulo": "Dentro das quatro linhas",
+      "nota": "Não há árbitro. O jogo arbitra-se a si próprio.",
+      "regras": [
+        {
+          "id": "2.1",
+          "titulo": "Marca quem sofre. Se dois pedem, não há falta.",
+          "detalhe": "A falta é declarada por quem a sofreu. Reclamação dos dois lados anula-a.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "A regra é simples e deve ser cumprida… quando dois pedem falta, por razões óbvias, a regra não se pode cumprir.",
+              "autor": "Pedro Pacheco",
+              "data": "16 fev 2023"
+            },
+            {
+              "texto": "Genuinamente acho que não foi falta, mas marca quem sofre, portanto deveria ter sido penálti.",
+              "autor": "Bernardo Castro",
+              "data": "16 fev 2023"
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "titulo": "Remate desviado conta ao rematador se ia à baliza.",
+          "detalhe": "Citada explicitamente como «a regra oficial» — o único momento em sete anos em que alguém usou essa expressão.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Acho que a regra é que se ia à baliza é golo. A regra oficial isto é.",
+              "autor": "Pedro Pacheco",
+              "data": "28 mai 2021"
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "titulo": "Não valem «bujas».",
+          "detalhe": "Estabelecida na fundação da liga, no Torrinha. Nunca mais foi invocada depois de 2020.",
+          "estado": "dormente",
+          "citacoes": [
+            {
+              "texto": "Foi estabelecido no início que não valia bujas.",
+              "autor": "João Magalhães",
+              "data": "22 out 2020"
+            }
+          ]
+        },
+        {
+          "id": "2.4",
+          "titulo": "Se faltar um jogador joga-se 6 contra 5 e o resultado conta.",
+          "detalhe": "Tentou-se anular a parte desequilibrada de um jogo em maio de 2022; a maioria recusou.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Sendo que decidimos que se der merda joga-se 6 para 5, isto tem que contar.",
+              "autor": "Pedro Pacheco",
+              "data": "20 mai 2022"
+            }
+          ]
+        },
+        {
+          "id": "2.5",
+          "titulo": "Resultado e golos são auto-reportados, e a soma tem de bater certo.",
+          "detalhe": "Cada jogador acrescenta o seu nome e os seus golos à mensagem do resultado. Se a soma dos individuais não fecha com o resultado da equipa, atribui-se a diferença a quem falta. Preenche-se à saída do jogo.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Temos de ser uns homens e dizer os golos marcados. Depois podemos ir embora chateados.",
+              "autor": "Fragoso",
+              "data": "28 abr 2022"
+            }
+          ]
+        },
+        {
+          "id": "2.6",
+          "titulo": "O guarda-redes não passa do meio-campo.",
+          "detalhe": "Proposta em 2020 quando o pessoal se queixou de as equipas jogarem demasiado com o GR. Nunca foi adotada — nem sequer há guarda-redes fixo.",
+          "estado": "proposta",
+          "citacoes": [
+            {
+              "texto": "A simples regra de o redes não passar do meio campo acho que já ajuda.",
+              "autor": "João Magalhães",
+              "data": "05 nov 2020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a3",
+      "numero": 3,
+      "titulo": "Convocatória e substitutos",
+      "nota": "A regra mais citada da liga, e a mais violada.",
+      "regras": [
+        {
+          "id": "3.1",
+          "titulo": "Quem não pode ir é responsável por garantir o seu substituto.",
+          "detalhe": "Pagas o mês e tens direito a jogar todos os jogos; em troca, se falhares, o teu lugar não fica vazio. O grupo ajuda sempre — isso não transfere a responsabilidade.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Cada um de vocês paga um mês e tem direito a jogar os jogos todos. Se por acaso não puder ir tem a obrigação de garantir que há um sub para essa pessoa. Esta é a regra há anos.",
+              "autor": "Fragoso",
+              "data": "18 jan 2023"
+            },
+            {
+              "texto": "A única regra que existe é «quem não pode é responsável por arranjar o seu sub».",
+              "autor": "Zé Soares Franco",
+              "data": "27 dez 2025"
+            },
+            {
+              "texto": "Está estipulado que quando alguém falta, esse alguém é responsável por garantir a sua vaga de modo que os outros não saiam prejudicados por não haver jogo. Como é lógico, o pessoal aqui ajuda sempre… Isso não diminui a nossa responsabilidade.",
+              "autor": "Zé Soares Franco",
+              "data": "27 jan 2026, no dia seguinte ao primeiro jogo cancelado"
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "titulo": "O substituto ocupa o lugar e a equipa de quem substitui.",
+          "detalhe": "Por isso a lista se escreve sempre «Fulano (sub Beltrano)»: é assim que o sorteio sabe onde o pôr.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Põe-se quem vão substituir e ficam com esse lugar. E acho que devia ser sempre assim.",
+              "autor": "Pedro Pacheco",
+              "data": "12 nov 2020"
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "titulo": "Cada um entende-se com o seu sub sobre o pagamento do jogo.",
+          "detalhe": "Nunca foi obrigatório o sub pagar. Se o sub for arranjado por terceiros, nada lhe é cobrado.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Depois se quiserem cobrar pelo jogo ao sub é convosco… Nunca ficou definido que os subs tinham de jogar à pala.",
+              "autor": "Fragoso",
+              "data": "18 jan 2023"
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "titulo": "2 € por cada substituto vão para o cofre comum.",
+          "detalhe": "Regra de dezembro de 2025: cofre partilhado no Revolut, para bolas e para as cervejas do jantar. Desde agosto de 2026, quem chama o sub adianta os 2 € e depois cobra-lhe.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Era uma excelente coisa para se aplicar pedir 2€ a cada sub quando vem jogar. Dava para fazer uma vaquinha e termos bolas boas.",
+              "autor": "Fragoso",
+              "data": "08 dez 2025"
+            },
+            {
+              "texto": "Quem chama põe logo 2€ e depois pede aos subs. A puta da tainada que fazemos só com isso.",
+              "autor": "Bernardo Queiroz",
+              "data": "21 ago 2026"
+            }
+          ]
+        },
+        {
+          "id": "3.5",
+          "titulo": "Prioridade a pôr sub: primeiro o próprio, depois quem ofereceu primeiro.",
+          "detalhe": "Quando dois membros oferecem sub para o mesmo lugar, vale a ordem de chegada.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Acho que a pessoa tem sempre prioridade a pôr o seu próprio sub.",
+              "autor": "Pedro Pacheco",
+              "data": "23 fev 2026"
+            }
+          ]
+        },
+        {
+          "id": "3.6",
+          "titulo": "Se afinal podes ir, o sub é dispensado.",
+          "detalhe": "E, evidentemente, não podes ser o teu próprio substituto.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Se o Kiko não pode ir, obviamente não pode ir substituir-se.",
+              "autor": "Pedro Pacheco",
+              "data": "15 fev 2024, sobre uma linha que dizia «Kiko (sub Kiko)»"
+            }
+          ]
+        },
+        {
+          "id": "3.7",
+          "titulo": "Penalizar quem não arranja sub.",
+          "detalhe": "Proposta em junho de 2026, depois de um jogo cancelado e de outro mudado para um dia em que o proponente não podia.",
+          "estado": "proposta",
+          "citacoes": [
+            {
+              "texto": "Mais que dar pontos a quem queria ir, devíamos criar penalização a quem não arranjou sub.",
+              "autor": "Miguel Girão",
+              "data": "29 jun 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4",
+      "numero": 4,
+      "titulo": "Formação das equipas",
+      "nota": "Brancos contra Maregões. O sorteio é aleatório por princípio.",
+      "regras": [
+        {
+          "id": "4.1",
+          "titulo": "As equipas são sorteadas aleatoriamente no site.",
+          "detalhe": "Sem critério, sem semente, sem equilíbrio. Qualquer pessoa com login pode carregar no botão.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Não há critério bro. É random.",
+              "autor": "João Magalhães",
+              "data": "13 jan 2022"
+            },
+            {
+              "texto": "As equipas são aleatórias por alguma razão.",
+              "autor": "Bernardo Xavier",
+              "data": "30 dez 2024"
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "titulo": "Um sorteio por jornada. Repetir é batota.",
+          "detalhe": "Havia um contador para detetar quem repetia o sorteio até sair uma equipa de que gostasse. Desde novembro de 2023 o site simplesmente não deixa.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Há um counter. Se não, significa que algum aldrabão andou a fazer equipas até sair uma que goste.",
+              "autor": "Pedro Pacheco",
+              "data": "21 out 2021"
+            },
+            {
+              "texto": "O site agora não deixa fazer mais do que uma equipa por jornada. — Acabaram-se as maroscas.",
+              "autor": "Pedro Pacheco / Bernardo Queiroz",
+              "data": "30 nov 2023"
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "titulo": "Só se sorteia depois de fechados os 14 e o resultado anterior lançado.",
+          "detalhe": "Sortear antes de todos os subs estarem confirmados foi considerado falta de verdade desportiva; e o site precisa do jogo anterior registado para colocar os nomes nas equipas certas.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Zero verdade desportiva saírem equipas antes de estarem os subs todos. — Concordo.",
+              "autor": "Ferna / Pedro Pacheco",
+              "data": "09 dez 2021"
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "titulo": "Depois do sorteio não se trocam jogadores.",
+          "detalhe": "A regra mais disputada da liga. Ver ponto em aberto B1.",
+          "estado": "contestada",
+          "citacoes": [
+            {
+              "texto": "Regras são regras. Por mim joga-se assim. — Não há trocas.",
+              "autor": "Afonso Mariz / Bernardo Xavier",
+              "data": "08 fev 2024"
+            },
+            {
+              "texto": "Os regulamentos dizem claramente que não há trocas.",
+              "autor": "Pedro Pacheco",
+              "data": "30 dez 2024"
+            }
+          ]
+        },
+        {
+          "id": "4.5",
+          "titulo": "Com mais de metade de subs, as equipas organizam-se à mão.",
+          "detalhe": "Distribuem-se os substitutos de forma equilibrada — 3 contra 3, 4 contra 4 — e sorteiam-se aleatoriamente apenas os membros da liga presentes.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Já tínhamos tido a conversa que quando fossem mais de metade de subs que se organizava as equipas.",
+              "autor": "Pedro Pacheco",
+              "data": "15 dez 2025"
+            },
+            {
+              "texto": "Não faria sentido dividir 4v4 equilibrado entre os subs e depois tiramos 3v3 aleatório entre nós?",
+              "autor": "Pedro Pacheco",
+              "data": "29 dez 2025"
+            }
+          ]
+        },
+        {
+          "id": "4.6",
+          "titulo": "No último jogo da época, pares contra ímpares da tabela.",
+          "detalhe": "Para garantir que quem disputa lugares não calha na mesma equipa. Aplicado em 2023 e 2024, contestado em 2025. Ver ponto em aberto B2.",
+          "estado": "contestada",
+          "citacoes": [
+            {
+              "texto": "Mas o último jogo não vai ser pares contra ímpares? O ano passado foi. Mesmo para garantir que havia disputa de lugares no último jogo.",
+              "autor": "Chico Castro",
+              "data": "23 mai 2024"
+            }
+          ]
+        },
+        {
+          "id": "4.7",
+          "titulo": "Métodos alternativos, todos rejeitados.",
+          "detalhe": "Dois capitães sorteados a escolher (João Magalhães, 2022 — travado porque ninguém conhece os subs); classificar cada jogador como tipo A ou B e obrigar a 3+3 por equipa (Zé SF, 2022); os 6 primeiros contra os 6 últimos da tabela (Kiko, 2021).",
+          "estado": "proposta",
+          "citacoes": [
+            {
+              "texto": "Cada jogador era classificado como A ou B… A equipa teria obrigatoriamente de incluir 3 jogadores do tipo A e 3 do tipo B.",
+              "autor": "Zé Soares Franco",
+              "data": "07 abr 2022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a5",
+      "numero": 5,
+      "titulo": "Dia, hora e adiamentos",
+      "nota": "Sete anos de negociação com o calendário do FC Porto.",
+      "regras": [
+        {
+          "id": "5.1",
+          "titulo": "Dia e hora fixos para toda a época, decididos por sondagem em agosto.",
+          "detalhe": "Segunda-feira às 20:00, desde 2024/25. Antes disso: quinta às 22h no Torrinha (2019–2022) e quinta às 21h em Paranhos e na Arca d'Água (2022–2024). Fixa-se em sondagem de agosto e não se mexe durante a época.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "A hora tem de ser fixa (21:30) e ponto. Se não vai dar merda. — Está fixa.",
+              "autor": "João Magalhães / Fragoso",
+              "data": "29 set 2021"
+            }
+          ],
+          "votacao": {
+            "data": "30 mai 2024",
+            "pergunta": "Horário para a época seguinte",
+            "resultado": [
+              {
+                "opcao": "Segunda às 20:00",
+                "votos": 6
+              },
+              {
+                "opcao": "Quinta às 21:00",
+                "votos": 5
+              }
+            ]
+          }
+        },
+        {
+          "id": "5.2",
+          "titulo": "Só se muda o jogo se todos os que podiam no dia normal puderem no dia alternativo.",
+          "detalhe": "Não é preciso que todos possam — é preciso que ninguém que iria perca o jogo por causa da mudança. Formulada em 2021, repetida sem alterações até 2025.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "A regra é claramente ninguém ser prejudicado.",
+              "autor": "Pedro Pacheco",
+              "data": "02 dez 2021"
+            },
+            {
+              "texto": "A regra não é podermos ir todos. A regra é: todos os que podiam têm que poder no novo dia sugerido.",
+              "autor": "Pedro Pacheco",
+              "data": "26 nov 2024"
+            },
+            {
+              "texto": "Só se muda se as pessoas que puderem nesse dia puderem noutro. Isso é o combinado desde sempre.",
+              "autor": "Pedro Pacheco",
+              "data": "22 set 2025"
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "titulo": "Com mais de 5 substitutos, procura-se outro dia nessa semana.",
+          "detalhe": "Votado 7-1 no fim de 2025. Escolhe-se o dia com mais votos, desde que haja campo. O jogo nunca se cancela e os pontos continuam a contar.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "A partir de agora, quando houver um jogo que haja mais de 5 subs, vê-se se há campo noutro horário dessa semana e joga-se no dia com mais votos.",
+              "autor": "Fragoso",
+              "data": "28 dez 2025, a fechar a votação"
+            },
+            {
+              "texto": "Nunca cancelar o jogo. No caso de nem haver campo não se mudava.",
+              "autor": "Fragoso",
+              "data": "27 dez 2025"
+            }
+          ],
+          "votacao": {
+            "data": "28 dez 2025",
+            "pergunta": "Alteração das regras",
+            "resultado": [
+              {
+                "opcao": "Mudar o jogo quando há mais de 5 subs",
+                "votos": 7
+              },
+              {
+                "opcao": "Manter tudo igual",
+                "votos": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "5.4",
+          "titulo": "Chegar 10 a 15 minutos antes.",
+          "detalhe": "Recorrente desde 2020. Nunca foi sancionado — ver 1.7.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Hoje sff sem atrasos. Para não começarmos às 9h45 como sempre. Não custa nada chegar às 09h25.",
+              "autor": "Zé Soares Franco",
+              "data": "16 dez 2021"
+            }
+          ]
+        },
+        {
+          "id": "5.5",
+          "titulo": "Quórum mínimo para haver jogo.",
+          "detalhe": "Invocado como se existisse; negado por quem organiza há mais tempo. Ver ponto em aberto C1.",
+          "estado": "contestada",
+          "citacoes": [
+            {
+              "texto": "Isso nunca houve. Isso nunca foi uma cena.",
+              "autor": "Fragoso",
+              "data": "27 nov 2023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a6",
+      "numero": 6,
+      "titulo": "Dinheiro",
+      "nota": "O tema que mais horas consumiu ao organizador.",
+      "regras": [
+        {
+          "id": "6.1",
+          "titulo": "Mensalidade fixa por jogador, paga antes do primeiro jogo do mês.",
+          "detalhe": "O custo do campo dividido por 14, independentemente de quantos jogos cada um faz. 15 €/mês no Torrinha, 17,15 € em 2022/23, 19,29 € desde 2023.",
+          "estado": "vigor",
+          "citacoes": []
+        },
+        {
+          "id": "6.2",
+          "titulo": "Paga-se mesmo faltando.",
+          "detalhe": "Lesão, férias ou ausência prolongada não isentam — pagas o lugar, não o jogo.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Quem não pode não vai. E paga na mesma.",
+              "autor": "Pedro Pacheco",
+              "data": "08 set 2021"
+            },
+            {
+              "texto": "Ainda que não vá o mês todo, em princípio sempre foi assim.",
+              "autor": "Perneta, lesionado",
+              "data": "26 set 2023"
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "titulo": "O tesoureiro nunca adianta dinheiro.",
+          "detalhe": "Se alguém não pagar até ao prazo, o tesoureiro escolhe um dos faltosos, envia-lhe tudo o que recebeu e esse trata do pagamento ao campo.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Não vou adiantar dinheiro por ninguém. Pagam-me antes e eu resolvo com eles.",
+              "autor": "Fragoso",
+              "data": "31 ago 2022, ao aceitar a tesouraria"
+            },
+            {
+              "texto": "Regras do Novo Tesoureiro: MBway até às 12h de segunda-feira. Depois disso escolho «aleatoriamente» um gajo que ainda não tenha pago.",
+              "autor": "Kiko",
+              "data": "01 set 2025"
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "titulo": "O substituto definitivo assume a mensalidade de quem sai.",
+          "detalhe": "Quem cede o lugar a meio da época deixa de pagar a partir desse mês.",
+          "estado": "vigor",
+          "citacoes": []
+        },
+        {
+          "id": "6.5",
+          "titulo": "A bola é do grupo, comprada a rateio.",
+          "detalhe": "Até 2022 jogava-se com a bola do Pacheco. Desde então compra-se em conjunto — a última custou 32,90 € e foi somada à mensalidade do mês.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Esta bola é minha, tal como são as 3 anteriores. Eu empresto na boa. Mas não me responsabilizo por não a levar.",
+              "autor": "Pedro Pacheco",
+              "data": "12 mai 2022"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a7",
+      "numero": 7,
+      "titulo": "Francesinha e fim de época",
+      "nota": "O prémio que dá nome à liga. Nas três primeiras épocas nunca chegou a acontecer.",
+      "regras": [
+        {
+          "id": "7.1",
+          "titulo": "A metade de cima da tabela come à borla, paga pela metade de baixo.",
+          "detalhe": "Com 14 jogadores: os 7 primeiros recebem, os 7 últimos pagam. Quem fica abaixo paga apenas a sua própria.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Se tiveres ficado abaixo pagas a tua só, se não alguém te paga.",
+              "autor": "Pedro Pacheco",
+              "data": "13 set 2021"
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "titulo": "Divide-se o custo das francesinhas efetivamente comidas.",
+          "detalhe": "Se um vencedor não aparece, os pagantes pagam menos — e o lugar seguinte da tabela abre caminho. Em 2023 saiu a 19,43 € por cada um dos 7 últimos.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "É só somar a vossa conta + 5 francesas × 12,5 € / 7.",
+              "autor": "Pedro Pacheco",
+              "data": "26 mai 2023"
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "titulo": "Quem cede o lugar a meio da época assume a francesinha.",
+          "detalhe": "O substituto herda os pontos mas não a fatura: se acabar em baixo, o titular original é que paga.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Normalmente substitui-te e fica com os teus pontos todos. No entanto tu assumes diretamente a derrota e tens que pagar francesinha.",
+              "autor": "Pedro Pacheco",
+              "data": "24 jan 2024"
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "titulo": "O jantar é logo a seguir ao último jogo — ou não acontece.",
+          "detalhe": "Lição aprendida à custa de três épocas em que se tentou marcar «o dia ótimo» e nunca houve jantar nenhum.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Nos anos em que se tentou sempre arranjar o dia ótimo, nunca aconteceu jantar. E sempre que foi logo depois do jogo houve sempre.",
+              "autor": "Fragoso",
+              "data": "27 jun 2026"
+            }
+          ]
+        },
+        {
+          "id": "7.5",
+          "titulo": "Suplentes são bem-vindos ao jantar, mas cada um paga a sua.",
+          "detalhe": "",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Suplentes são bem-vindos no jantar. Mas cada um paga a sua.",
+              "autor": "Pedro Pacheco",
+              "data": "02 jul 2026"
+            }
+          ]
+        },
+        {
+          "id": "7.6",
+          "titulo": "A época acaba na última segunda-feira de junho.",
+          "detalhe": "A época acaba na última segunda-feira de junho — não em maio. Passou de «quando o primeiro for de férias» (2020) para fim de maio (2023) e para fim de junho por sondagem em setembro de 2025, decisão que a meio de 2026 ainda ninguém se lembrava de ter tomado.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Tínhamos falado antes que acabava no fim de junho, já disse n vezes. — Está aqui os votos. Por isso de facto é até ao final de junho.",
+              "autor": "Vinhas / Pedro Pacheco",
+              "data": "01 jun 2026"
+            }
+          ],
+          "votacao": {
+            "data": "01 set 2025",
+            "pergunta": "Final da temporada",
+            "resultado": [
+              {
+                "opcao": "Última segunda de junho",
+                "votos": 9
+              },
+              {
+                "opcao": "Última segunda de maio",
+                "votos": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "a8",
+      "numero": 8,
+      "titulo": "Plantel, entradas e saídas",
+      "nota": "De 12 para 14 jogadores. Há sempre lista de espera.",
+      "regras": [
+        {
+          "id": "8.1",
+          "titulo": "A liga tem 14 lugares fixos.",
+          "detalhe": "Eram 12 até 2022, quando se passou para futebol de 7. Só se entra se alguém sair.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Temos um grupo de 14, quem não puder arranja sub.",
+              "autor": "Pedro Pacheco",
+              "data": "18 jul 2022"
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "titulo": "Entra-se por votação dos jogadores confirmados para a época.",
+          "detalhe": "Sondagem de agosto de 2025: «votos dos jogadores» (10) bateu «já ter jogado na Master League» (6) e «ordem de candidaturas» (0). Cada um vota em todos os que quiser; havendo empate, segunda ronda.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Este é o critério, sim. Até agora acho que foi. Mas podemos mudar. Acho que ninguém escreveu na pedra.",
+              "autor": "Vinhas",
+              "data": "18 ago 2025"
+            }
+          ],
+          "votacao": {
+            "data": "20 ago 2025",
+            "pergunta": "Método de entrada (preferencial)",
+            "resultado": [
+              {
+                "opcao": "Votos dos jogadores confirmados",
+                "votos": 10
+              },
+              {
+                "opcao": "Já ter jogado na Master League",
+                "votos": 6
+              },
+              {
+                "opcao": "Ordem de candidaturas",
+                "votos": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "8.3",
+          "titulo": "Antigos membros têm prioridade de regresso.",
+          "detalhe": "Regra da fundação, pela ordem em que pediram a reentrada. Continua a pesar, ainda que já não seja o critério principal.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "As pessoas que já fizeram parte têm prioridade, pela ordem que me pediram para ser reinseridos.",
+              "autor": "Pedro Pacheco",
+              "data": "22 set 2021"
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "titulo": "Quem entra a meio da época herda os pontos de quem saiu.",
+          "detalhe": "Aplicada de forma consistente pelo organizador — e contrariada duas vezes por quem entrou. Ver ponto em aberto B3.",
+          "estado": "contestada",
+          "citacoes": [
+            {
+              "texto": "Então entra com os pontos do Zé? — Isso. Como sempre.",
+              "autor": "Chico Castro / Pedro Pacheco",
+              "data": "01 mar 2023"
+            }
+          ]
+        },
+        {
+          "id": "8.5",
+          "titulo": "Baixa prolongada: cede-se o lugar e mantém-se a vaga para a época seguinte.",
+          "detalhe": "Quem se lesiona por meses passa a suplente, entrega o lugar a alguém que pague, e volta na época seguinte.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Preferia ceder o meu lugar… Obviamente que assumo o pagamento da francesinha e quero manter o meu lugar para a próxima época.",
+              "autor": "Bernardo Xavier",
+              "data": "09 mar 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a9",
+      "numero": 9,
+      "titulo": "Como se decide",
+      "nota": "A meta-regra: nada aqui foi imposto.",
+      "regras": [
+        {
+          "id": "9.1",
+          "titulo": "Muda-se uma regra por sondagem no grupo, e ganha a maioria dos que votam.",
+          "detalhe": "Sondagem aberta com prazo, encerrada por quem a lançou. Ganha a maioria dos que votam; quem não vota conta como abstenção e o empate mantém o que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda entre as duas mais votadas. Regista-se aqui a contagem e a data — os nomes ficam na própria sondagem no grupo. Votações sobre pessoas são anónimas.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Não vejo razão para não continuarmos uma democracia.",
+              "autor": "Pedro Pacheco",
+              "data": "02 jun 2025"
+            },
+            {
+              "texto": "Está fechado! Ganhou a maioria que votou.",
+              "autor": "Fragoso",
+              "data": "27 jun 2024"
+            },
+            {
+              "texto": "Bem, as votações estão empatadas para a alteração do dia. Por isso jogo mantém-se segunda.",
+              "autor": "Fragoso",
+              "data": "28 dez 2025"
+            },
+            {
+              "texto": "Puseste para não se ver os nomes para poderes votar no Dudas. — Era para toda a gente votar à vontade.",
+              "autor": "Bernardo Queiroz / Pedro Pacheco",
+              "data": "02 set 2026, na votação de entrada"
+            }
+          ]
+        },
+        {
+          "id": "9.2",
+          "titulo": "Na falta de estatutos novos, valem os antigos.",
+          "detalhe": "Combinou-se redigir estatutos em maio de 2022, maio de 2023, agosto de 2025, dezembro de 2025 e junho de 2026. Nunca aconteceu.",
+          "estado": "vigor",
+          "citacoes": [
+            {
+              "texto": "Como ninguém se chegou à frente para escrever novos regulamentos, sugiro manter os últimos.",
+              "autor": "Pedro Pacheco",
+              "data": "09 set 2023"
+            },
+            {
+              "texto": "Só falam das regras quando é para pedir faltas durante o jogo ou para adicionar pessoas ao grupo.",
+              "autor": "Bernardo Queiroz",
+              "data": "26 jan 2026"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pontos": [
+    {
+      "id": "A2",
+      "balde": "decidido",
+      "titulo": "Desempate: nº de vitórias, depois diferença de golos",
+      "contexto": "Votado 6-0 a 7 de setembro de 2025. O site continua a ordenar só por pontos, mantendo a ordem de inserção em caso de empate.",
+      "regrasAfetadas": ["1.5"],
+      "accao": "Alterar domain.ts. Sem votação."
+    },
+    {
+      "id": "B1",
+      "balde": "votar",
+      "titulo": "Trocas de jogadores depois do sorteio",
+      "contexto": "O Pacheco sustenta que os regulamentos nunca permitiram trocas; o Vinhas lembra que se fez duas vezes em 2024/25. O Queiroz propôs trocar só a partir de muitos subs; o Zi e o Ferna defendem corrigir sempre que estiver escandalosamente desequilibrado. A objeção do Pacheco à terceira via é que «desequilibrado» é subjetivo e traz a discussão todas as semanas.",
+      "regrasAfetadas": ["4.4", "4.5"],
+      "opcoes": [
+        "Nunca se troca — o sorteio é final",
+        "Só a partir de 7 subs, e nunca por desequilíbrio",
+        "Sempre que estiver claramente desequilibrado, com ou sem subs"
+      ],
+      "sondagem": "SONDAGEM:\nTrocas de jogadores depois do sorteio\nOPÇÃO: Nunca se troca — o sorteio é final\nOPÇÃO: Só a partir de 7 subs, e nunca por desequilíbrio\nOPÇÃO: Sempre que estiver claramente desequilibrado, com ou sem subs",
+      "nota": "Três opções: se nenhuma passar de metade, segunda ronda entre as duas mais votadas."
+    },
+    {
+      "id": "B2",
+      "balde": "votar",
+      "titulo": "Último jogo da época: pares contra ímpares?",
+      "contexto": "Aplicado em 2023 e 2024 para garantir que quem disputa lugares não joga na mesma equipa. Em 2025 o Bernardo Xavier disse que era regra estabelecida e o Afonso Mariz respondeu que no ano anterior o campeão saiu de um sorteio aleatório.",
+      "regrasAfetadas": ["4.6"],
+      "opcoes": [
+        "Pares contra ímpares, pela posição na tabela",
+        "Aleatório, como em todas as outras jornadas"
+      ],
+      "sondagem": "SONDAGEM:\nEquipas do último jogo da época\nOPÇÃO: Pares contra ímpares, pela posição na tabela\nOPÇÃO: Aleatório, como em todas as outras jornadas"
+    },
+    {
+      "id": "B3",
+      "balde": "votar",
+      "titulo": "Pontos de quem entra a meio da época",
+      "contexto": "O organizador aplica a mesma regra desde 2021 — herda os pontos do lugar e o titular original assume a francesinha. Mas o Afonso Pires (2021) e o Afonso Mariz (2022) ficaram ambos com os pontos que tinham feito como subs.",
+      "regrasAfetadas": ["8.4", "7.3"],
+      "opcoes": ["Herda os pontos do lugar que ocupa", "Começa com os pontos que fez como sub"],
+      "sondagem": "SONDAGEM:\nPontos de quem entra a meio da época\nOPÇÃO: Herda os pontos do lugar que ocupa\nOPÇÃO: Começa com os pontos que fez como sub"
+    },
+    {
+      "id": "C1",
+      "balde": "proposta",
+      "titulo": "Quórum: quantos membros da liga são precisos para haver jogo?",
+      "contexto": "Falta definir um número mínimo de membros (sem contar subs) e o que acontece se não se atingir — adia-se, joga-se na mesma, ou os pontos não contam.",
+      "regrasAfetadas": ["5.5"]
+    },
+    {
+      "id": "C2",
+      "balde": "proposta",
+      "titulo": "Como cobrar os 2 € dos subs",
+      "contexto": "O princípio está aceite desde dezembro de 2025. O problema é a cobrança: em julho de 2026 o cofre tinha 22 € quando devia ter cerca de 300 €. Falta um mecanismo que não dependa de alguém andar atrás das pessoas.",
+      "regrasAfetadas": ["3.4"]
+    },
+    {
+      "id": "C3",
+      "balde": "proposta",
+      "titulo": "Quem fica de fora por causa de um adiamento mantém o ponto?",
+      "contexto": "A regra dos 5 subs assume que alguém possa sair prejudicado em nome da qualidade do jogo. O Bernardo Xavier propôs que quem podia no dia normal e não pode no alternativo mantivesse pelo menos o ponto de presença. Nunca foi votado.",
+      "regrasAfetadas": ["5.2", "5.3", "1.4"]
+    },
+    {
+      "id": "C4",
+      "balde": "proposta",
+      "titulo": "Atraso −1 ponto: mecanismo de registo",
+      "contexto": "Já foi aprovado em setembro de 2024. Morreu porque dependia de alguém apontar os atrasos à mão e o organizador descontar no fim da época. Precisa de um mecanismo, não de nova votação de princípio.",
+      "regrasAfetadas": ["1.7", "5.4"]
+    },
+    {
+      "id": "C5",
+      "balde": "proposta",
+      "titulo": "Penalização a quem não arranja substituto",
+      "contexto": "Proposta pelo Miguel Girão em junho de 2026, depois do primeiro jogo cancelado da história da liga. O Pacheco não se opôs, mas exigiu votação.",
+      "regrasAfetadas": ["3.1", "3.7"]
+    }
+  ]
+}

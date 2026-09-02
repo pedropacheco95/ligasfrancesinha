@@ -12,10 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LeaguesRouteImport } from './routes/leagues'
 import { Route as PlayersRouteImport } from './routes/players'
+import { Route as RegulamentoRouteImport } from './routes/regulamento'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as AuthLogoutRouteImport } from './routes/auth/logout'
 import { Route as AuthRegisterRouteImport } from './routes/auth/register'
 import { Route as GameIdRouteImport } from './routes/game/$id'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias/$slug'
 import { Route as CreateChoose_editionViewRouteImport } from './routes/create/choose_edition/$view'
 import { Route as CreateGameIndexRouteImport } from './routes/create/game/index'
 import { Route as CreateGameEditionNameRouteImport } from './routes/create/game/$editionName'
@@ -48,6 +50,11 @@ const PlayersRoute = PlayersRouteImport.update({
   path: '/players',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegulamentoRoute = RegulamentoRouteImport.update({
+  id: '/regulamento',
+  path: '/regulamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthLoginRoute = AuthLoginRouteImport.update({
   id: '/auth/login',
   path: '/auth/login',
@@ -66,6 +73,11 @@ const AuthRegisterRoute = AuthRegisterRouteImport.update({
 const GameIdRoute = GameIdRouteImport.update({
   id: '/game/$id',
   path: '/game/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreateChoose_editionViewRoute =
@@ -167,10 +179,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/leagues': typeof LeaguesRoute
   '/players': typeof PlayersRoute
+  '/regulamento': typeof RegulamentoRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/logout': typeof AuthLogoutRoute
   '/auth/register': typeof AuthRegisterRoute
   '/game/$id': typeof GameIdRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/create/choose_edition/$view': typeof CreateChoose_editionViewRoute
   '/create/game/$editionName': typeof CreateGameEditionNameRoute
   '/player/all_editions/$playerName': typeof PlayerAll_editionsPlayerNameRoute
@@ -192,10 +206,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/leagues': typeof LeaguesRoute
   '/players': typeof PlayersRoute
+  '/regulamento': typeof RegulamentoRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/logout': typeof AuthLogoutRoute
   '/auth/register': typeof AuthRegisterRoute
   '/game/$id': typeof GameIdRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/create/choose_edition/$view': typeof CreateChoose_editionViewRoute
   '/create/game/$editionName': typeof CreateGameEditionNameRoute
   '/player/all_editions/$playerName': typeof PlayerAll_editionsPlayerNameRoute
@@ -218,10 +234,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/leagues': typeof LeaguesRoute
   '/players': typeof PlayersRoute
+  '/regulamento': typeof RegulamentoRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/logout': typeof AuthLogoutRoute
   '/auth/register': typeof AuthRegisterRoute
   '/game/$id': typeof GameIdRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/create/choose_edition/$view': typeof CreateChoose_editionViewRoute
   '/create/game/$editionName': typeof CreateGameEditionNameRoute
   '/player/all_editions/$playerName': typeof PlayerAll_editionsPlayerNameRoute
@@ -245,10 +263,12 @@ export interface FileRouteTypes {
     | '/'
     | '/leagues'
     | '/players'
+    | '/regulamento'
     | '/auth/login'
     | '/auth/logout'
     | '/auth/register'
     | '/game/$id'
+    | '/noticias/$slug'
     | '/create/choose_edition/$view'
     | '/create/game/$editionName'
     | '/player/all_editions/$playerName'
@@ -270,10 +290,12 @@ export interface FileRouteTypes {
     | '/'
     | '/leagues'
     | '/players'
+    | '/regulamento'
     | '/auth/login'
     | '/auth/logout'
     | '/auth/register'
     | '/game/$id'
+    | '/noticias/$slug'
     | '/create/choose_edition/$view'
     | '/create/game/$editionName'
     | '/player/all_editions/$playerName'
@@ -295,10 +317,12 @@ export interface FileRouteTypes {
     | '/'
     | '/leagues'
     | '/players'
+    | '/regulamento'
     | '/auth/login'
     | '/auth/logout'
     | '/auth/register'
     | '/game/$id'
+    | '/noticias/$slug'
     | '/create/choose_edition/$view'
     | '/create/game/$editionName'
     | '/player/all_editions/$playerName'
@@ -321,10 +345,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LeaguesRoute: typeof LeaguesRoute
   PlayersRoute: typeof PlayersRoute
+  RegulamentoRoute: typeof RegulamentoRoute
   AuthLoginRoute: typeof AuthLoginRoute
   AuthLogoutRoute: typeof AuthLogoutRoute
   AuthRegisterRoute: typeof AuthRegisterRoute
   GameIdRoute: typeof GameIdRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
   CreateChoose_editionViewRoute: typeof CreateChoose_editionViewRoute
   CreateGameEditionNameRoute: typeof CreateGameEditionNameRoute
   PlayerAll_editionsPlayerNameRoute: typeof PlayerAll_editionsPlayerNameRoute
@@ -366,6 +392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/regulamento': {
+      id: '/regulamento'
+      path: '/regulamento'
+      fullPath: '/regulamento'
+      preLoaderRoute: typeof RegulamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth/login': {
       id: '/auth/login'
       path: '/auth/login'
@@ -392,6 +425,13 @@ declare module '@tanstack/react-router' {
       path: '/game/$id'
       fullPath: '/game/$id'
       preLoaderRoute: typeof GameIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create/choose_edition/$view': {
@@ -513,10 +553,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LeaguesRoute: LeaguesRoute,
   PlayersRoute: PlayersRoute,
+  RegulamentoRoute: RegulamentoRoute,
   AuthLoginRoute: AuthLoginRoute,
   AuthLogoutRoute: AuthLogoutRoute,
   AuthRegisterRoute: AuthRegisterRoute,
   GameIdRoute: GameIdRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
   CreateChoose_editionViewRoute: CreateChoose_editionViewRoute,
   CreateGameEditionNameRoute: CreateGameEditionNameRoute,
   PlayerAll_editionsPlayerNameRoute: PlayerAll_editionsPlayerNameRoute,

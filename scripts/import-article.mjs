@@ -100,8 +100,11 @@ function scopeCss(css) {
       const lead = comments.length ? `${comments.join("\n")}\n` : "";
       const prelude = raw.replace(/\/\*[\s\S]*?\*\//g, " ").trim();
 
-      // Animation and font blocks name frames and faces, not elements.
-      if (/^@(keyframes|font-face|charset|import|property)\b/.test(prelude))
+      // Animation, font and page blocks name frames, faces and page boxes, not
+      // elements. `@page` in particular comes up in any article written to be
+      // printed, and scoping it produces `.news-article @page`, which is not a
+      // selector at all — lightningcss rejects the stylesheet outright.
+      if (/^@(keyframes|font-face|charset|import|property|page)\b/.test(prelude))
         return `${lead}${prelude} {${body}}`;
       // Conditional groups wrap rules, so scope what is inside them instead.
       if (/^@(media|supports|layer|container)\b/.test(prelude)) {

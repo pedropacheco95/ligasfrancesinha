@@ -1,0 +1,940 @@
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Reconstrução · out 2019 – set 2026</p>
+  <h1>Estatutos da Master League</h1>
+  <p class="dek">O grupo combinou escrever isto <strong>cinco vezes</strong> em quatro anos e nunca escreveu. Aqui está o que efetivamente foi decidido, extraído das 27 453 mensagens do grupo. Vem em quatro partes: o que está fechado, como se discorda de uma regra fechada, o que falta votar, e o que falta propor.</p>
+  <div class="facts">
+    <div class="fact"><b>27 453</b><span>mensagens lidas</span></div>
+    <div class="fact"><b>50</b><span>regras identificadas</span></div>
+    <div class="fact"><b>3</b><span>sondagens prontas a correr</span></div>
+    <div class="fact"><b>5</b><span>pontos à espera de proposta</span></div>
+    <div class="fact"><b>1</b><span>decisão votada por implementar</span></div>
+  </div>
+</header>
+
+
+<section class="part" id="p1">
+  <div class="part-head"><span class="part-num">Parte 1</span><h2>O que está decidido</h2></div>
+  <p class="part-note">Isto não vai a votos outra vez. Quatro decisões que já foram a sondagem e ganharam, e a seguir as 50 regras que regem a liga — cada uma com a data, o autor e a frase em que ficou fixada.</p>
+
+  <div class="settled">
+    <div class="settled-item">
+      <b>Segunda-feira, às 20:00</b>
+      <p>Dia e hora fixos para toda a época. Em vigor desde 2024/25, depois de três épocas à quinta.</p>
+      <span class="tally">Sondagem 6–5 · 30 mai 2024</span>
+    </div>
+    <div class="settled-item">
+      <b>A época acaba na última segunda de junho</b>
+      <p>Não é fim de maio. Foi votado, e a votação está registada — só ninguém se lembrava.</p>
+      <span class="tally">Sondagem 9–2 · 01 set 2025</span>
+    </div>
+    <div class="settled-item">
+      <b>Entra-se por votação dos confirmados</b>
+      <p>Cada um vota em todos os candidatos que quiser. Havendo empate, segunda ronda. Votação anónima.</p>
+      <span class="tally">Sondagem 10–6–0 · 20 ago 2025</span>
+    </div>
+    <div class="settled-item owed">
+      <b>Desempate: vitórias, depois golos</b>
+      <p>Votado por unanimidade. O site ainda ordena só por pontos — é a única decisão fechada que falta implementar.</p>
+      <span class="tally">Sondagem 6–0 · 07 set 2025 · por implementar</span>
+    </div>
+  </div>
+
+  <div class="clashes" style="margin-top:26px">
+    <div class="clash">
+      <h3>Porque é que isto precisou de ser escrito</h3>
+      <div class="sides">
+        <div class="side"><em>Fim de maio</em><p>Praticado em 2023, 2024 e 2025 — «como a liga portuguesa». Ainda em junho de 2026 metade do grupo assumia que era esta.</p></div>
+        <div class="side"><em>Fim de junho</em><p>Votado 9-2 em sondagem a 01 set 2025. Só foi reconhecido quando o Pacheco foi buscar o registo da votação, em junho de 2026.</p></div>
+      </div>
+      <div class="verdict"><b>Padrão</b>Uma regra votada não é uma regra sabida. É o argumento mais forte a favor de escrever os estatutos.</div>
+    </div>
+  </div>
+
+  <div class="cols">
+
+<nav class="index">
+  <p>Artigos</p>
+  <ol>
+    <li><a href="#a1"><em>1</em>Pontos e classificação</a></li>
+    <li><a href="#a2"><em>2</em>Dentro das quatro linhas</a></li>
+    <li><a href="#a3"><em>3</em>Convocatória e substitutos</a></li>
+    <li><a href="#a4"><em>4</em>Formação das equipas</a></li>
+    <li><a href="#a5"><em>5</em>Dia, hora e adiamentos</a></li>
+    <li><a href="#a6"><em>6</em>Dinheiro</a></li>
+    <li><a href="#a7"><em>7</em>Francesinha e fim de época</a></li>
+    <li><a href="#a8"><em>8</em>Plantel, entradas e saídas</a></li>
+    <li><a href="#a9"><em>9</em>Como se decide</a></li>
+  </ol>
+</nav>
+
+    <main>
+<article id="a1">
+  <div class="art-head"><span class="art-num">ART. 1</span><h2>Pontos e classificação</h2></div>
+  <p class="art-note">A única parte do regulamento que existe escrita — em código, não em texto. Tudo o resto vive na memória do grupo.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.1</span>
+        <div class="rbody">
+          <h3>Vitória vale 4 pontos, empate 2, derrota 1.</h3>
+          <p>O ponto da derrota é, na prática, o ponto de presença: aparecer garante-o.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>4 pontos vitória, 2 empate e 1 derrota, continua a ser isto certo?</q> — <q>Isso mesmo.</q><span class="who">Zé Soares Franco / Afonso Mariz · 08 set 2024</span></div>
+      <div class="verify">
+        <b>Verificado no código</b>
+        <p><code>src/lib/domain.ts:527</code> — <code>points: wins * 4 + draws * 2 + losts + goals * goalValue</code></p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.2</span>
+        <div class="rbody">
+          <h3>Os golos deixaram de contar para os pontos.</h3>
+          <p>Valeram 0,1 ponto cada até à 3.ª edição (2022/23). A partir da 4.ª (2023/24) são apenas estatística — continuam a reportar-se «por piada».</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>1 golinho. Mas pensava que já não contava.</q> — <q>E não conta. E isto era uma das razões pelas quais eu queria que contasse. Assim vai estar tudo a cagar para pôr, e eu acho fixe ter a estatística.</q><span class="who">Bernardo Xavier / Pedro Pacheco · 11 out 2023</span></div>
+      <div class="verify">
+        <b>Verificado nos dados</b>
+        <p><code>editions.json</code> — <code>goalValue: 0.1</code> nas edições 1–3 da Master League, <code>0</code> a partir da 4.ª. A Tuesday League manteve 0,1.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.3</span>
+        <div class="rbody">
+          <h3>Quem não põe o nome na lista final não pontua.</h3>
+          <p>A lista da convocatória é o registo oficial: é dela que sai o jogo no site. Todos os presentes têm de constar, mesmo com zero golos.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Queria avisar que este ano quem não se puser perde os pontos! Caguei para isto.</q><span class="who">Pedro Pacheco · 14 set 2023</span></div>
+      <div class="cite"><q>Isto não é só para golos. É a lista final que ponho no site.</q><span class="who">Pedro Pacheco · 09 nov 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.4</span>
+        <div class="rbody">
+          <h3>Quem falta leva zero — e mais nada.</h3>
+          <p>Nunca houve penalização acrescida por faltar, nem por não arranjar substituto.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Quem não vai não faz pontos. E simples.</q><span class="who">Pedro Pacheco · 16 mar 2022</span></div>
+      <div class="cite"><q>Quem não vai e não arranja sub perde 5 pontos.</q> — <q>Nunca.</q><span class="who">Kiko / Bernardo Queiroz · 02 dez 2024 — proposta rejeitada</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.5</span>
+        <div class="rbody">
+          <h3>Desempate: número de vitórias, depois diferença de golos.</h3>
+          <p>Votado por sondagem em setembro de 2025 (6 votos contra 0) depois de quatro anos de dúvida. <strong>O site ainda não o implementa</strong> — a classificação ordena só por pontos e, em caso de empate, mantém a ordem de inserção dos jogadores.</p>
+        </div>
+        <span class="chip c-pend">Votada · por implementar</span>
+      </div>
+      <div class="cite"><q>Caso também haja empate no nr de vitórias fica a diferença de golos como segundo critério.</q><span class="who">Zé Soares Franco · 07 set 2025</span></div>
+      <div class="cite"><q>Qual é o critério para quem está com o mesmo número de pontos?</q> — <q>Presenças? Não sei. Estou a perguntar mesmo.</q><span class="who">Fragoso / Pedro Pacheco · 22 fev 2024</span></div>
+      <div class="verify">
+        <b>Divergência confirmada no código</b>
+        <p><code>domain.ts:195</code> — «<code>points descending, ties keep id order</code>». Em junho de 2026 o Zé SF acabou empatado com o Fragoso e voltou a perguntar qual era o critério.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.6</span>
+        <div class="rbody">
+          <h3>O que o substituto faz não conta para ele.</h3>
+          <p>Golos, vitórias e presenças do sub não entram na classificação — o lugar pontua, não a pessoa.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Os teus não contam oh sub.</q><span class="who">Pedro Pacheco · 29 abr 2021</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">1.7</span>
+        <div class="rbody">
+          <h3>Atraso desconta 1 ponto.</h3>
+          <p>Proposta pelo Fragoso e votada favoravelmente em setembro de 2024, com registo manual e desconto no fim da época. Nunca chegou a ser aplicada.</p>
+        </div>
+        <span class="chip c-prop">Aprovada · nunca aplicada</span>
+      </div>
+      <div class="cite"><q>Falando em regras… não querem pensar na questão de atrasos tirar 1 ponto?</q> — <q>Eu voto a favor.</q><span class="who">Fragoso / Bernardo Xavier · 08 set 2024</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a2">
+  <div class="art-head"><span class="art-num">ART. 2</span><h2>Dentro das quatro linhas</h2></div>
+  <p class="art-note">Não há árbitro. O jogo arbitra-se a si próprio, e a maior parte destas regras nunca foi escrita em lado nenhum — só invocada em discussões pós-jogo.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">2.1</span>
+        <div class="rbody">
+          <h3>Marca quem sofre. Se dois pedem, não há falta.</h3>
+          <p>A falta é declarada por quem a sofreu. Reclamação dos dois lados anula-a — foi o que aconteceu no penálti mal anulado ao Ferna, que gerou um pedido de desculpas formal do Pacheco.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>A regra é simples e deve ser cumprida… quando dois pedem falta, por razões óbvias, a regra não se pode cumprir.</q><span class="who">Pedro Pacheco · 16 fev 2023</span></div>
+      <div class="cite"><q>Também reagi mal porque genuinamente acho que não foi falta, mas marca quem sofre, portanto deveria ter sido penálti.</q><span class="who">Bernardo Castro · 16 fev 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">2.2</span>
+        <div class="rbody">
+          <h3>Remate desviado conta ao rematador se ia à baliza.</h3>
+          <p>Citada explicitamente como «a regra oficial» — o único momento em sete anos em que alguém usou essa expressão.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Acho que a regra é que se ia à baliza é golo. A regra oficial isto é.</q><span class="who">Pedro Pacheco · 28 mai 2021</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">2.3</span>
+        <div class="rbody">
+          <h3>Não valem «bujas».</h3>
+          <p>Estabelecida na fundação da liga, no Torrinha. Nunca mais foi invocada depois de 2020 — provavelmente dormente.</p>
+        </div>
+        <span class="chip c-super">Dormente</span>
+      </div>
+      <div class="cite"><q>Foi estabelecido no início que não valia bujas.</q><span class="who">João Magalhães · 22 out 2020</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">2.4</span>
+        <div class="rbody">
+          <h3>Se faltar um jogador joga-se 6 contra 5 e o resultado conta.</h3>
+          <p>Tentou-se anular a parte desequilibrada de um jogo em maio de 2022; a maioria recusou.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Sendo que decidimos que se der merda joga-se 6 para 5, isto tem que contar.</q><span class="who">Pedro Pacheco · 20 mai 2022</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">2.5</span>
+        <div class="rbody">
+          <h3>Resultado e golos são auto-reportados, e a soma tem de bater certo.</h3>
+          <p>Cada jogador acrescenta o seu nome e os seus golos à mensagem do resultado. Se a soma dos individuais não fecha com o resultado da equipa, atribui-se a diferença a quem falta. Preenche-se à saída do jogo — «não vou andar atrás do pessoal».</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Temos de ser uns homens e dizer os golos marcados. Depois podemos ir embora chateados.</q><span class="who">Fragoso · 28 abr 2022</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">2.6</span>
+        <div class="rbody">
+          <h3>O guarda-redes não passa do meio-campo.</h3>
+          <p>Proposta em 2020 quando o pessoal se queixou de as equipas jogarem demasiado com o GR. Nunca foi adotada — nem sequer há guarda-redes fixo.</p>
+        </div>
+        <span class="chip c-prop">Proposta</span>
+      </div>
+      <div class="cite"><q>A simples regra de o redes não passar do meio campo acho que já ajuda.</q><span class="who">João Magalhães · 05 nov 2020</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a3">
+  <div class="art-head"><span class="art-num">ART. 3</span><h2>Convocatória e substitutos</h2></div>
+  <p class="art-note">A regra mais citada da liga, e a mais violada. É invocada por nome sempre que um jogo está em risco.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.1</span>
+        <div class="rbody">
+          <h3>Quem não pode ir é responsável por garantir o seu substituto.</h3>
+          <p>Pagas o mês e tens direito a jogar todos os jogos; em troca, se falhares, o teu lugar não fica vazio. O grupo ajuda sempre — isso não transfere a responsabilidade.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Cada um de vocês paga um mês e tem direito a jogar os jogos todos. Se por acaso não puder ir tem a obrigação de garantir que há um sub para essa pessoa. <strong>Esta é a regra há anos.</strong></q><span class="who">Fragoso · 18 jan 2023</span></div>
+      <div class="cite"><q>A única regra que existe é «quem não pode é responsável por arranjar o seu sub».</q><span class="who">Zé Soares Franco · 27 dez 2025</span></div>
+      <div class="cite"><q>Está estipulado que quando alguém falta, esse alguém é responsável por garantir a sua vaga de modo que os outros não saiam prejudicados por não haver jogo. Como é lógico, o pessoal aqui ajuda sempre… Isso não diminui a nossa responsabilidade.</q><span class="who">Zé Soares Franco · 27 jan 2026, no dia seguinte ao primeiro jogo cancelado</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.2</span>
+        <div class="rbody">
+          <h3>O substituto ocupa o lugar e a equipa de quem substitui.</h3>
+          <p>Por isso a lista se escreve sempre «Fulano (sub Beltrano)»: é assim que o sorteio sabe onde o pôr.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Põe-se quem vão substituir e ficam com esse lugar. E acho que devia ser sempre assim.</q><span class="who">Pedro Pacheco · 12 nov 2020</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.3</span>
+        <div class="rbody">
+          <h3>Cada um entende-se com o seu sub sobre o pagamento.</h3>
+          <p>Nunca foi obrigatório o sub pagar. Se o sub for arranjado por terceiros, nada lhe é cobrado.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Depois se quiserem cobrar pelo jogo ao sub é convosco… Nunca ficou definido que os subs tinham de jogar à pala.</q><span class="who">Fragoso · 18 jan 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.4</span>
+        <div class="rbody">
+          <h3>2 € por cada substituto vão para o cofre comum.</h3>
+          <p>Regra nova, de dezembro de 2025: cofre partilhado no Revolut, para bolas e para as cervejas do jantar. Desde agosto de 2026, quem chama o sub adianta os 2 € e depois cobra-lhe.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor desde dez 2025</span>
+      </div>
+      <div class="cite"><q>Era uma excelente coisa para se aplicar pedir 2€ a cada sub quando vem jogar. Às vezes que temos pessoal a vir dava para fazer uma vaquinha e termos bolas boas.</q><span class="who">Fragoso · 08 dez 2025</span></div>
+      <div class="cite"><q>Quem chama põe logo 2€ e depois pede aos subs. A puta da tainada que fazemos só com isso.</q><span class="who">Bernardo Queiroz · 21 ago 2026</span></div>
+      <div class="cite"><q>Temos 22 euros de subs para finos hoje. E devíamos ter prai 300…</q><span class="who">Zé Soares Franco · 06 jul 2026</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.5</span>
+        <div class="rbody">
+          <h3>Prioridade a pôr sub: primeiro o próprio, depois quem ofereceu primeiro.</h3>
+          <p>Quando dois membros oferecem sub para o mesmo lugar, vale a ordem de chegada («estava primeiro»).</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Acho que a pessoa tem sempre prioridade a pôr o seu próprio sub.</q><span class="who">Pedro Pacheco · 23 fev 2026</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.6</span>
+        <div class="rbody">
+          <h3>Se afinal podes ir, o sub é dispensado.</h3>
+          <p>E, evidentemente, não podes ser o teu próprio substituto.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Se o Kiko não pode ir, obviamente não pode ir substituir-se.</q><span class="who">Pedro Pacheco · 15 fev 2024, sobre uma linha que dizia «Kiko (sub Kiko)»</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">3.7</span>
+        <div class="rbody">
+          <h3>Penalizar quem não arranja sub.</h3>
+          <p>Proposta em junho de 2026, depois de um jogo cancelado e de outro mudado para um dia em que o proponente não podia.</p>
+        </div>
+        <span class="chip c-prop">Proposta</span>
+      </div>
+      <div class="cite"><q>Mais que dar pontos a quem queria ir, devíamos criar penalização a quem não arranjou sub.</q><span class="who">Miguel Girão · 29 jun 2026</span></div>
+      <div class="cite"><q>Nunca criámos regra nenhuma para isso. Não me choca que se crie essa regra. Mas no mínimo tem que ir a votos.</q><span class="who">Pedro Pacheco · 29 jun 2026</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a4">
+  <div class="art-head"><span class="art-num">ART. 4</span><h2>Formação das equipas</h2></div>
+  <p class="art-note">Brancos contra Maregões. O sorteio é aleatório por princípio — e é a fonte de metade das discussões da liga.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.1</span>
+        <div class="rbody">
+          <h3>As equipas são sorteadas aleatoriamente no site.</h3>
+          <p>Sem critério, sem semente, sem equilíbrio. Qualquer pessoa com login pode carregar no botão.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Não há critério bro. É random.</q><span class="who">João Magalhães · 13 jan 2022</span></div>
+      <div class="cite"><q>As equipas são aleatórias por alguma razão.</q><span class="who">Bernardo Xavier · 30 dez 2024</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.2</span>
+        <div class="rbody">
+          <h3>Um sorteio por jornada. Repetir é batota.</h3>
+          <p>Havia um contador para detetar quem repetia o sorteio até sair uma equipa de que gostasse. Desde novembro de 2023 o site simplesmente não deixa.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Há um counter. E suposto andarmos com isto a par das jornadas. Se não, significa que algum aldrabão andou a fazer equipas até sair uma que goste.</q><span class="who">Pedro Pacheco · 21 out 2021</span></div>
+      <div class="cite"><q>O site agora não deixa fazer mais do que uma equipa por jornada.</q> — <q>Acabaram-se as maroscas.</q><span class="who">Pedro Pacheco / Bernardo Queiroz · 30 nov 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.3</span>
+        <div class="rbody">
+          <h3>Só se sorteia depois de fechados os 14 e o resultado anterior lançado.</h3>
+          <p>Sortear antes de todos os subs estarem confirmados foi considerado falta de verdade desportiva; e o site precisa do jogo anterior registado para colocar os nomes nas equipas certas.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Zero verdade desportiva saírem equipas antes de estarem os subs todos.</q> — <q>Concordo.</q><span class="who">Ferna / Pedro Pacheco · 09 dez 2021</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.4</span>
+        <div class="rbody">
+          <h3>Depois do sorteio não se trocam jogadores.</h3>
+          <p>A regra mais disputada da liga. Ver <a href="#a9">artigo 9.1</a>.</p>
+        </div>
+        <span class="chip c-contest">Contestada</span>
+      </div>
+      <div class="cite"><q>Regras são regras. Por mim joga-se assim.</q> — <q>Não há trocas.</q><span class="who">Afonso Mariz / Bernardo Xavier · 08 fev 2024</span></div>
+      <div class="cite"><q>Os regulamentos dizem claramente que não há trocas.</q><span class="who">Pedro Pacheco · 30 dez 2024</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.5</span>
+        <div class="rbody">
+          <h3>Com mais de metade de subs, as equipas organizam-se à mão.</h3>
+          <p>Distribuem-se os substitutos de forma equilibrada — 3 contra 3, 4 contra 4 — e sorteiam-se aleatoriamente apenas os membros da liga presentes.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Já tínhamos tido a conversa que quando fossem mais de metade de subs que se organizava as equipas.</q><span class="who">Pedro Pacheco · 15 dez 2025</span></div>
+      <div class="cite"><q>Não faria sentido dividir 4v4 equilibrado entre os subs e depois tiramos 3v3 aleatório entre nós?</q><span class="who">Pedro Pacheco · 29 dez 2025</span></div>
+      <div class="cite"><q>Só mudamos com 7 subs. Nunca por estar desequilibrado.</q><span class="who">Bernardo Queiroz · 15 jun 2026</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.6</span>
+        <div class="rbody">
+          <h3>No último jogo da época, pares contra ímpares da tabela.</h3>
+          <p>Para garantir que quem disputa lugares não calha na mesma equipa. Aplicado em 2023 e 2024, contestado em 2025. Ver <a href="#a9">artigo 9.3</a>.</p>
+        </div>
+        <span class="chip c-contest">Contestada</span>
+      </div>
+      <div class="cite"><q>Mas o último jogo não vai ser pares contra ímpares? O ano passado foi. Mesmo para garantir que havia disputa de lugares no último jogo.</q><span class="who">Chico Castro · 23 mai 2024</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">4.7</span>
+        <div class="rbody">
+          <h3>Métodos alternativos, todos rejeitados.</h3>
+          <p>Dois capitães sorteados a escolher (João Magalhães, 2022 — travado porque ninguém conhece os subs); classificar cada jogador como tipo A ou B e obrigar a 3+3 por equipa (Zé SF, 2022); os 6 primeiros contra os 6 últimos da tabela (Kiko, 2021).</p>
+        </div>
+        <span class="chip c-prop">Propostas</span>
+      </div>
+      <div class="cite"><q>Cada jogador era classificado como A ou B… A equipa para cada jogo teria obrigatoriamente de incluir 3 jogadores do tipo A e 3 do tipo B.</q><span class="who">Zé Soares Franco · 07 abr 2022</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a5">
+  <div class="art-head"><span class="art-num">ART. 5</span><h2>Dia, hora e adiamentos</h2></div>
+  <p class="art-note">Sete anos de negociação com o calendário do FC Porto. A regra de adiamento é a mais reformulada de todas.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">5.1</span>
+        <div class="rbody">
+          <h3>Dia e hora fixos para toda a época, decididos por sondagem em agosto.</h3>
+          <p>«A hora tem de ser fixa e ponto. Se não vai dar merda.»</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="tl-wrap">
+        <table class="timeline">
+          <thead><tr><th>Época</th><th>Dia e hora</th><th>Campo</th></tr></thead>
+          <tbody>
+            <tr><td>2019 – 2022</td><td>Quinta, 22h → 21h30 → 21h45</td><td>Torrinha (futebol 6)</td></tr>
+            <tr><td>2022/23</td><td>Quinta, 22h → 21h</td><td>Paranhos → Arca d'Água (futebol 7)</td></tr>
+            <tr><td>2023/24</td><td>Quinta, 22h30 → 21h</td><td>Maria Lamas → Arca d'Água</td></tr>
+            <tr><td>2024/25 →</td><td>Segunda, 20h</td><td>Arca d'Água</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">5.2</span>
+        <div class="rbody">
+          <h3>Só se muda o jogo se todos os que podiam no dia normal puderem no dia alternativo.</h3>
+          <p>Não é preciso que todos possam — é preciso que ninguém que iria perca o jogo por causa da mudança. Formulada em 2021, repetida sem alterações até 2025.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>A regra é claramente ninguém ser prejudicado.</q><span class="who">Pedro Pacheco · 02 dez 2021</span></div>
+      <div class="cite"><q>A regra não é podermos ir todos. A regra é: todos os que podiam têm que poder no novo dia sugerido.</q><span class="who">Pedro Pacheco · 26 nov 2024</span></div>
+      <div class="cite"><q>Só se muda se as pessoas que puderem nesse dia puderem noutro. Isso é o combinado desde sempre.</q><span class="who">Pedro Pacheco · 22 set 2025</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">5.3</span>
+        <div class="rbody">
+          <h3>Com mais de 5 substitutos, procura-se outro dia nessa semana.</h3>
+          <p>A regra mais recente, votada 7-1 no fim de 2025 depois de meses de jogos «Tondela vs Milan». Escolhe-se o dia com mais votos, desde que haja campo. O jogo nunca se cancela e os pontos continuam a contar.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor desde dez 2025</span>
+      </div>
+      <div class="cite"><q>A partir de agora, quando houver um jogo que haja mais de 5 subs, vê-se se há campo noutro horário dessa semana e joga-se no dia com mais votos.</q><span class="who">Fragoso · 28 dez 2025, a fechar a votação</span></div>
+      <div class="cite"><q>Nunca cancelar o jogo. No caso de nem haver campo não se mudava.</q><span class="who">Fragoso · 27 dez 2025</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">5.4</span>
+        <div class="rbody">
+          <h3>Chegar 10 a 15 minutos antes.</h3>
+          <p>Recorrente desde 2020: «é fodido para quem chega a horas ficar à espera à chuva». Nunca foi sancionado (ver 1.7).</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Hoje sff sem atrasos. Para não começarmos às 9h45 como sempre. Não custa nada chegar às 09h25.</q><span class="who">Zé Soares Franco · 16 dez 2021</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">5.5</span>
+        <div class="rbody">
+          <h3>Quórum mínimo para haver jogo.</h3>
+          <p>Invocado como se existisse; negado por quem organiza há mais tempo. Ver <a href="#a9">artigo 9.2</a>.</p>
+        </div>
+        <span class="chip c-contest">Contestada</span>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a6">
+  <div class="art-head"><span class="art-num">ART. 6</span><h2>Dinheiro</h2></div>
+  <p class="art-note">O tema que mais horas consumiu ao organizador — e o que produziu a regra mais bem cumprida da liga.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">6.1</span>
+        <div class="rbody">
+          <h3>Mensalidade fixa por jogador, paga antes do primeiro jogo do mês.</h3>
+          <p>O valor é o custo do campo dividido por 14, independentemente de quantos jogos cada um faz.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="tl-wrap">
+        <table class="timeline">
+          <thead><tr><th>Período</th><th>Valor</th><th>Base</th></tr></thead>
+          <tbody>
+            <tr><td>2019 – 2022</td><td>15 € / mês</td><td>45 €/jogo ÷ 12, cobrado de 4 em 4 jornadas</td></tr>
+            <tr><td>2022/23</td><td>17,15 € / mês</td><td>240 €/mês ÷ 14</td></tr>
+            <tr><td>2023 →</td><td>19,29 € / mês</td><td>270 €/mês ÷ 14</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">6.2</span>
+        <div class="rbody">
+          <h3>Paga-se mesmo faltando.</h3>
+          <p>Lesão, férias ou ausência prolongada não isentam — pagas o lugar, não o jogo.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Quem não pode não vai. E paga na mesma.</q><span class="who">Pedro Pacheco · 08 set 2021</span></div>
+      <div class="cite"><q>Ainda que não vá o mês todo, em princípio sempre foi assim.</q><span class="who">Perneta, lesionado · 26 set 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">6.3</span>
+        <div class="rbody">
+          <h3>O tesoureiro nunca adianta dinheiro.</h3>
+          <p>Se alguém não pagar até ao prazo, o tesoureiro escolhe um dos faltosos, envia-lhe tudo o que recebeu e esse trata do pagamento ao campo. Regra herdada do Fragoso e formalizada pelo Kiko em 2025.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Não vou adiantar dinheiro por ninguém. Pagam-me antes e eu resolvo com eles.</q><span class="who">Fragoso · 31 ago 2022, ao aceitar a tesouraria</span></div>
+      <div class="cite"><q>Regras do Novo Tesoureiro: MBway até às 12h de segunda-feira. Depois disso escolho «aleatoriamente» um gajo que ainda não tenha pago.</q><span class="who">Kiko · 01 set 2025</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">6.4</span>
+        <div class="rbody">
+          <h3>O substituto definitivo assume a mensalidade de quem sai.</h3>
+          <p>Quem cede o lugar a meio da época deixa de pagar a partir desse mês.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">6.5</span>
+        <div class="rbody">
+          <h3>A bola é do grupo, comprada a rateio.</h3>
+          <p>Até 2022 jogava-se com a bola do Pacheco, que avisou que não se responsabilizava por a levar. Desde então compra-se em conjunto — a última custou 32,90 € e foi somada à mensalidade do mês.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Esta bola é minha, tal como são as 3 anteriores. Eu empresto na boa. Mas não me responsabilizo por não a levar. Se querem ter uma bola confiável que possamos usar sempre, então devíamos comprar uma bola de grupo.</q><span class="who">Pedro Pacheco · 12 mai 2022</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a7">
+  <div class="art-head"><span class="art-num">ART. 7</span><h2>Francesinha e fim de época</h2></div>
+  <p class="art-note">O prémio que dá nome à liga. Durante as três primeiras épocas nunca chegou a acontecer.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">7.1</span>
+        <div class="rbody">
+          <h3>A metade de cima da tabela come à borla, paga pela metade de baixo.</h3>
+          <p>Com 14 jogadores: os 7 primeiros recebem, os 7 últimos pagam. Quem fica abaixo paga apenas a sua própria.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Se tiveres ficado abaixo pagas a tua só, se não alguém te paga.</q><span class="who">Pedro Pacheco · 13 set 2021</span></div>
+      <div class="cite"><q>Só ganha francesinha se ficar na metade de cima.</q><span class="who">Pedro Pacheco · 12 out 2022</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">7.2</span>
+        <div class="rbody">
+          <h3>Divide-se o custo das francesinhas efetivamente comidas.</h3>
+          <p>Se um vencedor não aparece, os pagantes pagam menos — e o lugar seguinte da tabela «abre caminho». Em 2023 saiu a 19,43 € por cada um dos 7 últimos.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>É só somar a vossa conta + 5 francesas × 12,5 € / 7.</q><span class="who">Pedro Pacheco · 26 mai 2023</span></div>
+      <div class="cite"><q>A parte boa de vir pouca gente é que os 7 que vão pagar só pagam as francesinhas dos presentes.</q><span class="who">Zé Soares Franco · 06 jul 2026</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">7.3</span>
+        <div class="rbody">
+          <h3>Quem cede o lugar a meio da época assume a francesinha.</h3>
+          <p>O substituto herda os pontos mas não a fatura: se acabar em baixo, o titular original é que paga.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Normalmente substitui-te e fica com os teus pontos todos. No entanto tu assumes diretamente a derrota e tens que pagar francesinha. Se ele ficar na metade de cima não paga nada, se ficar na metade de baixo só paga a francesa dele.</q><span class="who">Pedro Pacheco · 24 jan 2024</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">7.4</span>
+        <div class="rbody">
+          <h3>O jantar é logo a seguir ao último jogo — ou não acontece.</h3>
+          <p>Lição aprendida à custa de três épocas em que se tentou marcar «o dia ótimo» e nunca houve jantar nenhum.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Nos anos em que se tentou sempre arranjar o dia ótimo, nunca aconteceu jantar. E sempre que foi logo depois do jogo houve sempre.</q><span class="who">Fragoso · 27 jun 2026</span></div>
+      <div class="cite"><q>Temos que marcar o dia e ir. Quem não puder não vai. Ponto final. Nem que vão só dois.</q><span class="who">Pedro Pacheco · 09 fev 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">7.5</span>
+        <div class="rbody">
+          <h3>Suplentes são bem-vindos ao jantar, mas cada um paga a sua.</h3>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Suplentes são bem-vindos no jantar. Mas cada um paga a sua.</q><span class="who">Pedro Pacheco · 02 jul 2026</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">7.6</span>
+        <div class="rbody">
+          <h3>A época acaba na última segunda-feira de junho.</h3>
+          <p>Começou por acabar «quando o primeiro for de férias» (2020), passou a fim de maio «como a liga portuguesa» (2023) e foi movida para fim de junho por sondagem em setembro de 2025 — decisão que a meio de 2026 ainda ninguém se lembrava de ter tomado.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor desde set 2025</span>
+      </div>
+      <div class="cite"><q>Fica final de maio. Fazemos assim desde o ano passado. Coincide com o campeonato, e junho tem sempre os feriados… Foi esse o racional.</q><span class="who">Fragoso · 30 abr 2024</span></div>
+      <div class="cite"><q>Tínhamos falado antes que acabava no fim de junho, já disse n vezes.</q> — <q>Está aqui os votos. Por isso de facto é até ao final de junho.</q><span class="who">Vinhas / Pedro Pacheco · 01 jun 2026</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a8">
+  <div class="art-head"><span class="art-num">ART. 8</span><h2>Plantel, entradas e saídas</h2></div>
+  <p class="art-note">De 12 para 14 jogadores. Há sempre lista de espera e nunca houve mais de uma vaga por época.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">8.1</span>
+        <div class="rbody">
+          <h3>A liga tem 14 lugares fixos.</h3>
+          <p>Eram 12 até 2022, quando se passou para futebol de 7. Só se entra se alguém sair. Rejeitou-se ter 15 ou 16 com fila de espera para jogar.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Temos um grupo de 14, quem não puder arranja sub.</q><span class="who">Pedro Pacheco · 18 jul 2022</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">8.2</span>
+        <div class="rbody">
+          <h3>Entra-se por votação dos jogadores confirmados para a época.</h3>
+          <p>Sondagem de agosto de 2025: «votos dos jogadores» (10) bateu «já ter jogado na Master League» (6) e «ordem de candidaturas» (0). Cada um vota em todos os que quiser; havendo empate, segunda ronda.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor desde ago 2025</span>
+      </div>
+      <div class="cite"><q>Acho que devíamos ter alguma espécie de critério. Tipo: 1. A pessoa está a contar vir; 2. vai trazer qualidade; 3. era antigo membro.</q><span class="who">Fragoso · 02 jul 2024, o critério anterior</span></div>
+      <div class="cite"><q>Este é o critério, sim. Até agora acho que foi. Mas podemos mudar. Acho que ninguém escreveu na pedra.</q><span class="who">Vinhas · 18 ago 2025</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">8.3</span>
+        <div class="rbody">
+          <h3>Antigos membros têm prioridade de regresso.</h3>
+          <p>Regra da fundação, pela ordem em que pediram a reentrada. Continua a pesar, ainda que já não seja o critério principal.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>As pessoas que já fizeram parte têm prioridade, pela ordem que me pediram para ser reinseridos.</q><span class="who">Pedro Pacheco · 22 set 2021</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">8.4</span>
+        <div class="rbody">
+          <h3>Quem entra a meio da época herda os pontos de quem saiu.</h3>
+          <p>Aplicada de forma consistente pelo organizador — e contrariada duas vezes por quem entrou. Ver <a href="#a9">artigo 9.4</a>.</p>
+        </div>
+        <span class="chip c-contest">Contestada</span>
+      </div>
+      <div class="cite"><q>Então entra com os pontos do Zé?</q> — <q>Isso. Como sempre.</q><span class="who">Chico Castro / Pedro Pacheco · 01 mar 2023</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">8.5</span>
+        <div class="rbody">
+          <h3>Baixa prolongada: cede-se o lugar e mantém-se a vaga para a época seguinte.</h3>
+          <p>Quem se lesiona por meses passa a suplente, entrega o lugar a alguém que pague e joga o resto do ano, e volta na época seguinte.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Preferia ceder o meu lugar e poderei eventualmente ir a um ou outro jogo como sub. Obviamente que assumo o pagamento da francesinha e quero manter o meu lugar para a próxima época.</q><span class="who">Bernardo Xavier · 09 mar 2026</span></div>
+    </div>
+
+  </div>
+</article>
+
+<article id="a9">
+  <div class="art-head"><span class="art-num">ART. 9</span><h2>Como se decide</h2></div>
+  <p class="art-note">A meta-regra: nada aqui foi imposto. Tudo saiu de sondagens no grupo, e o que nunca foi a votos nunca mudou.</p>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">9.1</span>
+        <div class="rbody">
+          <h3>Muda-se uma regra por sondagem no grupo, e ganha a maioria dos que votam.</h3>
+          <p>Sondagem aberta com prazo, encerrada por quem a lançou. Empate mantém o que estava; com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda entre as duas mais votadas. Foi assim que se decidiu o horário, o campo, o critério de desempate, o método de entrada, o fim de época e a regra dos 5 subs.</p>
+          <p>Do resultado regista-se a contagem e a data. Os nomes ficam na própria sondagem, no grupo, que é onde já se vão buscar; e votações sobre pessoas fazem-se anónimas.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Não vejo razão para não continuarmos uma democracia.</q><span class="who">Pedro Pacheco · 02 jun 2025</span></div>
+      <div class="cite"><q>Está fechado! Ganhou a maioria que votou.</q><span class="who">Fragoso · 27 jun 2024</span></div>
+      <div class="cite"><q>Se for para mudar, no mínimo tem que ir a votos, porque é para mudar uma regra.</q><span class="who">Pedro Pacheco · 30 dez 2024</span></div>
+      <div class="cite"><q>Puseste para não se ver os nomes para poderes votar no Dudas. — Era para toda a gente votar à vontade.</q><span class="who">Bernardo Queiroz e Pedro Pacheco · 02 set 2026, na votação de entrada</span></div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-top">
+        <span class="rid">9.2</span>
+        <div class="rbody">
+          <h3>Na falta de estatutos novos, valem os antigos.</h3>
+          <p>A regra que mantém tudo isto de pé. Combinou-se redigir estatutos em maio de 2022, maio de 2023, agosto de 2025, dezembro de 2025 e junho de 2026 — «temos todos de assinar um documento com todas as regras», «vou fazer um word que todos vamos assinar», «vou pedir ao chat gpt para escrever os estatutos». Nunca aconteceu.</p>
+        </div>
+        <span class="chip c-vigor">Em vigor</span>
+      </div>
+      <div class="cite"><q>Como ninguém se chegou à frente para escrever novos regulamentos, sugiro manter os últimos.</q><span class="who">Pedro Pacheco · 09 set 2023</span></div>
+      <div class="cite"><q>Só falam das regras quando é para pedir faltas durante o jogo ou para adicionar pessoas ao grupo.</q><span class="who">Bernardo Queiroz · 26 jan 2026</span></div>
+    </div>
+
+  </div>
+</article>
+    </main>
+  </div>
+</section>
+
+
+<section class="part" id="p2">
+  <div class="part-head"><span class="part-num">Parte 2</span><h2>Não concordo com uma regra</h2></div>
+  <p class="part-note">Uma regra fechada continua fechada — mas nenhuma delas é sagrada. Se alguma da Parte 1 te parece mesmo mal, isto é como se reabre.</p>
+
+  <details class="dissent">
+    <summary>Como se reabre uma regra já decidida</summary>
+    <div class="inner">
+      <p><b>Não a meio da época.</b> Reabre-se na paragem de agosto, antes de começar a época seguinte, para ninguém votar com pontos em jogo. Foi assim que se decidiu o horário, o fim de época e o método de entrada — todos em agosto ou setembro.</p>
+      <p><b>Diz qual e porquê.</b> No grupo, nomeando a regra pelo número. «Discordo» sem número nem razão não abre nada — cinco anos de discussão em campo não mudaram uma única regra.</p>
+      <p><b>Se mais dois concordarem em rediscutir, vai a sondagem.</b> Não é preciso ter razão para reabrir; é preciso que mais alguém ache que vale a pena votar.</p>
+      <p class="caveat"><b>Nota:</b> este mecanismo é uma proposta — nunca foi votado. Se não gostarem, é a primeira coisa a mudar.</p>
+    </div>
+  </details>
+
+  <a class="wa" href="https://wa.me/?text=Discordo%20da%20regra%20n.%C2%BA%20___%20dos%20estatutos%2C%20porque%3A">Discordar de uma regra no grupo</a>
+</section>
+
+
+<section class="part" id="p3">
+  <div class="part-head"><span class="part-num">Parte 3</span><h2>A votar já</h2></div>
+  <p class="part-note">Três pontos onde duas pessoas invocam «a regra» e dizem coisas incompatíveis. Não precisam de proposta nenhuma — as opções já estão em cima da mesa, só falta contá-las. Uma sondagem por ponto, no grupo.</p>
+
+  <div class="poll">
+    <h3>B1 · Trocas de jogadores depois do sorteio</h3>
+    <p class="ctx">O Pacheco sustenta que os regulamentos nunca permitiram trocas; o Vinhas lembra que se fez duas vezes em 2024/25. O Queiroz propôs trocar só a partir de muitos subs; o Zi e o Ferna defendem corrigir sempre que estiver escandalosamente desequilibrado.</p>
+    <div class="sides">
+        <div class="side"><em>Não, e está escrito</em><p><q>Os regulamentos dizem claramente que não há trocas.</q> — Pacheco, 30 dez 2024. <q>Regras são regras.</q> — Afonso Mariz.</p></div>
+        <div class="side"><em>Já se fez, logo pode-se</em><p><q>Valem pois. Já o fizemos este ano. Duas vezes.</q> — Vinhas. <q>Concordo que não deve acontecer… por isso é que foi estúpido abrir o precedente. Mas quem já fez uma vez pode fazer segunda.</q> — Bernardo Xavier.</p></div>
+    </div>
+    <ul class="poll-opts">
+      <li>Nunca se troca — o sorteio é final</li>
+      <li>Só a partir de 7 subs, e nunca por desequilíbrio</li>
+      <li>Sempre que estiver claramente desequilibrado, com ou sem subs</li>
+    </ul>
+    <p class="runoff">Três opções — se nenhuma passar de metade, segunda ronda entre as duas mais votadas.</p>
+    <a class="wa ghost" href="https://wa.me/?text=SONDAGEM%3A%0ATrocas%20de%20jogadores%20depois%20do%20sorteio%0AOP%C3%87%C3%83O%3A%20Nunca%20se%20troca%20%26mdash%3B%20o%20sorteio%20%26eacute%3B%20final%0AOP%C3%87%C3%83O%3A%20S%26oacute%3B%20a%20partir%20de%207%20subs%2C%20e%20nunca%20por%20desequil%26iacute%3Bbrio%0AOP%C3%87%C3%83O%3A%20Sempre%20que%20estiver%20claramente%20desequilibrado%2C%20com%20ou%20sem%20subs">Abrir esta sondagem no grupo</a>
+  </div>
+
+  <div class="poll">
+    <h3>B2 · Equipas do último jogo da época</h3>
+    <p class="ctx">Fez-se pares contra ímpares em 2022 e em 2024; em 2025 e 2026 sorteou-se como numa jornada normal. Ninguém alguma vez decidiu qual das duas é a regra.</p>
+    <div class="sides">
+        <div class="side"><em>É a regra</em><p><q>Pares contra ímpares! É a regra estabelecida para o último jogo.</q> — Bernardo Xavier, 02 jun 2025.</p></div>
+        <div class="side"><em>Não é</em><p><q>Não é. O ano passado o campeão foi decidido com base numa equipa aleatória.</q> — Afonso Mariz, mesmo dia.</p></div>
+    </div>
+    <ul class="poll-opts">
+      <li>Pares contra ímpares, pela posição na tabela</li>
+      <li>Aleatório, como em todas as outras jornadas</li>
+    </ul>
+    <a class="wa ghost" href="https://wa.me/?text=SONDAGEM%3A%0AEquipas%20do%20%26uacute%3Bltimo%20jogo%20da%20%26eacute%3Bpoca%0AOP%C3%87%C3%83O%3A%20Pares%20contra%20%26iacute%3Bmpares%2C%20pela%20posi%26ccedil%3B%26atilde%3Bo%20na%20tabela%0AOP%C3%87%C3%83O%3A%20Aleat%26oacute%3Brio%2C%20como%20em%20todas%20as%20outras%20jornadas">Abrir esta sondagem no grupo</a>
+  </div>
+
+  <div class="poll">
+    <h3>B3 · Pontos de quem entra a meio da época</h3>
+    <p class="ctx">Aplicou-se as duas coisas em anos diferentes, e as duas foram contestadas na altura. Afeta diretamente a classificação, por isso convém fechar antes de haver um caso.</p>
+    <div class="sides">
+        <div class="side"><em>Herda — «como sempre»</em><p>Pacheco afirmou-o em 2021, 2022, 2023 e 2024, sempre com a mesma fórmula: entra com os pontos de quem substitui e assume a francesinha.</p></div>
+        <div class="side"><em>Ficou com os seus</em><p><q>Eu começo com os meus 2 jogos só! Acho mais justo ter os pontos que fiz, não quero ficar com os pontos de quem já jogou.</q> — Afonso Pires, 2021. Afonso Mariz fez o mesmo em 2022, com 5 pontos.</p></div>
+    </div>
+    <ul class="poll-opts">
+      <li>Herda os pontos do lugar que ocupa</li>
+      <li>Começa com os pontos que fez como sub</li>
+    </ul>
+    <a class="wa ghost" href="https://wa.me/?text=SONDAGEM%3A%0APontos%20de%20quem%20entra%20a%20meio%20da%20%26eacute%3Bpoca%0AOP%C3%87%C3%83O%3A%20Herda%20os%20pontos%20do%20lugar%20que%20ocupa%0AOP%C3%87%C3%83O%3A%20Come%26ccedil%3Ba%20com%20os%20pontos%20que%20fez%20como%20sub">Abrir esta sondagem no grupo</a>
+  </div>
+</section>
+
+
+<section class="part" id="p4">
+  <div class="part-head"><span class="part-num">Parte 4</span><h2>Propor</h2></div>
+  <p class="part-note">Cinco pontos que não se resolvem com um sim ou um não: primeiro é preciso alguém escrever uma proposta concreta. Depois disso vão a votos na segunda ronda, como os de cima. Qualquer outra ideia entra aqui pela mesma porta.</p>
+
+  <div class="poll">
+    <h3>C1 · Quórum: quantos são precisos para haver jogo?</h3>
+    <p class="ctx">Invoca-se «quórum» há anos e ninguém sabe qual é o número, nem o que acontece quando não se atinge.</p>
+    <div class="sides">
+        <div class="side"><em>Metade chega</em><p><q>Estamos a 1 de atingir quórum.</q> — Pacheco. <q>Mais de metade. Pareceu-me um critério aceitável.</q> — Afonso Mariz, 27 nov 2023.</p></div>
+        <div class="side"><em>Nunca existiu</em><p><q>Isso nunca houve. Isso nunca foi uma cena. A única vez que aconteceu, e foi porque o ZSF aceitou, foi quando era dia de jogo do Porto e só ele é que podia.</q> — Fragoso.</p></div>
+    </div>
+    <p class="missing"><b>Falta:</b> um número (8? 10? mais de metade?) e o que se faz quando falha — adia, joga-se na mesma, ou conta como jornada.</p>
+  </div>
+
+  <div class="poll">
+    <h3>C2 · Como se cobram os 2 € dos subs</h3>
+    <p class="ctx">O sub paga, isso é pacífico. Quem cobra e quando é que nunca foi resolvido, e por isso perde-se dinheiro quase todas as semanas.</p>
+    <div class="sides">
+        <div class="side"><em>Depende de quem os chama</em><p><q>O que ficou acordado é que quem arranja sub decide o que fazer.</q> — Fragoso, 05 out 2023. Muitos nunca cobraram nada.</p></div>
+        <div class="side"><em>Pagam 2 € para o cofre</em><p>Desde dezembro de 2025 há uma contribuição obrigatória — mas a cobrança é frouxa: <q>Temos 22 euros na conta dos subs. E devíamos ter prai 300.</q></p></div>
+    </div>
+    <p class="missing"><b>Falta:</b> quem cobra: o jogador que arranjou o sub, o organizador, ou desconta-se na conta do titular.</p>
+  </div>
+
+  <div class="poll">
+    <h3>C3 · Quem fica de fora por um adiamento mantém o ponto?</h3>
+    <p class="ctx">Desde a regra dos 5 subs o jogo muda de dia — e quem podia no dia original pode não poder no novo. O Bernardo Xavier propôs que esses mantivessem pelo menos o ponto de presença.</p>
+    <div class="sides">
+        <div class="side"><em>Não se muda se prejudicar um</em><p>Regra fixada em 2021 e repetida até 2025: basta uma pessoa que podia no dia normal e não pode no alternativo para o jogo se manter.</p></div>
+        <div class="side"><em>Muda-se se houver mais de 5 subs</em><p>Votado 7-1 em dez 2025. Assume-se que alguém possa sair prejudicado em nome da qualidade do jogo — Bernardo Xavier propôs que esses mantivessem pelo menos o ponto de presença.</p></div>
+    </div>
+    <p class="missing"><b>Falta:</b> a formulação exata: ponto de presença a quem estava disponível no dia marcado, ou nada.</p>
+  </div>
+
+  <div class="poll">
+    <h3>C4 · Atraso desconta 1 ponto: como se regista?</h3>
+    <p class="ctx">A ideia foi proposta pelo Fragoso e votada favoravelmente em setembro de 2024. Nunca chegou a ser aplicada, porque nunca se definiu como se marca um atraso.</p>
+    <p class="missing"><b>Falta:</b> a partir de que minuto conta, quem regista, e onde — o site não tem campo para isto.</p>
+  </div>
+
+  <div class="poll">
+    <h3>C5 · Penalização a quem não arranja substituto</h3>
+    <p class="ctx">A regra dos substitutos é a mais citada da liga e a mais violada. Nunca teve consequência nenhuma associada.</p>
+    <p class="missing"><b>Falta:</b> qual é a consequência — perder o ponto de presença, pagar o campo do lugar vazio, ou nada e continua a ser só uma convenção.</p>
+  </div>
+
+  <a class="wa" href="https://wa.me/?text=Proposta%20para%20os%20estatutos%20%E2%80%94%20ponto%20___%3A">Mandar uma proposta para o grupo</a>
+</section>
+
+
+<footer>
+  <p><strong>Método.</strong> Reconstruído a partir do export completo do grupo — 27 453 mensagens entre 3 de outubro de 2019 e 2 de setembro de 2026. Filtrou-se o histórico por marcadores normativos, dia-a-dia e vocabulário próprio da liga, leram-se as ~11 000 mensagens resultantes na íntegra e auditou-se por amostragem o que ficou de fora.</p>
+  <p><strong>Regras verificadas contra o código.</strong> A fórmula de pontos (1.1), o fim da contagem de golos (1.2) e a ausência de critério de desempate (1.5) foram confirmadas em <code>src/lib/domain.ts</code> e <code>src/data/editions.json</code>. Tudo o resto vive apenas no chat.</p>
+  <p><strong>Não existe.</strong> Não há MVP, melhor marcador, taça, troféu nem qualquer prémio individual além da francesinha.</p>
+  <p><strong>Onde se vota.</strong> As sondagens correm no grupo, como sempre correram — é lá que toda a gente já responde. Esta página serve para se saber o que está fechado e porquê. O registo atualizado, com o resultado de cada votação, fica em <code>/regulamento</code>.</p>
+</footer>
+
+</div>
