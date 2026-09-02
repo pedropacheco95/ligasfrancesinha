@@ -82,7 +82,7 @@
   "time": "21:30",
   "finalGame": "2024-07-25",
   "hasEnded": true,
-  "goalValue": 0.0,
+  "goalValue": 0,
   "numberOfTeamsMade": 38,
   "leagueId": 1,
   "lastTeam": "8;5;2;4;3;1;49;12;9;39;37;11;41;30;"
@@ -104,7 +104,7 @@
   "time": "20:00",
   "finalGame": "2025-05-26",
   "hasEnded": true,
-  "goalValue": 0.0,
+  "goalValue": 0,
   "numberOfTeamsMade": 39,
   "leagueId": 1,
   "lastTeam": "5;30;9;49;39;41;37;51;11;3;12;1;31;8;"
@@ -125,10 +125,21 @@
   "name": "6ª Edição Master League",
   "time": "20:00",
   "finalGame": "2026-06-29",
-  "hasEnded": false,
-  "goalValue": 0.0,
+  "hasEnded": true,
+  "goalValue": 0,
   "numberOfTeamsMade": 42,
   "leagueId": 1,
   "lastTeam": "8;39;56;37;31;30;3;11;12;51;9;5;1;41;"
+ },
+ {
+  "id": 13,
+  "name": "7ª Edição Master League",
+  "time": "20:00",
+  "finalGame": "2027-06-28",
+  "hasEnded": false,
+  "goalValue": 0,
+  "numberOfTeamsMade": 0,
+  "leagueId": 1,
+  "lastTeam": null
  }
 ]
