@@ -192,9 +192,47 @@ export function getNumberOfPlayers(edition: Edition): number {
   return edition.playersRelations.length;
 }
 
-/** `Edition.players_relations_classification` — points descending, ties keep id order. */
+/** The fields the classification is sorted on, in the order they are applied. */
+interface Classifiable {
+  points: number | null;
+  wins: number | null;
+  goalsScoredByTeam: number | null;
+  goalsSufferedByTeam: number | null;
+}
+
+/**
+ * Goal difference for a player: the goals their team scored minus the goals it
+ * conceded, across the games they played. There is no per-player goal
+ * difference in a league where the teams are redrawn every week, and this is
+ * the figure the group meant by «diferença de golos».
+ */
+function goalDifference(relation: Classifiable): number {
+  return (relation.goalsScoredByTeam ?? 0) - (relation.goalsSufferedByTeam ?? 0);
+}
+
+/**
+ * Rule 1.5 — points, then number of wins, then goal difference.
+ *
+ * Voted 6-0 on 07 September 2025 and never applied: until now the table sorted
+ * on points alone and equal points kept whatever order the rows happened to be
+ * inserted in, which is why two players on the same points could swap places
+ * for no reason anyone could explain. Anything still level after goal
+ * difference keeps the incoming order, `Array.prototype.sort` being stable, so
+ * the result is at least deterministic.
+ */
+export function compareClassification(a: Classifiable, b: Classifiable): number {
+  const byPoints = (b.points ?? 0) - (a.points ?? 0);
+  if (byPoints !== 0) return byPoints;
+
+  const byWins = (b.wins ?? 0) - (a.wins ?? 0);
+  if (byWins !== 0) return byWins;
+
+  return goalDifference(b) - goalDifference(a);
+}
+
+/** `Edition.players_relations_classification` — rule 1.5. */
 export function playersRelationsClassification(edition: Edition): PlayerEdition[] {
-  return [...edition.playersRelations].sort((a, b) => (b.points ?? 0) - (a.points ?? 0));
+  return [...edition.playersRelations].sort(compareClassification);
 }
 
 export function playersClassification(edition: Edition): Player[] {
@@ -539,7 +577,7 @@ export function computeTableUpdate(edition: Edition): TableUpdate[] {
 
   // `players_classification(update_places=True)` then renumbers every place.
   const previousPlace = new Map(edition.playersRelations.map((rel) => [rel.id, rel.place]));
-  const ranked = [...computed].sort((a, b) => b.points - a.points);
+  const ranked = [...computed].sort(compareClassification);
   const places = new Map(ranked.map((entry, index) => [entry.relationId, index + 1]));
 
   return computed.map((entry) => ({

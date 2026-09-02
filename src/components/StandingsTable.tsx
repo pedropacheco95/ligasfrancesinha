@@ -8,10 +8,10 @@ import { PlayerNameForm } from "./PlayerLink";
  * red, and the rest split on the halfway mark — note the `<=` comparison runs
  * against a float, so an odd squad puts the middle player in the top half.
  */
-function rowStyle(place: number | null, numberOfPlayers: number) {
+function rowStyle(place: number, numberOfPlayers: number) {
   if (place === 1) return { backgroundColor: "rgba(0, 88, 252, 0.308)" };
   if (place === numberOfPlayers) return { backgroundColor: "rgba(255, 0, 0, 0.288)" };
-  if ((place ?? 0) <= numberOfPlayers / 2) return { backgroundColor: "rgba(0, 153, 255, 0.2)" };
+  if (place <= numberOfPlayers / 2) return { backgroundColor: "rgba(0, 153, 255, 0.2)" };
   return { backgroundColor: "rgba(228, 120, 120, 0.2)" };
 }
 
@@ -81,9 +81,13 @@ export function StandingsTable({
         </tr>
       </thead>
       <tbody>
-        {relations.map((relation) => (
-          <tr key={relation.id} style={rowStyle(relation.place, numberOfPlayers)}>
-            <td>{relation.place}</td>
+        {/* The position is the row's place in this table, not the `place`
+            column: that is only refreshed when someone recalculates an edition,
+            so after the tie-break of rule 1.5 it can disagree with the order
+            drawn here — and it did, numbering three rows 6, 5, 4. */}
+        {relations.map((relation, index) => (
+          <tr key={relation.id} style={rowStyle(index + 1, numberOfPlayers)}>
+            <td>{index + 1}</td>
             <td className="text">
               <PlayerNameForm playerName={relation.player?.name ?? ""} editionName={edition.name} />
             </td>

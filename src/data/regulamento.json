@@ -81,8 +81,8 @@
         {
           "id": "1.5",
           "titulo": "Desempate: número de vitórias, depois diferença de golos.",
-          "detalhe": "Votado por sondagem em setembro de 2025 (6 votos contra 0). O site ainda não o implementa — a classificação ordena só por pontos e, em caso de empate, mantém a ordem de inserção dos jogadores.",
-          "estado": "pendente",
+          "detalhe": "Empate nos pontos resolve-se pelo número de vitórias; se persistir, pela diferença de golos das equipas em que o jogador jogou. Votado por sondagem em setembro de 2025, 6 votos contra 0, e em vigor no site desde setembro de 2026.",
+          "estado": "vigor",
           "citacoes": [
             {
               "texto": "Caso também haja empate no nr de vitórias fica a diferença de golos como segundo critério.",
@@ -91,8 +91,8 @@
             }
           ],
           "verificacao": {
-            "titulo": "Divergência confirmada no código",
-            "texto": "domain.ts:195 — «points descending, ties keep id order». Em junho de 2026 o Zé SF acabou empatado com o Fragoso e voltou a perguntar qual era o critério."
+            "titulo": "Verificado no código",
+            "texto": "src/lib/domain.ts — compareClassification(): pontos, depois wins, depois goalsScoredByTeam − goalsSufferedByTeam. Altera a ordem de três edições: 3ª e 5ª da MasterLeague e 4ª da TuesdayLeague."
           },
           "votacao": {
             "data": "07 set 2025",
@@ -895,14 +895,6 @@
     }
   ],
   "pontos": [
-    {
-      "id": "A2",
-      "balde": "decidido",
-      "titulo": "Desempate: nº de vitórias, depois diferença de golos",
-      "contexto": "Votado 6-0 a 7 de setembro de 2025. O site continua a ordenar só por pontos, mantendo a ordem de inserção em caso de empate.",
-      "regrasAfetadas": ["1.5"],
-      "accao": "Alterar domain.ts. Sem votação."
-    },
     {
       "id": "B1",
       "balde": "votar",
