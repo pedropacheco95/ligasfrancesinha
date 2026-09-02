@@ -1,19 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 
 import { Layout } from "@/components/Layout";
+import { useRegulamentoActivity, useSquad, useVoter } from "@/hooks/use-regulamento";
+import { addObjection, addProposal, castVote, type RegulamentoActivity } from "@/lib/db";
 import {
-  BALDE_LABEL,
-  BALDE_NOTA,
   ESTADO_LABEL,
+  contagem,
   pontosDoBalde,
+  regraPorId,
+  regrasVotadas,
   regulamento,
   totalRegras,
-  type Balde,
   type EstadoRegra,
   type Ponto,
   type Regra,
-  type Votacao,
 } from "@/lib/regulamento";
 
 export const Route = createFileRoute("/regulamento")({
@@ -29,12 +30,20 @@ const ESTADO_CLASSE: Record<EstadoRegra, string> = {
   dormente: "tw:bg-muted tw:text-muted-foreground",
 };
 
-const BALDES: Balde[] = ["decidido", "votar", "proposta"];
+const CAIXA = "tw:rounded-lg tw:border tw:border-border tw:bg-card tw:p-5";
+const CAMPO =
+  "tw:w-full tw:rounded tw:border tw:border-border tw:bg-background tw:px-3 tw:py-2 tw:text-sm tw:text-foreground";
+const BOTAO =
+  "tw:cursor-pointer tw:rounded tw:border tw:border-primary tw:bg-primary tw:px-4 tw:py-2 tw:text-sm tw:font-semibold tw:text-primary-foreground tw:disabled:cursor-not-allowed tw:disabled:opacity-40";
 
 function RegulamentoPage() {
-  const contestadas = regulamento.artigos
-    .flatMap((artigo) => artigo.regras)
-    .filter((regra) => regra.estado === "contestada" || regra.estado === "pendente").length;
+  const { activity, loading, refresh } = useRegulamentoActivity();
+  const [voter, setVoter] = useVoter();
+  const squad = useSquad();
+
+  const decididas = regrasVotadas();
+  const paraVotar = pontosDoBalde("votar");
+  const paraPropor = pontosDoBalde("proposta");
 
   return (
     <Layout>
@@ -52,49 +61,29 @@ function RegulamentoPage() {
 
           <dl className="tw:mt-7 tw:mb-0 tw:grid tw:grid-cols-2 tw:gap-x-6 tw:gap-y-4 tw:sm:grid-cols-4">
             <Facto valor={String(totalRegras())} rotulo="regras" />
-            <Facto valor={String(regulamento.artigos.length)} rotulo="artigos" />
-            <Facto valor={String(contestadas)} rotulo="por resolver" />
-            <Facto valor={String(regulamento.pontos.length)} rotulo="pontos em aberto" />
+            <Facto valor={String(decididas.length)} rotulo="já votadas" />
+            <Facto valor={String(paraVotar.length)} rotulo="a votar agora" />
+            <Facto valor={String(paraPropor.length)} rotulo="à espera de proposta" />
           </dl>
         </header>
 
-        <section className="tw:mt-12" id="pontos">
-          <h2 className="tw:mb-1 tw:text-2xl tw:font-bold">Pontos em aberto</h2>
-          <p className="tw:mt-0 tw:mb-8 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-            Votação em duas rondas. A sondagem faz-se no grupo, como sempre — esta página só guarda
-            o que ficou decidido, porque uma regra votada não é uma regra sabida.
+        {!loading && !activity.available ? <AvisoSemTabelas /> : null}
+
+        <Parte numero={1} titulo="O que está decidido">
+          <p className="tw:mt-0 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+            Foi a votos e ganhou. Não se vota outra vez — se discordares de alguma, é na Parte 2 que
+            se diz, e não em campo à segunda-feira.
           </p>
 
-          <div className="tw:flex tw:flex-col tw:gap-10">
-            {BALDES.map((balde) => {
-              const pontos = pontosDoBalde(balde);
-              if (pontos.length === 0) return null;
-              return (
-                <div key={balde}>
-                  <div className="tw:flex tw:flex-wrap tw:items-baseline tw:gap-x-3 tw:gap-y-1">
-                    <h3 className="tw:m-0 tw:text-lg tw:font-semibold">{BALDE_LABEL[balde]}</h3>
-                    <span className="tw:text-xs tw:text-muted-foreground tw:tabular-nums">
-                      {pontos.length} {pontos.length === 1 ? "ponto" : "pontos"}
-                    </span>
-                  </div>
-                  <p className="tw:mt-1 tw:mb-4 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-                    {BALDE_NOTA[balde]}
-                  </p>
-                  <div className="tw:flex tw:flex-col tw:gap-4">
-                    {pontos.map((ponto) => (
-                      <CartaoPonto key={ponto.id} ponto={ponto} />
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+          <div className="tw:grid tw:gap-4 tw:sm:grid-cols-2">
+            {decididas.map((regra) => (
+              <CartaoDecidido key={regra.id} regra={regra} />
+            ))}
           </div>
-        </section>
 
-        <section className="tw:mt-16">
-          <h2 className="tw:mb-1 tw:text-2xl tw:font-bold">O regulamento</h2>
+          <h3 className="tw:mt-12 tw:mb-1 tw:text-xl tw:font-semibold">O regulamento inteiro</h3>
           <p className="tw:mt-0 tw:mb-2 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
-            Cada regra com a data, o autor e a frase em que foi fixada.
+            As {totalRegras()} regras, cada uma com a data, o autor e a frase em que ficou fixada.
           </p>
 
           {regulamento.artigos.map((artigo) => (
@@ -103,7 +92,7 @@ function RegulamentoPage() {
                 <span className="tw:text-xs tw:tracking-[0.08em] tw:text-primary tw:uppercase">
                   Art. {artigo.numero}
                 </span>
-                <h3 className="tw:m-0 tw:text-xl tw:font-semibold">{artigo.titulo}</h3>
+                <h4 className="tw:m-0 tw:text-lg tw:font-semibold">{artigo.titulo}</h4>
               </div>
               <p className="tw:mt-3 tw:mb-0 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
                 {artigo.nota}
@@ -115,19 +104,78 @@ function RegulamentoPage() {
               </div>
             </article>
           ))}
-        </section>
+        </Parte>
+
+        <Parte numero={2} titulo="Votar">
+          <p className="tw:mt-0 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+            Escolhe o teu nome uma vez e vota. Podes mudar o voto enquanto a votação estiver aberta
+            — fica sempre o último. As contagens aparecem à medida que as pessoas votam.
+          </p>
+
+          <SeletorVotante squad={squad} voter={voter} onChange={setVoter} />
+
+          <div className="tw:mt-8 tw:flex tw:flex-col tw:gap-5">
+            {paraVotar.map((ponto) => (
+              <Sondagem
+                key={ponto.id}
+                ponto={ponto}
+                activity={activity}
+                voter={voter}
+                squad={squad}
+                onDone={refresh}
+              />
+            ))}
+          </div>
+
+          <h3 className="tw:mt-12 tw:mb-1 tw:text-xl tw:font-semibold">
+            Não concordo com uma regra
+          </h3>
+          <p className="tw:mt-0 tw:mb-4 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+            Escolhe a regra, diz porquê e, se tiveres, escreve como devia ser. Podes fazê-lo a
+            tantas regras quantas quiseres — depois de submeteres uma, o formulário fica pronto para
+            a seguinte.
+          </p>
+
+          <FormDiscordancia voter={voter} onDone={refresh} />
+          <ListaDiscordancias activity={activity} />
+        </Parte>
+
+        <Parte numero={3} titulo="Propor">
+          <p className="tw:mt-0 tw:mb-6 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+            Estes cinco não se resolvem com um sim ou um não: falta alguém escrever o que devia
+            ficar na regra. Quando houver propostas, vão a votos como os da Parte 2.
+          </p>
+
+          <div className="tw:flex tw:flex-col tw:gap-5">
+            {paraPropor.map((ponto) => (
+              <CartaoProposta
+                key={ponto.id}
+                ponto={ponto}
+                activity={activity}
+                voter={voter}
+                onDone={refresh}
+              />
+            ))}
+
+            <div className={CAIXA}>
+              <h4 className="tw:mt-0 tw:mb-1 tw:text-base tw:font-semibold">
+                Outra ideia qualquer
+              </h4>
+              <p className="tw:mt-0 tw:mb-4 tw:text-sm tw:text-muted-foreground">
+                Alguma coisa que devia estar no regulamento e não está em nenhum dos pontos acima.
+              </p>
+              <FormProposta pontoId={null} voter={voter} onDone={refresh} />
+              <ListaPropostas activity={activity} pontoId={null} />
+            </div>
+          </div>
+        </Parte>
 
         <footer className="tw:mt-16 tw:border-t-2 tw:border-foreground tw:pt-6 tw:text-sm tw:text-muted-foreground">
           <p className="tw:mt-0 tw:mb-3">
-            <strong className="tw:text-foreground">Como se altera.</strong> Sondagem no grupo, com
-            prazo. Ganha a maioria dos que votam; quem não vota conta como abstenção e o empate
-            mantém o que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda
-            ronda entre as duas mais votadas. Depois de fechada, escreve-se aqui a contagem e a data
-            — os nomes ficam na sondagem, no grupo — em{" "}
-            <code className="tw:rounded tw:bg-muted tw:px-1.5 tw:py-0.5 tw:text-xs">
-              src/data/regulamento.json
-            </code>{" "}
-            e o commit é a ata da votação.
+            <strong className="tw:text-foreground">Como se altera.</strong> Vota-se aqui, com prazo.
+            Ganha a maioria dos que votam; quem não vota conta como abstenção e o empate mantém o
+            que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda
+            entre as duas mais votadas.
           </p>
           <p className="tw:m-0">
             <strong className="tw:text-foreground">Não existe.</strong> Não há MVP, melhor marcador,
@@ -136,6 +184,28 @@ function RegulamentoPage() {
         </footer>
       </div>
     </Layout>
+  );
+}
+
+function Parte({
+  numero,
+  titulo,
+  children,
+}: {
+  numero: number;
+  titulo: string;
+  children: ReactNode;
+}) {
+  return (
+    <section id={`p${numero}`} className="tw:mt-14 tw:scroll-mt-24">
+      <div className="tw:flex tw:flex-wrap tw:items-baseline tw:gap-x-3 tw:border-t-2 tw:border-foreground tw:pt-5">
+        <span className="tw:text-xs tw:tracking-[0.14em] tw:text-primary tw:uppercase">
+          Parte {numero}
+        </span>
+        <h2 className="tw:m-0 tw:text-2xl tw:font-bold">{titulo}</h2>
+      </div>
+      <div className="tw:mt-4">{children}</div>
+    </section>
   );
 }
 
@@ -148,6 +218,58 @@ function Facto({ valor, rotulo }: { valor: string; rotulo: string }) {
   );
 }
 
+/**
+ * The migration is applied by hand in the Supabase dashboard, so the page has
+ * to be honest about the gap rather than throwing: the rules are what most
+ * people come for, and they render without a database.
+ */
+function AvisoSemTabelas() {
+  return (
+    <div className="tw:mt-8 tw:rounded-lg tw:border tw:border-gold tw:bg-gold/10 tw:p-4">
+      <p className="tw:m-0 tw:text-sm">
+        <strong>A votação ainda não está ligada.</strong> Falta correr a migração{" "}
+        <code className="tw:rounded tw:bg-muted tw:px-1.5 tw:py-0.5 tw:text-xs">
+          supabase/migrations/20260902160000_regulamento_votes.sql
+        </code>{" "}
+        no SQL editor do Supabase. Até lá lê-se o regulamento, mas não se vota.
+      </p>
+    </div>
+  );
+}
+
+function CartaoDecidido({ regra }: { regra: Regra }) {
+  const votacao = regra.votacao;
+  const total = votacao ? votacao.resultado.reduce((soma, linha) => soma + linha.votos, 0) : 0;
+  const vencedora = votacao
+    ? [...votacao.resultado].sort((a, b) => b.votos - a.votos)[0]
+    : undefined;
+  const porImplementar = regra.estado === "pendente";
+
+  return (
+    <div
+      className={`tw:rounded-lg tw:border tw:p-5 ${
+        porImplementar ? "tw:border-gold tw:bg-gold/10" : "tw:border-border tw:bg-card"
+      }`}
+    >
+      <p className="tw:m-0 tw:text-xs tw:text-muted-foreground tw:tabular-nums">{regra.id}</p>
+      <h4 className="tw:mt-1 tw:mb-0 tw:text-base tw:leading-snug tw:font-semibold">
+        {regra.titulo}
+      </h4>
+      {vencedora ? (
+        <p className="tw:mt-2 tw:mb-0 tw:text-sm tw:text-muted-foreground">
+          Ganhou «{vencedora.opcao}» com {vencedora.votos} de {total} votos.
+        </p>
+      ) : null}
+      {votacao ? (
+        <p className="tw:mt-2 tw:mb-0 tw:text-[10px] tw:tracking-[0.1em] tw:text-primary tw:uppercase">
+          {votacao.pergunta} · {votacao.data}
+          {porImplementar ? " · falta implementar" : ""}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
 function LinhaRegra({ regra }: { regra: Regra }) {
   return (
     <div className="tw:border-b tw:border-border tw:py-5 tw:last:border-b-0">
@@ -156,7 +278,7 @@ function LinhaRegra({ regra }: { regra: Regra }) {
           {regra.id}
         </span>
         <div className="tw:min-w-0 tw:flex-1 tw:basis-80">
-          <h4 className="tw:m-0 tw:text-base tw:leading-snug tw:font-semibold">{regra.titulo}</h4>
+          <h5 className="tw:m-0 tw:text-base tw:leading-snug tw:font-semibold">{regra.titulo}</h5>
           {regra.detalhe ? (
             <p className="tw:mt-1.5 tw:mb-0 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
               {regra.detalhe}
@@ -182,8 +304,6 @@ function LinhaRegra({ regra }: { regra: Regra }) {
         </blockquote>
       ))}
 
-      {regra.votacao ? <BlocoVotacao votacao={regra.votacao} /> : null}
-
       {regra.verificacao ? (
         <div className="tw:mt-4 tw:rounded tw:border tw:border-border tw:bg-card tw:p-3.5 tw:sm:ml-13">
           <p className="tw:m-0 tw:text-[10px] tw:tracking-[0.12em] tw:text-primary tw:uppercase">
@@ -198,114 +318,396 @@ function LinhaRegra({ regra }: { regra: Regra }) {
   );
 }
 
-/**
- * The count and the date, never the voters. The names stay in the sondagem in
- * the group, which is where people already go looking for them; what gets lost
- * is that the vote happened at all, and that is what this puts back.
- */
-function BlocoVotacao({ votacao }: { votacao: Votacao }) {
-  const total = votacao.resultado.reduce((soma, linha) => soma + linha.votos, 0);
-
+function SeletorVotante({
+  squad,
+  voter,
+  onChange,
+}: {
+  squad: string[];
+  voter: string;
+  onChange: (name: string) => void;
+}) {
   return (
-    <div className="tw:mt-4 tw:sm:ml-13">
-      <p className="tw:m-0 tw:text-[10px] tw:tracking-[0.12em] tw:text-primary tw:uppercase">
-        {votacao.pergunta} · {votacao.data} · {total} {total === 1 ? "voto" : "votos"}
-      </p>
-      <ul className="tw:mt-2 tw:mb-0 tw:flex tw:list-none tw:flex-col tw:gap-1.5 tw:pl-0">
-        {votacao.resultado.map((linha) => (
-          <li
-            key={linha.opcao}
-            className="tw:grid tw:grid-cols-[1.5rem_1fr] tw:items-center tw:gap-x-3 tw:text-sm"
-          >
-            <span className="tw:text-right tw:font-semibold tw:tabular-nums">{linha.votos}</span>
-            <span className="tw:relative tw:overflow-hidden tw:rounded tw:bg-muted tw:px-2.5 tw:py-1">
-              <span
-                aria-hidden="true"
-                className="tw:absolute tw:inset-y-0 tw:left-0 tw:bg-primary/20"
-                style={{ width: total ? `${(linha.votos / total) * 100}%` : "0%" }}
-              />
-              <span className="tw:relative">{linha.opcao}</span>
-            </span>
-          </li>
+    <div className={CAIXA}>
+      <label
+        htmlFor="votante"
+        className="tw:mb-2 tw:block tw:text-sm tw:font-semibold tw:text-foreground"
+      >
+        Quem és tu?
+      </label>
+      <select
+        id="votante"
+        className={CAMPO}
+        value={voter}
+        onChange={(event) => onChange(event.target.value)}
+      >
+        <option value="">— escolhe o teu nome —</option>
+        {squad.map((name) => (
+          <option key={name} value={name}>
+            {name}
+          </option>
         ))}
-      </ul>
+      </select>
+      <p className="tw:mt-2 tw:mb-0 tw:text-xs tw:text-muted-foreground">
+        Fica guardado neste browser. Não há palavra-passe — somos catorze e conhecemo-nos.
+      </p>
     </div>
   );
 }
 
-function CartaoPonto({ ponto }: { ponto: Ponto }) {
+function Sondagem({
+  ponto,
+  activity,
+  voter,
+  squad,
+  onDone,
+}: {
+  ponto: Ponto;
+  activity: RegulamentoActivity;
+  voter: string;
+  squad: string[];
+  onDone: () => Promise<void>;
+}) {
+  const [erro, setErro] = useState("");
+  const [aGravar, setAGravar] = useState(false);
+
+  const votos = activity.votes.filter((voto) => voto.pointId === ponto.id);
+  const resultado = contagem(
+    ponto,
+    votos.map((voto) => voto.choice),
+  );
+  const total = votos.length;
+  const meu = votos.find((voto) => voto.voter === voter)?.choice ?? "";
+  const emFalta = squad.filter((name) => !votos.some((voto) => voto.voter === name));
+
+  async function votar(opcao: string) {
+    if (!voter) return;
+    setAGravar(true);
+    setErro("");
+    try {
+      await castVote(ponto.id, voter, opcao);
+      await onDone();
+    } catch {
+      setErro("Não deu para gravar o voto. Tenta outra vez daqui a bocado.");
+    } finally {
+      setAGravar(false);
+    }
+  }
+
   return (
-    <div className="tw:rounded-lg tw:border tw:border-border tw:bg-card tw:p-5">
+    <div className={CAIXA}>
       <div className="tw:flex tw:flex-wrap tw:items-baseline tw:gap-x-3 tw:gap-y-1">
         <span className="tw:text-xs tw:font-semibold tw:tracking-[0.08em] tw:text-primary">
           {ponto.id}
         </span>
         <h4 className="tw:m-0 tw:text-base tw:font-semibold">{ponto.titulo}</h4>
       </div>
-
       <p className="tw:mt-2 tw:mb-0 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
         {ponto.contexto}
       </p>
 
-      {ponto.accao ? (
-        <p className="tw:mt-3 tw:mb-0 tw:text-sm tw:font-medium">{ponto.accao}</p>
-      ) : null}
-
-      {ponto.opcoes ? (
-        <ul className="tw:mt-3 tw:mb-0 tw:list-none tw:pl-0">
-          {ponto.opcoes.map((opcao) => (
-            <li key={opcao} className="tw:flex tw:gap-2.5 tw:py-1 tw:text-sm">
-              <span aria-hidden="true" className="tw:text-muted-foreground">
-                ○
-              </span>
-              <span>{opcao}</span>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      <fieldset className="tw:mt-4 tw:mb-0 tw:border-0 tw:p-0" disabled={!voter || aGravar}>
+        <legend className="tw:sr-only">{ponto.titulo}</legend>
+        <div className="tw:flex tw:flex-col tw:gap-2">
+          {resultado.map(({ opcao, votos: votosNaOpcao }) => {
+            const escolhida = meu === opcao;
+            return (
+              <label
+                key={opcao}
+                className={`tw:relative tw:flex tw:cursor-pointer tw:items-center tw:gap-3 tw:overflow-hidden tw:rounded tw:border tw:px-3 tw:py-2.5 tw:text-sm ${
+                  escolhida ? "tw:border-primary tw:bg-primary/5" : "tw:border-border"
+                }`}
+              >
+                <span
+                  aria-hidden="true"
+                  className="tw:absolute tw:inset-y-0 tw:left-0 tw:bg-primary/10"
+                  style={{ width: total ? `${(votosNaOpcao / total) * 100}%` : "0%" }}
+                />
+                <input
+                  type="radio"
+                  name={`ponto-${ponto.id}`}
+                  className="tw:relative tw:shrink-0"
+                  checked={escolhida}
+                  onChange={() => void votar(opcao)}
+                />
+                <span className="tw:relative tw:flex-1">{opcao}</span>
+                <span className="tw:relative tw:shrink-0 tw:text-sm tw:font-semibold tw:tabular-nums">
+                  {votosNaOpcao}
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      </fieldset>
 
       {ponto.nota ? (
-        <p className="tw:mt-3 tw:mb-0 tw:max-w-prose tw:text-xs tw:text-muted-foreground">
-          {ponto.nota}
-        </p>
+        <p className="tw:mt-3 tw:mb-0 tw:text-xs tw:text-muted-foreground">{ponto.nota}</p>
       ) : null}
 
-      <div className="tw:mt-4 tw:flex tw:flex-wrap tw:items-center tw:gap-x-4 tw:gap-y-2">
-        {ponto.sondagem ? <BotaoCopiar texto={ponto.sondagem} /> : null}
-        <span className="tw:text-xs tw:text-muted-foreground">
-          Afeta {ponto.regrasAfetadas.join(", ")}
-        </span>
-      </div>
+      <p className="tw:mt-3 tw:mb-0 tw:text-xs tw:text-muted-foreground">
+        {!voter ? "Escolhe o teu nome acima para poderes votar. " : ""}
+        {total === 0
+          ? "Ainda ninguém votou."
+          : `${total} ${total === 1 ? "voto" : "votos"}${
+              emFalta.length ? ` · faltam ${emFalta.join(", ")}` : " · votaram todos"
+            }`}
+      </p>
+
+      {erro ? <p className="tw:mt-2 tw:mb-0 tw:text-xs tw:text-destructive">{erro}</p> : null}
     </div>
   );
 }
 
 /**
- * Copies the poll text so whoever runs the vote pastes a well-formed sondagem
- * into the group instead of improvising the options.
+ * One objection at a time, cleared and left open for the next — a player may
+ * disagree with any number of rules, and a fixed set of slots would either
+ * waste the page or run out.
  */
-function BotaoCopiar({ texto }: { texto: string }) {
-  const [copiado, setCopiado] = useState(false);
+function FormDiscordancia({ voter, onDone }: { voter: string; onDone: () => Promise<void> }) {
+  const [ruleId, setRuleId] = useState("");
+  const [reason, setReason] = useState("");
+  const [proposal, setProposal] = useState("");
+  const [estado, setEstado] = useState<"" | "a-gravar" | "gravado" | "erro">("");
 
-  async function copiar() {
+  async function submeter(event: FormEvent) {
+    event.preventDefault();
+    if (!voter || !ruleId || !reason.trim()) return;
+    setEstado("a-gravar");
     try {
-      await navigator.clipboard.writeText(texto);
-      setCopiado(true);
-      window.setTimeout(() => setCopiado(false), 2000);
+      await addObjection(ruleId, voter, reason.trim(), proposal.trim() || null);
+      setRuleId("");
+      setReason("");
+      setProposal("");
+      setEstado("gravado");
+      await onDone();
     } catch {
-      // Clipboard is unavailable outside a secure context; the poll text is
-      // still on screen above, so there is nothing to recover from.
-      setCopiado(false);
+      setEstado("erro");
     }
   }
 
   return (
-    <button
-      type="button"
-      onClick={copiar}
-      className="tw:cursor-pointer tw:rounded tw:border tw:border-primary tw:bg-transparent tw:px-3 tw:py-1.5 tw:text-xs tw:font-semibold tw:text-primary tw:hover:bg-primary/10"
-    >
-      {copiado ? "Copiado" : "Copiar sondagem"}
-    </button>
+    <form className={CAIXA} onSubmit={(event) => void submeter(event)}>
+      <fieldset className="tw:m-0 tw:border-0 tw:p-0" disabled={!voter || estado === "a-gravar"}>
+        <legend className="tw:sr-only">Discordar de uma regra</legend>
+
+        <label htmlFor="regra" className="tw:mb-1.5 tw:block tw:text-sm tw:font-semibold">
+          Que regra?
+        </label>
+        <select
+          id="regra"
+          className={CAMPO}
+          value={ruleId}
+          onChange={(event) => setRuleId(event.target.value)}
+          required
+        >
+          <option value="">— escolhe a regra —</option>
+          {regulamento.artigos.map((artigo) => (
+            <optgroup key={artigo.id} label={`Art. ${artigo.numero} · ${artigo.titulo}`}>
+              {artigo.regras.map((regra) => (
+                <option key={regra.id} value={regra.id}>
+                  {regra.id} · {regra.titulo}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+
+        <label htmlFor="porque" className="tw:mt-4 tw:mb-1.5 tw:block tw:text-sm tw:font-semibold">
+          Porque é que discordas?
+        </label>
+        <textarea
+          id="porque"
+          className={CAMPO}
+          rows={3}
+          value={reason}
+          onChange={(event) => setReason(event.target.value)}
+          placeholder="O que é que esta regra faz mal, na prática."
+          required
+        />
+
+        <label htmlFor="melhor" className="tw:mt-4 tw:mb-1.5 tw:block tw:text-sm tw:font-semibold">
+          Como devia ser?{" "}
+          <span className="tw:font-normal tw:text-muted-foreground">(opcional)</span>
+        </label>
+        <textarea
+          id="melhor"
+          className={CAMPO}
+          rows={2}
+          value={proposal}
+          onChange={(event) => setProposal(event.target.value)}
+          placeholder="Se já tens uma alternativa concreta, escreve-a aqui."
+        />
+
+        <div className="tw:mt-4 tw:flex tw:flex-wrap tw:items-center tw:gap-3">
+          <button type="submit" className={BOTAO}>
+            {estado === "a-gravar" ? "A gravar…" : "Registar discordância"}
+          </button>
+          {!voter ? (
+            <span className="tw:text-xs tw:text-muted-foreground">
+              Escolhe o teu nome primeiro.
+            </span>
+          ) : null}
+          {estado === "gravado" ? (
+            <span className="tw:text-xs tw:text-primary">
+              Registada. Podes escolher outra regra.
+            </span>
+          ) : null}
+          {estado === "erro" ? (
+            <span className="tw:text-xs tw:text-destructive">Não deu para gravar.</span>
+          ) : null}
+        </div>
+      </fieldset>
+    </form>
+  );
+}
+
+function ListaDiscordancias({ activity }: { activity: RegulamentoActivity }) {
+  if (activity.objections.length === 0) return null;
+
+  return (
+    <div className="tw:mt-5">
+      <h4 className="tw:mt-0 tw:mb-3 tw:text-sm tw:font-semibold tw:text-muted-foreground">
+        Discordâncias registadas ({activity.objections.length})
+      </h4>
+      <div className="tw:flex tw:flex-col tw:gap-3">
+        {activity.objections.map((objection) => {
+          const regra = regraPorId(objection.ruleId);
+          return (
+            <div
+              key={objection.id}
+              className="tw:rounded tw:border-l-2 tw:border-destructive tw:bg-card tw:px-4 tw:py-3"
+            >
+              <p className="tw:m-0 tw:text-xs tw:text-muted-foreground">
+                {objection.voter} · regra {objection.ruleId}
+                {regra ? ` · ${regra.titulo}` : ""}
+              </p>
+              <p className="tw:mt-1.5 tw:mb-0 tw:text-sm">{objection.reason}</p>
+              {objection.proposal ? (
+                <p className="tw:mt-2 tw:mb-0 tw:text-sm">
+                  <strong>Propõe:</strong> {objection.proposal}
+                </p>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function CartaoProposta({
+  ponto,
+  activity,
+  voter,
+  onDone,
+}: {
+  ponto: Ponto;
+  activity: RegulamentoActivity;
+  voter: string;
+  onDone: () => Promise<void>;
+}) {
+  return (
+    <div className={CAIXA}>
+      <div className="tw:flex tw:flex-wrap tw:items-baseline tw:gap-x-3 tw:gap-y-1">
+        <span className="tw:text-xs tw:font-semibold tw:tracking-[0.08em] tw:text-primary">
+          {ponto.id}
+        </span>
+        <h4 className="tw:m-0 tw:text-base tw:font-semibold">{ponto.titulo}</h4>
+      </div>
+      <p className="tw:mt-2 tw:mb-4 tw:max-w-prose tw:text-sm tw:text-muted-foreground">
+        {ponto.contexto}
+      </p>
+      <FormProposta pontoId={ponto.id} voter={voter} onDone={onDone} />
+      <ListaPropostas activity={activity} pontoId={ponto.id} />
+    </div>
+  );
+}
+
+function FormProposta({
+  pontoId,
+  voter,
+  onDone,
+}: {
+  pontoId: string | null;
+  voter: string;
+  onDone: () => Promise<void>;
+}) {
+  const [proposal, setProposal] = useState("");
+  const [estado, setEstado] = useState<"" | "a-gravar" | "gravado" | "erro">("");
+  const campoId = `proposta-${pontoId ?? "livre"}`;
+
+  async function submeter(event: FormEvent) {
+    event.preventDefault();
+    if (!voter || !proposal.trim()) return;
+    setEstado("a-gravar");
+    try {
+      await addProposal(pontoId, voter, proposal.trim());
+      setProposal("");
+      setEstado("gravado");
+      await onDone();
+    } catch {
+      setEstado("erro");
+    }
+  }
+
+  return (
+    <form onSubmit={(event) => void submeter(event)}>
+      <fieldset className="tw:m-0 tw:border-0 tw:p-0" disabled={!voter || estado === "a-gravar"}>
+        <legend className="tw:sr-only">Escrever uma proposta</legend>
+        <label htmlFor={campoId} className="tw:sr-only">
+          A tua proposta
+        </label>
+        <textarea
+          id={campoId}
+          className={CAMPO}
+          rows={2}
+          value={proposal}
+          onChange={(event) => setProposal(event.target.value)}
+          placeholder="Escreve a regra como ela devia ficar."
+          required
+        />
+        <div className="tw:mt-3 tw:flex tw:flex-wrap tw:items-center tw:gap-3">
+          <button type="submit" className={BOTAO}>
+            {estado === "a-gravar" ? "A gravar…" : "Propor"}
+          </button>
+          {!voter ? (
+            <span className="tw:text-xs tw:text-muted-foreground">
+              Escolhe o teu nome primeiro.
+            </span>
+          ) : null}
+          {estado === "gravado" ? (
+            <span className="tw:text-xs tw:text-primary">Proposta registada.</span>
+          ) : null}
+          {estado === "erro" ? (
+            <span className="tw:text-xs tw:text-destructive">Não deu para gravar.</span>
+          ) : null}
+        </div>
+      </fieldset>
+    </form>
+  );
+}
+
+function ListaPropostas({
+  activity,
+  pontoId,
+}: {
+  activity: RegulamentoActivity;
+  pontoId: string | null;
+}) {
+  const propostas = activity.proposals.filter((proposta) => proposta.pointId === pontoId);
+  if (propostas.length === 0) return null;
+
+  return (
+    <div className="tw:mt-4 tw:flex tw:flex-col tw:gap-3">
+      {propostas.map((proposta) => (
+        <div
+          key={proposta.id}
+          className="tw:rounded tw:border-l-2 tw:border-primary tw:bg-background tw:px-4 tw:py-3"
+        >
+          <p className="tw:m-0 tw:text-xs tw:text-muted-foreground">{proposta.voter}</p>
+          <p className="tw:mt-1.5 tw:mb-0 tw:text-sm">{proposta.proposal}</p>
+        </div>
+      ))}
+    </div>
   );
 }

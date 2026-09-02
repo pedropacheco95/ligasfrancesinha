@@ -29,9 +29,12 @@ export interface Verificacao {
 }
 
 /**
- * The result of the poll that settled a rule. Only the count and the date are
- * kept: the names live in the sondagem itself, which stays in the group, and
- * votes about people are run anonymously.
+ * The result of the poll that settled a rule.
+ *
+ * These are the votes held before the site ran them, so all we have is the
+ * count and the date — WhatsApp kept the names and the export did not. Votes
+ * held here record who voted; the exception stays the votes about people,
+ * which are run anonymously.
  */
 export interface Votacao {
   data: string;
@@ -66,8 +69,6 @@ export interface Ponto {
   regrasAfetadas: string[];
   /** Present on `balde: "votar"` — the options that go on the WhatsApp poll. */
   opcoes?: string[];
-  /** Present on `balde: "votar"` — poll text, ready to paste into the group. */
-  sondagem?: string;
   /** Present on `balde: "decidido"` — what is left to do, since the vote happened. */
   accao?: string;
   /** Anything the person running the poll needs to know before opening it. */
@@ -91,29 +92,32 @@ export const ESTADO_LABEL: Record<EstadoRegra, string> = {
   dormente: "Dormente",
 };
 
-export const BALDE_LABEL: Record<Balde, string> = {
-  decidido: "Já decidido",
-  votar: "Votar agora",
-  proposta: "Precisa de proposta",
-};
-
-export const BALDE_NOTA: Record<Balde, string> = {
-  decidido: "Já foi a votos e ganhou. Falta escrever e implementar — não se vota outra vez.",
-  votar: "Binários, não precisam de proposta prévia. Uma sondagem no grupo por cada um.",
-  proposta: "Precisam de uma ideia concreta antes de poderem ir a votos. Segunda ronda.",
-};
-
-/** The rules of one article, or all of them, matching an `estado`. */
-export function regrasPorEstado(estado: EstadoRegra): Regra[] {
-  return regulamento.artigos.flatMap((artigo) =>
-    artigo.regras.filter((regra) => regra.estado === estado),
-  );
-}
-
 export function pontosDoBalde(balde: Balde): Ponto[] {
   return regulamento.pontos.filter((ponto) => ponto.balde === balde);
 }
 
 export function totalRegras(): number {
   return regulamento.artigos.reduce((total, artigo) => total + artigo.regras.length, 0);
+}
+
+/** Every rule we have the poll result for — what "já está decidido" means. */
+export function regrasVotadas(): Regra[] {
+  return regulamento.artigos.flatMap((artigo) => artigo.regras.filter((regra) => regra.votacao));
+}
+
+/** The rule with this id, for showing what an objection is about. */
+export function regraPorId(id: string): Regra | undefined {
+  for (const artigo of regulamento.artigos) {
+    const regra = artigo.regras.find((r) => r.id === id);
+    if (regra) return regra;
+  }
+  return undefined;
+}
+
+/** Total votes per option for one point, in the order the options are listed. */
+export function contagem(ponto: Ponto, escolhas: string[]): { opcao: string; votos: number }[] {
+  return (ponto.opcoes ?? []).map((opcao) => ({
+    opcao,
+    votos: escolhas.filter((escolha) => escolha === opcao).length,
+  }));
 }

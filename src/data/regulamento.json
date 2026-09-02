@@ -1,5 +1,5 @@
 {
-  "versao": "2026-09-03",
+  "versao": "2026-09-02",
   "notaMetodo": "Reconstruído a partir do export completo do grupo — 27 453 mensagens entre 3 de outubro de 2019 e 2 de setembro de 2026. Cada regra traz a data, o autor e a frase em que foi fixada.",
   "artigos": [
     {
@@ -843,12 +843,12 @@
       "id": "a9",
       "numero": 9,
       "titulo": "Como se decide",
-      "nota": "A meta-regra: nada aqui foi imposto.",
+      "nota": "A meta-regra: nada aqui foi imposto. Tudo saiu de votações do grupo, e o que nunca foi a votos nunca mudou. O que mudou foi o sítio onde se vota.",
       "regras": [
         {
           "id": "9.1",
-          "titulo": "Muda-se uma regra por sondagem no grupo, e ganha a maioria dos que votam.",
-          "detalhe": "Sondagem aberta com prazo, encerrada por quem a lançou. Ganha a maioria dos que votam; quem não vota conta como abstenção e o empate mantém o que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda entre as duas mais votadas. Regista-se aqui a contagem e a data — os nomes ficam na própria sondagem no grupo. Votações sobre pessoas são anónimas.",
+          "titulo": "Muda-se uma regra por votação, e ganha a maioria dos que votam.",
+          "detalhe": "A votação corre em /regulamento, com prazo. Ganha a maioria dos que votam; quem não vota conta como abstenção e o empate mantém o que estava. Com três ou mais opções, se nenhuma passar de metade faz-se segunda ronda entre as duas mais votadas. Cada um vota em seu nome, e fica registado o que votou — exceto nas votações sobre pessoas, que se fazem anónimas.",
           "estado": "vigor",
           "citacoes": [
             {
@@ -869,7 +869,7 @@
             {
               "texto": "Puseste para não se ver os nomes para poderes votar no Dudas. — Era para toda a gente votar à vontade.",
               "autor": "Bernardo Queiroz / Pedro Pacheco",
-              "data": "02 set 2026, na votação de entrada"
+              "data": "02 set 2026, na votação de entrada — por isso essas são anónimas"
             }
           ]
         },
@@ -914,7 +914,6 @@
         "Só a partir de 7 subs, e nunca por desequilíbrio",
         "Sempre que estiver claramente desequilibrado, com ou sem subs"
       ],
-      "sondagem": "SONDAGEM:\nTrocas de jogadores depois do sorteio\nOPÇÃO: Nunca se troca — o sorteio é final\nOPÇÃO: Só a partir de 7 subs, e nunca por desequilíbrio\nOPÇÃO: Sempre que estiver claramente desequilibrado, com ou sem subs",
       "nota": "Três opções: se nenhuma passar de metade, segunda ronda entre as duas mais votadas."
     },
     {
@@ -926,8 +925,7 @@
       "opcoes": [
         "Pares contra ímpares, pela posição na tabela",
         "Aleatório, como em todas as outras jornadas"
-      ],
-      "sondagem": "SONDAGEM:\nEquipas do último jogo da época\nOPÇÃO: Pares contra ímpares, pela posição na tabela\nOPÇÃO: Aleatório, como em todas as outras jornadas"
+      ]
     },
     {
       "id": "B3",
@@ -935,8 +933,7 @@
       "titulo": "Pontos de quem entra a meio da época",
       "contexto": "O organizador aplica a mesma regra desde 2021 — herda os pontos do lugar e o titular original assume a francesinha. Mas o Afonso Pires (2021) e o Afonso Mariz (2022) ficaram ambos com os pontos que tinham feito como subs.",
       "regrasAfetadas": ["8.4", "7.3"],
-      "opcoes": ["Herda os pontos do lugar que ocupa", "Começa com os pontos que fez como sub"],
-      "sondagem": "SONDAGEM:\nPontos de quem entra a meio da época\nOPÇÃO: Herda os pontos do lugar que ocupa\nOPÇÃO: Começa com os pontos que fez como sub"
+      "opcoes": ["Herda os pontos do lugar que ocupa", "Começa com os pontos que fez como sub"]
     },
     {
       "id": "C1",

@@ -265,3 +265,114 @@ export async function updatePlayerEditions(
     }),
   );
 }
+
+/* -------------------------------------------------- Regulamento: o que o grupo decide */
+
+/**
+ * The tables behind `/regulamento` are created by
+ * `supabase/migrations/20260902160000_regulamento_votes.sql`. Until someone
+ * runs it, PostgREST answers every query with an error rather than an empty
+ * set, so the read below reports the feature as unavailable and the page still
+ * renders — the rules are the point of it, the tallies are not.
+ */
+export interface RegulamentoActivity {
+  votes: VoteRow[];
+  objections: ObjectionRow[];
+  proposals: ProposalRow[];
+  /** False when the tables are missing, which is not an error worth showing. */
+  available: boolean;
+}
+
+export interface VoteRow {
+  pointId: string;
+  voter: string;
+  choice: string;
+}
+
+export interface ObjectionRow {
+  id: number;
+  ruleId: string;
+  voter: string;
+  reason: string;
+  proposal: string | null;
+  createdAt: string;
+}
+
+export interface ProposalRow {
+  id: number;
+  pointId: string | null;
+  voter: string;
+  proposal: string;
+  createdAt: string;
+}
+
+const EMPTY_ACTIVITY: RegulamentoActivity = {
+  votes: [],
+  objections: [],
+  proposals: [],
+  available: false,
+};
+
+export async function fetchRegulamentoActivity(): Promise<RegulamentoActivity> {
+  try {
+    const [votes, objections, proposals] = await Promise.all([
+      selectAll("regulamento_votes"),
+      selectAll("regulamento_objections"),
+      selectAll("regulamento_proposals"),
+    ]);
+
+    return {
+      votes: votes.map((row) => ({
+        pointId: String(row["point_id"]),
+        voter: String(row["voter"]),
+        choice: String(row["choice"]),
+      })),
+      objections: objections.map((row) => ({
+        id: Number(row["id"]),
+        ruleId: String(row["rule_id"]),
+        voter: String(row["voter"]),
+        reason: String(row["reason"]),
+        proposal: str(row["proposal"]),
+        createdAt: String(row["created_at"]),
+      })),
+      proposals: proposals.map((row) => ({
+        id: Number(row["id"]),
+        pointId: str(row["point_id"]),
+        voter: String(row["voter"]),
+        proposal: String(row["proposal"]),
+        createdAt: String(row["created_at"]),
+      })),
+      available: true,
+    };
+  } catch (error) {
+    console.warn("[regulamento] as tabelas de votação ainda não existem:", error);
+    return EMPTY_ACTIVITY;
+  }
+}
+
+/** Cast or change one person's vote on one point. */
+export async function castVote(pointId: string, voter: string, choice: string) {
+  const { error } = await supabase
+    .from("regulamento_votes" as never)
+    .upsert({ point_id: pointId, voter, choice } as never, { onConflict: "point_id,voter" });
+  if (error) throw error;
+}
+
+export async function addObjection(
+  ruleId: string,
+  voter: string,
+  reason: string,
+  proposal: string | null,
+) {
+  const { error } = await supabase
+    .from("regulamento_objections" as never)
+    .insert({ rule_id: ruleId, voter, reason, proposal } as never);
+  if (error) throw error;
+}
+
+export async function addProposal(pointId: string | null, voter: string, proposal: string) {
+  const { error } = await supabase
+    .from("regulamento_proposals" as never)
+    .insert({ point_id: pointId, voter, proposal } as never);
+  if (error) throw error;
+}

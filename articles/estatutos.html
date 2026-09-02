@@ -1,3 +1,381 @@
+<style>
+:root{
+  --ground:#F1F2EE;
+  --surface:#FFFFFF;
+  --surface-2:#E9EBE5;
+  --ink:#191C19;
+  --ink-2:#3D423C;
+  --muted:#6B7169;
+  --line:#D6DAD1;
+  --line-soft:#E4E7E0;
+  --accent:#9E3B2E;
+  --accent-soft:#F2E2DE;
+  --pitch:#2F5D46;
+  --pitch-soft:#DFE9E2;
+  --contest:#8A5A16;
+  --contest-soft:#F4E8D3;
+  --shadow:0 1px 2px rgba(25,28,25,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12150F;
+    --surface:#191D16;
+    --surface-2:#20251D;
+    --ink:#E9ECE4;
+    --ink-2:#C3C9BC;
+    --muted:#8D948A;
+    --line:#2E342A;
+    --line-soft:#242A21;
+    --accent:#D8785F;
+    --accent-soft:#33211C;
+    --pitch:#7FB294;
+    --pitch-soft:#1C2A22;
+    --contest:#D6A353;
+    --contest-soft:#2C2417;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12150F;
+  --surface:#191D16;
+  --surface-2:#20251D;
+  --ink:#E9ECE4;
+  --ink-2:#C3C9BC;
+  --muted:#8D948A;
+  --line:#2E342A;
+  --line-soft:#242A21;
+  --accent:#D8785F;
+  --accent-soft:#33211C;
+  --pitch:#7FB294;
+  --pitch-soft:#1C2A22;
+  --contest:#D6A353;
+  --contest-soft:#2C2417;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:Karla,"Helvetica Neue",Arial,sans-serif;
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:Bitter,Georgia,"Times New Roman",serif;text-wrap:balance;margin:0}
+a{color:var(--accent)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px 96px}
+
+/* ---------- cabeçalho ---------- */
+header.top{padding:64px 0 34px;border-bottom:2px solid var(--ink)}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 16px
+}
+h1{font-size:clamp(2.5rem,6.2vw,4.1rem);line-height:1.02;font-weight:700;letter-spacing:-.02em}
+.dek{
+  max-width:64ch;margin:20px 0 0;font-size:1.075rem;color:var(--ink-2)
+}
+.dek strong{color:var(--ink);font-weight:600}
+
+.facts{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+  gap:0;margin-top:36px;border-top:1px solid var(--line)
+}
+.fact{padding:16px 20px 14px;border-right:1px solid var(--line-soft)}
+.fact:last-child{border-right:0}
+.fact b{
+  display:block;font-family:Bitter,Georgia,serif;font-weight:600;
+  font-size:1.75rem;line-height:1.1;font-variant-numeric:tabular-nums
+}
+.fact span{
+  display:block;margin-top:3px;font-size:12px;color:var(--muted);
+  letter-spacing:.03em
+}
+
+/* ---------- layout ---------- */
+.cols{display:grid;grid-template-columns:210px minmax(0,1fr);gap:56px;margin-top:52px;align-items:start}
+nav.index{position:sticky;top:24px}
+nav.index p{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 12px
+}
+nav.index ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+nav.index a{
+  display:flex;gap:10px;padding:5px 0;text-decoration:none;color:var(--ink-2);
+  font-size:14px;line-height:1.35;border-bottom:1px solid transparent
+}
+nav.index a:hover{color:var(--accent)}
+nav.index a em{
+  font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:12px;
+  color:var(--muted);flex:0 0 auto;padding-top:1px
+}
+nav.index a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- artigos ---------- */
+article{scroll-margin-top:20px}
+article + article{margin-top:60px}
+.art-head{display:flex;align-items:baseline;gap:14px;padding-bottom:10px;border-bottom:1px solid var(--ink)}
+.art-num{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);
+  letter-spacing:.08em;flex:0 0 auto
+}
+h2{font-size:1.55rem;font-weight:600;letter-spacing:-.01em}
+.art-note{margin:12px 0 0;color:var(--muted);font-size:14.5px;max-width:66ch}
+
+.rules{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.rule{padding:22px 0;border-bottom:1px solid var(--line-soft)}
+.rule:last-child{border-bottom:0}
+.rule-top{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.rid{
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);
+  flex:0 0 34px;padding-top:4px;font-variant-numeric:tabular-nums
+}
+.rbody{flex:1 1 420px;min-width:0}
+h3{font-size:1.05rem;font-weight:600;line-height:1.42;margin:0 0 6px}
+.rbody p{margin:0;color:var(--ink-2);font-size:15.3px;max-width:64ch}
+
+.chip{
+  flex:0 0 auto;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;
+  border-radius:2px;white-space:nowrap;margin-top:3px
+}
+.c-vigor{background:var(--pitch-soft);color:var(--pitch)}
+.c-contest{background:var(--contest-soft);color:var(--contest)}
+.c-prop{background:var(--surface-2);color:var(--muted)}
+.c-super{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.c-pend{background:var(--accent-soft);color:var(--accent)}
+
+/* citações */
+.cite{
+  margin:12px 0 0 48px;padding:11px 0 0 14px;border-left:2px solid var(--line);
+  font-size:14.2px;color:var(--ink-2)
+}
+.cite + .cite{margin-top:8px}
+.cite q{quotes:"“" "”" "‘" "’";font-style:italic}
+.cite .who{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;
+  letter-spacing:.05em;color:var(--muted);margin-top:5px
+}
+@media (max-width:620px){.cite{margin-left:0}}
+
+/* callout de verificação */
+.verify{
+  margin:18px 0 0 48px;background:var(--surface);border:1px solid var(--line);
+  border-radius:3px;padding:14px 16px;box-shadow:var(--shadow)
+}
+.verify p{margin:0;font-size:14px;color:var(--ink-2)}
+.verify code{
+  font-family:"IBM Plex Mono",monospace;font-size:12.6px;
+  background:var(--surface-2);padding:1px 5px;border-radius:2px;color:var(--ink)
+}
+.verify b{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--pitch);margin-bottom:7px
+}
+@media (max-width:620px){.verify{margin-left:0}}
+
+/* contradições */
+.clash{
+  border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  padding:20px 22px;box-shadow:var(--shadow)
+}
+.clashes{display:flex;flex-direction:column;gap:16px;margin-top:22px}
+.clash h3{margin:0 0 14px;font-size:1.05rem}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft)}
+.side{padding:13px 18px 13px 0;border-right:1px solid var(--line-soft)}
+.side:last-child{padding:13px 0 13px 18px;border-right:0}
+.side em{
+  display:block;font-style:normal;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:7px
+}
+.side p{margin:0;font-size:14.4px;color:var(--ink-2)}
+.verdict{
+  margin-top:14px;padding-top:13px;border-top:1px solid var(--line-soft);
+  font-size:14.4px
+}
+.verdict b{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-right:9px
+}
+@media (max-width:700px){
+  .sides{grid-template-columns:1fr}
+  .side{border-right:0;border-bottom:1px solid var(--line-soft);padding:13px 0}
+  .side:last-child{padding:13px 0 0;border-bottom:0}
+}
+
+/* linha do tempo */
+.timeline{
+  margin-top:22px;width:100%;border-collapse:collapse;font-size:14.4px
+}
+.tl-wrap{overflow-x:auto}
+.timeline th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;font-weight:500;
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  padding:0 18px 9px 0;border-bottom:1px solid var(--line)
+}
+.timeline td{padding:11px 18px 11px 0;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--ink-2)}
+.timeline td:first-child{
+  font-family:"IBM Plex Mono",monospace;font-size:12.6px;color:var(--muted);
+  white-space:nowrap;font-variant-numeric:tabular-nums
+}
+.timeline td:nth-child(2){color:var(--ink);font-weight:500}
+
+/* rodapé */
+footer{
+  margin-top:70px;padding-top:26px;border-top:2px solid var(--ink);
+  font-size:14px;color:var(--muted);max-width:70ch
+}
+footer p{margin:0 0 10px}
+footer strong{color:var(--ink-2)}
+
+@media (max-width:900px){
+  .cols{grid-template-columns:1fr;gap:34px}
+  nav.index{position:static;border-bottom:1px solid var(--line);padding-bottom:18px}
+  nav.index ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px 22px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- impressão / PDF ----------
+   Cmd+P → Guardar como PDF. Força a paleta clara (o PDF não tem tema),
+   larga o índice lateral e impede que uma regra parta a meio entre páginas. */
+@media print{
+  :root{
+    --ground:#FFFFFF;--surface:#FFFFFF;--surface-2:#F1F2EE;
+    --ink:#000000;--ink-2:#262924;--muted:#5A605A;
+    --line:#B9BEB4;--line-soft:#D9DDD4;
+    --accent:#8A3226;--accent-soft:#F4E7E4;
+    --pitch:#274C39;--pitch-soft:#E6EEE8;
+    --contest:#71490F;--contest-soft:#F5EBD8;
+    --shadow:none;
+  }
+  @page{margin:16mm 14mm}
+  body{font-size:10.2pt;line-height:1.5}
+  .wrap{max-width:none;padding:0}
+
+  /* o índice é navegação, não conteúdo */
+  nav.index{display:none}
+  .cols{display:block;margin-top:26px}
+
+  header.top{padding:0 0 20px}
+  h1{font-size:26pt}
+  .dek{font-size:11pt;max-width:none}
+  .facts{grid-template-columns:repeat(5,1fr)}
+  .fact b{font-size:15pt}
+
+  /* nada parte a meio */
+  article,.rule,.clash,.verify,.cite,.timeline tr{break-inside:avoid;page-break-inside:avoid}
+  article{break-before:page;page-break-before:always;margin-top:0}
+  article:first-of-type{break-before:auto;page-break-before:auto}
+  .art-head{break-after:avoid;page-break-after:avoid}
+  h2,h3{break-after:avoid;page-break-after:avoid}
+
+  h2{font-size:15pt}
+  h3{font-size:11pt}
+  .rule{padding:13px 0}
+  .cite{margin-left:38px;font-size:9.4pt}
+  .verify{margin-left:38px;border-color:var(--line)}
+  .clash{border-color:var(--line)}
+  .timeline{font-size:9.6pt}
+  .tl-wrap{overflow-x:visible}
+
+  /* âncoras internas não precisam de URL impresso */
+  a{color:var(--accent);text-decoration:none}
+  footer{break-inside:avoid;page-break-inside:avoid}
+}
+
+/* ---------- as quatro partes ---------- */
+.part{margin-top:64px;padding-top:26px;border-top:3px solid var(--ink)}
+/* O cabecalho ja fecha com uma regua; a da primeira parte ficaria colada a ela. */
+.part:first-of-type{margin-top:34px;padding-top:0;border-top:0}
+.part-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.part-num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);white-space:nowrap
+}
+.part-head h2{margin:0;font-size:1.85rem;line-height:1.15}
+.part-note{margin:12px 0 0;max-width:62ch;color:var(--ink-2)}
+
+/* ---------- o que esta fechado ---------- */
+.settled{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px}
+.settled-item{
+  background:var(--pitch-soft);border:1px solid var(--line);border-radius:8px;
+  padding:16px 18px;box-shadow:var(--shadow)
+}
+.settled-item b{display:block;font-size:1.05rem;line-height:1.3;margin-bottom:6px}
+.settled-item p{margin:0;font-size:13.6px;color:var(--ink-2)}
+.settled-item .tally{
+  display:block;margin-top:9px;font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:11px;letter-spacing:.06em;color:var(--pitch);text-transform:uppercase
+}
+.settled-item.owed{background:var(--contest-soft)}
+.settled-item.owed .tally{color:var(--contest)}
+
+/* ---------- discordar ---------- */
+.dissent{
+  margin-top:24px;background:var(--surface);border:1px solid var(--line);
+  border-radius:8px;padding:18px 20px;box-shadow:var(--shadow)
+}
+.dissent summary{cursor:pointer;font-weight:700;font-size:1rem;list-style:none}
+.dissent summary::-webkit-details-marker{display:none}
+.dissent summary::before{content:"\25B8  ";color:var(--accent)}
+.dissent[open] summary::before{content:"\25BE  "}
+.dissent .inner{margin-top:14px;border-top:1px solid var(--line-soft);padding-top:14px}
+.dissent p{margin:0 0 10px;font-size:14.4px;color:var(--ink-2);max-width:62ch}
+.dissent p:last-child{margin-bottom:0}
+.dissent .caveat{color:var(--accent)}
+
+/* ---------- sondagens e propostas ---------- */
+.poll{
+  margin-top:16px;background:var(--surface);border:1px solid var(--line);
+  border-radius:8px;padding:20px;box-shadow:var(--shadow)
+}
+.poll > h3{margin:0 0 4px;font-size:1.1rem}
+.poll .ctx{margin:0;font-size:14.4px;color:var(--ink-2);max-width:62ch}
+.poll .sides{margin-top:14px}
+.poll-opts{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.poll-opts li{
+  display:flex;gap:11px;align-items:flex-start;background:var(--surface-2);
+  border-radius:6px;padding:10px 13px;font-size:14.6px
+}
+.poll-opts li::before{content:"\25CB";color:var(--muted);line-height:1.45}
+.poll .runoff{
+  margin:13px 0 0;font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:11px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase
+}
+.missing{
+  margin:13px 0 0;padding:11px 14px;border-left:3px solid var(--accent);
+  background:var(--accent-soft);font-size:14px;color:var(--ink-2)
+}
+.missing b{color:var(--ink)}
+
+/* ---------- botao para o grupo ---------- */
+.wa{
+  display:inline-block;margin-top:18px;padding:10px 17px;border-radius:6px;
+  background:var(--pitch);color:var(--ground);text-decoration:none;
+  font-weight:700;font-size:14px;border:1px solid var(--pitch)
+}
+.wa:hover{opacity:.9}
+.wa.ghost{background:transparent;color:var(--pitch)}
+
+@media (max-width:760px){
+  .sides{grid-template-columns:1fr}
+  .side,.side:last-child{padding:13px 0;border-right:0;border-bottom:1px solid var(--line-soft)}
+}
+
+@media print{
+  .part{break-before:page;page-break-before:always;border-top-width:2px}
+  .part:first-of-type{break-before:auto;page-break-before:auto}
+  .settled-item,.poll,.dissent{break-inside:avoid;page-break-inside:avoid;box-shadow:none}
+  .dissent .inner{display:block}
+  .wa{display:none}
+}
+</style>
+
 <div class="wrap">
 
 <header class="top">
