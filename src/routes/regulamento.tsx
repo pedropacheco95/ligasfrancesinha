@@ -580,6 +580,8 @@ function Sondagem({
         <p className="tw:mt-3 tw:mb-0 tw:text-xs tw:text-muted-foreground">{ponto.nota}</p>
       ) : null}
 
+      <ListaPropostas activity={activity} pontoId={ponto.id} />
+
       <p className="tw:mt-3 tw:mb-0 tw:text-xs tw:text-muted-foreground">
         {!voter ? "Escolhe o teu nome acima para poderes votar. " : ""}
         {total === 0

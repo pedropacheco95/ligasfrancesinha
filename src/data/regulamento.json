@@ -912,7 +912,7 @@
       "id": "B2",
       "balde": "votar",
       "titulo": "Último jogo da época: pares contra ímpares?",
-      "contexto": "Aplicado em 2023 e 2024 para garantir que quem disputa lugares não joga na mesma equipa. Em 2025 o Bernardo Xavier disse que era regra estabelecida e o Afonso Mariz respondeu que no ano anterior o campeão saiu de um sorteio aleatório.",
+      "contexto": "Aplicado em 2023 e 2024 para garantir que quem disputa lugares não joga na mesma equipa. Em 2025 o Bernardo Xavier disse que era regra estabelecida e o Afonso Mariz respondeu que no ano anterior o campeão saiu de um sorteio aleatório. A folha do jantar de 2026 escreve «último jogo: 28 de junho de 2027 (ímpares vs pares)», mas nunca foi ratificada.",
       "regrasAfetadas": ["4.6"],
       "opcoes": [
         "Pares contra ímpares, pela posição na tabela",
@@ -928,6 +928,39 @@
       "opcoes": ["Herda os pontos do lugar que ocupa", "Começa com os pontos que fez como sub"]
     },
     {
+      "id": "B4",
+      "balde": "votar",
+      "titulo": "Equipas quando há 7 ou mais substitutos",
+      "contexto": "A regra 4.5 diz que com mais de metade de subs as equipas se organizam à mão, sem dizer como. A folha do jantar fixa um critério: a partir de 7 subs, joga-se residentes contra substitutos.",
+      "regrasAfetadas": ["4.5"],
+      "opcoes": [
+        "A partir de 7 subs: residentes contra substitutos",
+        "Fica como está — organizam-se à mão, caso a caso"
+      ],
+      "nota": "Proposta escrita na Folha manuscrita «Master League 2026/2027», assinada no jantar de fim de época, jun 2026."
+    },
+    {
+      "id": "B5",
+      "balde": "votar",
+      "titulo": "Quanto pagam os 7 de baixo aos 7 de cima",
+      "contexto": "A regra 7.1 diz que a metade de cima come à borla, paga pela metade de baixo, e nunca disse quanto. A folha do jantar põe 20 € por cabeça.",
+      "regrasAfetadas": ["7.1", "7.2"],
+      "opcoes": ["20 € cada um dos 7 de baixo", "Divide-se o custo real das francesinhas comidas"],
+      "nota": "Proposta escrita na Folha manuscrita «Master League 2026/2027», assinada no jantar de fim de época, jun 2026."
+    },
+    {
+      "id": "B6",
+      "balde": "votar",
+      "titulo": "Calendário: arranque e paragem de dezembro",
+      "contexto": "A folha do jantar marca o arranque a 7 de setembro de 2026 e uma paragem a 28 de dezembro. Nunca houve regra sobre paragens — o Natal foi sempre decidido à última.",
+      "regrasAfetadas": ["5.1", "7.6"],
+      "opcoes": [
+        "Arranca a 7 de setembro e não há jogo a 28 de dezembro",
+        "Arranca a 7 de setembro e joga-se a 28 de dezembro se houver gente"
+      ],
+      "nota": "Proposta escrita na Folha manuscrita «Master League 2026/2027», assinada no jantar de fim de época, jun 2026."
+    },
+    {
       "id": "C1",
       "balde": "proposta",
       "titulo": "Quórum: quantos membros da liga são precisos para haver jogo?",
@@ -936,17 +969,29 @@
     },
     {
       "id": "C2",
-      "balde": "proposta",
-      "titulo": "Como cobrar os 2 € dos subs",
-      "contexto": "O princípio está aceite desde dezembro de 2025. O problema é a cobrança: em julho de 2026 o cofre tinha 22 € quando devia ter cerca de 300 €. Falta um mecanismo que não dependa de alguém andar atrás das pessoas.",
-      "regrasAfetadas": ["3.4"]
+      "balde": "votar",
+      "titulo": "Como se cobram os 2 € dos subs",
+      "contexto": "O sub paga, isso é pacífico; o problema sempre foi quem cobra. A folha do jantar escreve um mecanismo que não depende de ninguém andar atrás das pessoas: quem falta adianta os 2 € na conta e cobra depois ao seu sub. Em julho de 2026 o cofre tinha 22 € quando devia ter perto de 300 €.",
+      "regrasAfetadas": ["3.4"],
+      "opcoes": [
+        "Quem falta adianta os 2 € na conta e cobra depois ao sub",
+        "Alguém lembra, no fim do jogo ou no início do seguinte, de pedir o valor",
+        "Fica como está — cada um entende-se com o seu sub"
+      ],
+      "nota": "Três opções: se nenhuma passar de metade, segunda ronda entre as duas mais votadas. A primeira vem da folha do jantar, a segunda foi proposta aqui na primeira ronda."
     },
     {
       "id": "C3",
-      "balde": "proposta",
-      "titulo": "Quem fica de fora por causa de um adiamento mantém o ponto?",
-      "contexto": "A regra dos 5 subs assume que alguém possa sair prejudicado em nome da qualidade do jogo. O Bernardo Xavier propôs que quem podia no dia normal e não pode no alternativo mantivesse pelo menos o ponto de presença. Nunca foi votado.",
-      "regrasAfetadas": ["5.2", "5.3", "1.4"]
+      "balde": "votar",
+      "titulo": "Jogo cancelado: quem podia ir leva pontos?",
+      "contexto": "O Bernardo Xavier tinha proposto que quem estava disponível mantivesse pelo menos o ponto de presença. A folha do jantar vai bastante mais longe: 4 pontos, que é o mesmo que uma vitória. Atenção que a folha fala de jogo cancelado, e não de jogo adiado — a regra dos 5 subs muda o dia, não cancela.",
+      "regrasAfetadas": ["5.2", "5.3", "1.4"],
+      "opcoes": [
+        "4 pontos a quem podia ir, como diz a folha do jantar",
+        "Só o ponto de presença",
+        "Nada — quem não joga não pontua"
+      ],
+      "nota": "Três opções: se nenhuma passar de metade, segunda ronda entre as duas mais votadas. Proposta escrita na Folha manuscrita «Master League 2026/2027», assinada no jantar de fim de época, jun 2026."
     },
     {
       "id": "C4",
@@ -961,6 +1006,14 @@
       "titulo": "Penalização a quem não arranja substituto",
       "contexto": "Proposta pelo Miguel Girão em junho de 2026, depois do primeiro jogo cancelado da história da liga. O Pacheco não se opôs, mas exigiu votação.",
       "regrasAfetadas": ["3.1", "3.7"]
+    },
+    {
+      "id": "C6",
+      "balde": "proposta",
+      "titulo": "Dois capitães em todas as jornadas",
+      "contexto": "A folha do jantar deixa isto como sondagem por fazer: «para evitar Tondela-Milan, que tal haver 2 capitães todas as jornadas». Ataca o mesmo problema que o B1 — equipas desequilibradas — mas por escolha em vez de por sorteio, e trocaria a regra 4.1.",
+      "regrasAfetadas": ["4.1", "4.4"],
+      "nota": "Falta definir: quem são os capitães, como se escolhem, e se escolhem à vez ou por posição na tabela."
     }
   ]
 }
