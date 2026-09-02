@@ -37,6 +37,11 @@ export function Layout({ children }: { children: ReactNode }) {
               </Link>
             </li>
             <li>
+              <Link activeProps={{ className: "" }} to="/regulamento">
+                Regulamento
+              </Link>
+            </li>
+            <li>
               <Link
                 activeProps={{ className: "" }}
                 to="/scores/table/$leagueId"
