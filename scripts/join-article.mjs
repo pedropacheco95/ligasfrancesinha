@@ -43,16 +43,16 @@ const HTML_CLOSE = "<!-- end Quadro de Honra -->";
 
 /** Section id → the eyebrow it gets, continuing the article's file numbering. */
 const EYEBROWS = {
-  ranking: "14 — a tagarelice",
-  ritmo: "15 — o pulso",
-  palavra: "16 — prémios: a palavra",
-  riso: "17 — prémios: o riso",
-  relogio: "18 — prémios: o relógio",
-  balneario: "19 — prémios: o balneário",
-  estilo: "20 — prémios: o estilo",
-  dicionario: "21 — o dicionário",
-  arquivo: "22 — o arquivo",
-  social: "23 — a teia",
+  ranking: "15 — a tagarelice",
+  ritmo: "16 — o pulso",
+  palavra: "17 — prémios: a palavra",
+  riso: "18 — prémios: o riso",
+  relogio: "19 — prémios: o relógio",
+  balneario: "20 — prémios: o balneário",
+  estilo: "21 — prémios: o estilo",
+  dicionario: "22 — o dicionário",
+  arquivo: "23 — o arquivo",
+  social: "24 — a teia",
 };
 
 /** Rules the article already provides; the chat page's versions are dropped. */

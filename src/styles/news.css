@@ -201,17 +201,6 @@
   font-size: 1.15rem;
 }
 
-.share_whatsapp {
-  background: #25d366;
-  color: #05341a;
-}
-
-.share_whatsapp:hover {
-  background: #1eb757;
-  color: #05341a;
-  text-decoration: none;
-}
-
 .share_light .share_copy {
   border-color: rgba(34, 48, 94, 0.3);
   color: #22305e;

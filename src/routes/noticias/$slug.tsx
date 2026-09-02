@@ -77,14 +77,14 @@ function ArticlePage() {
           <Link activeProps={{ className: "" }} to="/" className="article_back">
             <i className="bx bx-left-arrow-alt" aria-hidden="true"></i> Voltar
           </Link>
-          <ShareButtons title={article.title} path={`/noticias/${article.slug}`} tone="dark" />
+          <ShareButtons path={`/noticias/${article.slug}`} tone="dark" />
         </div>
 
         <div className="news-article" dangerouslySetInnerHTML={{ __html: article.body }} />
 
         <div className="article_share_end">
           <p>Manda isto para o grupo</p>
-          <ShareButtons title={article.title} path={`/noticias/${article.slug}`} tone="dark" />
+          <ShareButtons path={`/noticias/${article.slug}`} tone="dark" />
         </div>
       </div>
     </Layout>

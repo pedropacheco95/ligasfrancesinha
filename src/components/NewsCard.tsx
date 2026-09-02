@@ -30,7 +30,7 @@ export function NewsCard({ article }: { article: Article }) {
           <Link activeProps={{ className: "" }} to={to} params={params} className="news_card_read">
             Ler o artigo
           </Link>
-          <ShareButtons title={article.title} path={`/noticias/${article.slug}`} />
+          <ShareButtons path={`/noticias/${article.slug}`} />
         </div>
       </div>
     </article>
