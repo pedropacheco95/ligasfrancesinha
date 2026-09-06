@@ -18,6 +18,7 @@ import { Route as AuthLogoutRouteImport } from './routes/auth/logout'
 import { Route as AuthRegisterRouteImport } from './routes/auth/register'
 import { Route as GameIdRouteImport } from './routes/game/$id'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias/$slug'
+import { Route as SorteioTesoureiroRouteImport } from './routes/sorteio/tesoureiro'
 import { Route as CreateChoose_editionViewRouteImport } from './routes/create/choose_edition/$view'
 import { Route as CreateGameIndexRouteImport } from './routes/create/game/index'
 import { Route as CreateGameEditionNameRouteImport } from './routes/create/game/$editionName'
@@ -78,6 +79,11 @@ const GameIdRoute = GameIdRouteImport.update({
 const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   id: '/noticias/$slug',
   path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SorteioTesoureiroRoute = SorteioTesoureiroRouteImport.update({
+  id: '/sorteio/tesoureiro',
+  path: '/sorteio/tesoureiro',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreateChoose_editionViewRoute =
@@ -185,6 +191,7 @@ export interface FileRoutesByFullPath {
   '/auth/register': typeof AuthRegisterRoute
   '/game/$id': typeof GameIdRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
+  '/sorteio/tesoureiro': typeof SorteioTesoureiroRoute
   '/create/choose_edition/$view': typeof CreateChoose_editionViewRoute
   '/create/game/$editionName': typeof CreateGameEditionNameRoute
   '/player/all_editions/$playerName': typeof PlayerAll_editionsPlayerNameRoute
@@ -212,6 +219,7 @@ export interface FileRoutesByTo {
   '/auth/register': typeof AuthRegisterRoute
   '/game/$id': typeof GameIdRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
+  '/sorteio/tesoureiro': typeof SorteioTesoureiroRoute
   '/create/choose_edition/$view': typeof CreateChoose_editionViewRoute
   '/create/game/$editionName': typeof CreateGameEditionNameRoute
   '/player/all_editions/$playerName': typeof PlayerAll_editionsPlayerNameRoute
@@ -240,6 +248,7 @@ export interface FileRoutesById {
   '/auth/register': typeof AuthRegisterRoute
   '/game/$id': typeof GameIdRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
+  '/sorteio/tesoureiro': typeof SorteioTesoureiroRoute
   '/create/choose_edition/$view': typeof CreateChoose_editionViewRoute
   '/create/game/$editionName': typeof CreateGameEditionNameRoute
   '/player/all_editions/$playerName': typeof PlayerAll_editionsPlayerNameRoute
@@ -269,6 +278,7 @@ export interface FileRouteTypes {
     | '/auth/register'
     | '/game/$id'
     | '/noticias/$slug'
+    | '/sorteio/tesoureiro'
     | '/create/choose_edition/$view'
     | '/create/game/$editionName'
     | '/player/all_editions/$playerName'
@@ -296,6 +306,7 @@ export interface FileRouteTypes {
     | '/auth/register'
     | '/game/$id'
     | '/noticias/$slug'
+    | '/sorteio/tesoureiro'
     | '/create/choose_edition/$view'
     | '/create/game/$editionName'
     | '/player/all_editions/$playerName'
@@ -323,6 +334,7 @@ export interface FileRouteTypes {
     | '/auth/register'
     | '/game/$id'
     | '/noticias/$slug'
+    | '/sorteio/tesoureiro'
     | '/create/choose_edition/$view'
     | '/create/game/$editionName'
     | '/player/all_editions/$playerName'
@@ -351,6 +363,7 @@ export interface RootRouteChildren {
   AuthRegisterRoute: typeof AuthRegisterRoute
   GameIdRoute: typeof GameIdRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
+  SorteioTesoureiroRoute: typeof SorteioTesoureiroRoute
   CreateChoose_editionViewRoute: typeof CreateChoose_editionViewRoute
   CreateGameEditionNameRoute: typeof CreateGameEditionNameRoute
   PlayerAll_editionsPlayerNameRoute: typeof PlayerAll_editionsPlayerNameRoute
@@ -432,6 +445,13 @@ declare module '@tanstack/react-router' {
       path: '/noticias/$slug'
       fullPath: '/noticias/$slug'
       preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sorteio/tesoureiro': {
+      id: '/sorteio/tesoureiro'
+      path: '/sorteio/tesoureiro'
+      fullPath: '/sorteio/tesoureiro'
+      preLoaderRoute: typeof SorteioTesoureiroRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create/choose_edition/$view': {
@@ -559,6 +579,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRegisterRoute: AuthRegisterRoute,
   GameIdRoute: GameIdRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
+  SorteioTesoureiroRoute: SorteioTesoureiroRoute,
   CreateChoose_editionViewRoute: CreateChoose_editionViewRoute,
   CreateGameEditionNameRoute: CreateGameEditionNameRoute,
   PlayerAll_editionsPlayerNameRoute: PlayerAll_editionsPlayerNameRoute,
