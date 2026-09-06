@@ -4,18 +4,23 @@
  * Plain unlayered CSS, like `news.css` and `regulamento.css`: Tailwind's
  * utilities are imported into `@layer utilities`, and an unlayered rule from
  * Bootstrap's reboot or the compiled Flask stylesheet beats a layered one
- * whatever its specificity. Anything here that styles a bare `ul`, `li` or `p`
- * would lose if it were written as a utility.
+ * whatever its specificity. Everything here that styles a bare `p`, `ul`, `li`
+ * or `ol` would lose if it were written as a utility.
  *
  * Loaded from the route's `head.links`.
  */
+
+.sorteio_page {
+  /* Kept in step with ALTURA_NOME in the route: the reel is offset in pixels. */
+  --altura-nome: 76px;
+}
 
 .sorteio_page .sorteio_palco {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  padding: 2.5rem 1.5rem 2rem;
+  gap: 0.85rem;
+  padding: 2.25rem 1.5rem 2rem;
   border: 1px solid var(--border);
   border-radius: 0.75rem;
   background: var(--card);
@@ -30,58 +35,54 @@
   color: var(--muted-foreground);
 }
 
-.sorteio_page .sorteio_nome {
-  margin: 0;
-  min-height: 1.15em;
-  font-size: clamp(2rem, 7vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-/* Rolling names read as a blur of candidates, not as a result. */
-.sorteio_page .sorteio_nome.a-rolar {
-  color: var(--muted-foreground);
-}
-
 /*
- * The winner is set in the foreground colour, not the accent: at this size the
- * league green washes out against the card and the one moment the page exists
- * for has to read cleanly. The green does the work underneath instead.
+ * One name tall, with the rest of the strip clipped above and below. The soft
+ * edges are what make it read as a reel rather than as a list that jumped.
  */
-.sorteio_page .sorteio_nome.ganhou {
-  color: var(--foreground);
-  animation: sorteio-aterra 420ms ease-out;
+.sorteio_page .sorteio_janela {
+  position: relative;
+  width: 100%;
+  height: var(--altura-nome);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 26%,
+    #000 74%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 74%, transparent 100%);
 }
 
-.sorteio_page .sorteio_nome.ganhou::after {
-  content: "";
-  display: block;
-  width: 3.5rem;
-  height: 4px;
-  margin: 0.6rem auto 0;
-  border-radius: 2px;
-  background: var(--primary);
+.sorteio_page .sorteio_tira {
+  transition-property: transform;
+  /* Fast away, long slow settle — the last three names crawl past. */
+  transition-timing-function: cubic-bezier(0.09, 0.72, 0.13, 1);
 }
 
-@keyframes sorteio-aterra {
-  0% {
-    transform: scale(0.94);
-    opacity: 0.4;
-  }
-  60% {
-    transform: scale(1.04);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
+.sorteio_page .sorteio_nome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--altura-nome);
+  margin: 0;
+  font-size: clamp(1.9rem, 6vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .sorteio_page .sorteio_nome.ganhou {
-    animation: none;
-  }
+/* Only while it is moving fast enough for the blur to mean something. */
+.sorteio_page .sorteio_janela.a-girar .sorteio_nome {
+  filter: blur(0.6px);
+  opacity: 0.85;
+}
+
+.sorteio_page .sorteio_selado {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
 }
 
 .sorteio_page .sorteio_lista {
@@ -103,12 +104,40 @@
 
 .sorteio_page .sorteio_lista li.escolhido {
   border-color: var(--primary);
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  background: color-mix(in srgb, var(--primary) 14%, transparent);
   font-weight: 600;
 }
 
-.sorteio_page .sorteio_lista.fora li {
+.sorteio_page .sorteio_historico {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.sorteio_page .sorteio_historico li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.sorteio_page .sorteio_historico .edicao {
+  font-size: 0.85rem;
   color: var(--muted-foreground);
-  background: transparent;
-  text-decoration: line-through;
+}
+
+.sorteio_page .sorteio_historico .nome {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sorteio_page .sorteio_tira {
+    transition-duration: 0ms !important;
+  }
+  .sorteio_page .sorteio_janela.a-girar .sorteio_nome {
+    filter: none;
+  }
 }

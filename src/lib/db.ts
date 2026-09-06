@@ -420,3 +420,62 @@ export async function clearRegulamento(voter: string) {
     if (error) throw error;
   }
 }
+
+/* ---------------------------------------------------- Tesoureiro da edição */
+
+export interface TreasurerRow {
+  editionId: number;
+  playerId: number;
+}
+
+/**
+ * Who the treasurer is for each edition.
+ *
+ * Created by `supabase/migrations/20260906120000_edition_treasurers.sql`, so
+ * the read tolerates the table not being there yet the same way the regulamento
+ * one does — the draw page still lists the squad.
+ */
+export async function fetchTreasurers(): Promise<TreasurerRow[] | null> {
+  // Not `selectAll`: that orders by `id`, and this table is keyed on
+  // `edition_id` — one treasurer per edition is the whole point, so there is no
+  // surrogate key to sort on.
+  const { data, error } = await supabase
+    .from("edition_treasurers" as never)
+    .select("*")
+    .order("edition_id", { ascending: true });
+
+  if (error) {
+    // Only a missing table is answered with an empty page; anything else is a
+    // real failure and saying "the table does not exist" would send whoever
+    // reads it to run a migration that has already been run.
+    if (error.code === "PGRST205" || error.code === "42P01") {
+      console.warn("[tesoureiro] a tabela ainda não existe:", error.message);
+      return null;
+    }
+    throw error;
+  }
+
+  const rows = (data ?? []) as unknown as Row[];
+  return rows.map((row) => ({
+    editionId: Number(row["edition_id"]),
+    playerId: Number(row["player_id"]),
+  }));
+}
+
+/** Raised when the edition already has a treasurer — the draw is not repeatable. */
+export const JA_SORTEADO = "ja-sorteado";
+
+/**
+ * Record the draw. The primary key on `edition_id` is what stops a second one,
+ * so a unique violation is the expected answer to a repeated click rather than
+ * an error worth showing: the caller re-reads and shows the name that stands.
+ */
+export async function insertTreasurer(editionId: number, playerId: number) {
+  const { error } = await supabase
+    .from("edition_treasurers" as never)
+    .insert({ edition_id: editionId, player_id: playerId } as never);
+  if (error) {
+    if (error.code === "23505") throw new Error(JA_SORTEADO);
+    throw error;
+  }
+}
