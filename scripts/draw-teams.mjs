@@ -118,6 +118,13 @@ await rest(`editions?id=eq.${edition.id}`, {
 const file = path.join(ROOT, "src/data/editions.json");
 const rows = JSON.parse(fs.readFileSync(file, "utf8"));
 const row = rows.find((e) => e.id === edition.id);
+if (!row) {
+  // The draw is saved either way; only the export is behind. Say so plainly
+  // rather than dying on it, since the database write has already happened.
+  console.log(`  Saved: equipas numero ${number}.`);
+  console.log(`  Edition ${edition.id} is not in the export yet — run qa/export-supabase.py.\n`);
+  process.exit(0);
+}
 row.numberOfTeamsMade = number;
 row.lastTeam = lastTeam;
 fs.writeFileSync(file, `${JSON.stringify(rows, null, 1)}\n`, "utf8");

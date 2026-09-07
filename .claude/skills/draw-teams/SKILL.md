@@ -5,23 +5,29 @@ description: Draw the teams for a Ligas Francesinha matchday, exactly as the sit
 
 # Drawing the week's teams
 
+Asked to draw the teams, do the whole thing in one go — draw, save, and hand
+over the message for the group. Do not stop at a preview to ask whether to save
+it; that is the answer to a question the user has already given.
+
 ```sh
-npm run draw-teams                    # preview, writes nothing
-npm run draw-teams -- --commit        # save it
-npm run draw-teams -- --whatsapp      # also print the message for the group
+npm run draw-teams -- --commit --whatsapp
 ```
 
-The draw is the app's own `makeTeams` (`src/lib/domain.ts`), run against the
-cloud database, and `--commit` performs the same write as the button. Preview
-first, show the user, then commit.
+Then commit `src/data/editions.json` and push, and give the user the WhatsApp
+block the script printed, in a code block, ready to paste. That is the finished
+job: teams drawn, saved, and sendable.
 
-## Save it
+The draw is the app's own `makeTeams` (`src/lib/domain.ts`), run against the
+cloud database, and `--commit` performs the same write as the button. Drop
+`--commit` only when the user explicitly asks to just see one — a preview, a
+"what would come out", a dry run.
+
+## Why it is saved, not previewed
 
 **A draw you announce but do not save is not the draw.** Until the week's result
 is entered, the site replays the saved draw instead of rolling a new one — so if
 nothing is saved, the next person to press "Fazer Equipas" gets different teams
-from the ones the group was just sent. Commit unless the user only wanted to see
-what a draw might look like.
+from the ones the group was just sent.
 
 Committing writes `last_team` and `number_of_teams_made` on the edition, and
 updates `src/data/editions.json` to match — the export the site serves on first
@@ -52,7 +58,8 @@ whoever already saw the old teams will not hear about the new ones.
 
 ## The message for the group
 
-`--whatsapp` prints it ready to paste — the two squads under `*BRANQUELAS*` and
+The script prints it ready to paste — the two squads under `*BRANQUELAS*` and
 `*MAREGÕES*`, which WhatsApp shows in bold. Give it in a code block so it can be
 copied verbatim, and keep it to the teams: the group wants the line-up, not an
-explanation of how it was drawn.
+explanation of how it was drawn. Anything you want to say about the draw itself
+goes after the block, in your own reply.
