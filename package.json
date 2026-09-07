@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "add-game": "node --experimental-strip-types --import ./scripts/register-ts.mjs scripts/add-game.mjs"
+    "add-game": "node --experimental-strip-types --import ./scripts/register-ts.mjs scripts/add-game.mjs",
+    "draw-teams": "node --experimental-strip-types --import ./scripts/register-ts.mjs scripts/draw-teams.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
