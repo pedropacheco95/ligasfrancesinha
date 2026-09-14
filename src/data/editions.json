@@ -138,8 +138,8 @@
   "finalGame": "2027-06-28",
   "hasEnded": false,
   "goalValue": 0,
-  "numberOfTeamsMade": 0,
+  "numberOfTeamsMade": 1,
   "leagueId": 1,
-  "lastTeam": null
+  "lastTeam": "8;56;41;3;5;9;30;18;51;1;39;12;11;31;"
  }
 ]
