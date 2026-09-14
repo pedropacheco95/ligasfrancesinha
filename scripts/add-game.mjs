@@ -254,9 +254,18 @@ if (goalsTeam1 === null || goalsTeam2 === null) {
 }
 
 const matchweek = Math.max(0, ...edition.games.map((g) => g.matchweek)) + 1;
-// Same default as the create-game page: today, wound back to the matchday.
-const target =
+// Same default as the create-game page: today, wound back to the matchday. The
+// page pins a weekday per league, but an edition can play on another one — the
+// 7th MasterLeague plays Mondays, not Thursdays — so where the edition has a
+// game already, its day is the one to wind back to.
+const leagueTarget =
   edition.league?.name === "MasterLeague" ? 3 : edition.league?.name === "TuesdayLeague" ? 1 : null;
+const latestGame = edition.games
+  .map((game) => game.date)
+  .filter(Boolean)
+  .sort()
+  .at(-1);
+const target = latestGame ? pyWeekday(new Date(`${latestGame}T00:00:00`)) : leagueTarget;
 const day = new Date();
 if (target !== null) day.setDate(day.getDate() - ((pyWeekday(day) - target + 7) % 7));
 const date = dateArg ?? isoLocalDate(day);

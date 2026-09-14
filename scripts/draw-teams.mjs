@@ -13,7 +13,7 @@
  * draw instead of rolling a new one. A draw that is announced but not saved is
  * therefore a draw the next person to open the page will silently replace.
  */
-import fs from "node:fs";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 
 import { loadDataset, rest, ROOT } from "./supabase.mjs";
@@ -112,21 +112,14 @@ await rest(`editions?id=eq.${edition.id}`, {
 });
 
 // The app serves src/data/*.json until the browser has the real rows, so the
-// export has to follow the write. Only this edition changed; rewriting the one
-// file by hand keeps the diff to the two fields instead of the churn a full
-// re-export brings.
-const file = path.join(ROOT, "src/data/editions.json");
-const rows = JSON.parse(fs.readFileSync(file, "utf8"));
-const row = rows.find((e) => e.id === edition.id);
-if (!row) {
-  // The draw is saved either way; only the export is behind. Say so plainly
-  // rather than dying on it, since the database write has already happened.
-  console.log(`  Saved: equipas numero ${number}.`);
-  console.log(`  Edition ${edition.id} is not in the export yet — run qa/export-supabase.py.\n`);
-  process.exit(0);
+// export has to follow the write — through the export script rather than by
+// hand, so that every writer of those files agrees on their formatting.
+console.log(`  Saved: equipas numero ${number}.`);
+try {
+  execFileSync("python3", [path.join(ROOT, "qa/export-supabase.py")], { cwd: ROOT });
+  console.log("  src/data updated; commit it.\n");
+} catch (error) {
+  // The draw itself is safe in the database; only the export is behind.
+  console.log(`  Could not refresh src/data (${error.message.trim()}).`);
+  console.log("  Run python3 qa/export-supabase.py and commit it.\n");
 }
-row.numberOfTeamsMade = number;
-row.lastTeam = lastTeam;
-fs.writeFileSync(file, `${JSON.stringify(rows, null, 1)}\n`, "utf8");
-
-console.log(`  Saved: equipas numero ${number}, and src/data/editions.json with it.\n`);

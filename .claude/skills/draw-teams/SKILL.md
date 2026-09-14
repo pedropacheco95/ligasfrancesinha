@@ -13,9 +13,9 @@ it; that is the answer to a question the user has already given.
 npm run draw-teams -- --commit --whatsapp
 ```
 
-Then commit `src/data/editions.json` and push, and give the user the WhatsApp
-block the script printed, in a code block, ready to paste. That is the finished
-job: teams drawn, saved, and sendable.
+Then commit what it changed under `src/data/` and push, and give the user the
+WhatsApp block the script printed, in a code block, ready to paste. That is the
+finished job: teams drawn, saved, and sendable.
 
 The draw is the app's own `makeTeams` (`src/lib/domain.ts`), run against the
 cloud database, and `--commit` performs the same write as the button. Drop
@@ -29,9 +29,9 @@ is entered, the site replays the saved draw instead of rolling a new one — so 
 nothing is saved, the next person to press "Fazer Equipas" gets different teams
 from the ones the group was just sent.
 
-Committing writes `last_team` and `number_of_teams_made` on the edition, and
-updates `src/data/editions.json` to match — the export the site serves on first
-render. Commit that file too; it is the only file the draw touches.
+Committing writes `last_team` and `number_of_teams_made` on the edition, then
+runs `qa/export-supabase.py` so `src/data/` — the export the site serves on
+first render — matches the database again. Commit what it wrote.
 
 ## Once it stands
 

@@ -87,8 +87,11 @@ was not there and shifts the standings.
 
 - **Which edition**, by which running squad every name fits.
 - **The matchweek**, as one past that edition's highest.
-- **The date**, as the most recent matchday for the league (Thursday for
-  MasterLeague, Tuesday for TuesdayLeague). Override with `--date=2026-09-03`.
+- **The date**, as the most recent matchday: the weekday the edition last played
+  on, or the league's usual one (Thursday for MasterLeague, Tuesday for
+  TuesdayLeague) before it has played at all. Check it against the preview — a
+  result sent in the days after the game still dates to the game. Override with
+  `--date=2026-09-03`.
 - `--edition=12` forces an edition if both somehow fit.
 
 ## Worth telling the user
