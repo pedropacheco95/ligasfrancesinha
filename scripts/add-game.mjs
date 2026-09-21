@@ -268,6 +268,16 @@ const latestGame = edition.games
 const target = latestGame ? pyWeekday(new Date(`${latestGame}T00:00:00`)) : leagueTarget;
 const day = new Date();
 if (target !== null) day.setDate(day.getDate() - ((pyWeekday(day) - target + 7) % 7));
+// Winding back to the matchday lands on today when today is one — but the
+// result of a game that has not kicked off yet is last week's, and the group
+// reports a week late as often as on the night. The edition's own kick-off
+// time says when today stops being in the future.
+const now = new Date();
+const [hours, minutes] = (edition.time ?? "23:59").split(":").map(Number);
+const kickoff = (hours || 0) * 60 + (minutes || 0);
+if (isoLocalDate(day) === isoLocalDate(now) && now.getHours() * 60 + now.getMinutes() < kickoff) {
+  day.setDate(day.getDate() - 7);
+}
 const date = dateArg ?? isoLocalDate(day);
 
 /* ---------------------------------------------------------------- preview */
