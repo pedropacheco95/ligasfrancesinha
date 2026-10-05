@@ -20361,5 +20361,89 @@
   "gameId": 301,
   "team": "Maregões",
   "goals": 1
+ },
+ {
+  "id": 2938,
+  "playerId": 39,
+  "gameId": 302,
+  "team": "Branquelas",
+  "goals": 0
+ },
+ {
+  "id": 2939,
+  "playerId": 12,
+  "gameId": 302,
+  "team": "Branquelas",
+  "goals": 1
+ },
+ {
+  "id": 2940,
+  "playerId": 31,
+  "gameId": 302,
+  "team": "Branquelas",
+  "goals": 1
+ },
+ {
+  "id": 2941,
+  "playerId": 3,
+  "gameId": 302,
+  "team": "Branquelas",
+  "goals": 0
+ },
+ {
+  "id": 2942,
+  "playerId": 30,
+  "gameId": 302,
+  "team": "Branquelas",
+  "goals": 0
+ },
+ {
+  "id": 2943,
+  "playerId": 51,
+  "gameId": 302,
+  "team": "Branquelas",
+  "goals": 2
+ },
+ {
+  "id": 2944,
+  "playerId": 1,
+  "gameId": 302,
+  "team": "Maregões",
+  "goals": 1
+ },
+ {
+  "id": 2945,
+  "playerId": 11,
+  "gameId": 302,
+  "team": "Maregões",
+  "goals": 0
+ },
+ {
+  "id": 2946,
+  "playerId": 41,
+  "gameId": 302,
+  "team": "Maregões",
+  "goals": 2
+ },
+ {
+  "id": 2947,
+  "playerId": 18,
+  "gameId": 302,
+  "team": "Maregões",
+  "goals": 0
+ },
+ {
+  "id": 2948,
+  "playerId": 9,
+  "gameId": 302,
+  "team": "Maregões",
+  "goals": 1
+ },
+ {
+  "id": 2949,
+  "playerId": 5,
+  "gameId": 302,
+  "team": "Maregões",
+  "goals": 1
  }
 ]
