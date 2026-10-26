@@ -3018,5 +3018,15 @@
   "matchweek": 6,
   "played": false,
   "editionId": 13
+ },
+ {
+  "id": 305,
+  "goalsTeam1": 7,
+  "goalsTeam2": 8,
+  "date": "2026-10-19",
+  "winner": -1,
+  "matchweek": 7,
+  "played": false,
+  "editionId": 13
  }
 ]
